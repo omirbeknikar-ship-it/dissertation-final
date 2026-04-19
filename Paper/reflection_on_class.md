@@ -1,3 +1,9 @@
 # Reflection on Class
 
-Scaffold for class reflection.
+The class discussion helped me understand that a research repository should not be treated as a place to store final files only. It should show the development of the research process: the question, theory, data sources, literature review, model logic, and outputs. Organizing the repository in this way makes the project easier to review because the professor can see how each part of the research connects to the others.
+
+One important lesson was that a literature review should be an argument, not a list of summaries. For this project, that means I should not only describe what scholars say about BRI or Kazakhstan-China trade. I need to compare different interpretations: BRI as trade facilitation, BRI as a source of uneven outcomes, and strategic minerals as either dependency or leverage. The literature review should lead directly to the research gap and explain why my question matters.
+
+The class also emphasized the importance of linking theory, data, and model. In my project, Dependency Theory explains why increased trade may still be unequal, while trade facilitation explains why BRI may increase trade flows. The data must then measure the correct outcome: trade balance, not only total trade. The model should test whether strategic mineral exports are associated with that balance and whether the relationship changed after BRI.
+
+Finally, I learned that GitHub can function as a research workspace, not only as a software platform. A clean repository structure makes the research process more transparent and disciplined. It also helps separate raw data notes, literature review, scripts, analysis plans, outputs, and paper drafts. This organization is especially useful for a work-in-progress project because it shows what has been completed and what still needs to be verified.
