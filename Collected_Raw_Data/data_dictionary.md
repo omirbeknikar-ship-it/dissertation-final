@@ -22,8 +22,10 @@ country-pair year: Kazakhstan-China annual trade relationship
 | `trade_balance_ratio` | Numeric | Constructed | Trade balance divided by total bilateral trade. | Pending |
 | `strategic_mineral_exports_usd` | Numeric | UN Comtrade | Annual value of selected strategic mineral exports from Kazakhstan to China. | Pending |
 | `strategic_mineral_export_share` | Numeric | Constructed | Strategic mineral exports divided by Kazakhstan's total exports to China. | Pending |
-| `post_bri` | Binary | Constructed | Indicator equal to 1 for post-BRI years and 0 otherwise. | Pending |
-| `gdp_kazakhstan_current_usd` | Numeric | World Bank WDI | Kazakhstan's GDP in current USD. | Pending |
+| `ores_metals_exports_usd` | Numeric | World Bank WITS | Preliminary proxy for mineral export exposure using WITS `Ores and Metals` exports. | Available |
+| `ores_metals_export_share` | Numeric | Constructed | WITS `Ores and Metals` exports divided by Kazakhstan's total exports to China. | Available |
+| `post_bri` | Binary | Constructed | Indicator equal to 1 for years after 2013 and 0 otherwise. | Available |
+| `gdp_kazakhstan_current_usd` | Numeric | World Bank WDI | Kazakhstan's GDP in current USD. | Available |
 | `exchange_rate_optional` | Numeric | World Bank WDI | Exchange rate indicator, if included. | Optional |
 | `commodity_price_proxy_optional` | Numeric | External verified source | Commodity price proxy, if theoretically justified. | Optional |
 
@@ -56,4 +58,10 @@ Missing data should not be silently replaced. Any imputation, interpolation, or 
 
 ## Data Status
 
-No cleaned dataset is currently included in this repository. This dictionary is a planning document for future data collection and cleaning.
+A preliminary cleaned dataset is included at:
+
+```text
+Collected_Raw_Data/clean/kazakhstan_china_trade_panel.csv
+```
+
+This dataset is suitable for descriptive analysis. It is not yet the final regression dataset because the strategic mineral variable still needs to be replaced with a verified HS-level commodity basket.

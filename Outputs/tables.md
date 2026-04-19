@@ -1,20 +1,18 @@
 # Tables
 
-This file is a placeholder for tables that will be produced after data collection and cleaning.
+This file indexes the preliminary descriptive tables generated from public World Bank WITS and WDI API data.
 
-## Planned Tables
+## Available Tables
 
 ```text
-Table 1: Annual Kazakhstan-China trade flows
-Table 2: Pre-BRI and post-BRI descriptive averages
-Table 3: Strategic mineral exports to China
-Table 4: Summary statistics
-Table 5: Baseline regression estimates
+Outputs/generated_tables/annual_trade_balance.csv
+Outputs/generated_tables/pre_post_bri_summary.csv
+Outputs/generated_tables/summary_statistics.csv
 ```
 
-## Current Status
+## Current Interpretation Status
 
-No tables are available yet. Tables will be added only after verified data are collected, cleaned, and analyzed.
+These tables are preliminary descriptive outputs. They use WITS `Ores and Metals` exports as a proxy for mineral export exposure. They should not be presented as final uranium or copper export tables.
 
 ## Reporting Notes
 

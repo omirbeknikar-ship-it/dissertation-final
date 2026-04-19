@@ -1,8 +1,9 @@
 # Regression Model Script
 # Project: BRI's Impact on Kazakhstan-China Trade Balance
 #
-# This script estimates planned models only after a verified cleaned dataset
-# exists. It does not include fabricated estimates or stored results.
+# This script estimates preliminary proxy models only after a verified cleaned
+# dataset exists. Final regression claims should wait until the HS-level
+# strategic mineral variable is constructed.
 
 required_packages <- c("readr", "dplyr", "broom")
 
@@ -42,10 +43,10 @@ required_columns <- c(
   "trade_balance_usd",
   "trade_balance_ratio",
   "post_bri",
-  "strategic_mineral_exports_usd",
-  "strategic_mineral_export_share",
-  "post_bri_x_strategic_mineral_exports",
-  "post_bri_x_strategic_mineral_share"
+  "ores_metals_exports_usd",
+  "ores_metals_export_share",
+  "post_bri_x_ores_metals_exports",
+  "post_bri_x_ores_metals_share"
 )
 
 missing_columns <- setdiff(required_columns, names(analysis_data))
@@ -64,8 +65,8 @@ if (length(missing_columns) > 0) {
 baseline_model <- lm(
   trade_balance_usd ~
     post_bri +
-    strategic_mineral_exports_usd +
-    post_bri_x_strategic_mineral_exports,
+    ores_metals_exports_usd +
+    post_bri_x_ores_metals_exports,
   data = analysis_data
 )
 
@@ -79,8 +80,8 @@ baseline_fit <- glance(baseline_model)
 ratio_model <- lm(
   trade_balance_ratio ~
     post_bri +
-    strategic_mineral_export_share +
-    post_bri_x_strategic_mineral_share,
+    ores_metals_export_share +
+    post_bri_x_ores_metals_share,
   data = analysis_data
 )
 
@@ -97,6 +98,6 @@ write_csv(ratio_results, file.path(results_dir, "ratio_model_terms.csv"))
 write_csv(ratio_fit, file.path(results_dir, "ratio_model_fit.csv"))
 
 message(
-  "Model estimation completed. Interpret all estimates cautiously because ",
-  "the annual sample is expected to be small."
+  "Preliminary proxy model estimation completed. Do not treat these outputs ",
+  "as final strategic mineral regression results."
 )

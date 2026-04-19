@@ -1,19 +1,18 @@
 # Figures
 
-This file is a placeholder for figures that will be produced after the dataset is constructed.
+This file indexes the preliminary figures generated from the cleaned public-data panel.
 
-## Planned Figures
+## Available Figures
 
 ```text
-Figure 1: Kazakhstan exports to China and imports from China over time
-Figure 2: Kazakhstan-China bilateral trade balance over time
-Figure 3: Strategic mineral exports to China over time
-Figure 4: Strategic mineral export share and trade balance
+Outputs/generated_figures/exports_imports_over_time.svg
+Outputs/generated_figures/trade_balance_over_time.svg
+Outputs/generated_figures/ores_metals_share_over_time.svg
 ```
 
 ## Current Status
 
-No figures are available yet. The repository intentionally does not include draft graphics based on unverified data.
+The figures are available as SVG files. They are preliminary because the mineral measure is a broad WITS `Ores and Metals` proxy rather than a final HS-level strategic mineral basket.
 
 ## Figure Standards
 
@@ -22,4 +21,4 @@ Future figures should:
 1. Mark the BRI period clearly.
 2. Use readable labels and source notes.
 3. Avoid visual claims that are stronger than the underlying data.
-4. Be reproducible from the R scripts in `Scripts/`.
+4. Be reproducible from scripts in `Scripts/`.

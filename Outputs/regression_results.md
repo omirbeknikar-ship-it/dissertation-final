@@ -4,7 +4,7 @@ This file is a placeholder for regression results.
 
 ## Current Status
 
-No regression results are reported at this stage. The model has not been estimated because the verified dataset has not yet been collected and cleaned.
+No regression results are reported at this stage. Preliminary descriptive data are now available, but the final HS-level strategic mineral variable has not yet been constructed. Regression estimates should wait until that variable is documented.
 
 ## Planned Output
 

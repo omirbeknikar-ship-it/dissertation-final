@@ -22,7 +22,7 @@ library(dplyr)
 library(ggplot2)
 
 clean_data_path <- "Collected_Raw_Data/clean/kazakhstan_china_trade_panel.csv"
-figures_dir <- "Outputs/figures"
+figures_dir <- "Outputs/generated_figures"
 
 if (!file.exists(clean_data_path)) {
   stop(
@@ -42,8 +42,8 @@ required_columns <- c(
   "exports_kazakhstan_to_china_usd",
   "imports_kazakhstan_from_china_usd",
   "trade_balance_usd",
-  "strategic_mineral_exports_usd",
-  "strategic_mineral_export_share",
+  "ores_metals_exports_usd",
+  "ores_metals_export_share",
   "post_bri"
 )
 
@@ -68,8 +68,8 @@ summary_by_period <- analysis_data %>%
     mean_exports = mean(exports_kazakhstan_to_china_usd, na.rm = TRUE),
     mean_imports = mean(imports_kazakhstan_from_china_usd, na.rm = TRUE),
     mean_trade_balance = mean(trade_balance_usd, na.rm = TRUE),
-    mean_mineral_exports =
-      mean(strategic_mineral_exports_usd, na.rm = TRUE),
+    mean_mineral_proxy_exports =
+      mean(ores_metals_exports_usd, na.rm = TRUE),
     .groups = "drop"
   )
 
@@ -86,7 +86,7 @@ trade_balance_plot <- ggplot(analysis_data, aes(x = year, y = trade_balance_usd)
   geom_vline(xintercept = 2013, linetype = "dashed") +
   labs(
     title = "Kazakhstan-China Bilateral Trade Balance",
-    subtitle = "Draft figure to be regenerated after final data verification",
+    subtitle = "Preliminary figure based on WITS and WDI public data",
     x = "Year",
     y = "Trade balance, current USD",
     caption = "Source: To be completed after data collection."

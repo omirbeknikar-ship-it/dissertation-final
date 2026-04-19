@@ -20,7 +20,13 @@ The most likely control is Kazakhstan's GDP in current USD, used to account for 
 
 ## Collection Status
 
-Data collection is pending. No WDI extract has been added to this repository yet. The future dataset should record indicator codes, download date, source link, and any transformations.
+A preliminary WDI GDP extract is included in:
+
+```text
+Collected_Raw_Data/raw/world_bank_wdi_kazakhstan_gdp.csv
+```
+
+The current extract uses Kazakhstan GDP in current US dollars for 2000-2023. Additional WDI indicators may still be added later if they are theoretically justified.
 
 ## Expected Strengths
 

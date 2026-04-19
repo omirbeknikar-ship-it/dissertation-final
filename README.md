@@ -2,7 +2,7 @@
 
 This repository contains the working materials for a master's-level term paper research project on Kazakhstan-China trade after the launch of the Belt and Road Initiative (BRI). The project examines whether the expansion of bilateral trade after BRI corresponded with an improvement in Kazakhstan's trade balance with China, and whether strategic mineral exports changed that relationship.
 
-The repository is organized as a research workspace rather than a software product. It contains research planning documents, literature review drafts, data source notes, analysis plans, R script skeletons, and placeholders for future empirical outputs. No final empirical results are reported at this stage.
+The repository is organized as a research workspace rather than a software product. It contains research planning documents, literature review drafts, data source notes, a preliminary descriptive data analysis, script files, and output folders for tables and figures.
 
 ## Research Question
 
@@ -25,11 +25,11 @@ The project uses Dependency Theory and asymmetrical interdependence as its prima
 ## Repository Structure
 
 ```text
-Collected_Raw_Data/     Notes on planned data sources and variable definitions.
+Collected_Raw_Data/     Source notes, raw API extracts, and cleaned panel data.
 Literature_Review/      Analytical literature review and theoretical framework.
-Scripts/                R script skeletons for cleaning, exploration, and modeling.
-Analysis/               Descriptive plan, model specification, and diagnostics plan.
-Outputs/                Placeholders for tables, figures, and regression outputs.
+Scripts/                Scripts for preliminary analysis and future R workflow.
+Analysis/               Data analysis, model specification, and diagnostics plan.
+Outputs/                Generated descriptive tables, figures, and regression placeholders.
 Paper/                  Proposal drafts and reflection on the research workflow.
 README.md               Repository overview.
 Research_Plan.md        Main research plan.
@@ -38,11 +38,14 @@ hypothesis_model.md     Hypothesis and model logic.
 
 ## Current Status
 
-This repository is a work in progress. Data collection, cleaning, descriptive analysis, and model estimation are still pending. Output files intentionally contain placeholders so that future tables, figures, and regression results can be added only after verified data have been collected and analyzed.
+The repository now includes a preliminary descriptive data analysis based on public World Bank WITS and WDI API data for 2000-2023. The generated analysis includes a cleaned country-year panel, summary statistics, pre-BRI and post-BRI comparison tables, and SVG figures.
+
+The project is still not a final empirical paper. The current mineral measure uses WITS `Ores and Metals` exports as a cautious proxy for mineral export exposure. A final HS-level strategic mineral dataset for uranium, copper, and related categories still needs to be constructed from UN Comtrade or another verified commodity-level source before final regression claims are made.
 
 ## Research Integrity Notes
 
 - No fabricated empirical results are included.
 - No fabricated citations or bibliographic references are included.
-- Data source notes identify planned sources but do not claim that the dataset has already been finalized.
-- Regression scripts are skeletons intended to support reproducible analysis once the data file is available.
+- Preliminary descriptive statistics are generated from public API data and saved in `Outputs/generated_tables/`.
+- Preliminary figures are generated from the cleaned panel and saved in `Outputs/generated_figures/`.
+- Regression results are still pending because the final strategic mineral variable has not yet been built from HS-level commodity data.

@@ -96,7 +96,7 @@ Because the sample will use annual data, the model must remain simple. The final
 
 The expected contribution is to reframe the evaluation of BRI in Kazakhstan-China trade. Instead of asking only whether trade increased, the project asks whether Kazakhstan's trade balance improved and whether strategic minerals contributed to that improvement. This provides a more precise way to evaluate the economic implications of BRI for a resource-rich but structurally smaller partner.
 
-The project also contributes methodologically by building a transparent research repository. The repository documents the research question, theoretical logic, planned data sources, model specification, and pending outputs. This structure makes the workflow easier to review and revise.
+The project also contributes methodologically by building a transparent research repository. The repository documents the research question, theoretical logic, planned data sources, model specification, preliminary descriptive outputs, and remaining analytical tasks. This structure makes the workflow easier to review and revise.
 
 ## Limitations
 
