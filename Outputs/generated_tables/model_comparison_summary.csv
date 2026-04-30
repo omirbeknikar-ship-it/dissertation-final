@@ -1,0 +1,5 @@
+Model,Sample,Interaction_Coef,Interaction_SE,Interaction_P,R2,AdjR2
+A1: Full (7 regressors),2000-2023 (n=24),-3.2205,1.0429,0.0071,0.7645,0.6614
+A2: Parsimonious (no GDP),2000-2023 (n=24),-2.3823,0.9774,0.0254,0.7026,0.62
+"A3: Full, excl. 2023",2000-2022 (n=23),-0.4071,0.2883,0.1783,0.96,0.9414
+"A4: Parsimonious, excl. 2023",2000-2022 (n=23),0.4009,0.2568,0.1369,0.9281,0.907

@@ -38,14 +38,53 @@ hypothesis_model.md     Hypothesis and model logic.
 
 ## Current Status
 
-The repository now includes a preliminary descriptive data analysis based on public World Bank WITS and WDI API data for 2000-2023. The generated analysis includes a cleaned country-year panel, summary statistics, pre-BRI and post-BRI comparison tables, and SVG figures.
+The dissertation is complete. `Paper/final_dissertation.md` is the submission-ready document. All empirical outputs are reproducible from the scripts in `Scripts/`.
 
-The project is still not a final empirical paper. The current mineral measure uses WITS `Ores and Metals` exports as a cautious proxy for mineral export exposure. A final HS-level strategic mineral dataset for uranium, copper, and related categories still needs to be constructed from UN Comtrade or another verified commodity-level source before final regression claims are made.
+The final analysis includes:
+- A cleaned annual Kazakhstan–China bilateral panel (2000–2023, *n* = 24)
+- OLS association models with HAC (Newey–West) standard errors
+- VIF diagnostics (full model VIF > 100 for GDP controls; parsimonious model VIF < 10)
+- Influence diagnostics: Cook's D, leverage, studentised residuals, leave-one-out analysis
+- AIC-selected ADL dynamic association model with PSS bounds test
+- A 288-specification robustness grid
+- Structural-break diagnostics (Chow and Bai–Perron-style)
+- A WITS-consistent mineral proxy for robustness
+
+The narrow strategic mineral variable (uranium, copper, chromium) uses WITS Ores and Metals as a proxy for 2000–2013 and UN Comtrade HS-2 codes for 2014–2023. This measurement break is documented in `Paper/final_dissertation.md` §4.3 and addressed by a consistent-proxy robustness specification.
+
+Bilateral oil and energy export data (HS 27) were not available for the full sample period and are treated as an acknowledged omitted variable.
+
+## Reproducing the Analysis
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run scripts in order
+
+```bash
+python Scripts/01_load_comtrade.py
+python Scripts/01b_load_prices.py
+python Scripts/01c_load_wdi.py
+python Scripts/01d_load_bri.py
+python Scripts/02_mirror_reconcile.py
+python Scripts/03_build_panel.py
+python Scripts/10_descriptives.py
+python Scripts/11_structural_breaks.py
+python Scripts/12_ardl.py
+python Scripts/20_robustness.py
+python Scripts/30_full_diagnostics.py
+python Scripts/31_revision_computations.py
+```
+
+Outputs are written to `Outputs/generated_tables/` and `Outputs/generated_figures/`.
 
 ## Research Integrity Notes
 
 - No fabricated empirical results are included.
 - No fabricated citations or bibliographic references are included.
-- Preliminary descriptive statistics are generated from public API data and saved in `Outputs/generated_tables/`.
-- Preliminary figures are generated from the cleaned panel and saved in `Outputs/generated_figures/`.
-- Regression results are still pending because the final strategic mineral variable has not yet been built from HS-level commodity data.
+- All regression outputs are computed from real data and saved in `Outputs/generated_tables/`.
+- All figures are generated programmatically and saved in `Outputs/generated_figures/`.
+- The dissertation explicitly acknowledges fragile findings, influence of the 2023 observation, multicollinearity in GDP controls, and the absence of causal identification.

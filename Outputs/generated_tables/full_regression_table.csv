@@ -1,0 +1,9 @@
+Variable,Coefficient,HAC_SE,t_stat,p_value,Significance
+const,197.6241,53.0398,3.726,0.0018,***
+minerals_narrow_B,2.4628,0.5414,4.549,0.0003,***
+brent_annual_mean,0.0472,0.0386,1.222,0.2394,
+kzt_usd,0.0157,0.0117,1.344,0.1979,
+log_kz_gdp,-13.2297,6.1119,-2.165,0.0459,**
+log_cn_gdp,4.5293,4.4599,1.016,0.325,
+post_bri_2013,4.9273,1.8465,2.668,0.0168,**
+post_bri_x_minerals,-3.2205,1.0429,-3.088,0.0071,***

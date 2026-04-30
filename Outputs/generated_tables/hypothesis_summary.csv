@@ -1,0 +1,5 @@
+Hypothesis,Variable,Coefficient,p_value,Interpretation
+H1: Post-BRI trade-balance deterioration,post_bri_2013,4.9273,0.2396,"Positive level shift, but offset by negative interaction"
+H2: Minerals → better pre-BRI balance,minerals_narrow_B,2.4628,0.0226,Supported: positive pre-BRI mineral-balance association
+H3: Post-BRI × minerals interaction < 0,post_bri_x_minerals,-3.2205,0.0072,Supported: weaker mineral-balance payoff post-BRI
+H4: Cautious interpretation required,—,—,—,"Multiple confounders: oil shock, tenge, measurement break"
