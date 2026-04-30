@@ -1,0 +1,9 @@
+variable,adf_stat,adf_pval,adf_lags,adf_5pct_crit,pp_stat,pp_pval,pp_lags,kpss_stat,kpss_pval,adf_conclusion,pp_conclusion,kpss_conclusion,integration_order
+Trade Balance,-2.0948,0.2466,0,-2.998,-0.8866,0.9576,9,0.1113,0.1,I(1)?,I(1)?,I(0),ambiguous
+Minerals Narrow,-1.6314,0.4668,6,-3.054,-1.1677,0.9169,9,0.0968,0.1,I(1)?,I(1)?,I(0),ambiguous
+Brent Crude,-2.2052,0.2044,9,-3.104,-1.6477,0.7732,9,0.1339,0.0724,I(1)?,I(1)?,I(0),ambiguous
+Copper Price,-2.3086,0.1692,9,-3.104,-1.5761,0.8017,9,0.1252,0.0885,I(1)?,I(1)?,I(0),ambiguous
+KAZ GDP,-1.5563,0.5055,9,-3.104,-1.6376,0.7774,9,0.1741,0.0266,I(1)?,I(1)?,I(1)?,I(1)
+CHN GDP,1.3689,0.997,2,-3.013,-6.5769,0.0,9,0.1854,0.0215,I(1)?,I(0),I(1)?,ambiguous
+BRI Intensity,-4.0816,0.001,8,-3.085,-2.9061,0.1603,9,0.1858,0.0213,I(0),I(1)?,I(1)?,ambiguous
+log(Minerals Narrow),-0.793,0.8212,9,-3.104,-6.1476,0.0,9,0.1541,0.0432,I(1)?,I(0),I(1)?,ambiguous
