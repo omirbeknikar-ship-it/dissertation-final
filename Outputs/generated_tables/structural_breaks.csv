@@ -1,0 +1,7 @@
+break_year,statistic,p_value,df1,df2,significant_at_10pct,test,ci_lower,ci_upper,n_breaks,method_note
+2013,10.4344,0.0008,2.0,20.0,1.0,Chow,,,,OLS Chow test at fixed break year
+2014,6.6471,0.0061,2.0,20.0,1.0,Chow,,,,OLS Chow test at fixed break year
+2015,2.8362,0.0823,2.0,20.0,1.0,Chow,,,,OLS Chow test at fixed break year
+2016,1.2017,0.3215,2.0,20.0,0.0,Chow,,,,OLS Chow test at fixed break year
+2009,,,,,,Bai-Perron-style,2004.0,2009.0,2.0,"ruptures Binseg l2 with BIC-selected number of breaks; bootstrap CI, see KNOWN_ISSUES.md ISSUE-003"
+2014,,,,,,Bai-Perron-style,2014.0,2019.0,2.0,"ruptures Binseg l2 with BIC-selected number of breaks; bootstrap CI, see KNOWN_ISSUES.md ISSUE-003"
