@@ -1,12 +1,12 @@
 # Known Issues and Data Limitations
 
-## ISSUE-001: Comtrade files are 2014-only HS-2 snapshots
+## ISSUE-001: Comtrade files are 2014–2024 HS-2/aggregate snapshots
 
 **Status:** Active — affects Scripts/01_load_comtrade.py
 
-The Comtrade files provided (`comtrade_kaz_reporter.csv`, `comtrade_chn_reporter.csv`) contain data for 2014 only, at HS chapter (HS-2) level rather than the HS-6 level required by the Codebook. They cannot support the construction of `minerals_narrow`, `minerals_broad`, or `oil_exports` as annual time series for 2000–2024.
+The Comtrade files provided (`comtrade_kaz_reporter.csv`, `comtrade_chn_reporter.csv`) contain 2014–2024 data at HS chapter (HS-2) and aggregate levels rather than the HS-6 level required by the Codebook. They cannot support the construction of HS-6 `minerals_narrow`, `minerals_broad`, or `oil_exports` as annual time series for 2000–2024.
 
-**Workaround:** The `minerals_proxy` variable (WITS Ores & Metals exports, available 2000–2023) is used as the primary observable in all regression tables. The Comtrade 2014 snapshot is used only for a cross-sectional composition note in the mirror-reconciliation memo.
+**Workaround:** The processed pipeline uses the available bilateral export series and treats HS-2 mineral aggregates as proxies where HS-6 baskets are unavailable. The missing HS-6 basket and missing 2000–2013 Comtrade local extracts are explicitly flagged in econometric scripts and the paper.
 
 **Required to fix:** Re-download Comtrade API pulls for years 2000–2024 at HS-6, or access UN Comtrade+ with bilateral filtering, reporter=KAZ, partner=CHN, classification=HS.
 

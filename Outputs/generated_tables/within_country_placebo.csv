@@ -1,0 +1,2 @@
+test,status,did_coef,did_pval,did_se,n_obs,note
+Within-country placebo fallback from script 13,DECISION NEEDED - skipped,,,,0,"Synthetic control skipped: donor-pool countries' bilateral trade-balance-with-China series are not available in local raw files. Within-country ROW placebo also skipped: KAZ reporter Comtrade years available after correct parsing = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], not a 2000-2023 panel."
