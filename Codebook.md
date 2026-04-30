@@ -80,4 +80,4 @@ All codes from minerals_narrow, plus:
 
 ## Data Availability Notes
 
-The HS-6 disaggregated Comtrade files provided cover only 2014 at HS-2 chapter level; they cannot support the full 2000–2024 HS-6 time series. The variable `minerals_proxy` (WITS Ores & Metals total) is used as the primary observable throughout; `minerals_narrow` and `minerals_broad` are constructed analytically but labeled as WITS-proxy in all tables. See `KNOWN_ISSUES.md`.
+The local Comtrade files provided cover 2014–2024 at HS-2/aggregate level, not the full 2000–2024 HS-6 basket required by the ideal design. Mineral variables are therefore proxy-based where HS-6 detail is unavailable, and all econometric scripts label these limitations explicitly. See `KNOWN_ISSUES.md`.
