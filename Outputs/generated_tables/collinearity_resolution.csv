@@ -1,11 +1,11 @@
 Variable,VIF_A_Levels,VIF_B_Growth,VIF_C_GravRatio
 POST_x_MIN,15.98,9.72,13.74
-dlg_cn_gdp,—,3.36,—
-dlg_kz_gdp,—,2.63,—
-MIN,12.44,6.81,10.77
+BRENT,5.67,4.4,4.93
 log_cn_gdp,236.32,—,—
-gravity_ratio,—,—,33.36
-log_kz_gdp,130.93,—,—
+dlg_cn_gdp,—,3.36,—
 KZT,17.79,8.28,17.74
 POST,28.87,10.43,21.9
-BRENT,5.67,4.4,4.93
+MIN,12.44,6.81,10.77
+log_kz_gdp,130.93,—,—
+dlg_kz_gdp,—,2.63,—
+gravity_ratio,—,—,33.36
