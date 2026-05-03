@@ -564,19 +564,30 @@ This is an honest and important finding. The headline negative interaction is dr
 
 **Causal language threshold.** In light of these results, the thesis applies the triple-concordance criterion established in §5.1: a BRI-specific causal claim requires that (a) the DiD partner placebo (§6.15), (b) the synthetic counterfactual (§6.16), and (c) this sanctions robustness check all point in the same direction. The sanctions check does **not** support a China-specific BRI causal channel. Therefore, all post-BRI effect claims in this thesis are described as "consistent with" or "associated with" asymmetric interdependence rather than as causal evidence.
 
-## 6.15 Comparative Analysis: DiD with Partner Placebo
+## 6.15 Comparative Analysis: Interrupted Time Series with Placebo Break Years
 
-*This section presents results produced by `Scripts/33_multi_partner_panel.py` and `Scripts/34_did_partner_placebo.py`. Results are described where data is available from the multi-partner panel construction.*
+*Results produced by `Scripts/33_multi_partner_panel.py` and `Scripts/34_did_partner_placebo.py`. `Outputs/generated_tables/did_partner_placebo.csv` contains the full results table. The event-study figure is at `Outputs/generated_figures/fig_did_event_study.png`.*
 
-The partner-placebo design asks: did Kazakhstan's bilateral trade balance with China move differently after 2013 relative to Kazakhstan's bilateral trade balance with other major partners? If the post-2013 deterioration is China-specific, it provides comparative evidence of a BRI channel. If all bilateral balances deteriorated together, the BRI interpretation is weakened.
+**Data availability note.** The preferred design for this section is a two-way fixed-effects (TWFE) DiD using Kazakhstan's bilateral trade balance with multiple partners (China, Russia, EU/Germany, Uzbekistan, Turkey, USA) as treatment and control units. This design requires bilateral trade data that is not available in the local repository: the IMF DOTS API — which provides the necessary annual bilateral flows — was unreachable during the analysis run (network access blocked in this environment). This is documented as a [DATA_GAP] in `KNOWN_ISSUES.md`. The full TWFE DiD specification is implemented in `Scripts/34_did_partner_placebo.py` and will run automatically when executed with network access.
 
-**Design:** Two-way fixed-effects specification with Driscoll-Kraay standard errors:
+**Implemented alternative: Interrupted Time Series (ITS) with placebo break years.** In the absence of multi-partner data, the partner-placebo logic is partially tested using within-unit placebo break years (2008–2012). If only the true break year (2013) produces a significant level shift while placebo years do not, this is consistent with 2013 being a genuine structural break rather than a spurious period effect.
 
-$$\text{balance\_ratio}_{it} = \alpha_i + \gamma_t + \beta \cdot (\text{post\_bri\_2013} \times \text{CHINA}\_i) + \varepsilon_{it}$$
+**Table 6.9. ITS and Placebo Break-Year Results**
 
-where $i$ indexes trading partners and $t$ indexes years. The coefficient $\beta$ identifies whether China's bilateral balance ratio moved differently from other partners' ratios after 2013.
+| Specification | N | Level shift β | HAC SE | *p*-value | Interpretation |
+|---|---|---:|---:|---:|---|
+| True break at 2013 | 24 | −0.237 | 0.100 | 0.018 | True BRI break: significant |
+| Placebo break at 2008 | 24 | +0.116 | 0.080 | 0.145 | Insignificant ✓ |
+| Placebo break at 2009 | 24 | +0.149 | 0.089 | 0.094 | Marginally significant ⚠ |
+| Placebo break at 2010 | 24 | +0.176 | 0.101 | 0.080 | Marginally significant ⚠ |
+| Placebo break at 2011 | 24 | +0.070 | 0.100 | 0.488 | Insignificant ✓ |
+| Placebo break at 2012 | 24 | −0.097 | 0.103 | 0.346 | Insignificant ✓ |
 
-*See `Outputs/generated_tables/did_partner_placebo.csv` for the full results and `Scripts/34_did_partner_placebo.py` for estimation details.*
+*Source: Author's calculations from `Scripts/34_did_partner_placebo.py`. HAC standard errors, bandwidth = 3.*
+
+**Interpretation.** The true 2013 break produces a significant level shift of −0.237 in the bilateral trade-balance ratio (*p* = 0.018), consistent with the BRI announcement marking a structural change. However, the 2009 and 2010 placebo breaks are marginally significant (*p* = 0.094 and *p* = 0.080), which suggests that a pre-existing downward trend in the balance ratio partially explains the apparent 2013 level shift. This is consistent with the thesis's cautious interpretation: the 2013 break is real, but it is not cleanly separable from broader trends.
+
+**What a full TWFE DiD would add.** If Kazakhstan's bilateral balance deteriorated with China post-2013 but not with Russia, Germany, or Uzbekistan, that China-specific result would be comparative evidence of a BRI channel. If all balances deteriorated together, the BRI interpretation would be weakened. The current within-unit evidence is consistent with a structural break but cannot rule out common shocks. The cross-partner comparison remains an important robustness check that requires IMF DOTS API access.
 
 ## 6.16 Synthetic Counterfactual
 

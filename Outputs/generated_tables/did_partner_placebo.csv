@@ -1,0 +1,7 @@
+Specification,N_obs,N_partners,DiD_coef,HAC_SE,p_value,Interpretation
+ITS: true break at 2013,24,1,-0.2371,0.1001,0.0179,Level shift at true BRI break (2013)
+ITS placebo: break at 2008,24,1,0.1162,0.0797,0.1449,Placebo break at 2008 — should be insignificant
+ITS placebo: break at 2009,24,1,0.1487,0.0887,0.0937,Placebo break at 2009 — should be insignificant
+ITS placebo: break at 2010,24,1,0.1764,0.1008,0.0802,Placebo break at 2010 — should be insignificant
+ITS placebo: break at 2011,24,1,0.0695,0.1004,0.4884,Placebo break at 2011 — should be insignificant
+ITS placebo: break at 2012,24,1,-0.097,0.1028,0.3458,Placebo break at 2012 — should be insignificant
