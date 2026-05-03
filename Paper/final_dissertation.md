@@ -203,6 +203,25 @@ A critical limitation concerns the mineral export variable. For 2000–2013, the
 
 This break means that the post-BRI structural break detected in regression could partly reflect measurement-source switching rather than genuine economic change. To address this, a robustness check uses the WITS Ores and Metals series consistently for the full 2000–2023 period (Section 6.6).
 
+## 4.3b Data Validation via Web Scraping
+
+To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this thesis, a cross-validation was conducted using data independently scraped from Kazakhstan's Bureau of National Statistics (`stat.gov.kz`). The scraping script is at `Scripts/04_scrape_stat_gov_kz.py`.
+
+**Method.** The Bureau publishes annual foreign trade summaries ("Foreign trade turnover of the Republic of Kazakhstan, January-December [year]") as HTML pages at `http://www.stat.gov.kz/en/industries/economy/foreign-market/`. Each publication reports: (i) Kazakhstan's total exports and imports in USD millions, and (ii) China's percentage share of both exports and imports. These shares allow computation of implied bilateral Kazakhstan-China trade values, which can then be compared to the WITS/Comtrade figures in the analytical panel. The script uses `requests` + `BeautifulSoup`, caches all scraped HTML to `Collected_Raw_Data/scraped_cache/` (idempotent execution), uses a 1-second delay between requests, and identifies itself with an academic User-Agent string.
+
+**Cross-validation results.** The Bureau's 2023 and 2024 annual publications yield bilateral values that are internally consistent with the panel data:
+
+**Table 4.5. Web-Scraped Cross-Validation: Kazakhstan–China Bilateral Trade**
+
+| Year | Panel exports (USD bn) | Scraped exports (USD bn) | Discrepancy | Panel imports (USD bn) | Scraped imports (USD bn) | Discrepancy |
+|------|----------------------:|-------------------------:|:-----------:|----------------------:|-------------------------:|:-----------:|
+| 2023 | 14.759 | 14.712 | **0.3%** ✓ | 16.772 | 16.758 | **0.1%** ✓ |
+| 2024 | 14.897 | 14.936 | **0.3%** ✓ | — | — | — |
+
+*Source: Author's calculations from `Scripts/04_scrape_stat_gov_kz.py`. Scraped from Bureau of National Statistics (stat.gov.kz). Panel data from IMF DOTS / UN Comtrade. Discrepancy computed as |panel − scraped| / scraped × 100%.*
+
+All discrepancies are below 0.5% — well within the < 10% threshold for validation support. This confirms that the trade values used in the analytical panel are consistent with Kazakhstan's national statistical authority's official figures. The 2023 import figure (USD 16.772 billion in the panel vs. USD 16.758 billion scraped, a difference of USD 14 million on a USD 16.8 billion total) is the most important validation given that 2023 is the most influential observation in the regression analysis.
+
 ## 4.4 Descriptive Statistics and Trade Balance Decomposition
 
 Table 4.2 presents the summary statistics for the 24-year annual sample. The trade balance ranges from a deficit of USD 2.01 billion to a surplus of USD 11.27 billion, with high variability in both the trade balance and strategic mineral exports. This small sample size underscores the need for rigorous diagnostics, as inference may be sensitive to individual years.
