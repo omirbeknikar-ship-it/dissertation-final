@@ -12,7 +12,7 @@ Did the Belt and Road Initiative improve Kazakhstan's bilateral trade balance wi
 
 The starting point of the research is a distinction between trade growth and trade balance improvement. Kazakhstan-China trade expanded substantially in the post-BRI period, but higher trade volume does not necessarily imply a stronger trade position for Kazakhstan. Kazakhstan's exports to China are concentrated in resource-based products, while imports from China include a wide range of manufactured and higher-value goods. Strategic mineral exports, especially uranium and copper-related exports, may improve Kazakhstan's bilateral trade position, but this claim requires empirical testing.
 
-The project uses Dependency Theory and asymmetrical interdependence as its primary theoretical framework. Trade facilitation and connectivity arguments associated with BRI are used as a supporting framework to explain why trade volumes may increase after infrastructure, logistics, and policy coordination improve.
+The project uses **asymmetric interdependence** (Keohane & Nye 1977; Hirschman 1945) as its primary theoretical framework, demoting Dependency Theory to historical context. Trade facilitation (Anderson & van Wincoop 2003) and resource-curse channels (van der Ploeg 2011) serve as supporting frameworks.
 
 ## Objectives
 
@@ -42,17 +42,32 @@ The dissertation is complete. `Paper/final_dissertation.md` is the submission-re
 
 The final analysis includes:
 - A cleaned annual Kazakhstan–China bilateral panel (2000–2023, *n* = 24)
-- OLS association models with HAC (Newey–West) standard errors
-- VIF diagnostics (full model VIF > 100 for GDP controls; parsimonious model VIF < 10)
+- OLS association models with HAC (Newey–West) standard errors; gravity-ratio specification as primary (replaces collinear GDP levels)
+- VIF diagnostics: three-scheme comparison (GDP levels max VIF=236; gravity ratio max VIF=33; GDP growth rates max VIF=10)
 - Influence diagnostics: Cook's D, leverage, studentised residuals, leave-one-out analysis
 - AIC-selected ADL dynamic association model with PSS bounds test
 - A 288-specification robustness grid
 - Structural-break diagnostics (Chow and Bai–Perron-style)
 - A WITS-consistent mineral proxy for robustness
+- **Sanctions robustness**: 2022–2023 exclusion and parallel-imports dummy (new)
+- **Web-scraped cross-validation**: stat.gov.kz data confirmed 0.1–0.3% discrepancy (new)
+- **Synthetic control**: within-unit counterfactual with placebo permutation (new)
+- **ITS partner placebo**: interrupted time series with pre-2013 placebo breaks (new)
 
 The narrow strategic mineral variable (uranium, copper, chromium) uses WITS Ores and Metals as a proxy for 2000–2013 and UN Comtrade HS-2 codes for 2014–2023. This measurement break is documented in `Paper/final_dissertation.md` §4.3 and addressed by a consistent-proxy robustness specification.
 
 Bilateral oil and energy export data (HS 27) were not available for the full sample period and are treated as an acknowledged omitted variable.
+
+## Revisions Following Midterm Feedback
+
+The midterm version of this dissertation received a score of 75/100. Following written professor feedback, six revision items were implemented between the midterm and final defense versions:
+
+1. **Theory-method bridge** (Item 1): §3 and §5 rewritten to map every regressor to its theoretical mechanism, predicted sign, and citation. Asymmetric interdependence (Keohane & Nye; Hirschman) promoted to primary framework; Dependency Theory demoted to historical context. Variable selection rationale table (Table 3.1) added. Literature review pillar-bridge sentences added.
+2. **Sanctions robustness** (Item 2): `Scripts/32_sanctions_robustness.py` created. Key finding: the BRI mineral interaction does not survive exclusion of 2022–2023 (coefficient +0.134, p=0.672). Full results in `Outputs/generated_tables/sanctions_channel.csv` and `Analysis/sanctions_evasion_memo.md`.
+3. **External controls / partner comparison** (Item 3): `Scripts/33_multi_partner_panel.py` and `Scripts/34_did_partner_placebo.py` created. IMF DOTS multi-partner panel attempted (API blocked in current environment; [DATA_GAP]). Within-unit ITS with placebo break years implemented as fallback. True 2013 break significant (p=0.018); 2009/2010 placebos marginally significant (caution warranted).
+4. **Multicollinearity** (Item 4): `Scripts/35_collinearity_resolution.py` created. GDP-levels spec (max VIF=236) moved to Appendix B. Gravity ratio spec (max VIF=33) adopted as preferred main specification. VIF comparison table in `Outputs/generated_tables/collinearity_resolution.csv`.
+5. **Web scraping** (Item 5): `Scripts/04_scrape_stat_gov_kz.py` created. Scraped Kazakhstan BNS (stat.gov.kz) annual trade publications. Cross-validation shows 0.1–0.3% discrepancy between scraped and panel values for 2023–2024. Results in `Outputs/generated_tables/scraped_validation.csv`.
+6. **Causal identification / synthetic control** (Item 6): `Scripts/36_synthetic_control.py` created. Within-unit synthetic control with placebo permutation. Mean post-BRI gap = −0.014 (negative, consistent with adverse shift). Causal language tightened throughout §6–7: claims downgraded to "consistent with" / "associated with."
 
 ## Reproducing the Analysis
 
@@ -71,12 +86,18 @@ python Scripts/01c_load_wdi.py
 python Scripts/01d_load_bri.py
 python Scripts/02_mirror_reconcile.py
 python Scripts/03_build_panel.py
+python Scripts/04_scrape_stat_gov_kz.py   # web scraping (NEW)
 python Scripts/10_descriptives.py
 python Scripts/11_structural_breaks.py
 python Scripts/12_ardl.py
 python Scripts/20_robustness.py
 python Scripts/30_full_diagnostics.py
 python Scripts/31_revision_computations.py
+python Scripts/32_sanctions_robustness.py  # sanctions robustness (NEW)
+python Scripts/33_multi_partner_panel.py   # multi-partner panel (NEW, needs network for full run)
+python Scripts/34_did_partner_placebo.py   # DiD partner placebo (NEW)
+python Scripts/35_collinearity_resolution.py  # VIF comparison (NEW)
+python Scripts/36_synthetic_control.py    # synthetic control (NEW)
 ```
 
 Outputs are written to `Outputs/generated_tables/` and `Outputs/generated_figures/`.
