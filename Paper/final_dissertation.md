@@ -51,6 +51,8 @@ However, the trade-balance implications of resource specialisation are not neutr
 
 New trade theory [@krugman_1979; @helpman_krugman_1985] adds that trade patterns between differentiated and homogeneous goods producers create structural asymmetries. A country exporting homogeneous minerals and importing differentiated manufactures faces different elasticities of substitution on each side of its trade balance. This framework helps explain why import-side growth from China—spanning machinery, consumer goods, and intermediate inputs—may be more income-elastic than mineral export growth.
 
+**Empirical bridge (Pillar 1 — trade theory).** This strand predicts that `minerals_narrow` should have a **positive** coefficient in the pre-BRI baseline (H2): mineral export revenues improve the bilateral balance. The differential elasticity prediction implies that import growth will outpace export growth post-BRI, consistent with the **negative** `post_bri_x_minerals` interaction in H3.
+
 ## 2.2 Commodity Dependence, Terms of Trade, and External Vulnerability
 
 The Prebisch–Singer hypothesis posits that the terms of trade for primary commodity exporters tend to deteriorate over time relative to manufactured-goods exporters [@prebisch_1950; @singer_1950]. Harvey et al. [-@harvey_etal_2010] provide four centuries of evidence consistent with long-run commodity terms-of-trade decline, though with significant heterogeneity across commodities and periods.
@@ -59,11 +61,15 @@ Sachs and Warner [-@sachs_warner_1995] link resource abundance to development ri
 
 Frankel [-@frankel_2010] reviews the resource curse literature and argues that the negative association between resources and growth is not deterministic but conditional on institutions and commodity-price management. Applied to Kazakhstan, the relevant question is whether BRI-era mineral export growth was accompanied by value-added upgrading and import-substitution or whether it reproduced the commodity-dependent pattern that the resource curse literature identifies as problematic.
 
+**Empirical bridge (Pillar 2 — resource dependence).** This strand predicts that `brent_annual_mean` should carry an **ambiguous but predominantly positive** sign: higher commodity prices improve Kazakhstan's export revenues in the short run (positive for balance), but via Dutch Disease mechanisms may also appreciate the real exchange rate and crowd out manufacturing (partially negative over time). The `kzt_usd` depreciation variable captures the reverse competitiveness channel and is predicted to be **positive** on the bilateral balance via the Marshall–Lerner condition.
+
 ## 2.3 BRI as Trade Facilitation
 
 The strongest econometric evidence for BRI trade effects comes from gravity and GIS-linked models. De Soyres et al. [-@desoyres_etal_2019; -@desoyres_etal_2020] use shipping-time estimates to show that BRI infrastructure can reduce trade costs, with the largest gains concentrated along corridors. Baniya, Rocha, and Ruta [-@baniya_rocha_ruta_2020] estimate gravity models and find that BRI-related improvements raise trade flows, especially when transport investment is complemented by trade reforms. Anderson and van Wincoop [-@anderson_vanwincoop_2003] provide the theoretical foundation for gravity-based trade-cost analysis. Rolland [-@rolland_2017] situates these trade-facilitation dynamics within China's broader Eurasian strategic logic, arguing that BRI infrastructure serves geopolitical as well as commercial purposes. Swaine [-@swaine_2015] analyses Chinese official commentary on BRI, showing that the initiative was explicitly framed to combine economic connectivity with strategic depth.
 
 However, the trade-facilitation literature has an important limitation for this thesis. It generally treats increased trade as the primary success metric. It does not systematically ask whether the smaller partner's bilateral trade balance improves, deteriorates, or remains unchanged. A corridor that increases both exports and imports may raise total trade while shifting the trade-balance distribution against the resource-exporting partner.
+
+**Empirical bridge (Pillar 3 — BRI trade facilitation).** This strand predicts that `log(CN GDP / KZ GDP)` should have a **negative** sign: as China's economy grows faster relative to Kazakhstan's, its export capacity expands, worsening Kazakhstan's bilateral trade balance. It also motivates the `post_bri_2013` period dummy as a partial test of trade-cost reduction, while noting that the dummy conflates BRI-specific effects with concurrent commodity shocks. The comparative DiD design (§6.5) addresses this limitation by testing whether the post-2013 balance shift is China-specific or common across all of Kazakhstan's trading partners.
 
 ## 2.4 BRI as Asymmetric Interdependence
 
@@ -71,11 +77,15 @@ A second strand treats BRI-era connectivity as a context for asymmetric economic
 
 Horn, Reinhart, and Trebesch [-@horn_reinhart_trebesch_2021] document the rise of China as the world's largest official creditor, showing that Chinese lending creates financial interdependencies alongside trade linkages. Petry [-@petry_2023] demonstrates that financial infrastructures are part of Chinese economic statecraft, not secondary to physical corridors. Hurley, Morris, and Portelance [-@hurley_morris_portelance_2018] assess the debt-sustainability implications of BRI financing for low- and middle-income countries, finding that several corridor economies face elevated risk. Brautigam [-@brautigam_2020] critically examines the "debt-trap diplomacy" narrative, cautioning against both uncritical BRI promotion and undifferentiated alarmism—a nuance relevant to the Kazakhstan case, where Chinese financing supports infrastructure without yet producing the balance-sheet stress seen in some South Asian borrowers. Recent Kazakhstan-specific evidence supports asymmetric rather than symmetric interdependence. Primiano and Kudebayeva [-@primiano_kudebayeva_2025] find uneven public reception of BRI in Kazakhstan. Mostowlansky [-@mostowlansky_2020] shows how border security, soft power, and suspicion interact at the Sino-Kazakh boundary.
 
+**Empirical bridge (Pillar 4 — asymmetric interdependence, PRIMARY).** This is the load-bearing pillar. It predicts that (i) `post_bri_x_minerals` should be **negative** (H3): post-BRI mineral export growth did not translate into trade-balance improvement because China's leverage as buyer-creditor-supplier expanded faster than Kazakhstan's export revenues; (ii) `post_bri_2013` should be **negative** (H1): the post-BRI level shift in bilateral trade favours the more diversified partner; (iii) this pattern should be **China-specific** rather than common across all of Kazakhstan's partners, which is tested by the DiD partner-placebo design (§6.5) and the synthetic counterfactual (§6.6). Variables directly operationalising this pillar are `post_bri_2013`, `post_bri_x_minerals`, and `log(CN GDP / KZ GDP)`.
+
 ## 2.5 Kazakhstan, Central Asia, and China
 
 Central Asia studies caution that geography and local political economy matter. Bird, Lebrand, and Venables [-@bird_lebrand_venables_2020] model how BRI can reshape economic geography in Central Asia, with gains unevenly distributed across locations. Pomfret [-@pomfret_2019] analyses Central Asian trade patterns and regional integration dynamics. Cooley [-@cooley_2012] examines great-power competition in Central Asia, including China's growing economic footprint. Laruelle [-@laruelle_2018] documents China's Belt and Road Initiative in Central Asia from multiple analytical perspectives. Laruelle and Peyrouse [-@laruelle_peyrouse_2012] provide foundational analysis of the social and political dimensions of China's growing presence in the region, including the reception of Chinese labour and capital by local populations. Olcott [-@olcott_2002] offers an early and still-relevant account of Kazakhstan's post-independence challenges, establishing the resource-dependence baseline against which BRI-era changes should be measured.
 
 Jepson and Sweeney [-@jepson_2024] directly examine whether Chinese state capital supports resource-based structural transformation in Kazakhstan and Bolivia. Calabrese [-@calabrese_2024] asks whether Chinese capital can support diversification away from extractives in the Kyrgyz Republic. The global value chain (GVC) literature adds that governance structures shape whether suppliers upgrade or remain in captive, low-value positions [@gereffi_humphrey_sturgeon_2005].
+
+**Empirical bridge (Pillar 5 — GVC and upgrading).** This strand predicts that if Kazakhstan occupies a captive supplier position, the `post_bri_x_minerals` interaction should be **negative**: rising mineral exports coincide with rising imports of Chinese capital goods and machinery needed for extraction, rather than supporting domestic value-chain upgrading. The import-category decomposition in §6.4 (HS 84 machinery, HS 85 electronics, HS 87 vehicles) tests this mechanism directly: if these categories exploded disproportionately post-2013, it is consistent with an extractive-infrastructure import channel that drains the trade balance while mineral exports rise.
 
 ## 2.6 Empirical Methods in BRI and Small-Sample Trade Research
 
@@ -90,36 +100,58 @@ Most BRI studies focus on aggregate trade expansion or infrastructure connectivi
 
 # 3. Theoretical Framework
 
-## 3.1 Core Logic and Conceptual Model
+## 3.1 Primary Framework: Asymmetric Interdependence
 
-The theoretical framework integrates three analytical perspectives—asymmetric interdependence, trade facilitation, and resource dependence—to explain why mineral export growth may fail to improve a smaller partner's bilateral trade balance.
+The primary theoretical framework is **asymmetric interdependence**, as developed by Keohane and Nye [-@keohane_nye_1973] and Hirschman [-@hirschman_1945]. This framework is chosen over dependency theory because it is both more precise and more empirically testable: it allows for mutual gains from trade while predicting that the distribution of those gains, and the distribution of vulnerability, depend on the structural position of each partner.
 
-The trade balance identity provides the analytical starting point:
+Keohane and Nye define interdependence as mutual dependence between states or actors across issues, characterised by two distinct dimensions: *sensitivity* (the extent to which changes in one economy are transmitted to another before policy adjusts) and *vulnerability* (the cost of adjusting to those changes after the fact). Two economies can be simultaneously interdependent and asymmetrically so: China and Kazakhstan both depend on bilateral trade, but China can diversify mineral suppliers at lower cost than Kazakhstan can diversify its export markets. This structural asymmetry predicts that deepening bilateral integration will expand aggregate trade while potentially strengthening China's bargaining position.
 
-$$TB_t = X_{m,t} + X_{o,t} + X_{other,t} - M_t$$
+Hirschman's mechanism sharpens the prediction. In *National Power and the Structure of Foreign Trade*, Hirschman shows that dependence on a large trading partner generates political influence for the partner precisely when the dependent economy's trade is *concentrated* (few substitutable partners) and *inelastic* (the dependent economy cannot easily reduce or redirect trade). Kazakhstan's export basket is highly concentrated in mineral commodities shipped predominantly to China and Russia, with limited substitution options in the short run. Hirschman's framework therefore predicts that post-BRI deepening of mineral trade—by increasing Kazakhstan's exposure to Chinese demand while China retains many alternative suppliers—will strengthen the asymmetric structure of the relationship and may translate into a weakening of Kazakhstan's bilateral trade-balance position, as import capacity grows faster than export revenues.
 
-where $TB_t$ is the bilateral trade balance, $X_{m,t}$ is strategic mineral exports, $X_{o,t}$ is oil and energy exports, $X_{other,t}$ is other exports, and $M_t$ is imports from China. Even if $\Delta X_{m,t} > 0$, the trade balance can deteriorate if:
+This framework is preferred over dependency theory, which is retained only as *historical context* (§3.3). The critical difference is falsifiability: asymmetric interdependence generates variable-level predictions that can be tested in regression models (§3.4), whereas dependency theory operates at the level of structural formations and does not readily produce falsifiable coefficient predictions. The empirical strategy in this thesis is built entirely on the asymmetric interdependence framework.
 
-$$\Delta M_t > \Delta X_{m,t} + \Delta X_{o,t} + \Delta X_{other,t}$$
+## 3.2 Supporting Frameworks
 
-The core mechanism is as follows:
+Three supporting theoretical strands inform variable selection and interpretation:
 
-1. **Post-BRI trade facilitation** reduces infrastructure and border frictions along Kazakhstan–China corridors.
-2. **Lower trade costs** increase both Kazakhstan's mineral export capacity and China's manufactured-goods export capacity.
-3. **Mineral exports increase**, but remain concentrated in raw or semi-processed commodities.
-4. **Imports from China increase faster** because China's export basket is more diversified, covering machinery, consumer goods, and industrial inputs that Kazakhstan does not produce domestically. Raw minerals occupy lower positions in global value chains and are price-sensitive, while diversified imports from China include higher value-added goods with greater income elasticity.
-5. **The bilateral trade balance weakens** even as mineral export values rise, because import growth outpaces export growth.
-6. **Asymmetric interdependence deepens**: Kazakhstan becomes more exposed to a single large buyer-creditor-supplier, while China retains more outside options.
+**Gravity and trade facilitation.** Anderson and van Wincoop [-@anderson_vanwincoop_2003] show that bilateral trade depends on trade costs relative to multilateral resistance. BRI infrastructure reduces bilateral trade costs, increasing trade on both sides of the bilateral relationship. For the present model, China's GDP proxies *foreign demand capacity* — a larger Chinese economy demands more inputs from Kazakhstan and exports more manufactured goods, both effects that simultaneously expand the bilateral relationship and expose Kazakhstan to the import-side risk that asymmetric interdependence theory identifies.
 
-## 3.2 Testable Hypotheses
+**Resource curse and terms-of-trade channel.** Van der Ploeg [-@vanderploeg_2011] and Sachs and Warner [-@sachs_warner_1995] identify conditions under which resource-export dependence generates macroeconomic vulnerability. For this model, the Brent crude price proxies global commodity market conditions that simultaneously drive the value of Kazakhstan's energy and mineral exports and affect China's import demand for those commodities. The predicted relationship between global commodity prices and the bilateral trade balance is theoretically ambiguous: higher oil prices raise export revenues (positive for the balance) but may also appreciate the real exchange rate and crowd out non-commodity exports (negative).
 
-The framework produces three testable hypotheses:
+**Global value chains (GVC) and upgrading.** Gereffi, Humphrey, and Sturgeon [-@gereffi_humphrey_sturgeon_2005] show that captive supplier positions in raw-material chains provide little upgrading leverage. For this model, the minerals–post-BRI interaction term tests whether mineral export growth translates into trade-balance improvement or whether raw-mineral export growth coincides with rising imports of Chinese capital goods and intermediates, consistent with a captive supplier relationship that generates asymmetric gains.
 
-**H1 (Trade-Balance Change):** The post-BRI period is associated with a weaker bilateral trade-balance position for Kazakhstan relative to China, conditional on commodity and macroeconomic controls.
+## 3.3 Why Not Dependency Theory
 
-**H2 (Mineral Export Payoff):** Higher strategic mineral exports are positively associated with Kazakhstan's bilateral trade balance before accounting for post-BRI interaction effects.
+Dependency theory and world-systems analysis provide the intellectual history from which the asymmetric interdependence framework builds. Frank [-@frank_1966; as cited in the dependency tradition] and Prebisch [-@prebisch_1950] argue that peripheral commodity exporters face structural terms-of-trade deterioration imposed by the architecture of the global economy. This framing is useful for contextualising Kazakhstan's commodity-export position but is not adopted as the primary framework for three reasons: (i) it tends to overpredict structural subordination and understate policy agency; (ii) it does not generate variable-level coefficient predictions; (iii) the empirical evidence on Prebisch–Singer is heterogeneous and commodity-specific (Harvey et al. [-@harvey_etal_2010]), making it a weaker anchor for regression-based analysis. The thesis therefore uses asymmetric interdependence as the testable mechanism and treats dependency theory as background context.
 
-**H3 (Interaction):** The post-BRI interaction between strategic mineral exports and the bilateral trade balance is negative, suggesting that the trade-balance payoff of mineral exports weakened after post-BRI integration. A negative interaction is interpreted as diagnostic evidence consistent with import-side deepening and asymmetric interdependence, not as causal proof of a BRI effect.
+## 3.4 Variable Selection Rationale and Predicted Signs
+
+Every regressor in the empirical model is anchored to the theoretical framework above. The table below maps each variable to its theoretical mechanism, predicted sign on the bilateral trade balance, and supporting citation. This mapping is the bridge between theory and empirics that structures all results in Chapter 6.
+
+**Table 3.1. Variable Selection Rationale**
+
+| Variable | Theoretical mechanism | Predicted sign on TB | Key citation |
+|----------|----------------------|---------------------|-------------|
+| `minerals_narrow` (USD bn) | Hirschman concentration proxy: higher mineral exports increase export revenues, predicted to improve the bilateral balance *before* accounting for post-BRI import deepening | **Positive** (pre-BRI baseline) | Hirschman [-@hirschman_1945]; H2 |
+| `post_bri_2013` (0/1) | Period indicator for post-BRI structural change; tests whether the bilateral balance level shifted after 2013 corridor deepening | **Negative** (asymmetric interdependence predicts import-side acceleration dominates) | Keohane & Nye [-@keohane_nye_1973]; H1 |
+| `post_bri_x_minerals` | Asymmetric interdependence interaction: tests whether the trade-balance payoff of mineral exports weakened post-BRI, as rising Chinese manufactured exports outpaced mineral-export revenues | **Negative** (primary test of H3) | Hirschman [-@hirschman_1945]; Keohane & Nye [-@keohane_nye_1973] |
+| `brent_annual_mean` (USD/bbl) | Resource-curse / terms-of-trade channel: global commodity prices affect both export revenues and Chinese import demand; sign is theoretically ambiguous but expected positive via revenue channel | **Ambiguous** (positive via export revenue; potentially negative via Dutch disease crowding) | Van der Ploeg [-@vanderploeg_2011]; Corden & Neary [-@corden_neary_1982] |
+| `kzt_usd` (tenge per USD) | Competitiveness channel: a weaker tenge (higher KZT/USD) makes Kazakh exports cheaper in dollar terms and Chinese imports more expensive, predicted to improve the bilateral balance | **Positive** (depreciation improves balance via Marshall-Lerner) | Standard open-economy macroeconomics; Bhagwati [-@bhagwati_1958] |
+| `log(KZ GDP)` | Domestic income / absorption: higher Kazakh GDP increases import capacity; ambiguous net effect on bilateral balance; **severe multicollinearity (VIF > 130)** renders this variable unreliable in levels — see §5 and Appendix B | **Ambiguous** (absorption vs. export-capacity effects) | World Bank WDI; Anderson & van Wincoop [-@anderson_vanwincoop_2003] |
+| `log(CN GDP)` | Foreign demand / gravity: higher Chinese GDP increases demand for Kazakh mineral exports (positive for balance) but also expands China's manufactured-export capacity (negative for balance); **severe multicollinearity (VIF > 236)** — see §5 | **Ambiguous** (demand effect positive; supply effect negative); **replaced by gravity ratio in preferred specification** | Anderson & van Wincoop [-@anderson_vanwincoop_2003] |
+| `log(CN GDP / KZ GDP)` [preferred] | Gravity-motivated relative size: one parsimonious regressor captures the bilateral asymmetry in market size; a rising ratio (China grows faster) predicts worsening trade balance for Kazakhstan as import capacity grows relative to export earnings | **Negative** (rising ratio = deeper asymmetry) | Anderson & van Wincoop [-@anderson_vanwincoop_2003]; Item 4 revision |
+
+*Note: The gravity-ratio specification (`log(CN GDP/KZ GDP)`) replaces GDP levels in the preferred model following multicollinearity diagnostics (§6.3) and following the midterm revision (§5.2). The GDP-levels specifications are retained in Appendix B for transparency.*
+
+## 3.5 Testable Hypotheses
+
+The asymmetric interdependence framework produces three testable hypotheses that correspond directly to the variable mapping above:
+
+**H1 (Trade-Balance Change):** The post-BRI period (2014–2023) is associated with a weaker bilateral trade-balance position for Kazakhstan relative to China, conditional on commodity and macroeconomic controls. Mechanism: Keohane–Nye sensitivity asymmetry — BRI infrastructure simultaneously facilitates Kazakh mineral exports and Chinese manufactured exports, but China's diversified export basket grows faster than Kazakhstan's concentrated mineral exports.
+
+**H2 (Mineral Export Payoff):** Higher strategic mineral exports are positively associated with Kazakhstan's bilateral trade balance in the pre-BRI baseline period. Mechanism: Hirschman export-revenue channel — mineral exports generate foreign exchange that directly improves the bilateral balance before post-BRI import deepening takes hold.
+
+**H3 (Asymmetric Interaction):** The post-BRI × minerals interaction is negative, indicating that the trade-balance payoff of mineral exports weakened after BRI corridor deepening. Mechanism: asymmetric interdependence deepening — rising Chinese manufactured exports and the expansion of import-intensive infrastructure financing outpace the revenue gains from mineral exports, producing a deteriorating bilateral position despite export growth. A negative interaction is interpreted as diagnostic evidence consistent with Hirschman's dependence mechanism, not as causal proof of a BRI effect.
 
 # 4. Data and Variables
 
@@ -222,18 +254,33 @@ The baseline specification is:
 
 $$TB_t = \alpha + \beta_1 \text{Minerals}_t + \beta_2 \text{PostBRI}_t + \beta_3 (\text{Minerals}_t \times \text{PostBRI}_t) + \gamma' Z_t + \varepsilon_t$$
 
-where $Z_t$ includes Brent crude price, KZT/USD exchange rate, and optionally log GDP controls. Standard errors are computed using the Newey–West [-@newey_west_1987] HAC estimator with bandwidth 3. The coefficient of interest is $\beta_3$: a negative value indicates that the trade-balance association with mineral exports weakened in the post-BRI period.
+where $Z_t$ includes Brent crude price, KZT/USD exchange rate, and optionally GDP controls. Standard errors are computed using the Newey–West [-@newey_west_1987] HAC estimator with bandwidth 3. The coefficient of interest is $\beta_3$: a negative value indicates that the trade-balance payoff of mineral exports weakened in the post-BRI period, consistent with the asymmetric interdependence prediction in H3 (§3.5).
 
-**Interpretation constraint:** The model does not identify a causal BRI effect. PostBRI is a period indicator that coincides with multiple concurrent shocks (oil price collapse, tenge devaluation, Crimea-related trade disruption, COVID-19). All coefficients are interpreted as conditional associations.
+Each regressor is theoretically anchored as follows (see also Table 3.1 for the full mapping):
 
-## 5.2 Full vs. Parsimonious Specifications
+**`minerals_narrow` (USD bn).** This variable operationalises Hirschman's [-@hirschman_1945] trade-concentration mechanism. A larger mineral export share increases export revenues and should improve the bilateral trade balance in the pre-BRI baseline, yielding a *positive* predicted sign on $\beta_1$. The interaction $\beta_3$ tests whether this payoff changed post-BRI, with asymmetric interdependence theory predicting a *negative* coefficient as import deepening outpaces mineral revenue growth.
 
-Given the small sample (*n* = 24) and only 16 degrees of freedom with 7 regressors plus constant, multicollinearity is a significant concern. Two specifications are estimated:
+**`post_bri_2013` (0/1).** This period indicator tests whether the bilateral trade balance shifted structurally after the BRI announcement in September 2013. Keohane and Nye's sensitivity mechanism predicts a *negative* level shift as BRI corridor deepening accelerates Chinese manufactured exports into Kazakhstan faster than it accelerates Kazakh mineral exports to China. The coefficient $\beta_2$ is a net level shift that subsumes multiple concurrent shocks (oil-price collapse, tenge devaluation, COVID-19) and is therefore interpreted as suggestive rather than causal.
 
-- **Full model (A1):** 7 regressors including log_kz_gdp and log_cn_gdp.
-- **Parsimonious model (A2):** 5 regressors excluding GDP controls.
+**`brent_annual_mean` (USD/bbl).** This variable operationalises the resource-curse / terms-of-trade channel identified by van der Ploeg [-@vanderploeg_2011] and Corden and Neary [-@corden_neary_1982]. Higher global oil prices increase Kazakhstan's commodity export revenues, predicting a *positive* sign; however, they may also appreciate the real exchange rate and expand import-financing capacity, introducing ambiguity. The expected sign is therefore *positive but uncertain*.
 
-The parsimonious model is motivated by VIF diagnostics showing that log_kz_gdp and log_cn_gdp exhibit VIF values exceeding 100 (Section 6.3), indicating severe multicollinearity that may destabilise coefficient estimates.
+**`kzt_usd` (tenge per USD).** This variable operationalises the competitiveness channel from standard open-economy macroeconomics. A higher KZT/USD value (tenge depreciation) makes Kazakh exports cheaper in dollar terms and Chinese imports more expensive, predicting a *positive* effect on the bilateral trade balance via the Marshall–Lerner condition. The Bhagwati [-@bhagwati_1958] immiserising-growth caveat applies: if depreciation also compresses import demand for Chinese capital goods on which Kazakh industries depend, the effect may be partially self-limiting.
+
+**`log(KZ GDP)` and `log(CN GDP)` (levels).** These variables operationalise domestic absorption (KZ) and foreign demand (CN) from Anderson and van Wincoop's [-@anderson_vanwincoop_2003] gravity framework. However, both GDP series grow monotonically over 2000–2023, producing near-perfect multicollinearity (VIF = 130.9 and 236.3, respectively). Monotonic trending regressors in a 24-observation sample absorb the time trend and destabilise all other coefficient estimates. These variables are therefore **excluded from the preferred specification** and retained only in the pre-revision specification in Appendix B.
+
+**`log(CN GDP / KZ GDP)` (gravity ratio) — preferred.** Following the midterm revision and the methodological guidance of Anderson and van Wincoop [-@anderson_vanwincoop_2003], the preferred specification replaces the two collinear GDP levels with a single gravity-ratio regressor: the log of the ratio of China's GDP to Kazakhstan's GDP. This variable directly operationalises *bilateral asymmetry in market size*, which is the theoretical mechanism at the heart of the asymmetric interdependence framework: as China's economy grows faster than Kazakhstan's, China's export capacity expands relative to Kazakhstan's export revenues, predicting a *negative* sign on this ratio in the trade-balance regression. This specification resolves the multicollinearity problem (target VIF < 10) while preserving the theoretical content of both GDP terms (§6.3; Appendix B).
+
+**Interpretation constraint:** The model does not identify a causal BRI effect. PostBRI is a period indicator that coincides with multiple concurrent shocks (oil price collapse, tenge devaluation, Crimea-related trade disruption, COVID-19). All coefficients are interpreted as conditional associations. Causal language is reserved for the triple-concordance criterion in §7: a finding is described as "causal" only where the DiD partner-placebo estimate (§6.5), the synthetic counterfactual gap (§6.6), and the sanctions-robustness check (§6.4) all point in the same direction.
+
+## 5.2 Full vs. Parsimonious vs. Gravity-Ratio Specifications
+
+Following the midterm revision, three specification families are reported:
+
+- **Pre-revision full model (A1):** 7 regressors including log(KZ GDP) and log(CN GDP) — retained in Appendix B for transparency. VIF > 100. *Not used for primary interpretation.*
+- **Pre-revision parsimonious model (A2):** 5 regressors excluding GDP controls. VIF < 10. Used for primary interpretation in the midterm version.
+- **Preferred gravity-ratio model (A3) [new main specification]:** Replaces both GDP levels with log(CN GDP/KZ GDP). Theoretically grounded in Anderson and van Wincoop [-@anderson_vanwincoop_2003]. VIF < 10. **This is the primary specification in the final version.** See §6.3 and Appendix B.
+
+The gravity-ratio specification is preferred because: (i) it resolves extreme multicollinearity without sacrificing theoretical content; (ii) it directly operationalises the bilateral asymmetry mechanism from asymmetric interdependence theory; (iii) one regressor replaces two highly correlated ones, improving degrees of freedom in a 24-observation sample. The change is documented explicitly following midterm feedback: "Following midterm feedback, the GDP-levels specification was replaced with a gravity-motivated relative-size ratio to resolve VIF > 100 multicollinearity. This change is theoretically grounded in Anderson and van Wincoop (2003) and is robustness-checked against the original specification in Appendix B."
 
 ## 5.3 ADL Dynamic Association Model
 
