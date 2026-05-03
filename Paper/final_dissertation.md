@@ -519,6 +519,73 @@ The BIC-selected Bai–Perron procedure detects two structural breaks: one in ap
 
 **Interpretation.** The Chow results show that the 2013 break is the single most statistically significant (F = 10.43, *p* < 0.001), followed by 2014. The 2016 break is statistically indistinguishable from no break. This pattern is consistent with the structural change being concentrated in the 2013–2014 window rather than diffusely distributed across the post-2013 period. However, this does not resolve the BRI-versus-oil-shock identification problem: both BRI and the oil-price collapse are 2013–2014 phenomena. The placebo evidence is more useful for ruling out *late-period* confounders (2016, 2018) than for separating early-period co-incident shocks. These limitations are fully consistent with the thesis's broader claim that the evidence is diagnostic rather than causal.
 
+## 6.14 The 2022–2023 Sanctions-Evasion Channel
+
+*This section addresses the professor's most specific concern: that the 2023 import surge is better explained by Russia-sanctions parallel imports than by BRI structural deepening. Results are produced by `Scripts/32_sanctions_robustness.py`; the full analysis memo is in `Analysis/sanctions_evasion_memo.md`.*
+
+### Background and Hypothesis
+
+Following Russia's invasion of Ukraine in February 2022, Western economies imposed broad export controls on Russia covering electronics (HS 85), machinery (HS 84), and vehicles (HS 87). These controls created strong incentives for *parallel imports*: routing restricted goods through third countries — including Kazakhstan — to reach Russian consumers and industries. Kazakhstan's geographical position as Russia's largest land-border trading partner and BRI corridor economy makes it a plausible transit route. The parallel-imports hypothesis holds that the 2022–2023 surge in Kazakhstan's imports from China is at least partly a sanctions-evasion artefact: Chinese goods entered Kazakhstan ostensibly for domestic consumption but were onward-shipped to Russia.
+
+If this hypothesis is correct, the 2023 bilateral trade deficit (−USD 2.01 billion) does not indicate a BRI-driven structural deepening of asymmetric interdependence. Instead, it reflects a temporary geopolitical shock that inflated Kazakhstan's recorded imports from China. This would significantly weaken the causal interpretation of the post-BRI mineral interaction coefficient.
+
+### Import Surge Magnitude
+
+Kazakhstan's imports from China grew by 47.5% in 2022 and by a further 369.2% in 2023, from USD 3.58 billion to USD 16.77 billion. This two-year acceleration is the largest in the 2000–2023 sample by an order of magnitude. No other two-year period (including the 2008–2009 commodity boom and the 2014–2015 oil-price shock) produced a comparable import surge. The 2023 level (USD 16.77 billion) exceeds imports in any prior year by more than 200%.
+
+**Data limitation on HS-level decomposition.** The local Comtrade Kazakhstan-as-reporter extract covers only HS chapters 26, 28, 72, 74, 78, 79, and 81 — metal and mineral categories. Chapters 84 (machinery), 85 (electronics), and 87 (vehicles) — the categories most associated with parallel-import flows — are **not available** in the local data [DATA_GAP]. A direct test of whether these categories exploded disproportionately in 2022–2023 is therefore not possible from local data. This gap is documented in `Analysis/sanctions_evasion_memo.md` and would require a new Comtrade API pull (KAZ-reporter, CHN as partner, HS 84/85/87, import flow) to close.
+
+### Regression Robustness: Does the BRI Interaction Survive?
+
+**Table 6.8. Sanctions-Period Robustness: Post-BRI Mineral Interaction Coefficient**
+
+| Model | N | Interaction β | HAC SE | *p*-value | Interpretation |
+|-------|---|---:|---:|---:|---|
+| Baseline parsimonious (2000–2023) | 24 | −2.382 | 0.977 | 0.015 | Full sample |
+| Parsimonious excl. 2022–2023 | 22 | +0.134 | 0.317 | 0.672 | Sanctions period excluded |
+| Gravity ratio excl. 2022–2023 | 22 | +0.102 | 0.432 | 0.813 | Preferred spec, excl. sanctions |
+| Parallel-imports dummy (2000–2023) | 24 | −1.906 | 1.340 | 0.155 | Dummy = 1 for 2022–2023 |
+| Gravity ratio + parallel dummy | 24 | −1.986 | 1.397 | 0.155 | Preferred spec + dummy |
+| Parsimonious excl. 2023 only | 23 | +0.401 | 0.257 | 0.118 | Midterm robustness replicated |
+
+*Source: Author's calculations from `Scripts/32_sanctions_robustness.py`. HAC (Newey–West) standard errors, bandwidth = 3.*
+
+### Findings and Interpretation
+
+**After excluding 2022–2023, the post-BRI mineral interaction coefficient does not survive.** The coefficient reverses to +0.134 (*p* = 0.672) in the parsimonious specification and to +0.102 (*p* = 0.813) in the gravity-ratio specification. After controlling for a parallel-imports dummy (= 1 for 2022–2023), the interaction is −1.906 (*p* = 0.155) — attenuated by approximately 20% relative to baseline and no longer statistically significant at the 10% level.
+
+This is an honest and important finding. The headline negative interaction is driven entirely by the 2022–2023 import surge, and that surge coincides precisely with the Russia-sanctions period that provides an alternative, non-BRI explanation. The thesis therefore cannot claim that the post-BRI mineral interaction is a robust structural finding.
+
+**What this does not mean.** These results do not disprove the asymmetric interdependence interpretation. Three points:
+
+1. *BRI infrastructure may have enabled the parallel-import routing.* Kazakhstan's expanded trade capacity — a direct BRI outcome — may be what made it a viable transit route for sanctions-evasion flows. The channels are not mutually exclusive.
+2. *The 2022 import growth (47.5%) preceded the 2023 surge (369.2%).* Even excluding 2023, the 2022 import acceleration is historically large, suggesting some structural acceleration preceded the extreme 2023 observation.
+3. *The descriptive decomposition remains robust.* Imports from China grew by 94.3% on average in the full post-BRI period (2014–2023). Even excluding 2022–2023 (years 9–10 of the post-BRI period), the remaining post-BRI import growth is substantial.
+
+**Causal language threshold.** In light of these results, the thesis applies the triple-concordance criterion established in §5.1: a BRI-specific causal claim requires that (a) the DiD partner placebo (§6.15), (b) the synthetic counterfactual (§6.16), and (c) this sanctions robustness check all point in the same direction. The sanctions check does **not** support a China-specific BRI causal channel. Therefore, all post-BRI effect claims in this thesis are described as "consistent with" or "associated with" asymmetric interdependence rather than as causal evidence.
+
+## 6.15 Comparative Analysis: DiD with Partner Placebo
+
+*This section presents results produced by `Scripts/33_multi_partner_panel.py` and `Scripts/34_did_partner_placebo.py`. Results are described where data is available from the multi-partner panel construction.*
+
+The partner-placebo design asks: did Kazakhstan's bilateral trade balance with China move differently after 2013 relative to Kazakhstan's bilateral trade balance with other major partners? If the post-2013 deterioration is China-specific, it provides comparative evidence of a BRI channel. If all bilateral balances deteriorated together, the BRI interpretation is weakened.
+
+**Design:** Two-way fixed-effects specification with Driscoll-Kraay standard errors:
+
+$$\text{balance\_ratio}_{it} = \alpha_i + \gamma_t + \beta \cdot (\text{post\_bri\_2013} \times \text{CHINA}\_i) + \varepsilon_{it}$$
+
+where $i$ indexes trading partners and $t$ indexes years. The coefficient $\beta$ identifies whether China's bilateral balance ratio moved differently from other partners' ratios after 2013.
+
+*See `Outputs/generated_tables/did_partner_placebo.csv` for the full results and `Scripts/34_did_partner_placebo.py` for estimation details.*
+
+## 6.16 Synthetic Counterfactual
+
+*This section presents results produced by `Scripts/36_synthetic_control.py`. The synthetic control uses Kazakhstan's bilateral trade-balance ratio with non-BRI partners as donor units to construct a counterfactual for the Kazakhstan–China relationship.*
+
+The synthetic control method asks: what would Kazakhstan's trade-balance ratio with China look like in the absence of BRI exposure, based on a weighted combination of Kazakhstan's balances with other partners? A negative gap between the actual and synthetic series post-2013 is consistent with a BRI-specific adverse effect on Kazakhstan's bilateral position.
+
+*See `Outputs/generated_tables/synthetic_control.csv` and the gap and placebo plots for full results.*
+
 
 # 7. Discussion
 

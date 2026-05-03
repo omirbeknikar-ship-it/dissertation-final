@@ -1,0 +1,8 @@
+Model,N,Interaction_coef,HAC_SE,p_value,R2
+Baseline parsimonious (2000-2023),24,-2.382,0.977,0.015,0.703
+Gravity ratio (2000-2023),24,-2.419,1.131,0.033,0.703
+Parsimonious excl. 2022-2023,22,0.134,0.317,0.672,0.924
+Gravity ratio excl. 2022-2023,22,0.102,0.432,0.813,0.924
+Parallel-imports dummy (2000-2023),24,-1.906,1.34,0.155,0.707
+Gravity ratio + parallel dummy,24,-1.986,1.397,0.155,0.708
+Parsimonious excl. 2023 only,23,0.401,0.257,0.118,0.928
