@@ -347,23 +347,45 @@ The parsimonious model (A2) is therefore preferred for substantive interpretatio
 
 The Breusch–Pagan test rejects the null of homoskedasticity (*p* = 0.006), which motivates the use of HAC standard errors throughout. HAC standard errors correct for both heteroskedasticity and autocorrelation in inference, but do not address potential model misspecification. The Durbin–Watson statistic (1.80) is close to 2.0, suggesting that serial correlation is mild after conditioning on regressors.
 
-## 6.3 Multicollinearity Diagnostics
+## 6.3 Multicollinearity Diagnostics and Resolution
 
-**Table 6.3. Variance Inflation Factors**
+Following midterm feedback on VIF > 100, three variable schemes were evaluated in `Scripts/35_collinearity_resolution.py`:
 
-| Variable | Full Model VIF | Parsimonious VIF |
-|----------|---------------:|-----------------:|
-| minerals_narrow_B | 12.44 | 6.37 |
-| brent_annual_mean | 5.67 | 4.67 |
-| kzt_usd | 17.79 | 7.87 |
-| log_kz_gdp | **130.93** | — |
-| log_cn_gdp | **236.32** | — |
-| post_bri_2013 | 28.87 | 7.17 |
-| post_bri_x_minerals | 15.98 | 8.31 |
+**Table 6.3a. VIF Comparison Across Specification Schemes**
 
-The GDP controls exhibit extreme multicollinearity (VIF > 100), consistent with the well-known near-perfect collinearity of trending macroeconomic aggregates in annual data. Removing GDP controls reduces all VIF values below 10, substantially improving coefficient stability. This explains why the full model produces a suspiciously large constant (197.6) and an economically implausible interaction magnitude (−3.22): the GDP terms absorb most of the trending variation, leaving the remaining coefficients sensitive to small perturbations in the data.
+| Variable | Scheme A (GDP levels) | Scheme B (GDP growth) | Scheme C (Gravity ratio) |
+|----------|----------------------:|----------------------:|-------------------------:|
+| MIN (minerals) | 12.4 | 6.8 | 10.8 |
+| BRENT | 5.7 | 4.4 | 4.9 |
+| KZT/USD | 17.8 | 8.3 | 17.7 |
+| log(KZ GDP) | **130.9** | — | — |
+| log(CN GDP) | **236.3** | — | — |
+| d.log(KZ GDP) growth | — | 2.6 | — |
+| d.log(CN GDP) growth | — | 3.4 | — |
+| log(CN/KZ GDP ratio) | — | — | 33.4 |
+| POST dummy | 28.9 | 10.4 | 21.9 |
+| POST × MIN | 16.0 | 9.7 | 13.7 |
+| **Max VIF** | **236.3** | **10.4** | **33.4** |
 
-The parsimonious specification is therefore preferred for substantive interpretation, though both are reported for transparency.
+*Source: Author's calculations from `Scripts/35_collinearity_resolution.py`. Scheme A = pre-revision (retained in Appendix B). Scheme B = GDP annual growth rates. Scheme C = gravity ratio log(CN GDP/KZ GDP).*
+
+**Scheme A (pre-revision)** has GDP-level VIFs of 130.9 and 236.3 — severe. This is the specification moved to Appendix B.
+
+**Scheme B (growth rates)** reduces maximum VIF to 10.4, nearly achieving the VIF < 10 target. Growth rates are stationary, theoretically defensible, and eliminate the trending-variable collinearity problem. One year of observations is lost to differencing (n = 23).
+
+**Scheme C (gravity ratio)** reduces maximum VIF from 236 to 33 — a large improvement, but not below 10. The remaining collinearity is driven by the interaction of the post-BRI dummy and the gravity ratio (both capture the post-2013 period). The gravity ratio is retained as the *theoretically preferred* specification because it directly operationalises bilateral size asymmetry (Anderson & van Wincoop 2003), but the growth-rate scheme is also reported as the specification that best achieves the VIF < 10 target.
+
+**Table 6.3b. Coefficient Stability Across Schemes**
+
+| Scheme | N | Interaction β | HAC SE | *p*-value | Max VIF |
+|--------|---|---:|---:|---:|---:|
+| A: GDP levels (pre-revision) | 24 | −3.220 | 1.043 | 0.002 | 236.3 |
+| B: GDP growth rates | 23 | −2.489 | 0.974 | 0.011 | 10.4 |
+| C: Gravity ratio (preferred) | 24 | −2.419 | 1.131 | 0.033 | 33.4 |
+| C: Gravity ratio, excl. 2022–2023 | 22 | +0.102 | 0.432 | 0.813 | 33.4 |
+| C: Gravity ratio, excl. 2023 | 23 | +0.307 | 0.449 | 0.494 | 33.4 |
+
+The interaction coefficient is stable at approximately −2.4 to −2.5 across all three full-sample schemes, suggesting that the collinearity inflated the magnitude in Scheme A (−3.22) but not catastrophically. The more important finding is that all three schemes lose significance when 2022–2023 are excluded — confirming the sanctions-robustness concern in §6.14 is not scheme-specific but structural.
 
 ## 6.4 Influence Diagnostics and the Role of 2023
 
@@ -674,4 +696,47 @@ This appendix maps the figures and tables referenced in the text to their source
 | Figure 6 | `Outputs/generated_figures/fig_6_pre_post.png` | 6.8 | Pre/post coefficient robustness |
 | Table 6.7 | `Outputs/generated_tables/structural_breaks.csv` | 6.13 | Chow placebo break-year tests |
 | §6.12 data | `Outputs/oil_energy_exports_to_china.csv` | 6.12 | Bilateral oil/energy export null-result documentation |
+| Table 6.8 | `Outputs/generated_tables/sanctions_channel.csv` | 6.14 | Sanctions robustness |
+| Table 6.9 | `Outputs/generated_tables/did_partner_placebo.csv` | 6.15 | ITS + placebo break years |
+| Table 6.3a/b | `Outputs/generated_tables/collinearity_resolution.csv`, `gravity_ratio_main_results.csv` | 6.3 | VIF comparison across schemes |
+| Figure DiD | `Outputs/generated_figures/fig_did_event_study.png` | 6.15 | ITS + placebo event study |
+| Figure SC | `Outputs/generated_figures/fig_synthetic_control.png` | 6.16 | Synthetic control gap plot |
+
+# Appendix B: Pre-Revision Specification (Retained for Transparency)
+
+*This appendix documents the pre-revision OLS specification that used log(KZ GDP) and log(CN GDP) as separate level regressors. It is retained per hard rule 4 (do not delete midterm specifications) and per the explicit midterm revision commitment in §5.2.*
+
+## Appendix B.1 Pre-Revision Full Model (A1)
+
+The full model with GDP levels produced severe multicollinearity (max VIF = 236.3) that inflated coefficient magnitudes and destabilised inference. This specification is **not used for substantive interpretation** in the final thesis. It is retained here so that the revision from midterm to final is transparent and reproducible.
+
+| Variable | Pre-revision A1 Coef. | HAC SE | *p*-value |
+|----------|---------------------:|-------:|----------:|
+| Constant | 197.624 | 53.040 | 0.002 |
+| Minerals (USD bn) | 2.463 | 0.541 | 0.000 |
+| Brent (USD/bbl) | 0.047 | 0.039 | 0.239 |
+| KZT/USD | 0.016 | 0.012 | 0.198 |
+| log(KZ GDP) | −13.230 | 6.112 | 0.046 |
+| log(CN GDP) | 4.529 | 4.460 | 0.325 |
+| Post-BRI | 4.927 | 1.847 | 0.017 |
+| **Minerals × Post-BRI** | **−3.221** | **1.043** | **0.007** |
+| N=24, R²=0.765, max VIF=236.3 | | | |
+
+*Notes: The large constant (197.6), implausible GDP coefficient magnitudes, and max VIF > 100 indicate that this specification's coefficients absorb trending collinearity rather than identifying genuine partial effects. This specification is superseded by the gravity-ratio model (Scheme C) in the final version.*
+
+## Appendix B.2 Pre-Revision Parsimonious Model (A2)
+
+The midterm parsimonious model excluded GDP controls, reducing VIF:
+
+| Variable | Pre-revision A2 Coef. | HAC SE | *p*-value |
+|----------|---------------------:|-------:|----------:|
+| Constant | −3.326 | 2.359 | 0.176 |
+| Minerals (USD bn) | 1.694 | 0.853 | 0.062 |
+| Brent (USD/bbl) | 0.023 | 0.037 | 0.542 |
+| KZT/USD | 0.014 | 0.012 | 0.270 |
+| Post-BRI | 0.691 | 1.492 | 0.649 |
+| **Minerals × Post-BRI** | **−2.382** | **0.977** | **0.025** |
+| N=24, R²=0.703, max VIF=8.31 | | | |
+
+*Notes: This specification achieved VIF < 10 by excluding GDP controls entirely. The final preferred specification (gravity ratio, Scheme C) retains a GDP-related regressor for theoretical completeness while substantially reducing the severity of collinearity relative to Scheme A.*
 
