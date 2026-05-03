@@ -632,30 +632,68 @@ This is an honest and important finding. The headline negative interaction is dr
 
 ## 6.16 Synthetic Counterfactual
 
-*This section presents results produced by `Scripts/36_synthetic_control.py`. The synthetic control uses Kazakhstan's bilateral trade-balance ratio with non-BRI partners as donor units to construct a counterfactual for the Kazakhstan–China relationship.*
+*Results produced by `Scripts/36_synthetic_control.py`. Outputs: `Outputs/generated_tables/synthetic_control.csv` and `Outputs/generated_figures/fig_synthetic_control.png`.*
 
-The synthetic control method asks: what would Kazakhstan's trade-balance ratio with China look like in the absence of BRI exposure, based on a weighted combination of Kazakhstan's balances with other partners? A negative gap between the actual and synthetic series post-2013 is consistent with a BRI-specific adverse effect on Kazakhstan's bilateral position.
+**Data note.** The standard Abadie (2003) synthetic control requires multiple donor units — in this context, Kazakhstan's bilateral trade-balance ratios with Russia, EU, Turkey, USA, and Uzbekistan. These series are not available locally (IMF DOTS API blocked; [DATA_GAP] documented in §6.15). A within-unit synthetic control is implemented instead: the pre-period (2000–2012) dynamics of the KZ-China balance ratio are modelled using global commodity prices (Brent, normalised), the gravity ratio (log CN/KZ GDP), a linear time trend, and the lagged balance ratio as predictors. The pre-period OLS fit on these predictors serves as the synthetic counterfactual for the post-2013 period.
 
-*See `Outputs/generated_tables/synthetic_control.csv` and the gap and placebo plots for full results.*
+**Design.** The synthetic counterfactual is constructed as the OLS-fitted value of the trade-balance ratio on the four predictors, with coefficients estimated only on the 2000–2012 pre-period sample. The post-2013 counterfactual is the out-of-sample projection of these pre-period dynamics. A negative gap (actual < synthetic) post-2013 is interpreted as the actual balance falling below what would be predicted by the pre-BRI dynamics of commodity prices, bilateral size asymmetry, and trend.
+
+**Table 6.10. Post-BRI Synthetic Counterfactual Gap**
+
+| Year | Actual balance ratio | Synthetic counterfactual | Gap (actual − synthetic) |
+|------|--------------------:|------------------------:|-------------------------:|
+| 2013 | 0.264 | 0.340 | −0.075 |
+| 2014 | 0.142 | 0.265 | −0.123 |
+| 2015 | 0.037 | 0.192 | −0.155 |
+| 2016 | 0.070 | 0.160 | −0.091 |
+| 2017 | 0.105 | 0.164 | −0.059 |
+| 2018 | 0.079 | 0.173 | −0.094 |
+| 2019 | 0.082 | 0.115 | −0.033 |
+| 2020 | 0.555 | 0.112 | +0.443 |
+| 2021 | 0.477 | 0.361 | +0.116 |
+| 2022 | 0.491 | 0.287 | +0.204 |
+| 2023 | −0.064 | 0.219 | −0.283 |
+
+*Source: Author's calculations from `Scripts/36_synthetic_control.py`. Pre-period MSPE = 0.0038; post-period MSPE = 0.0362; MSPE ratio = 9.53.*
+
+**Findings.** The gap is negative in 8 of 11 post-BRI years, with a mean post-BRI gap of −0.014. The MSPE ratio (post-period fit error / pre-period fit error) is 9.53, indicating that post-2013 outcomes are substantially harder to predict from pre-BRI dynamics alone — consistent with a post-2013 structural change. The three years with positive gaps (2020, 2021, 2022) coincide with the COVID-19 pandemic import collapse and the initial post-Ukraine sanctions period, both of which temporarily improved the bilateral trade balance.
+
+**Limitations and caution.** The permutation p-value from placebo runs is 0.857 — not statistically significant. This is partly an artifact of the small sample (within-unit placebo permutations produce very high MSPE ratios for early pseudo-treatment years due to the small pre-period). The within-unit design is also a weaker identification strategy than a full multi-partner synthetic control: it assumes the pre-period relationship between predictors and the balance ratio would have continued post-2013 in the absence of BRI, which is untestable. The full multi-partner design (requiring IMF DOTS data) would provide stronger identification by using other countries' bilateral balances as explicit control units.
+
+![Figure 7. Synthetic Counterfactual: Actual vs. Synthetic KZ-China Trade Balance Ratio](../Outputs/generated_figures/fig_synthetic_control.png)
+*Source: Author's construction from `Scripts/36_synthetic_control.py`. Panel A: actual vs. synthetic trajectory. Panel B: gap plot showing post-BRI deviations from counterfactual.*
+
+**Triple-concordance assessment.** The three causal identification methods produce the following pattern:
+
+| Method | Direction | Significant | Notes |
+|--------|-----------|-------------|-------|
+| Regression (gravity ratio) | Negative (−2.42) | p=0.033 | Driven by 2022–2023; does not survive exclusion |
+| ITS level shift (2013) | Negative (−0.237) | p=0.018 | 2009/2010 placebo marginally significant |
+| Synthetic control gap | Negative (mean=−0.014) | p=0.857 | Consistent direction; not statistically significant |
+| Sanctions robustness | Attenuated to insignificance | p=0.813 excl. 2022–23 | Alternative explanation not ruled out |
+
+**Causal language.** Following the triple-concordance criterion established in §5.1: all three methods point in the same direction (negative/adverse post-BRI balance shift), but none individually achieves robust statistical significance after controlling for alternative explanations. The sanctions-evasion check (§6.14) further weakens the case for a BRI-specific causal attribution. The thesis therefore maintains its original cautious framing: the evidence is **consistent with** asymmetric interdependence deepening post-BRI, but does not constitute proof of a BRI causal effect. Causal language is not warranted.
 
 
 # 7. Discussion
 
 ## 7.1 What the Results Show
 
-The most robust finding is descriptive rather than econometric. Kazakhstan's imports from China grew by 94.3% between the pre-BRI and post-BRI periods, while exports grew by only 24.3%. This import-side deepening—not export collapse—explains the 37.8% decline in the average bilateral trade balance. Strategic mineral exports grew by 29.2%, but this growth was insufficient to offset the import surge.
+The most robust finding is descriptive rather than econometric. Kazakhstan's imports from China grew by 94.3% between the pre-BRI and post-BRI periods, while exports grew by only 24.3%. This import-side deepening—not export collapse—explains the 37.8% decline in the average bilateral trade balance. Strategic mineral exports grew by 29.2%, but this growth was insufficient to offset the import surge. These descriptive findings are consistent with the asymmetric interdependence prediction that BRI trade facilitation would expand trade asymmetrically in favour of the more diversified partner, but this consistency does not constitute causal proof.
 
-The regression analysis provides suggestive but fragile corroboration. The negative interaction term is statistically significant in full-sample models but depends critically on 2023. The leave-one-out analysis shows that excluding any single year other than 2023 preserves the negative interaction. Excluding 2023 alone eliminates or reverses it. This pattern is consistent with two interpretations: (a) 2023 represents the crystallisation of a structural shift that had been building since 2014, or (b) 2023 is an idiosyncratic shock (e.g., related to specific import contracts, transit trade, or data revisions) that exaggerates the post-BRI interaction.
+The regression analysis provides suggestive but fragile corroboration. The negative interaction term is statistically significant in full-sample models but depends critically on 2023. The leave-one-out analysis shows that excluding any single year other than 2023 preserves the negative interaction. Excluding 2023 alone eliminates or reverses it. Furthermore, the sanctions robustness checks (§6.14) show that after excluding 2022–2023 — the period coinciding with Russia-sanctions parallel-import routing — the interaction coefficient does not survive. This raises the possibility that the 2023 outcome reflects a geopolitical shock rather than a BRI structural effect.
+
+Three causal identification methods (regression, ITS placebo, synthetic control) all point in the same direction — consistent with an adverse post-BRI balance shift — but none achieves robust statistical significance after controlling for the 2022–2023 period. This pattern supports the evidence being described as **associated with** or **consistent with** asymmetric interdependence deepening, not as proof of a BRI causal mechanism.
 
 ## 7.2 What the Results Do Not Show
 
 The results do **not** demonstrate that:
-- BRI caused Kazakhstan's trade-balance deterioration;
-- strategic minerals caused the bilateral deficit;
-- China caused Kazakhstan's external weakness;
-- the interaction coefficient (−3.22 or −2.38) is a structural parameter.
+- BRI *caused* Kazakhstan's trade-balance deterioration;
+- strategic minerals *caused* the bilateral deficit;
+- China *caused* Kazakhstan's external weakness;
+- the interaction coefficient (−3.22, −2.42, or −2.38) is a structural parameter.
 
-The coefficient should be read as evidence that the trade-balance payoff of mineral exports weakened, not as a causal multiplier.
+The coefficient should be read as evidence that the trade-balance association of mineral exports weakened in the post-BRI period, not as a causal multiplier. The sanctions robustness check (§6.14) cannot rule out that part or all of the post-2013 interaction is driven by the 2022–2023 Russia-sanctions routing rather than BRI-specific structural deepening.
 
 ## 7.3 The 2023 Inflection Point
 
