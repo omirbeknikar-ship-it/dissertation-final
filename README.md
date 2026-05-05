@@ -1,8 +1,10 @@
 # BRI's Impact on Kazakhstan-China Trade Balance: The Role of Strategic Mineral Exports
 
-This repository contains the working materials for a master's-level term paper research project on Kazakhstan-China trade after the launch of the Belt and Road Initiative (BRI). The project examines whether the expansion of bilateral trade after BRI corresponded with an improvement in Kazakhstan's trade balance with China, and whether strategic mineral exports changed that relationship.
+> **Note on the title.** The officially registered dissertation title uses the word "impact." Throughout this repository and the paper itself, all analysis is **associational and diagnostic**, not causal. No causal effect of BRI is identified or claimed. The term "impact" refers to post-BRI trade-balance dynamics observed in the data. See `Paper/final_dissertation.md` §Abstract for the explicit clarification note.
 
-The repository is organized as a research workspace rather than a software product. It contains research planning documents, literature review drafts, data source notes, a preliminary descriptive data analysis, script files, and output folders for tables and figures.
+This repository contains the complete materials for a master's dissertation examining Kazakhstan–China bilateral trade balance dynamics in the post-BRI period, with a focus on the role of strategic mineral exports. The central question is whether strategic mineral export growth in the post-2013 period was associated with sustained trade-balance improvement for Kazakhstan.
+
+The repository is organised as a fully reproducible research pipeline: raw data, cleaned panel, analysis scripts, generated tables and figures, and the final dissertation document are all version-controlled together.
 
 ## Research Question
 
@@ -102,10 +104,41 @@ python Scripts/36_synthetic_control.py    # synthetic control (NEW)
 
 Outputs are written to `Outputs/generated_tables/` and `Outputs/generated_figures/`.
 
+## Generating the PDF
+
+A compiled PDF can be generated with Pandoc:
+
+```bash
+pandoc Paper/final_dissertation.md \
+  --citeproc \
+  --bibliography Literature_Review/bibliography.bib \
+  -o Paper/final_dissertation.pdf
+```
+
+Requires [Pandoc](https://pandoc.org/) and a LaTeX distribution (e.g. TeX Live or MiKTeX).
+
+## Main Findings
+
+- Kazakhstan's imports from China grew by **94.3%** in the post-BRI period (2014–2023) vs. export growth of **24.3%** — import-side deepening is the primary driver of trade-balance deterioration, not export collapse.
+- The average bilateral trade balance fell by **37.8%** despite a **29.2%** rise in strategic mineral exports.
+- The full-sample OLS interaction coefficient (Minerals × Post-BRI) is **−2.42** (*p* = 0.033, gravity-ratio preferred spec), but this result **does not survive exclusion of 2022–2023** — the two years associated with Russia-sanctions parallel-import routing.
+- **2023** is the only year of bilateral deficit (−USD 2.01 bn) and has Cook's D = 3.90 (23× the threshold). The finding is diagnostic, not structural.
+- The strongest contribution is the **descriptive decomposition**: import-side deepening is robustly documented regardless of regression specification.
+
+## Key Limitations
+
+- **n = 24** annual observations; all inference is small-sample and fragile.
+- **HS-27 bilateral oil/energy data** were not available; mineral coefficient may absorb commodity dynamics.
+- **Multi-partner DiD** was not executed due to IMF DOTS API unavailability; within-unit ITS is a weaker substitute.
+- **2022–2023** are geopolitically contaminated (Russia-sanctions parallel imports); the regression finding depends on these years.
+- **No causal identification** is claimed or achieved.
+
 ## Research Integrity Notes
 
 - No fabricated empirical results are included.
 - No fabricated citations or bibliographic references are included.
-- All regression outputs are computed from real data and saved in `Outputs/generated_tables/`.
+- All regression outputs are computed from real observed data and saved in `Outputs/generated_tables/`.
 - All figures are generated programmatically and saved in `Outputs/generated_figures/`.
-- The dissertation explicitly acknowledges fragile findings, influence of the 2023 observation, multicollinearity in GDP controls, and the absence of causal identification.
+- The energy proxy in §6.12 of the paper is clearly labelled **illustrative only** — it is not observed HS-27 data.
+- The within-unit synthetic control is presented as a weaker substitute for a true multi-partner design, not as causal evidence.
+- The dissertation explicitly acknowledges fragile findings, the influence of the 2023 observation, multicollinearity in GDP controls, and the absence of causal identification.

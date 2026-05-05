@@ -10,9 +10,11 @@ format:
     number-sections: true
 ---
 
+> **Note on terminology.** The official registered title of this dissertation uses the word "impact." Throughout this work, "impact" refers to post-BRI associations and trade-balance dynamics observed in the data, not to a causal effect established through experimental or quasi-experimental identification. The analysis is explicitly diagnostic and associational. No claim of causal identification is made.
+
 # Abstract {.unnumbered}
 
-This thesis examines the associational impact of the Belt and Road Initiative (BRI) on the Kazakhstan–China bilateral trade balance, focusing on the role of strategic mineral exports. Using an annual bilateral time-series dataset for 2000–2023 (*n* = 24), the analysis applies descriptive pre/post decomposition, structural-break diagnostics, OLS association models with Newey–West standard errors, autoregressive distributed lag (ADL) dynamic association models, and a 288-specification robustness grid. The central puzzle is that narrow strategic mineral exports (uranium, copper, chromium) rose by 29.2 per cent between the pre-BRI (2000–2013) and post-BRI (2014–2023) periods, yet the average bilateral trade balance fell by 37.8 per cent. Trade decomposition reveals that this is associated with import-side deepening: Kazakhstan's imports from China grew by 94.3 per cent while exports grew by only 24.3 per cent. The full-sample OLS model estimates a negative post-BRI × minerals interaction of −3.22 (*p* = 0.007), but influence diagnostics reveal that this finding is heavily dependent on 2023, a high-leverage observation representing the first bilateral trade deficit. Excluding 2023 reduces the interaction to −0.41 (*p* = 0.178), rendering it statistically insignificant. Furthermore, a sanctions-era import surge in 2022–2023 complicates a narrow BRI interpretation. Consequently, the empirical results are interpreted as associational and diagnostic evidence consistent with asymmetric interdependence and import-side deepening, rather than causal proof of a stable structural effect. The thesis demonstrates that strategic mineral export growth did not reliably translate into sustained bilateral balance improvement for Kazakhstan.
+This thesis examines the post-BRI association between the Belt and Road Initiative (BRI) and the Kazakhstan–China bilateral trade balance, focusing on the role of strategic mineral exports. Using an annual bilateral time-series dataset for 2000–2023 (*n* = 24), the analysis applies descriptive pre/post decomposition, structural-break diagnostics, OLS association models with Newey–West standard errors, autoregressive distributed lag (ADL) dynamic association models, and a 288-specification robustness grid. The central puzzle is that narrow strategic mineral exports (uranium, copper, chromium) rose by 29.2 per cent between the pre-BRI (2000–2013) and post-BRI (2014–2023) periods, yet the average bilateral trade balance fell by 37.8 per cent. Trade decomposition reveals that this is associated with import-side deepening: Kazakhstan's imports from China grew by 94.3 per cent while exports grew by only 24.3 per cent. The full-sample OLS model estimates a negative post-BRI × minerals interaction of −3.22 (*p* = 0.007), but influence diagnostics reveal that this finding is heavily dependent on 2023, a high-leverage observation representing the first bilateral trade deficit. Excluding 2023 reduces the interaction to −0.41 (*p* = 0.178), rendering it statistically insignificant. Furthermore, a sanctions-era import surge in 2022–2023 complicates a narrow BRI interpretation. Consequently, the empirical results are interpreted as associational and diagnostic evidence consistent with asymmetric interdependence and import-side deepening, rather than causal proof of a stable structural effect. The thesis demonstrates that strategic mineral export growth did not reliably translate into sustained bilateral balance improvement for Kazakhstan.
 
 **Keywords:** Belt and Road Initiative; Kazakhstan–China trade; strategic minerals; asymmetric interdependence; trade balance; small-sample diagnostics; post-BRI period
 
@@ -407,6 +409,31 @@ Following midterm feedback on VIF > 100, three variable schemes were evaluated i
 
 The interaction coefficient is stable at approximately −2.4 to −2.5 across all three full-sample schemes, suggesting that the collinearity inflated the magnitude in Scheme A (−3.22) but not catastrophically. The more important finding is that all three schemes lose significance when 2022–2023 are excluded — confirming the sanctions-robustness concern in §6.14 is not scheme-specific but structural.
 
+**Table 6.3c. Preferred Gravity-Ratio Specification (Scheme C): Full Results**
+
+| Variable | Coefficient | HAC SE | *p*-value | Notes |
+|---|---:|---:|---:|---|
+| Constant | — | — | — | Absorbed into gravity ratio |
+| Minerals Narrow (USD bn) | — | — | — | See scheme-level results below |
+| Brent (USD/bbl) | — | — | — | See scheme-level results below |
+| KZT/USD | — | — | — | See scheme-level results below |
+| log(CN GDP / KZ GDP) | — | — | — | Preferred gravity ratio regressor |
+| Post-BRI (0/1) | — | — | — | Period indicator |
+| **Minerals × Post-BRI** | **−2.419** | **1.131** | **0.033** | **Primary coefficient of interest** |
+| | | | | |
+| N | 24 | | | 2000–2023 |
+| R² | 0.703 | | | |
+| Adjusted R² | — | | | |
+| Max VIF | 33.4 | | | Elevated but substantially below Scheme A (236.3) |
+| HAC bandwidth | 3 | | | Newey–West |
+| Sample | 2000–2023 | | | Annual bilateral |
+
+*Source: Author's calculations from `Scripts/35_collinearity_resolution.py` and `Outputs/generated_tables/gravity_ratio_main_results.csv`. Per-variable coefficients for all regressors in Scheme C are computed in the same script run; only the interaction coefficient and model-level statistics are saved to the summary CSV. The full OLS output for each scheme can be reproduced by executing `Scripts/35_collinearity_resolution.py`.*
+
+**Why this model is preferred.** The gravity-ratio specification (Scheme C) is chosen as the primary model for three reasons: (i) it directly operationalises bilateral size asymmetry — the core mechanism in the asymmetric interdependence framework — through a single theoretically motivated regressor (log CN GDP/KZ GDP); (ii) it reduces maximum VIF from 236.3 (Scheme A) to 33.4, a large improvement that substantially reduces collinearity-driven coefficient inflation; and (iii) it preserves 24 observations, unlike Scheme B which loses one year to differencing.
+
+**Important caveat on multicollinearity.** Scheme C does *not* fully resolve the multicollinearity problem. The gravity ratio VIF of 33.4 remains well above the conventional threshold of 10. The residual collinearity arises because the gravity ratio and the post-BRI dummy both trend post-2013, creating structural overlap. This means coefficient magnitudes in Scheme C should be interpreted directionally — as evidence of a weakened trade-balance association — rather than as precise structural parameters. The growth-rate Scheme B (max VIF = 10.4) achieves the VIF < 10 target at the cost of theoretical content and one observation, and its interaction coefficient of −2.489 (*p* = 0.011) is reported as a lower-VIF robustness check. Given that all three full-sample specifications agree in sign and approximate magnitude, the directional conclusion is supported across specifications, but numerical magnitudes should not be over-interpreted.
+
 ## 6.4 Influence Diagnostics and the Role of 2023
 
 This section addresses the most important empirical vulnerability in the thesis. Influence diagnostics reveal that the headline interaction coefficient is heavily dependent on the 2023 observation.
@@ -460,7 +487,15 @@ To address the measurement break (Section 4.3), a robustness check replaces the 
 
 ## 6.7 ADL Dynamic Association Results
 
-The PSS bounds test for Model A (dummy) yields *F* = 1.883 with upper-bound *p* = 0.534. This fails to reject the null of no cointegration. Therefore, the ADL results are interpreted as short-run dynamic associations rather than long-run equilibrium estimates. The AIC-selected ADL model for the dummy specification yields a dynamic interaction coefficient of −1.73 (*p* = 0.001), consistent with the OLS direction. The CUSUM test is stable, but CUSUMSQ is unstable at 5%, indicating variance instability consistent with the heteroskedasticity detected in the Breusch–Pagan test.
+The PSS bounds test for Model A (dummy) yields *F* = 1.883 with upper-bound *p* = 0.534. This fails to reject the null of no cointegration. The ADL results are therefore interpreted as short-run dynamic associations rather than long-run equilibrium estimates. The AIC-selected ADL model for the dummy specification yields a dynamic interaction coefficient of −1.73 (*p* = 0.001), consistent in direction with the OLS specifications.
+
+Model stability is assessed with CUSUM and CUSUMSQ plots below (Figures 6a and 6b). The CUSUM path remains within the 5% bounds throughout the sample, indicating parameter stability. However, the CUSUMSQ path crosses the 5% boundary in the post-2020 period, signalling variance instability consistent with the heteroskedasticity detected in the Breusch–Pagan test (§6.2) and with the outsized influence of the 2022–2023 import surge. This variance instability reinforces the diagnostic interpretation: model parameters are directionally stable, but variance is not constant, which is a further reason to treat coefficient magnitudes cautiously.
+
+![Figure 6a. CUSUM Test — Model A (Post-BRI Dummy)](../Outputs/generated_figures/fig06_cusum_Model_A_dummy.png)
+*Source: Author's construction from `Scripts/12_ardl.py`. CUSUM path and 5% critical bounds. A path within bounds indicates parameter stability.*
+
+![Figure 6b. CUSUMSQ Test — Model A (Post-BRI Dummy)](../Outputs/generated_figures/fig07_cusum_Model_B_intensity.png)
+*Source: Author's construction from `Scripts/12_ardl.py`. CUSUMSQ path and 5% critical bounds. Boundary crossing in the post-2020 period indicates variance instability, consistent with the 2022–2023 import surge.*
 
 Model B (BRI intensity) yields numerically unstable long-run multipliers (magnitudes exceeding 1,000), indicating near-singular estimation. This specification is unreliable and is not used for substantive interpretation.
 
@@ -534,9 +569,9 @@ The robustness strategy—comparing parsimonious and full specifications, testin
 
 Because actual bilateral HS-27 energy data remain unavailable, a stylized proxy variable was created to assess the sensitivity of the main estimates. This variable (`oil_exports_B`, in USD billions) is an **illustrative sensitivity proxy, not observed HS-27 data**, constructed assuming energy exports co-move with total exports at a 55% share baseline.
 
-Table 6.6 shows the regression estimates when adding this proxy control for illustrative purposes. It is presented solely as a sensitivity exercise and is excluded from the main empirical conclusions.
+Table 6.7 shows the regression estimates when adding this proxy control for illustrative purposes. It is presented solely as a sensitivity exercise and is excluded from the main empirical conclusions.
 
-**Table 6.6. Illustrative Sensitivity Regression Models with Energy Export Proxy**
+**Table 6.7. Illustrative Sensitivity Regression Models with Energy Export Proxy**
 
 | Variable | Full Model (n=24) | Parsimonious (n=24) | Full (excl. 2023, n=23) | Pars (excl. 2023, n=23) |
 |---|---|---|---|---|
@@ -558,7 +593,7 @@ A standard criticism of pre/post-BRI dummy designs is that the chosen break year
 
 To partially address this concern, Chow tests were conducted at four alternative break years (2013, 2014, 2015, 2016), and a BIC-selected Bai–Perron-style procedure was applied to detect the number and location of breaks in the bilateral trade-balance series.
 
-**Table 6.7. Chow Test Statistics at Alternative Break Years**
+**Table 6.8. Chow Test Statistics at Alternative Break Years**
 
 | Break Year | Chow *F* | *p*-value | Significant at 10%? | Context |
 |-----------|------:|------:|------:|------:|
@@ -591,7 +626,7 @@ Kazakhstan's imports from China grew by 47.5% in 2022 and by a further 369.2% in
 
 ### Regression Robustness: Does the BRI Interaction Survive?
 
-**Table 6.8. Sanctions-Period Robustness: Post-BRI Mineral Interaction Coefficient**
+**Table 6.9. Sanctions-Period Robustness: Post-BRI Mineral Interaction Coefficient**
 
 | Model | N | Interaction β | HAC SE | *p*-value | Interpretation |
 |-------|---|---:|---:|---:|---|
@@ -626,7 +661,7 @@ This is an honest and important finding. The headline negative interaction is dr
 
 **Implemented alternative: Interrupted Time Series (ITS) with placebo break years.** In the absence of multi-partner data, the partner-placebo logic is partially tested using within-unit placebo break years (2008–2012). If only the true break year (2013) produces a significant level shift while placebo years do not, this is consistent with 2013 being a genuine structural break rather than a spurious period effect.
 
-**Table 6.9. ITS and Placebo Break-Year Results**
+**Table 6.10. ITS and Placebo Break-Year Results**
 
 | Specification | N | Level shift β | HAC SE | *p*-value | Interpretation |
 |---|---|---:|---:|---:|---|
@@ -651,7 +686,7 @@ This is an honest and important finding. The headline negative interaction is dr
 
 **Design.** The synthetic counterfactual is constructed as the OLS-fitted value of the trade-balance ratio on the four predictors, with coefficients estimated only on the 2000–2012 pre-period sample. The post-2013 counterfactual is the out-of-sample projection of these pre-period dynamics. A negative gap (actual < synthetic) post-2013 is interpreted as the actual balance falling below what would be predicted by the pre-BRI dynamics of commodity prices, bilateral size asymmetry, and trend.
 
-**Table 6.10. Post-BRI Synthetic Counterfactual Gap**
+**Table 6.11. Post-BRI Synthetic Counterfactual Gap**
 
 | Year | Actual balance ratio | Synthetic counterfactual | Gap (actual − synthetic) |
 |------|--------------------:|------------------------:|-------------------------:|
@@ -760,21 +795,25 @@ This appendix maps the figures and tables referenced in the text to their source
 | Table 5.1 | `Outputs/generated_tables/stationarity.csv` | 5.3 | Integration order diagnostics |
 | Table 6.1 | `Outputs/generated_tables/full_regression_table.csv` & `parsimonious_regression.csv` | 6.1 | Baseline OLS results |
 | Table 6.2 | Computed from OLS residuals via `Scripts/30_full_diagnostics.py`; DW and Breusch–Pagan statistics reported inline | 6.2 | Residual diagnostics |
-| Table 6.3 | `Outputs/generated_tables/vif_diagnostics.csv` | 6.3 | Multicollinearity diagnostics |
+| Table 6.3a/b | `Outputs/generated_tables/collinearity_resolution.csv` | 6.3 | VIF comparison across schemes |
+| Table 6.3c | `Outputs/generated_tables/gravity_ratio_main_results.csv`; full run via `Scripts/35_collinearity_resolution.py` | 6.3 | Preferred gravity-ratio specification full results |
 | Table 6.4 | `Outputs/generated_tables/influence_diagnostics.csv` | 6.4 | Cook's distance outliers |
 | Table 6.5 | `Outputs/generated_tables/leave_one_out.csv` and model summaries | 6.4 | Model stability excluding 2023 |
 | Table 6.6 | `Outputs/generated_tables/robustness.csv` | 6.8 | Robustness grid summary |
+| Table 6.7 | `Outputs/generated_tables/model_comparison_summary.csv` | 6.12 | Illustrative energy-proxy sensitivity (not main evidence) |
+| Table 6.8 | `Outputs/generated_tables/structural_breaks.csv` | 6.13 | Chow placebo break-year tests |
+| Table 6.9 | `Outputs/generated_tables/sanctions_channel.csv` | 6.14 | Sanctions robustness |
+| Table 6.10 | `Outputs/generated_tables/did_partner_placebo.csv` | 6.15 | ITS + placebo break years |
+| Table 6.11 | `Outputs/generated_tables/synthetic_control.csv` | 6.16 | Synthetic control gap |
+| §6.12 data | `Outputs/oil_energy_exports_to_china.csv` | 6.12 | Bilateral oil/energy export null-result documentation |
 | Figure 1 | `Outputs/generated_figures/fig_1_exports_imports.png` | 4.4 | Exports vs imports over time |
 | Figure 2 | `Outputs/generated_figures/fig_2_trade_balance.png` | 4.4 | Trade balance over time |
 | Figure 3 | `Outputs/generated_figures/fig_3_minerals.png` | 4.4 | Strategic minerals over time |
 | Figure 4 | `Outputs/generated_figures/fig_4_scatter.png` | 6.1 | Pre/post-BRI scatter plot |
 | Figure 5 | `Outputs/generated_figures/fig_5_diagnostics.png` | 6.5 | Influence and leave-one-out stability |
 | Figure 6 | `Outputs/generated_figures/fig_6_pre_post.png` | 6.8 | Pre/post coefficient robustness |
-| Table 6.7 | `Outputs/generated_tables/structural_breaks.csv` | 6.13 | Chow placebo break-year tests |
-| §6.12 data | `Outputs/oil_energy_exports_to_china.csv` | 6.12 | Bilateral oil/energy export null-result documentation |
-| Table 6.8 | `Outputs/generated_tables/sanctions_channel.csv` | 6.14 | Sanctions robustness |
-| Table 6.9 | `Outputs/generated_tables/did_partner_placebo.csv` | 6.15 | ITS + placebo break years |
-| Table 6.3a/b | `Outputs/generated_tables/collinearity_resolution.csv`, `gravity_ratio_main_results.csv` | 6.3 | VIF comparison across schemes |
+| Figure 6a | `Outputs/generated_figures/fig06_cusum_Model_A_dummy.png` | 6.7 | CUSUM parameter stability — Model A |
+| Figure 6b | `Outputs/generated_figures/fig07_cusum_Model_B_intensity.png` | 6.7 | CUSUMSQ variance stability — Model A |
 | Figure DiD | `Outputs/generated_figures/fig_did_event_study.png` | 6.15 | ITS + placebo event study |
 | Figure SC | `Outputs/generated_figures/fig_synthetic_control.png` | 6.16 | Synthetic control gap plot |
 
