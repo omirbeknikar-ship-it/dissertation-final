@@ -1,11 +1,12 @@
 model,variable,long_run_coef,hac_se,t_stat,p_value,selected_terms
-Model_A_dummy,minerals_narrow_B,2.260027,0.513071,4.4049,0.0006,minerals_narrow_B.L0
-Model_A_dummy,brent_annual_mean,-0.068017,0.02251,-3.0216,0.0092,"brent_annual_mean.L0,brent_annual_mean.L1"
+Model_A_dummy,minerals_narrow_B,4.465256,0.727361,6.139,0.0,minerals_narrow_B.L0
+Model_A_dummy,brent_annual_mean,-0.033568,0.024489,-1.3707,0.1937,"brent_annual_mean.L0,brent_annual_mean.L1"
 Model_A_dummy,kzt_usd,,,,,
 Model_A_dummy,log_kz_gdp,,,,,
-Model_A_dummy,log_cn_gdp,4.137772,2.230151,1.8554,0.0847,"log_cn_gdp.L0,log_cn_gdp.L1"
-Model_A_dummy,post_bri_2013,-4.027857,2.675995,-1.5052,0.1545,"post_bri_2013.L0,post_bri_2013.L1"
-Model_A_dummy,post_bri_2013_x_minerals_narrow_B,-1.731751,0.428019,-4.046,0.0012,"post_bri_2013_x_minerals_narrow_B.L0,post_bri_2013_x_minerals_narrow_B.L1"
+Model_A_dummy,log_cn_gdp,3.951424,1.143045,3.4569,0.0043,"log_cn_gdp.L0,log_cn_gdp.L1"
+Model_A_dummy,post_bri_2013,-3.13072,1.057118,-2.9616,0.011,"post_bri_2013.L0,post_bri_2013.L1"
+Model_A_dummy,post_bri_2013_x_minerals_narrow_B,-2.414301,0.377036,-6.4034,0.0,"post_bri_2013_x_minerals_narrow_B.L0,post_bri_2013_x_minerals_narrow_B.L1"
+Model_A_dummy,oil_exports_B,-1.334609,0.544902,-2.4493,0.0293,oil_exports_B.L0
 Model_B_intensity,minerals_narrow_B,-1963.075365,29220.148146,-0.0672,0.9478,"minerals_narrow_B.L0,minerals_narrow_B.L1"
 Model_B_intensity,brent_annual_mean,-0.66219,9.228552,-0.0718,0.9442,"brent_annual_mean.L0,brent_annual_mean.L1"
 Model_B_intensity,kzt_usd,1.270757,19.0596,0.0667,0.9482,"kzt_usd.L0,kzt_usd.L1"
@@ -13,3 +14,4 @@ Model_B_intensity,log_kz_gdp,2448.867621,36474.474959,0.0671,0.9478,log_kz_gdp.L
 Model_B_intensity,log_cn_gdp,-1789.648065,26638.385121,-0.0672,0.9478,"log_cn_gdp.L0,log_cn_gdp.L1"
 Model_B_intensity,bri_intensity,-29.507874,437.704064,-0.0674,0.9476,bri_intensity.L0
 Model_B_intensity,bri_intensity_x_minerals_narrow_B,82.912095,1231.996168,0.0673,0.9477,bri_intensity_x_minerals_narrow_B.L0
+Model_B_intensity,oil_exports_B,,,,,

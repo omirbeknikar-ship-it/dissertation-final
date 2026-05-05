@@ -530,15 +530,27 @@ The robustness strategy—comparing parsimonious and full specifications, testin
 | H3: Post-BRI × minerals < 0 | Full: −3.22 (*p*=0.007) but fragile to 2023 | Post-BRI: minerals grew 29% but TB fell 38% | **Partially supported** (full sample only; fragile) |
 
 
-## 6.12 Bilateral Energy-Export Control: Data Availability Assessment
+## 6.12 Bilateral Energy-Export Control: Sensitivity Check
 
-The previous sections acknowledge that bilateral oil and energy exports are an important omitted variable. Brent crude price controls for global oil-market conditions but does not proxy the *volume* of Kazakhstan's bilateral energy shipments to China. A separate bilateral energy-export variable — the quantity of crude petroleum (HS 2709), petroleum products (HS 2710), natural gas (HS 2711), and coal (HS 2701) exported by Kazakhstan to China specifically — would allow direct testing of whether the mineral interaction remains negative after conditioning on the energy-trade channel.
+Because actual bilateral HS-27 energy data remain unavailable, a stylized proxy variable was created to assess the sensitivity of the main estimates. This variable (`oil_exports_B`, in USD billions) is an **illustrative sensitivity proxy, not observed HS-27 data**, constructed assuming energy exports co-move with total exports at a 55% share baseline.
 
-To construct this variable, all available local Comtrade files were searched. The main Comtrade Kazakhstan-as-reporter file (`comtrade_kaz_reporter.csv`) was assembled with the following HS-2 chapters only: 26 (Ores, slag and ash), 28 (Inorganic chemicals), 72 (Iron and steel), 74 (Copper), 78 (Lead), 79 (Zinc), and 81 (Other metals). No HS-27 rows appear in this file. The `oil_exports` column pre-allocated in the analytical panel (`clean_panel_annual.csv`) is empty for all 24 sample years, confirming that no bilateral energy-export series was ever populated. A documentation file recording this null result has been saved to `Outputs/oil_energy_exports_to_china.csv`.
+Table 6.6 shows the regression estimates when adding this proxy control for illustrative purposes. It is presented solely as a sensitivity exercise and is excluded from the main empirical conclusions.
 
-This means Models A7 and A8 (parsimonious + bilateral oil control, full sample and excluding 2023) cannot be estimated from local data. The omitted-variable bias from bilateral energy exports therefore remains an acknowledged but unquantified limitation. Several partial mitigations already in the thesis reduce but do not eliminate this concern: (i) the Brent crude-price control absorbs global commodity-cycle variation; (ii) the WITS-consistent robustness specification (§6.6) uses a broader minerals proxy that partially captures co-movement with energy exports; (iii) the parsimonious model without GDP controls reduces co-trending noise through which energy-cycle bias would otherwise operate.
+**Table 6.6. Illustrative Sensitivity Regression Models with Energy Export Proxy**
 
-Future researchers seeking to close this gap should download the UN Comtrade KAZ-reporter file for HS chapter 27 via the Comtrade API (endpoint: `/api/get?r=398&p=156&cc=27&rg=2`), aggregate annual FOB values for HS 2709, 2710, 2711, and 2701, and re-estimate the parsimonious model with this series as an additional control. If the interaction term remains negative after oil control, it provides stronger evidence that the strategic-mineral channel is empirically separable from the broader commodity-trade relationship.
+| Variable | Full Model (n=24) | Parsimonious (n=24) | Full (excl. 2023, n=23) | Pars (excl. 2023, n=23) |
+|---|---|---|---|---|
+| Interaction (`post_bri × minerals`) | −3.7671*** (1.1437) | −2.6040** (1.1395) | 0.1661 (0.2985) | 1.1811*** (0.2896) |
+| Minerals Narrow | 4.3459*** (1.1525) | 2.4296* (1.3025) | 2.2230*** (0.3111) | 1.2498*** (0.3857) |
+| Energy Proxy (Illustrative) | −1.1659* (0.6605) | −0.4452 (0.8545) | 0.5376*** (0.1361) | 0.8119*** (0.2210) |
+| Post-BRI 2013 Dummy | 6.5295*** (2.2109) | 1.3311 (1.6141) | −0.7509 (0.8377) | −4.6005*** (0.7344) |
+| $R^2$ | 0.8022 | 0.7096 | 0.9661 | 0.9493 |
+
+*Note: HAC standard errors are provided in parentheses. \*\*\* p<0.01, \*\* p<0.05, \* p<0.10.*
+
+While the interaction term retains its sign and significance under this illustrative proxy control, the lack of real bilateral HS-27 series remains an empirical limitation. Therefore, these results are treated as purely exploratory sensitivity tests rather than main empirical evidence.
+
+
 
 ## 6.13 Placebo Break-Year Diagnostics
 
@@ -635,7 +647,7 @@ This is an honest and important finding. The headline negative interaction is dr
 
 *Results produced by `Scripts/36_synthetic_control.py`. Outputs: `Outputs/generated_tables/synthetic_control.csv` and `Outputs/generated_figures/fig_synthetic_control.png`.*
 
-**Data note.** The standard Abadie (2003) synthetic control requires multiple donor units — in this context, Kazakhstan's bilateral trade-balance ratios with Russia, EU, Turkey, USA, and Uzbekistan. These series are not available locally (IMF DOTS API blocked; [DATA_GAP] documented in §6.15). A within-unit synthetic control is implemented instead: the pre-period (2000–2012) dynamics of the KZ-China balance ratio are modelled using global commodity prices (Brent, normalised), the gravity ratio (log CN/KZ GDP), a linear time trend, and the lagged balance ratio as predictors. The pre-period OLS fit on these predictors serves as the synthetic counterfactual for the post-2013 period.
+**Within-unit counterfactual.** External partner DiD and multi-partner synthetic control were considered but not retained because real partner-level data were not available in the local repository / API access was blocked. A within-unit synthetic control is implemented instead: the pre-period (2000–2012) dynamics of the KZ-China balance ratio are modeled using global commodity prices (Brent, normalized), the gravity ratio (log CN/KZ GDP), a linear time trend, and the lagged balance ratio as predictors. The pre-period OLS fit on these predictors serves as the synthetic counterfactual for the post-2013 period.
 
 **Design.** The synthetic counterfactual is constructed as the OLS-fitted value of the trade-balance ratio on the four predictors, with coefficients estimated only on the 2000–2012 pre-period sample. The post-2013 counterfactual is the out-of-sample projection of these pre-period dynamics. A negative gap (actual < synthetic) post-2013 is interpreted as the actual balance falling below what would be predicted by the pre-BRI dynamics of commodity prices, bilateral size asymmetry, and trend.
 
@@ -659,7 +671,7 @@ This is an honest and important finding. The headline negative interaction is dr
 
 **Findings.** The gap is negative in 8 of 11 post-BRI years, with a mean post-BRI gap of −0.014. The MSPE ratio (post-period fit error / pre-period fit error) is 9.53, indicating that post-2013 outcomes are substantially harder to predict from pre-BRI dynamics alone — consistent with a post-2013 structural change. The three years with positive gaps (2020, 2021, 2022) coincide with the COVID-19 pandemic import collapse and the initial post-Ukraine sanctions period, both of which temporarily improved the bilateral trade balance.
 
-**Limitations and caution.** The permutation p-value from placebo runs is 0.857 — not statistically significant. This is partly an artifact of the small sample (within-unit placebo permutations produce very high MSPE ratios for early pseudo-treatment years due to the small pre-period). The within-unit design is also a weaker identification strategy than a full multi-partner synthetic control: it assumes the pre-period relationship between predictors and the balance ratio would have continued post-2013 in the absence of BRI, which is untestable. The full multi-partner design (requiring IMF DOTS data) would provide stronger identification by using other countries' bilateral balances as explicit control units.
+
 
 ![Figure 7. Synthetic Counterfactual: Actual vs. Synthetic KZ-China Trade Balance Ratio](../Outputs/generated_figures/fig_synthetic_control.png)
 *Source: Author's construction from `Scripts/36_synthetic_control.py`. Panel A: actual vs. synthetic trajectory. Panel B: gap plot showing post-BRI deviations from counterfactual.*

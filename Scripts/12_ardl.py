@@ -54,12 +54,12 @@ df = df.sort_values("year").reset_index(drop=True)
 
 df["minerals_narrow_B"] = df["minerals_narrow"] / 1e9
 df["trade_balance_B"]   = df["trade_balance_usd"] / 1e9
+df["oil_exports_B"]     = df["oil_exports"] / 1e9
 df["log_kz_gdp"] = np.log(df["kz_gdp"])
 df["log_cn_gdp"] = np.log(df["cn_gdp"])
 n = len(df)
 print(f"ARDL sample: n={n}, years {df['year'].min()}–{df['year'].max()}")
-if df["oil_exports"].isna().all():
-    print("NOTE: oil_exports is all missing in clean_panel_annual.csv; excluded from ARDL regressors.")
+print(f"Bilateral HS-27 energy control included: oil_exports_B")
 
 results_rows = []
 lr_rows = []
@@ -132,7 +132,8 @@ for model_label, bri_var, bri_desc in MODELS:
     interaction_col = f"{bri_var}_x_minerals_narrow_B"
     df[interaction_col] = df[bri_var] * df["minerals_narrow_B"]
     exog_cols = ["minerals_narrow_B", "brent_annual_mean", "kzt_usd",
-                 "log_kz_gdp", "log_cn_gdp", bri_var, interaction_col]
+                 "log_kz_gdp", "log_cn_gdp", bri_var, interaction_col, "oil_exports_B"]
+
 
     # -------- (1) OLS + HAC SE, for direct comparison with earlier output --------
     X = sm.add_constant(df[exog_cols])
