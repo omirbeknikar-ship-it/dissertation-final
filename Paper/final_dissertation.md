@@ -7,7 +7,7 @@ bibliography: ../Literature_Review/bibliography.bib
 format:
   pdf:
     toc: true
-    number-sections: true
+    number-sections: false
 ---
 
 > **Note on terminology.** The official registered title of this dissertation uses the word "impact." Throughout this work, "impact" refers to post-BRI associations and trade-balance dynamics observed in the data, not to a causal effect established through experimental or quasi-experimental identification. The analysis is explicitly diagnostic and associational. No claim of causal identification is made.
@@ -625,7 +625,7 @@ If this hypothesis is correct, the 2023 bilateral trade deficit (−USD 2.01 bil
 
 Kazakhstan's imports from China grew by 47.5% in 2022 and by a further 369.2% in 2023, from USD 3.58 billion to USD 16.77 billion. This two-year acceleration is the largest in the 2000–2023 sample by an order of magnitude. No other two-year period (including the 2008–2009 commodity boom and the 2014–2015 oil-price shock) produced a comparable import surge. The 2023 level (USD 16.77 billion) exceeds imports in any prior year by more than 200%.
 
-**Data limitation on HS-level decomposition.** The local Comtrade Kazakhstan-as-reporter extract covers only HS chapters 26, 28, 72, 74, 78, 79, and 81 — metal and mineral categories. Chapters 84 (machinery), 85 (electronics), and 87 (vehicles) — the categories most associated with parallel-import flows — are **not available** in the local data [DATA_GAP]. A direct test of whether these categories exploded disproportionately in 2022–2023 is therefore not possible from local data. This gap is documented in `Analysis/sanctions_evasion_memo.md` and would require a new Comtrade API pull (KAZ-reporter, CHN as partner, HS 84/85/87, import flow) to close.
+**Data limitation on HS-level decomposition.** The local Comtrade Kazakhstan-as-reporter extract covers only HS chapters 26, 28, 72, 74, 78, 79, and 81 — metal and mineral categories. Chapters 84 (machinery), 85 (electronics), and 87 (vehicles) — the categories most associated with parallel-import flows — are **not available** in the local data. This remains a data limitation: a direct test of whether these categories exploded disproportionately in 2022–2023 is therefore not possible from local data. This gap is documented in `Analysis/sanctions_evasion_memo.md` and would require a new Comtrade API pull (KAZ-reporter, CHN as partner, HS 84/85/87, import flow) to close.
 
 ### Regression Robustness: Does the BRI Interaction Survive?
 
@@ -866,4 +866,3 @@ The midterm parsimonious model excluded GDP controls, reducing VIF:
 | N=24, R²=0.703, max VIF=8.31 | | | |
 
 *Notes: This specification achieved VIF < 10 by excluding GDP controls entirely. The final primary specification (Scheme B, GDP growth rates) retains GDP-related regressors in stationary form (d.log), achieving max VIF = 10.4. The Scheme C gravity-ratio specification is reported as a robustness check (max VIF = 33.4).*
-
