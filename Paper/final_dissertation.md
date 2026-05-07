@@ -849,7 +849,7 @@ The full model with GDP levels produced severe multicollinearity (max VIF = 236.
 | **Minerals × Post-BRI** | **−3.221** | **1.043** | **0.007** |
 | N=24, R²=0.765, max VIF=236.3 | | | |
 
-*Notes: The large constant (197.6), implausible GDP coefficient magnitudes, and max VIF > 100 indicate that this specification's coefficients absorb trending collinearity rather than identifying genuine partial effects. This specification is superseded by the gravity-ratio model (Scheme C) in the final version.*
+*Notes: The large constant (197.6), implausible GDP coefficient magnitudes, and max VIF > 100 indicate that this specification's coefficients absorb trending collinearity rather than identifying genuine partial effects. This specification is superseded by the growth-rate model (Scheme B, primary) and gravity-ratio model (Scheme C, robustness) in the final version.*
 
 ## Appendix B.2 Pre-Revision Parsimonious Model (A2)
 
