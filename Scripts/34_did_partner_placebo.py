@@ -54,11 +54,11 @@ if multi_partner:
 
     # Encode fixed effects manually (partner and year dummies)
     panel_fe = panel.dropna(subset=["balance_ratio"]).copy()
-    partner_dummies = pd.get_dummies(panel_fe["partner_code"], prefix="p", drop_first=True)
-    year_dummies = pd.get_dummies(panel_fe["year"], prefix="y", drop_first=True)
-    X = pd.concat([panel_fe[["did_term"]], partner_dummies, year_dummies], axis=1)
+    partner_dummies = pd.get_dummies(panel_fe["partner_code"], prefix="p", drop_first=True).astype(float)
+    year_dummies = pd.get_dummies(panel_fe["year"], prefix="y", drop_first=True).astype(float)
+    X = pd.concat([panel_fe[["did_term"]].astype(float), partner_dummies, year_dummies], axis=1)
     X = sm.add_constant(X)
-    y = panel_fe["balance_ratio"]
+    y = panel_fe["balance_ratio"].astype(float)
 
     model = sm.OLS(y, X).fit(cov_type="HAC", cov_kwds={"maxlags": 3})
     did_coef = model.params.get("did_term", np.nan)
@@ -77,9 +77,9 @@ if multi_partner:
     # China vs Russia only
     panel_cr = panel_fe[panel_fe["partner_code"].isin(["CHN", "RUS"])].copy()
     if len(panel_cr) >= 20:
-        p_cr = pd.get_dummies(panel_cr["partner_code"], prefix="p", drop_first=True)
-        y_cr = pd.get_dummies(panel_cr["year"], prefix="y", drop_first=True)
-        X_cr = pd.concat([panel_cr[["did_term"]], p_cr, y_cr], axis=1)
+        p_cr = pd.get_dummies(panel_cr["partner_code"], prefix="p", drop_first=True).astype(float)
+        y_cr = pd.get_dummies(panel_cr["year"], prefix="y", drop_first=True).astype(float)
+        X_cr = pd.concat([panel_cr[["did_term"]].astype(float), p_cr, y_cr], axis=1)
         X_cr = sm.add_constant(X_cr)
         m_cr = sm.OLS(panel_cr["balance_ratio"], X_cr).fit(
             cov_type="HAC", cov_kwds={"maxlags": 3})

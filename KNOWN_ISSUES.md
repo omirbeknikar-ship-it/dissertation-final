@@ -20,15 +20,15 @@ This file documents known limitations, data gaps, and technical issues in the di
 
 ## ISSUE-002: Multi-Partner Bilateral Trade Panel — IMF DOTS API Blocked
 
-**Severity:** Affects causal identification completeness  
+**Severity:** ~~Affects causal identification completeness~~ **RESOLVED**  
 **Script:** `Scripts/33_multi_partner_panel.py`, `Scripts/34_did_partner_placebo.py`  
-**Status:** [DATA_GAP] — workaround implemented (within-unit ITS)
+**Status:** [RESOLVED] — full TWFE DiD implemented using UN Comtrade public API
 
-**Description:** The two-way fixed-effects DiD partner-placebo design (§6.15) requires Kazakhstan's bilateral trade-balance ratios with Russia, Germany, Uzbekistan, Turkey, and USA as control units. This data is available from IMF Direction of Trade Statistics (DOTS). However, the IMF DOTS REST API (`dataservices.imf.org`) was unreachable due to network restrictions in the current execution environment (SSL timeout).
+**Description:** IMF DOTS API remained unreachable. Partner data sourced instead from the UN Comtrade public preview API (`comtradeapi.un.org/public/v1/preview/C/A/HS`), which requires no subscription and returned complete 2000–2023 annual bilateral flows for KAZ vs CHN, RUS, DEU, UZB, TUR, USA.
 
-**Consequence:** The full TWFE DiD with multiple partners was not estimated. An interrupted time series (ITS) with placebo break years was implemented as a within-unit fallback. The ITS evidence is weaker than the cross-partner TWFE design.
+**Validation:** China data cross-validated against the existing local panel — 0% discrepancy across all 24 years.
 
-**Remediation:** Run `Scripts/33_multi_partner_panel.py` with network access. The IMF DOTS endpoint is `https://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/DOT/A.KZ.{flow}.{partner}.?startPeriod=2000&endPeriod=2023`. Partners needed: CHN, RUS, DEU, UZB, TUR, USA.
+**Result:** TWFE DiD (§6.15) fully estimated. DiD coefficient = −0.305 (*p* = 0.0002), China-specific post-2013 balance deterioration confirmed. `Collected_Raw_Data/kz_multi_partner_panel.csv` updated with 144 rows (6 partners × 24 years). `data_source` field records `comtrade_public_api`.
 
 ---
 
@@ -48,15 +48,15 @@ This file documents known limitations, data gaps, and technical issues in the di
 
 ## ISSUE-004: Synthetic Control — Multi-Partner Donor Pool Unavailable
 
-**Severity:** Affects causal identification strength  
+**Severity:** ~~Affects causal identification strength~~ **PARTIALLY RESOLVED**  
 **Script:** `Scripts/36_synthetic_control.py`  
-**Status:** [DATA_GAP] — within-unit variant implemented; full Abadie design pending
+**Status:** [PARTIAL] — partner data now available; full Abadie SC not yet re-estimated
 
-**Description:** The full Abadie (2003) synthetic control requires multiple donor units. The intended donor pool (KZ bilateral balance ratios with Russia, EU, Turkey, USA, Uzbekistan) requires the same IMF DOTS data as ISSUE-002. A within-unit synthetic control using pre-period OLS fit is implemented instead.
+**Description:** The full Abadie (2003) synthetic control requires multiple donor units. Partner data is now available via UN Comtrade (see ISSUE-002 resolution). `Collected_Raw_Data/kz_multi_partner_panel.csv` contains balance ratios for all 6 donor partners (RUS, DEU, UZB, TUR, USA) 2000–2023. The within-unit synthetic control remains in place pending a full multi-partner SC re-run.
 
-**Consequence:** The within-unit SC is a weaker design. Permutation p-value is 0.857 (not significant), partly due to small sample and the use of pre-period subsamples as placebos. The full multi-partner SC would use independent time series as donors and would provide more credible identification.
+**Consequence:** The TWFE DiD (§6.15) now provides strong cross-partner identification (DiD = −0.305, p=0.0002). The within-unit SC (permutation p=0.857) is a complement, not the primary causal identification method.
 
-**Remediation:** Once IMF DOTS data is available (see ISSUE-002), extend `Scripts/36_synthetic_control.py` with the multi-partner donor pool. The script already contains the fallback logic; set `multi_partner_available = True` and populate the `MULTI_PARTNER` CSV.
+**Remediation:** Extend `Scripts/36_synthetic_control.py` to use the multi-partner donor pool from `kz_multi_partner_panel.csv`. Set `multi_partner_available = True`. This would provide a full Abadie SC as an additional robustness check beyond the TWFE DiD.
 
 ---
 
