@@ -783,6 +783,10 @@ Future research should extend the analysis to quarterly data to increase the sam
 
 The finding that mineral export growth did not translate into trade-balance improvement is consistent with the broader resource-dependence literature: export success in raw materials does not automatically improve external balance when the trading partner's diversified export capacity grows faster. For Kazakhstan and comparable corridor economies, this diagnostic evidence suggests that BRI participation should be evaluated not by aggregate trade volumes but by the composition and balance of bilateral exchange.
 
+# References
+
+<div id="refs"></div>
+
 # Appendix A: Tables and Figures Concordance
 
 This appendix maps the figures and tables referenced in the text to their source files to ensure computational reproducibility.
