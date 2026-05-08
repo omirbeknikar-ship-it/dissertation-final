@@ -2,17 +2,10 @@
 title: "BRI's Impact on Kazakhstan-China Trade Balance: The Role of Strategic Mineral Exports"
 subtitle: "Evidence from an Annual Bilateral Time-Series Analysis, 2000–2023"
 author: "Nikar Omirbek"
-date: "2026"
 bibliography: ../Literature_Review/bibliography.bib
-format:
-  pdf:
-    toc: true
-    number-sections: false
 ---
 
-> **Note on terminology.** The official registered title of this dissertation uses the word "impact." Throughout this work, "impact" refers to post-BRI associations and trade-balance dynamics observed in the data, not to a causal effect established through experimental or quasi-experimental identification. The analysis is explicitly diagnostic and associational. No claim of causal identification is made.
-
-# Abstract {.unnumbered}
+# Abstract
 
 This thesis examines the post-BRI association between the Belt and Road Initiative (BRI) and the Kazakhstan–China bilateral trade balance, focusing on the role of strategic mineral exports. Using an annual bilateral time-series dataset for 2000–2023 (*n* = 24), the analysis applies descriptive pre/post decomposition, structural-break diagnostics, OLS association models with Newey–West standard errors, autoregressive distributed lag (ADL) dynamic association models, and a 288-specification robustness grid. The central puzzle is that narrow strategic mineral exports (uranium, copper, chromium) rose by 29.2 per cent between the pre-BRI (2000–2013) and post-BRI (2014–2023) periods, yet the average bilateral trade balance fell by 37.8 per cent. Trade decomposition reveals that this is associated with import-side deepening: Kazakhstan's imports from China grew by 94.3 per cent while exports grew by only 24.3 per cent. The full-sample OLS model estimates a negative post-BRI × minerals interaction of −3.22 (*p* = 0.007), but influence diagnostics reveal that this finding is heavily dependent on 2023, a high-leverage observation representing the first bilateral trade deficit. Excluding 2023 reduces the interaction to −0.41 (*p* = 0.178), rendering it statistically insignificant. Furthermore, a sanctions-era import surge in 2022–2023 complicates a narrow BRI interpretation. Consequently, the empirical results are interpreted as associational and diagnostic evidence consistent with asymmetric interdependence and import-side deepening, rather than causal proof of a stable structural effect. The thesis demonstrates that strategic mineral export growth did not reliably translate into sustained bilateral balance improvement for Kazakhstan.
 
@@ -20,6 +13,8 @@ This thesis examines the post-BRI association between the Belt and Road Initiati
 
 
 # 1. Introduction
+
+*Note on terminology: The official registered title of this dissertation uses the word "impact." Throughout this work, "impact" refers to post-BRI associations and trade-balance dynamics observed in the data, not to a causal effect established through experimental or quasi-experimental identification. The analysis is explicitly diagnostic and associational.*
 
 Kazakhstan occupies a central position in the overland economic geography of China's Belt and Road Initiative (BRI). The Silk Road Economic Belt was announced in Astana in September 2013, and since then Kazakhstan's transport corridors, mineral exports, and financing relationships have been folded into the broader architecture of Eurasian connectivity. Policy discourse frequently treats BRI as a vehicle for mutual economic benefit: more infrastructure should reduce trade costs, increase bilateral exchange, and expand opportunities for landlocked economies. Yet the distinction between trade growth and trade-balance improvement is analytically essential. A corridor that increases both exports and imports may expand total trade while simultaneously weakening the bilateral trade-balance position of the smaller partner.
 
@@ -169,7 +164,7 @@ Table 4.1 consolidates all variables, their sources, coverage, and key limitatio
 
 | Variable / Concept | Definition | Source | Coverage | Key Limitation |
 |-------------------|-----------|--------|----------|---------------|
-| Bilateral exports to China | Kazakhstan's total exports to China, FOB (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | Mirror-data discrepancies; reconciled in `Scripts/02_mirror_reconcile.py` |
+| Bilateral exports to China | Kazakhstan's total exports to China, FOB (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | Mirror-data discrepancies reconciled via bilateral cross-reporting |
 | Bilateral imports from China | Kazakhstan's total imports from China, CIF (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | CIF/FOB adjustment not applied; affects level, not trend |
 | Bilateral trade balance | $TB_t = X_t - M_t$ (USD bn) | Derived | 2000–2023 | Dependent on accuracy of both export and import series |
 | Strategic mineral exports (narrow) | Uranium (HS 2612), copper (HS 7403), chromium (HS 2610), USD bn | WITS Ores & Metals proxy (2000–2013); Comtrade HS-2 (2014–2023) | 2000–2023 | **Measurement break at 2014** coincides with BRI dummy |
@@ -181,7 +176,7 @@ Table 4.1 consolidates all variables, their sources, coverage, and key limitatio
 | Post-BRI dummy | =1 for 2014–2023, =0 for 2000–2013 | Author-constructed | 2000–2023 | Period indicator only; coincides with oil shock, tenge devaluation, COVID-19 |
 | Bilateral oil/energy exports | KAZ→CHN HS 2709/2710/2711/2701 exports, USD bn | **Not available** in current dataset | — | Major omitted variable; future research should use Comtrade HS-27 pull |
 
-*Source: Author's compilation. See `Codebook.md` and `Collected_Raw_Data/data_dictionary.md` for full variable definitions.*
+*Note: Author's compilation. Full variable definitions are available in the accompanying codebook.*
 
 ## 4.2 Variable Definitions
 
@@ -209,9 +204,9 @@ This break means that the post-BRI structural break detected in regression could
 
 ## 4.3b Data Validation via Web Scraping
 
-To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this thesis, a cross-validation was conducted using data independently scraped from Kazakhstan's Bureau of National Statistics (`stat.gov.kz`). The scraping script is at `Scripts/04_scrape_stat_gov_kz.py`.
+To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this thesis, a cross-validation was conducted using data independently collected from Kazakhstan's Bureau of National Statistics (`stat.gov.kz`) via automated web-scraping.
 
-**Method.** The Bureau publishes annual foreign trade summaries ("Foreign trade turnover of the Republic of Kazakhstan, January-December [year]") as HTML pages at `http://www.stat.gov.kz/en/industries/economy/foreign-market/`. Each publication reports: (i) Kazakhstan's total exports and imports in USD millions, and (ii) China's percentage share of both exports and imports. These shares allow computation of implied bilateral Kazakhstan-China trade values, which can then be compared to the WITS/Comtrade figures in the analytical panel. The script uses `requests` + `BeautifulSoup`, caches all scraped HTML to `Collected_Raw_Data/scraped_cache/` (idempotent execution), uses a 1-second delay between requests, and identifies itself with an academic User-Agent string.
+**Method.** The Bureau publishes annual foreign trade summaries ("Foreign trade turnover of the Republic of Kazakhstan, January-December [year]") at `stat.gov.kz`. Each publication reports Kazakhstan's total exports and imports in USD millions and China's percentage share of both, allowing computation of implied bilateral trade values for comparison against the WITS/Comtrade panel figures.
 
 **Cross-validation results.** The Bureau's 2023 and 2024 annual publications yield bilateral values that are internally consistent with the panel data:
 
@@ -222,7 +217,7 @@ To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this t
 | 2023 | 14.759 | 14.712 | **0.3%** ✓ | 16.772 | 16.758 | **0.1%** ✓ |
 | 2024 | 14.897 | 14.936 | **0.3%** ✓ | — | — | — |
 
-*Source: Author's calculations from `Scripts/04_scrape_stat_gov_kz.py`. Scraped from Bureau of National Statistics (stat.gov.kz). Panel data from IMF DOTS / UN Comtrade. Discrepancy computed as |panel − scraped| / scraped × 100%.*
+*Source: Author's calculations. Data collected from Bureau of National Statistics (stat.gov.kz); panel data from IMF DOTS / UN Comtrade. Discrepancy computed as |panel − scraped| / scraped × 100%.*
 
 All discrepancies are below 0.5% — well within the < 10% threshold for validation support. This confirms that the trade values used in the analytical panel are consistent with Kazakhstan's national statistical authority's official figures. The 2023 import figure (USD 16.772 billion in the panel vs. USD 16.758 billion scraped, a difference of USD 14 million on a USD 16.8 billion total) is the most important validation given that 2023 is the most influential observation in the regression analysis.
 
@@ -322,7 +317,7 @@ Prior to estimating the ADL model, stationarity diagnostics were conducted. Beca
 | KAZ GDP | −1.56 | 0.506 | −1.64 | 0.777 | 0.17 | 0.027 | I(1) |
 | BRI Intensity | −4.08 | 0.001 | −2.91 | 0.160 | 0.19 | 0.021 | Ambiguous |
 
-*Source: Author's calculations from `Outputs/generated_tables/stationarity.csv`. Notes: ADF and PP test $H_0$: unit root. KPSS tests $H_0$: stationarity. Low power at n=24 is acknowledged; diagnostics guide model selection rather than definitively proving integration orders. Table 5.1 presents the five series entering the main specifications; diagnostics for Copper Price, log China GDP, and log(Minerals Narrow) are qualitatively similar (all ambiguous) and are available in the full stationarity output file.*
+*Note: Author's calculations. ADF and PP test H₀: unit root. KPSS tests H₀: stationarity. Low power at n = 24 is acknowledged; diagnostics guide model selection rather than definitively establishing integration orders. Diagnostics for additional series (copper price, log China GDP, log minerals) are qualitatively similar and are available from the author on request.*
 
 Given the mixed and ambiguous integration orders (I(0) and I(1)), the bounds testing approach is appropriate. The AIC-selected autoregressive distributed lag (ADL) model is estimated to capture dynamic associations. Following Pesaran, Shin, and Smith [-@pesaran_shin_smith_2001], the bounds test is applied to assess cointegration. If the PSS F-statistic falls below the upper bound, the results are interpreted as short-run dynamic associations rather than long-run equilibrium estimates.
 
@@ -375,7 +370,7 @@ The Breusch–Pagan test rejects the null of homoskedasticity (*p* = 0.006), whi
 
 ## 6.3 Multicollinearity Diagnostics and Resolution
 
-Following midterm feedback on VIF > 100, three variable schemes were evaluated in `Scripts/35_collinearity_resolution.py`:
+Three variable schemes were evaluated to address the severe multicollinearity in the GDP levels specification:
 
 **Table 6.3a. VIF Comparison Across Specification Schemes**
 
@@ -393,7 +388,7 @@ Following midterm feedback on VIF > 100, three variable schemes were evaluated i
 | POST × MIN | 16.0 | 9.7 | 13.7 |
 | **Max VIF** | **236.3** | **10.4** | **33.4** |
 
-*Source: Author's calculations from `Scripts/35_collinearity_resolution.py`. Scheme A = pre-revision (retained in Appendix B). Scheme B = GDP annual growth rates. Scheme C = gravity ratio log(CN GDP/KZ GDP).*
+*Note: Scheme A = pre-revision specification (retained in Appendix B). Scheme B = GDP annual growth rates (primary). Scheme C = gravity ratio log(CN GDP/KZ GDP) (robustness).*
 
 **Scheme A (pre-revision)** has GDP-level VIFs of 130.9 and 236.3 — severe. This is the specification moved to Appendix B.
 
@@ -431,7 +426,7 @@ The interaction coefficient is stable at approximately −2.4 to −2.5 across b
 | Max VIF | 10.4 |
 | HAC bandwidth | 3 (Newey–West) |
 
-*Source: Author's calculations from `Scripts/35_collinearity_resolution.py` and `Outputs/generated_tables/gravity_ratio_main_results.csv`.*
+*Source: Author's calculations.*
 
 **Why Scheme B is the primary specification.** The growth-rate specification is adopted as primary because: (i) it is the only scheme that substantially meets the VIF < 10 collinearity threshold (max VIF = 10.4, driven by the POST dummy); (ii) GDP growth rates are stationary, removing the trending-variable collinearity that destabilises levels-based inference; (iii) annual growth rates operationalise the income-dynamics channel (year-on-year demand and capacity changes) consistently with the underlying theory. The one-observation cost (n = 23 vs. 24) is the only trade-off relative to Scheme C.
 
@@ -495,10 +490,10 @@ The PSS bounds test for Model A (dummy) yields *F* = 1.883 with upper-bound *p* 
 Model stability is assessed with CUSUM and CUSUMSQ plots below (Figures 6a and 6b). The CUSUM path remains within the 5% bounds throughout the sample, indicating parameter stability. However, the CUSUMSQ path crosses the 5% boundary in the post-2020 period, signalling variance instability consistent with the heteroskedasticity detected in the Breusch–Pagan test (§6.2) and with the outsized influence of the 2022–2023 import surge. This variance instability reinforces the diagnostic interpretation: model parameters are directionally stable, but variance is not constant, which is a further reason to treat coefficient magnitudes cautiously.
 
 ![Figure 6a. CUSUM Test — Model A (Post-BRI Dummy)](../Outputs/generated_figures/fig06_cusum_Model_A_dummy.png)
-*Source: Author's construction from `Scripts/12_ardl.py`. CUSUM path and 5% critical bounds. A path within bounds indicates parameter stability.*
+*Note: CUSUM path and 5% critical bounds. A path within bounds indicates parameter stability.*
 
 ![Figure 6b. CUSUMSQ Test — Model A (Post-BRI Dummy)](../Outputs/generated_figures/fig07_cusum_Model_B_intensity.png)
-*Source: Author's construction from `Scripts/12_ardl.py`. CUSUMSQ path and 5% critical bounds. Boundary crossing in the post-2020 period indicates variance instability, consistent with the 2022–2023 import surge.*
+*Note: CUSUMSQ path and 5% critical bounds. Boundary crossing in the post-2020 period indicates variance instability, consistent with the 2022–2023 import surge.*
 
 Model B (BRI intensity) yields numerically unstable long-run multipliers (magnitudes exceeding 1,000), indicating near-singular estimation. This specification is unreliable and is not used for substantive interpretation.
 
@@ -605,15 +600,13 @@ To partially address this concern, Chow tests were conducted at four alternative
 | 2015 | 2.84 | 0.0823 | * | Tenge float; China growth slowdown |
 | 2016 | 1.20 | 0.3215 | No | No major bilateral structural event |
 
-*Source: Author's calculations from `Outputs/generated_tables/structural_breaks.csv`. Chow test applied to the parsimonious trade-balance regression with a split at the indicated year.*
+*Note: Author's calculations. Chow test applied to the parsimonious trade-balance regression with a split at the indicated year.*
 
 The BIC-selected Bai–Perron procedure detects two structural breaks: one in approximately 2009 (95% CI: 2004–2009) and one in approximately 2014 (95% CI: 2014–2019). The 2009 break is consistent with the Global Financial Crisis commodity collapse. The 2014 break overlaps with both the BRI implementation period and the oil-price collapse.
 
 **Interpretation.** The Chow results show that the 2013 break is the single most statistically significant (F = 10.43, *p* < 0.001), followed by 2014. The 2016 break is statistically indistinguishable from no break. This pattern is consistent with the structural change being concentrated in the 2013–2014 window rather than diffusely distributed across the post-2013 period. However, this does not resolve the BRI-versus-oil-shock identification problem: both BRI and the oil-price collapse are 2013–2014 phenomena. The placebo evidence is more useful for ruling out *late-period* confounders (2016, 2018) than for separating early-period co-incident shocks. These limitations are fully consistent with the thesis's broader claim that the evidence is diagnostic rather than causal.
 
 ## 6.14 The 2022–2023 Sanctions-Evasion Channel
-
-*Results produced by `Scripts/32_sanctions_robustness.py`. Full analysis memo: `Analysis/sanctions_evasion_memo.md`.*
 
 ### Background and Hypothesis
 
@@ -625,7 +618,7 @@ If this hypothesis is correct, the 2023 bilateral trade deficit (−USD 2.01 bil
 
 Kazakhstan's imports from China grew by 47.5% in 2022 and by a further 369.2% in 2023, from USD 3.58 billion to USD 16.77 billion. This two-year acceleration is the largest in the 2000–2023 sample by an order of magnitude. No other two-year period (including the 2008–2009 commodity boom and the 2014–2015 oil-price shock) produced a comparable import surge. The 2023 level (USD 16.77 billion) exceeds imports in any prior year by more than 200%.
 
-**Data limitation on HS-level decomposition.** The local Comtrade Kazakhstan-as-reporter extract covers only HS chapters 26, 28, 72, 74, 78, 79, and 81 — metal and mineral categories. Chapters 84 (machinery), 85 (electronics), and 87 (vehicles) — the categories most associated with parallel-import flows — are **not available** in the local data. This remains a data limitation: a direct test of whether these categories exploded disproportionately in 2022–2023 is therefore not possible from local data. This gap is documented in `Analysis/sanctions_evasion_memo.md` and would require a new Comtrade API pull (KAZ-reporter, CHN as partner, HS 84/85/87, import flow) to close.
+**Data limitation on HS-level decomposition.** The local Comtrade Kazakhstan-as-reporter extract covers only HS chapters 26, 28, 72, 74, 78, 79, and 81 — metal and mineral categories. Chapters 84 (machinery), 85 (electronics), and 87 (vehicles) — the categories most associated with parallel-import flows — are **not available** in the local data. This remains a data limitation: a direct test of whether these categories exploded disproportionately in 2022–2023 is not possible from the current data. Closing this gap would require a dedicated Comtrade data pull for Kazakhstan as reporter, China as partner, HS chapters 84/85/87, import flow.
 
 ### Regression Robustness: Does the BRI Interaction Survive?
 
@@ -640,7 +633,7 @@ Kazakhstan's imports from China grew by 47.5% in 2022 and by a further 369.2% in
 | Gravity ratio + parallel dummy | 24 | −1.986 | 1.397 | 0.155 | Preferred spec + dummy |
 | Parsimonious excl. 2023 only | 23 | +0.401 | 0.257 | 0.118 | Midterm robustness replicated |
 
-*Source: Author's calculations from `Scripts/32_sanctions_robustness.py`. HAC (Newey–West) standard errors, bandwidth = 3.*
+*Note: Author's calculations. HAC (Newey–West) standard errors, bandwidth = 3.*
 
 ### Findings and Interpretation
 
@@ -658,8 +651,6 @@ This is an honest and important finding. The headline negative interaction is dr
 
 ## 6.15 Comparative Analysis: Two-Way Fixed-Effects Difference-in-Differences
 
-*Results produced by `Scripts/33_multi_partner_panel.py` and `Scripts/34_did_partner_placebo.py`. Partner data sourced from UN Comtrade public API (KAZ as reporter, partners: CHN, RUS, DEU, UZB, TUR, USA; 2000–2023). `Outputs/generated_tables/did_partner_placebo.csv` contains the full results table. The event-study figure is at `Outputs/generated_figures/fig_did_event_study.png`.*
-
 **Design.** This section tests whether Kazakhstan's bilateral trade-balance ratio deteriorated *specifically* with China post-2013, or whether it deteriorated uniformly across all major trading partners. The TWFE DiD design stacks annual bilateral trade-balance ratios for six partners — China (treatment), Russia, Germany, Uzbekistan, Turkey, and USA (controls) — into a balanced panel of 144 observations (6 partners × 24 years). The treatment indicator is `china_dummy × post_2013`. Partner and year fixed effects absorb unobserved partner heterogeneity and common time trends. HAC standard errors (bandwidth = 3) account for serial correlation within partners. Data are sourced from the UN Comtrade public API, validated against the existing Kazakhstan–China panel (0% discrepancy across all 24 years).
 
 **Table 6.10. TWFE DiD Results: China-Specific Post-2013 Balance Shift**
@@ -669,7 +660,7 @@ This is an honest and important finding. The headline negative interaction is dr
 | TWFE DiD: China vs all partners | 144 | 6 | **−0.305** | **0.083** | **0.0002** | Strong China-specific deterioration |
 | TWFE DiD: China vs Russia only | 48 | 2 | −0.151 | 0.057 | 0.008 | Robust to most similar partner |
 
-*Source: Author's calculations from `Scripts/34_did_partner_placebo.py`. Partner dummies and year dummies as fixed effects. HAC standard errors, bandwidth = 3.*
+*Note: Author's calculations. Partner and year dummies as fixed effects. HAC standard errors, bandwidth = 3.*
 
 **Interpretation.** The TWFE DiD coefficient of −0.305 (*p* = 0.0002) indicates that China's bilateral balance ratio declined by 30.5 percentage points relative to the control partners post-2013, after controlling for partner-level heterogeneity and common time trends. This is **statistically significant at the 0.01% level** and is robust to restricting the comparison to Russia alone (−0.151, *p* = 0.008), Kazakhstan's geographically closest major trading partner.
 
@@ -687,8 +678,6 @@ Critically, this result addresses the main identification concern in the regress
 The 2009/2010 marginal placebo significance in the ITS is a within-unit artefact that reflects the pre-existing downward trend in the Kazakhstan–China balance. The TWFE DiD absorbs this trend via year fixed effects and confirms the 2013 break is genuinely China-specific.
 
 ## 6.16 Synthetic Counterfactual
-
-*Results produced by `Scripts/36_synthetic_control.py`. Outputs: `Outputs/generated_tables/synthetic_control.csv` and `Outputs/generated_figures/fig_synthetic_control.png`.*
 
 **Within-unit counterfactual.** The full multi-partner synthetic control (Abadie 2003 design) requires partner time series as donor units; these are now available via the UN Comtrade API (see §6.15). A within-unit synthetic control is implemented as a complement: the pre-period (2000–2012) dynamics of the KZ-China balance ratio are modeled using global commodity prices (Brent, normalized), the gravity ratio (log CN/KZ GDP), a linear time trend, and the lagged balance ratio as predictors. The pre-period OLS fit on these predictors serves as a within-unit synthetic counterfactual for the post-2013 period, isolating departures from pre-BRI trend dynamics without using other partners as donors.
 
@@ -710,14 +699,14 @@ The 2009/2010 marginal placebo significance in the ITS is a within-unit artefact
 | 2022 | 0.491 | 0.287 | +0.204 |
 | 2023 | −0.064 | 0.219 | −0.283 |
 
-*Source: Author's calculations from `Scripts/36_synthetic_control.py`. Pre-period MSPE = 0.0038; post-period MSPE = 0.0362; MSPE ratio = 9.53.*
+*Note: Author's calculations. Pre-period MSPE = 0.0038; post-period MSPE = 0.0362; MSPE ratio = 9.53.*
 
 **Findings.** The gap is negative in 8 of 11 post-BRI years, with a mean post-BRI gap of −0.014. The MSPE ratio (post-period fit error / pre-period fit error) is 9.53, indicating that post-2013 outcomes are substantially harder to predict from pre-BRI dynamics alone — consistent with a post-2013 structural change. The three years with positive gaps (2020, 2021, 2022) coincide with the COVID-19 pandemic import collapse and the initial post-Ukraine sanctions period, both of which temporarily improved the bilateral trade balance.
 
 
 
 ![Figure 7. Synthetic Counterfactual: Actual vs. Synthetic KZ-China Trade Balance Ratio](../Outputs/generated_figures/fig_synthetic_control.png)
-*Source: Author's construction from `Scripts/36_synthetic_control.py`. Panel A: actual vs. synthetic trajectory. Panel B: gap plot showing post-BRI deviations from counterfactual.*
+*Note: Panel A shows actual vs. synthetic trajectory. Panel B shows the gap plot of post-BRI deviations from the counterfactual.*
 
 **Triple-concordance assessment.** The three causal identification methods produce the following pattern:
 
