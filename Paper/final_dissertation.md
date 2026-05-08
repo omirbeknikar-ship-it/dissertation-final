@@ -677,6 +677,9 @@ Critically, this result addresses the main identification concern in the regress
 
 The 2009/2010 marginal placebo significance in the ITS is a within-unit artefact that reflects the pre-existing downward trend in the Kazakhstan–China balance. The TWFE DiD absorbs this trend via year fixed effects and confirms the 2013 break is genuinely China-specific.
 
+![Figure DiD. Event Study: Kazakhstan–China Balance vs. Other Partners (2013 = reference year)](../Outputs/generated_figures/fig_did_event_study.png)
+*Note: Actual balance ratio series with BRI 2013 break marker and ITS placebo years. Author's construction.*
+
 ## 6.16 Synthetic Counterfactual
 
 **Within-unit counterfactual.** The full multi-partner synthetic control (Abadie 2003 design) requires partner time series as donor units; these are now available via the UN Comtrade API (see §6.15). A within-unit synthetic control is implemented as a complement: the pre-period (2000–2012) dynamics of the KZ-China balance ratio are modeled using global commodity prices (Brent, normalized), the gravity ratio (log CN/KZ GDP), a linear time trend, and the lagged balance ratio as predictors. The pre-period OLS fit on these predictors serves as a within-unit synthetic counterfactual for the post-2013 period, isolating departures from pre-BRI trend dynamics without using other partners as donors.
