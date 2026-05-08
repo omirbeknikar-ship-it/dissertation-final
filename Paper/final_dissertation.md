@@ -202,7 +202,7 @@ A critical limitation concerns the mineral export variable. For 2000–2013, the
 
 This break means that the post-BRI structural break detected in regression could partly reflect measurement-source switching rather than genuine economic change. Consequently, researchers must avoid overclaiming from the narrow mineral variable alone. A robustness check using the WITS Ores and Metals series consistently for the full 2000–2023 period (Section 6.6) is therefore essential, not optional, for validating the findings.
 
-## 4.3b Data Validation via Web Scraping
+## 4.4 Data Validation via Independent Cross-Checking
 
 To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this thesis, a cross-validation was conducted using data independently collected from Kazakhstan's Bureau of National Statistics (`stat.gov.kz`) via automated web-scraping.
 
@@ -221,7 +221,7 @@ To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this t
 
 All discrepancies are below 0.5% — well within the < 10% threshold for validation support. This confirms that the trade values used in the analytical panel are consistent with Kazakhstan's national statistical authority's official figures. The 2023 import figure (USD 16.772 billion in the panel vs. USD 16.758 billion scraped, a difference of USD 14 million on a USD 16.8 billion total) is the most important validation given that 2023 is the most influential observation in the regression analysis.
 
-## 4.4 Descriptive Statistics and Trade Balance Decomposition
+## 4.5 Descriptive Statistics and Trade Balance Decomposition
 
 Table 4.2 presents the summary statistics for the 24-year annual sample. The trade balance ranges from a deficit of USD 2.01 billion to a surplus of USD 11.27 billion, with high variability in both the trade balance and strategic mineral exports. This small sample size underscores the need for rigorous diagnostics, as inference may be sensitive to individual years.
 
@@ -259,7 +259,7 @@ Table 4.2 presents the summary statistics for the 24-year annual sample. The tra
 
 The decomposition reveals that the trade-balance deterioration is driven by import-side deepening. Imports from China nearly doubled (+94.3%), while exports grew modestly (+24.3%). Strategic mineral exports grew by 29.2%, but this growth was insufficient to offset the import surge. The year 2023 is exceptional: it is the only year in the sample in which Kazakhstan recorded a bilateral trade deficit (−USD 2.01 billion), driven by imports of USD 16.77 billion exceeding exports of USD 14.76 billion.
 
-## 4.5 Oil and Energy Exports: An Omitted Variable
+## 4.6 Oil and Energy Exports: An Omitted Variable
 
 Oil and energy exports (HS 2709, 2710, 2711, 2701) constitute approximately 60% of Kazakhstan's total export revenues. These are absent from the current dataset because bilateral HS-level oil export data for Kazakhstan–China were not available for the full sample period. This is a major limitation. The mineral coefficient may partly capture broader commodity-cycle dynamics rather than the isolated contribution of strategic minerals. The direction of omitted variable bias is ambiguous: oil exports are positively correlated with both minerals and trade balance, so their exclusion may bias the mineral coefficient upward while simultaneously affecting the interaction term. Future research with HS-level energy data should treat oil exports as a separate control.
 
@@ -783,16 +783,17 @@ Future research should extend the analysis to quarterly data to increase the sam
 
 The finding that mineral export growth did not translate into trade-balance improvement is consistent with the broader resource-dependence literature: export success in raw materials does not automatically improve external balance when the trading partner's diversified export capacity grows faster. For Kazakhstan and comparable corridor economies, this diagnostic evidence suggests that BRI participation should be evaluated not by aggregate trade volumes but by the composition and balance of bilateral exchange.
 
-# 9. Appendix: Table and Figure Concordance
+# Appendix A: Tables and Figures Concordance
 
 This appendix maps the figures and tables referenced in the text to their source files to ensure computational reproducibility.
 
 | Table/Figure | Source File | Section Used | Purpose |
 |--------------|-------------|--------------|---------|
 | Table 4.1 | Author's compilation; see `Codebook.md` and `Collected_Raw_Data/data_dictionary.md` | 4.1 | Consolidated data sources and variable construction |
-| Table 4.2 | `Outputs/generated_tables/summary_statistics.csv` | 4.4 | Descriptive statistics |
-| Table 4.3 | `Outputs/generated_tables/trade_decomposition.csv` | 4.4 | Trade balance decomposition |
+| Table 4.2 | `Outputs/generated_tables/summary_statistics.csv` | 4.5 | Descriptive statistics |
+| Table 4.3 | `Outputs/generated_tables/trade_decomposition.csv` | 4.5 | Trade balance decomposition |
 | Table 4.4 | N/A (Manual summary) | 4.3 | Measurement break summary |
+| Table 4.5 | Author's calculations, Bureau of National Statistics (stat.gov.kz) | 4.4 | Independent cross-validation of bilateral trade figures |
 | Table 5.1 | `Outputs/generated_tables/stationarity.csv` | 5.3 | Integration order diagnostics |
 | Table 6.1 | `Outputs/generated_tables/full_regression_table.csv` & `parsimonious_regression.csv` | 6.1 | Baseline OLS results |
 | Table 6.2 | Computed from OLS residuals via `Scripts/30_full_diagnostics.py`; DW and Breusch–Pagan statistics reported inline | 6.2 | Residual diagnostics |
@@ -807,9 +808,9 @@ This appendix maps the figures and tables referenced in the text to their source
 | Table 6.10 | `Outputs/generated_tables/did_partner_placebo.csv` | 6.15 | TWFE DiD partner-placebo results (China vs RUS, DEU, UZB, TUR, USA) |
 | Table 6.11 | `Outputs/generated_tables/synthetic_control.csv` | 6.16 | Synthetic control gap |
 | §6.12 data | `Outputs/oil_energy_exports_to_china.csv` | 6.12 | Bilateral oil/energy export null-result documentation |
-| Figure 1 | `Outputs/generated_figures/fig_1_exports_imports.png` | 4.4 | Exports vs imports over time |
-| Figure 2 | `Outputs/generated_figures/fig_2_trade_balance.png` | 4.4 | Trade balance over time |
-| Figure 3 | `Outputs/generated_figures/fig_3_minerals.png` | 4.4 | Strategic minerals over time |
+| Figure 1 | `Outputs/generated_figures/fig_1_exports_imports.png` | 4.5 | Exports vs imports over time |
+| Figure 2 | `Outputs/generated_figures/fig_2_trade_balance.png` | 4.5 | Trade balance over time |
+| Figure 3 | `Outputs/generated_figures/fig_3_minerals.png` | 4.5 | Strategic minerals over time |
 | Figure 4 | `Outputs/generated_figures/fig_4_scatter.png` | 6.1 | Pre/post-BRI scatter plot |
 | Figure 5 | `Outputs/generated_figures/fig_5_diagnostics.png` | 6.5 | Influence and leave-one-out stability |
 | Figure 6 | `Outputs/generated_figures/fig_6_pre_post.png` | 6.8 | Pre/post coefficient robustness |
@@ -818,7 +819,7 @@ This appendix maps the figures and tables referenced in the text to their source
 | Figure DiD | `Outputs/generated_figures/fig_did_event_study.png` | 6.15 | ITS + placebo event study |
 | Figure SC | `Outputs/generated_figures/fig_synthetic_control.png` | 6.16 | Synthetic control gap plot |
 
-# Appendix B: Pre-Revision Specification (Retained for Transparency)
+# Appendix B: Pre-Revision Specification
 
 *This appendix documents the pre-revision OLS specification that used log(KZ GDP) and log(CN GDP) as separate level regressors. It is retained for transparency, enabling direct comparison between the midterm and final specifications and illustrating how multicollinearity resolution affected the estimates.*
 
