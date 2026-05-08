@@ -613,7 +613,7 @@ The BIC-selected Bai–Perron procedure detects two structural breaks: one in ap
 
 ## 6.14 The 2022–2023 Sanctions-Evasion Channel
 
-*This section addresses the professor's most specific concern: that the 2023 import surge is better explained by Russia-sanctions parallel imports than by BRI structural deepening. Results are produced by `Scripts/32_sanctions_robustness.py`; the full analysis memo is in `Analysis/sanctions_evasion_memo.md`.*
+*Results produced by `Scripts/32_sanctions_robustness.py`. Full analysis memo: `Analysis/sanctions_evasion_memo.md`.*
 
 ### Background and Hypothesis
 
@@ -831,7 +831,7 @@ This appendix maps the figures and tables referenced in the text to their source
 
 # Appendix B: Pre-Revision Specification (Retained for Transparency)
 
-*This appendix documents the pre-revision OLS specification that used log(KZ GDP) and log(CN GDP) as separate level regressors. It is retained per hard rule 4 (do not delete midterm specifications) and per the explicit midterm revision commitment in §5.2.*
+*This appendix documents the pre-revision OLS specification that used log(KZ GDP) and log(CN GDP) as separate level regressors. It is retained for transparency, enabling direct comparison between the midterm and final specifications and illustrating how multicollinearity resolution affected the estimates.*
 
 ## Appendix B.1 Pre-Revision Full Model (A1)
 
