@@ -1,0 +1,2 @@
+Model,Sample,N,k_regressors,R2,Adj_R2,F_classical,F_classical_p,F_HAC_Wald,F_HAC_Wald_p,LogLik,AIC,BIC,RMSE_SER,Durbin_Watson,BG_LM_lag12,BG_p,BP_LM,BP_p,JB,JB_p,RESET_F,RESET_p
+Q1: observed quarterly,2010Q1-2019Q4,40,8,0.8134,0.7652,16.8883,0.0,107.0114,0.0,-21.3895,60.7789,75.9789,0.4692,1.8537,17.9986,0.1157,13.4198,0.0982,17.1475,0.0002,0.0557,0.8151

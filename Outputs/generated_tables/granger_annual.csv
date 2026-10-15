@@ -1,0 +1,17 @@
+Frequency,Null,Transform,Lags,N_used,Statistic,Stat_value,p_value,Decision_5pct
+annual,MIN does not Granger-cause TB,first difference,1,22,F,0.0098,0.9224,Fail to reject H0
+annual,MIN does not Granger-cause TB,first difference,2,21,F,0.8485,0.4464,Fail to reject H0
+annual,MIN does not Granger-cause TB,Toda-Yamamoto levels (dmax=1),1,22,Wald chi2,0.0266,0.8705,Fail to reject H0
+annual,MIN does not Granger-cause TB,Toda-Yamamoto levels (dmax=1),2,21,Wald chi2,1.1421,0.5649,Fail to reject H0
+annual,TB does not Granger-cause MIN,first difference,1,22,F,6.3826,0.0206,Reject H0
+annual,TB does not Granger-cause MIN,first difference,2,21,F,3.5727,0.0521,Fail to reject H0
+annual,TB does not Granger-cause MIN,Toda-Yamamoto levels (dmax=1),1,22,Wald chi2,3.1441,0.0762,Fail to reject H0
+annual,TB does not Granger-cause MIN,Toda-Yamamoto levels (dmax=1),2,21,Wald chi2,5.6092,0.0605,Fail to reject H0
+annual,BRI_INT does not Granger-cause TB,first difference,1,22,F,0.1069,0.7472,Fail to reject H0
+annual,BRI_INT does not Granger-cause TB,first difference,2,21,F,0.251,0.781,Fail to reject H0
+annual,BRI_INT does not Granger-cause TB,Toda-Yamamoto levels (dmax=1),1,22,Wald chi2,0.0174,0.8951,Fail to reject H0
+annual,BRI_INT does not Granger-cause TB,Toda-Yamamoto levels (dmax=1),2,21,Wald chi2,0.3561,0.8369,Fail to reject H0
+annual,TB does not Granger-cause BRI_INT,first difference,1,22,F,0.0,0.9949,Fail to reject H0
+annual,TB does not Granger-cause BRI_INT,first difference,2,21,F,0.0561,0.9456,Fail to reject H0
+annual,TB does not Granger-cause BRI_INT,Toda-Yamamoto levels (dmax=1),1,22,Wald chi2,0.0265,0.8708,Fail to reject H0
+annual,TB does not Granger-cause BRI_INT,Toda-Yamamoto levels (dmax=1),2,21,Wald chi2,0.194,0.9076,Fail to reject H0

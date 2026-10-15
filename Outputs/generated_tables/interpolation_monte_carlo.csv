@@ -1,0 +1,6 @@
+Design,False_positive_rate_at_5pct,Replications,DGP
+"Annual, n=24, HAC(3)",0.2055,2000,"two independent AR(1) annual series, phi=0.6, n=24; true slope = 0"
+"Interpolated quarterly, n=96, plain OLS SE",0.468,2000,"two independent AR(1) annual series, phi=0.6, n=24; true slope = 0"
+"Interpolated quarterly, n=96, HAC(4)",0.233,2000,"two independent AR(1) annual series, phi=0.6, n=24; true slope = 0"
+"Interpolated quarterly, n=96, HAC(12)",0.2145,2000,"two independent AR(1) annual series, phi=0.6, n=24; true slope = 0"
+"Observed monthly, n=120, HAC(12) (benchmark)",0.226,2000,"two independent AR(1) monthly series, phi=0.9, n=120; true slope = 0"

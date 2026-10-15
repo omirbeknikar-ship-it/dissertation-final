@@ -71,6 +71,14 @@ The midterm version of this dissertation received a score of 75/100. Following w
 5. **Web scraping** (Item 5): `Scripts/04_scrape_stat_gov_kz.py` created. Scraped Kazakhstan BNS (stat.gov.kz) annual trade publications. Cross-validation shows 0.1–0.3% discrepancy between scraped and panel values for 2023–2024. Results in `Outputs/generated_tables/scraped_validation.csv`.
 6. **Causal identification / synthetic control** (Item 6): `Scripts/36_synthetic_control.py` created. Within-unit synthetic control with placebo permutation. Mean post-BRI gap = −0.014 (negative, consistent with adverse shift). Causal language tightened throughout §6–7: claims downgraded to "consistent with" / "associated with."
 
+## Revisions Following Supervisor Feedback (Round 2)
+
+The supervisor raised two points: (1) the small annual sample (N = 24), with the suggestion to disaggregate to quarterly (96) or monthly (288) observations; (2) clearer interpretation of hypothesis tests, model fit statistics, and optionally Granger causality tests.
+
+1. **Sample size.** Two routes were implemented. (a) Denton quarterly disaggregation of the annual panel (n = 96, `Scripts/41`). It reproduces the annual estimates, but a Monte Carlo shows that interpolation adds rows, not information, so it is reported as a robustness check only (§6.17). (b) **Observed monthly UN Comtrade data, 2010-2019 (n = 120)** with NBK exchange rates and Pink Sheet prices (`Scripts/42`, §6.18). H2 and H3 hold (interaction −0.91, p = 0.008, adj. R² = 0.70) without any post-2019 year. They are robust to a trend, copper, dynamics, break date and product-level minerals, but not to controlling for bilateral oil exports (HS 27).
+2. **Hypothesis testing and fit.** Formal one-sided tests with H0/H1, t, df, p and the decision (§6.11, `hypothesis_tests_formal.csv`). Full fit statistics for every model (R², adj. R², F, HAC Wald F, AIC, BIC, RMSE, DW, BG, BP, JB, RESET). Granger causality (VAR in differences and Toda-Yamamoto), annual and monthly (§6.19): mineral exports do not Granger-cause the balance. The predictive link exists only pre-BRI in monthly data and is bidirectional.
+3. **New data-quality finding.** Kazakhstan-reported imports from China are under-recorded in 2020-2022 (China/Kazakhstan mirror ratio about 2.2 in 2016-2019 versus 4.6-6.0 in 2020-2022, and HS 84/85/87 rows missing). This explains much of the "2023 drives everything" fragility. With mirror-adjusted imports, the interaction survives excluding 2023 and 2022-2023 (§4.7, §6.20, `Scripts/43`). The result is weaker when exports are adjusted too.
+
 ## Reproducing the Analysis
 
 ### Install dependencies
@@ -100,6 +108,11 @@ python Scripts/33_multi_partner_panel.py   # multi-partner panel (NEW, needs net
 python Scripts/34_did_partner_placebo.py   # DiD partner placebo (NEW)
 python Scripts/35_collinearity_resolution.py  # VIF comparison (NEW)
 python Scripts/36_synthetic_control.py    # synthetic control (NEW)
+python Scripts/40_model_fit_hypothesis_tests.py  # fit statistics, formal H1-H3 tests, annual Granger (supervisor round 2)
+python Scripts/41_quarterly_interpolation.py     # Denton quarterly disaggregation + Monte Carlo (supervisor round 2)
+python Scripts/42_monthly_observed.py            # observed monthly models + monthly Granger (supervisor round 2)
+python Scripts/43_import_break_sensitivity.py    # 2020-2022 import reporting break (supervisor round 2)
+python Scripts/50_build_paper.py                 # rebuild PDF and DOCX from the markdown
 ```
 
 Outputs are written to `Outputs/generated_tables/` and `Outputs/generated_figures/`.
@@ -127,8 +140,9 @@ Requires [Pandoc](https://pandoc.org/) and a LaTeX distribution (e.g. TeX Live o
 
 ## Key Limitations
 
-- **n = 24** annual observations; all inference is small-sample and fragile.
-- **HS-27 bilateral oil/energy data** were not available; mineral coefficient may absorb commodity dynamics.
+- **n = 24** annual observations; partly addressed with 120 observed months (2010-2019). Interpolated quarterly data are not independent evidence.
+- **2020-2022 import reporting break** in Kazakhstan-reported data; mirror adjustment is an estimate.
+- **HS-27 bilateral oil/energy data** are now available monthly (2010-2023); controlling for them removes the monthly interaction, so H3 is not shown to be mineral-specific.
 - **Multi-partner DiD** was not executed due to IMF DOTS API unavailability; within-unit ITS is a weaker substitute.
 - **2022–2023** are geopolitically contaminated (Russia-sanctions parallel imports); the regression finding depends on these years.
 - **No causal identification** is claimed or achieved.

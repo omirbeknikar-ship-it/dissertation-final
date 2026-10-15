@@ -1,0 +1,9 @@
+Balance_series,Null,Lags,F,p_value
+"TB, 2020-22 imports mirror-adjusted",Minerals does not Granger-cause TB,1,0.0261,0.8733
+"TB, 2020-22 imports mirror-adjusted",Minerals does not Granger-cause TB,2,0.0272,0.9732
+"TB, 2020-22 imports mirror-adjusted",TB does not Granger-cause Minerals,1,8.0163,0.0107
+"TB, 2020-22 imports mirror-adjusted",TB does not Granger-cause Minerals,2,3.8962,0.0418
+"TB, 2020-22 exports and imports mirror-adjusted",Minerals does not Granger-cause TB,1,0.2518,0.6216
+"TB, 2020-22 exports and imports mirror-adjusted",Minerals does not Granger-cause TB,2,0.3979,0.6782
+"TB, 2020-22 exports and imports mirror-adjusted",TB does not Granger-cause Minerals,1,7.6918,0.0121
+"TB, 2020-22 exports and imports mirror-adjusted",TB does not Granger-cause Minerals,2,3.8978,0.0418

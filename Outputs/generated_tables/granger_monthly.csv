@@ -1,0 +1,25 @@
+Frequency,Sample,Null,Method,Lags,Lag_rule,N_used,Statistic,Stat_value,p_value,Decision_5pct
+monthly,2010M01-2019M12,MIN does not Granger-cause TB,VAR in first differences (seasonally adjusted),1,BIC,118,F,0.007,0.9336,Fail to reject H0
+monthly,2010M01-2019M12,MIN does not Granger-cause TB,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,BIC,118,Wald chi2,0.0123,0.9117,Fail to reject H0
+monthly,2010M01-2019M12,TB does not Granger-cause MIN,VAR in first differences (seasonally adjusted),1,BIC,118,F,0.2762,0.6002,Fail to reject H0
+monthly,2010M01-2019M12,TB does not Granger-cause MIN,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,BIC,118,Wald chi2,0.1519,0.6967,Fail to reject H0
+monthly,2010M01-2019M12,MIN does not Granger-cause TB,VAR in first differences (seasonally adjusted),7,AIC,112,F,0.4424,0.8731,Fail to reject H0
+monthly,2010M01-2019M12,MIN does not Granger-cause TB,"Toda-Yamamoto levels, dmax=1, HAC Wald",7,AIC,112,Wald chi2,5.9134,0.5499,Fail to reject H0
+monthly,2010M01-2019M12,TB does not Granger-cause MIN,VAR in first differences (seasonally adjusted),7,AIC,112,F,1.0212,0.4214,Fail to reject H0
+monthly,2010M01-2019M12,TB does not Granger-cause MIN,"Toda-Yamamoto levels, dmax=1, HAC Wald",7,AIC,112,Wald chi2,32.3242,0.0,Reject H0
+monthly,pre-BRI 2010M01-2013M12,MIN does not Granger-cause TB,VAR in first differences (seasonally adjusted),1,BIC,46,F,1.4514,0.2349,Fail to reject H0
+monthly,pre-BRI 2010M01-2013M12,MIN does not Granger-cause TB,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,BIC,46,Wald chi2,1.0514,0.3052,Fail to reject H0
+monthly,pre-BRI 2010M01-2013M12,TB does not Granger-cause MIN,VAR in first differences (seasonally adjusted),1,BIC,46,F,0.9902,0.3253,Fail to reject H0
+monthly,pre-BRI 2010M01-2013M12,TB does not Granger-cause MIN,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,BIC,46,Wald chi2,3.7583,0.0525,Fail to reject H0
+monthly,pre-BRI 2010M01-2013M12,MIN does not Granger-cause TB,VAR in first differences (seasonally adjusted),3,AIC,44,F,3.2685,0.0319,Reject H0
+monthly,pre-BRI 2010M01-2013M12,MIN does not Granger-cause TB,"Toda-Yamamoto levels, dmax=1, HAC Wald",3,AIC,44,Wald chi2,10.3457,0.0158,Reject H0
+monthly,pre-BRI 2010M01-2013M12,TB does not Granger-cause MIN,VAR in first differences (seasonally adjusted),3,AIC,44,F,5.5622,0.003,Reject H0
+monthly,pre-BRI 2010M01-2013M12,TB does not Granger-cause MIN,"Toda-Yamamoto levels, dmax=1, HAC Wald",3,AIC,44,Wald chi2,21.3427,0.0001,Reject H0
+monthly,post-BRI 2014M01-2019M12,MIN does not Granger-cause TB,VAR in first differences (seasonally adjusted),1,AIC,70,F,1.088,0.3007,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,MIN does not Granger-cause TB,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,AIC,70,Wald chi2,0.1253,0.7234,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,TB does not Granger-cause MIN,VAR in first differences (seasonally adjusted),1,AIC,70,F,0.3588,0.5512,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,TB does not Granger-cause MIN,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,AIC,70,Wald chi2,0.4017,0.5262,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,MIN does not Granger-cause TB,VAR in first differences (seasonally adjusted),1,BIC,70,F,1.088,0.3007,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,MIN does not Granger-cause TB,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,BIC,70,Wald chi2,0.1253,0.7234,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,TB does not Granger-cause MIN,VAR in first differences (seasonally adjusted),1,BIC,70,F,0.3588,0.5512,Fail to reject H0
+monthly,post-BRI 2014M01-2019M12,TB does not Granger-cause MIN,"Toda-Yamamoto levels, dmax=1, HAC Wald",1,BIC,70,Wald chi2,0.4017,0.5262,Fail to reject H0

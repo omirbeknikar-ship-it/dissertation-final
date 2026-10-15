@@ -86,5 +86,20 @@ This file documents known limitations, data gaps, and technical issues in the di
 
 ---
 
-*Last updated: 2026-05-04*
+## ISSUE-007: Kazakhstan-Reported Imports from China Under-Recorded, 2020-2022
+
+**Severity:** Major (affects the 2023 influence finding and the sanctions robustness results)
+**Script:** `Scripts/43_import_break_sensitivity.py`; documented in §4.7 and §6.20
+**Status:** [DOCUMENTED + SENSITIVITY] mirror-adjusted estimates reported alongside the original series
+
+**Description:** The China-reported exports to Kazakhstan / Kazakhstan-reported imports from China ratio is 1.50-2.46 in 2013-2019, 5.99, 5.67 and 4.57 in 2020-2022, and 1.47 in 2023. Kazakhstan's 2020-2022 monthly Comtrade records contain no HS 84/85/87 import rows. Exports show a smaller widening (1.42-1.65 vs 1.10-1.28).
+
+**Remediation:** Reconcile with stat.gov.kz annual bulletins for 2020-2022 (the scraper currently covers 2023-2025 only). Check whether imports from the DiD control partners show the same break.
+
+## ISSUE-008: Monthly China-Reported Data Gaps
+
+**Severity:** Minor
+**Description:** China's monthly Comtrade records for Kazakhstan are missing for 2012M10-2015M12 and could not be retrieved for 2021M08-2023M12 within the public preview quota (annual totals for 2013-2015 and 2021-2023 were retrieved instead). Monthly mirror-adjusted samples therefore omit 2021M08-2022M12. The NBK RSS archive lacks most of August 2023 (that month's KZT/USD average uses 3 dates).
+
+*Last updated: 2026-10-15*
 
