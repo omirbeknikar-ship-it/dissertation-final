@@ -28,11 +28,48 @@ The empirical strategy is convergent and transparent. The thesis constructs an a
 
 These results are interpreted as strong diagnostic evidence that Kazakhstan's bilateral trade deterioration post-BRI is China-specific and consistent with asymmetric interdependence deepening. The regression interaction is fragile; the cross-partner identification is robust. The strongest empirical contributions are: (i) the descriptive decomposition showing import-side deepening as the primary mechanism; (ii) the TWFE DiD demonstrating China-specificity; and (iii) transparent reporting of regression fragility.
 
-## 1.1 Contribution
+## 1.1 Relevance, Research Problem, Aim and Objectives
+
+**Relevance.** China is Kazakhstan's largest source of imports and its second-largest export market: in 2023 it accounted for 27.4 per cent of Kazakhstan's imports and 18.7 per cent of its exports [@bns_2024_foreign_trade]. Kazakhstan is also the country where the Silk Road Economic Belt was announced, and BRI is routinely presented in both countries' policy discourse as mutually beneficial. Whether it has been mutually beneficial *for Kazakhstan's external position* is therefore a question of direct policy interest. The question is all the more pressing because the bilateral balance as recorded turned negative for the first time in 2023 (§4.5), and because Kazakhstan's own trade statistics for 2020–2022 understate imports from China (§4.7).
+
+**Research problem.** Kazakhstan's trade with China grew after 2013, and so did its exports of strategic minerals. Yet its bilateral trade surplus with China fell by 37.8 per cent. Existing BRI research largely measures trade *volumes* and infrastructure effects; it says little about whether a resource-exporting partner's *balance* improves, or whether its mineral exports translate into a stronger position. This thesis addresses that gap for the Kazakhstan–China pair.
+
+**Aim.** To assess how the relationship between Kazakhstan's strategic mineral exports to China and its bilateral trade balance with China changed after the launch of BRI, and to interpret that change through the theory of asymmetric interdependence.
+
+**Objectives.** The aim is pursued through six objectives, each addressed in a specific chapter:
+
+1. To review the literature on trade specialisation, commodity dependence, BRI as trade facilitation and asymmetric interdependence, and to identify the research gap (Chapters 2–3).
+2. To construct and validate a reproducible Kazakhstan–China dataset: annual for 2000–2023, and observed monthly for 2010–2019 (Chapter 4).
+3. To decompose post-BRI changes in exports, imports and the trade balance, distinguishing trade growth from trade-balance improvement (§4.5).
+4. To test whether mineral exports were associated with the trade balance before BRI, and whether that association changed afterwards (hypotheses H1–H3; Chapters 5–6).
+5. To test whether the post-2013 change is specific to China (difference-in-differences against five other partners), which way predictive causation runs (Granger tests), and how robust the results are to data and specification choices (Chapter 6).
+6. To derive policy recommendations for Kazakhstan and comparable resource-exporting BRI partners (Chapters 7–8).
+
+**Object and subject.** The *object* of the research is Kazakhstan–China bilateral trade. The *subject* is the relationship between Kazakhstan's strategic mineral exports and its bilateral trade balance with China before and after BRI.
+
+**Methods.** Descriptive pre/post decomposition; OLS association models with Newey–West standard errors and formal one-sided hypothesis tests; monthly time-series models on observed UN Comtrade data; Granger causality tests (VAR in differences and Toda–Yamamoto); a two-way fixed-effects difference-in-differences design; influence, structural-break and robustness diagnostics; and mirror-data validation of the trade statistics.
+
+**Scientific novelty.**
+
+1. The thesis shifts the empirical question for the Kazakhstan–China case from trade *volume* to trade *balance*, and tests directly whether strategic mineral exports protected the balance after BRI.
+2. It combines annual data with 120 months of observed monthly data, showing that the weakening of the mineral–balance association appears before 2020 and does not depend on the contested 2020–2023 years.
+3. It documents, through mirror-data comparison, that Kazakhstan-reported imports from China are under-recorded in 2020–2022, and shows how this distorts conclusions drawn from the official series.
+4. It shows with a multi-partner difference-in-differences design that the post-2013 deterioration is specific to China rather than common to Kazakhstan's trade with all partners.
+
+**Practical significance.** The results are relevant to Kazakhstan's trade and economic-policy bodies and its statistical authority. They show that BRI outcomes should be monitored through the composition and balance of bilateral trade, not through turnover alone; that raw mineral exports did not secure a stronger bilateral position, which strengthens the case for in-country processing and export diversification; and that bilateral import statistics for 2020–2022 need reconciliation with partner data. The reproducible dataset and code can be reused for other Central Asian BRI partners.
+
+**Provisions submitted for defence.**
+
+1. After 2013, Kazakhstan's imports from China grew far faster than its exports (+94.3 per cent against +24.3 per cent), so trade growth coincided with a weaker bilateral balance.
+2. Before BRI, strategic mineral exports were positively associated with the bilateral balance; after BRI, this association weakened and is no longer distinguishable from zero, in both annual and observed monthly data.
+3. The post-2013 deterioration is China-specific, but the evidence supports an association consistent with asymmetric interdependence, not a causal or mineral-specific BRI effect.
+4. Kazakhstan's official 2020–2022 import statistics understate imports from China, and correcting them changes the apparent fragility of the regression results.
+
+## 1.2 Contribution
 
 This thesis makes five specific contributions. First, it distinguishes between trade expansion and trade-balance improvement, shifting attention from aggregate trade volumes to bilateral trade-balance outcomes in a diagnostic case study of Kazakhstan and China. Second, it bridges theory and method by using asymmetric interdependence to interpret the moderating compositional channel of strategic mineral exports, accommodating both mutual gains and distributional asymmetry. Third, it tests whether strategic mineral exports translated into external-balance improvement, demonstrating that resource-export growth is not inherently synonymous with an improved external position. Fourth, it provides a transparent and reproducible annual Kazakhstan–China single country-pair dataset with a fully scripted pipeline. Fifth, it treats the results explicitly as diagnostic and fragile, deploying small-sample robustness checks and influence diagnostics to document the critical role of 2023. By providing an honest interpretation of fragility, the thesis strengthens methodological discipline and avoids claiming definitive causal identification of a stable structural effect.
 
-## 1.2 Structure
+## 1.3 Structure
 
 The remainder of this thesis is organised as follows. Chapter 2 reviews the literature and identifies the research gap. Chapter 3 presents the theoretical framework. Chapter 4 describes the data, variable construction, and data limitations. Chapter 5 explains the empirical strategy. Chapter 6 presents the results, including influence diagnostics and model stability analysis. Chapter 7 discusses the findings and their implications. Chapter 8 concludes.
 
@@ -167,7 +204,7 @@ Table 4.1 consolidates all variables, their sources, coverage, and key limitatio
 | Bilateral exports to China | Kazakhstan's total exports to China, FOB (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | Mirror-data discrepancies reconciled via bilateral cross-reporting |
 | Bilateral imports from China | Kazakhstan's total imports from China, CIF (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | CIF/FOB adjustment not applied; affects level, not trend |
 | Bilateral trade balance | $TB_t = X_t - M_t$ (USD bn) | Derived | 2000–2023 | Dependent on accuracy of both export and import series |
-| Strategic mineral exports (narrow) | Uranium (HS 2612), copper (HS 7403), chromium (HS 2610), USD bn | WITS Ores & Metals proxy (2000–2013); Comtrade HS-2 (2014–2023) | 2000–2023 | **Measurement break at 2014** coincides with BRI dummy |
+| Strategic mineral exports (narrow) | HS chapters 26 (ores, incl. chromium and copper ores) and 28 (inorganic chemicals, incl. uranium compounds), USD bn | WITS Ores & Metals proxy (2000–2013); UN Comtrade HS 26 + 28, Kazakhstan-reported exports to China (2014–2023) | 2000–2023 | **Measurement break at 2014** coincides with BRI dummy |
 | WITS ores and metals proxy | Aggregate ores and metals exports from WITS, USD bn | World Bank WITS | 2000–2023 | Broader than target minerals; used for consistent-proxy robustness |
 | Brent crude price | Annual mean Brent spot price, USD/barrel | FRED (St. Louis Fed) | 2000–2023 | Controls global price conditions; does **not** proxy bilateral oil volume |
 | KZT/USD exchange rate | Kazakh tenge per US dollar, annual average | World Bank WDI | 2000–2023 | Annual average; within-year volatility not captured |
@@ -183,7 +220,7 @@ Table 4.1 consolidates all variables, their sources, coverage, and key limitatio
 **Dependent variable:** Kazakhstan's bilateral trade balance with China in current USD billions: $TB_t = X_t - M_t$.
 
 **Key explanatory variables:**
-- *minerals_narrow_B*: Strategic mineral exports (uranium, copper, chromium) in USD billions.
+- *minerals_narrow_B*: Strategic mineral exports in USD billions, measured as HS chapters 26 (ores, slag and ash) and 28 (inorganic chemicals, which include the uranium compounds that make up most of Kazakhstan's uranium exports). Uranium, chromium and copper ores are the main strategic products inside these chapters; product-level codes (HS 2610, 2612, 2844, 7403) are used as a robustness check in the monthly data (§6.18).
 - *post_bri_2013*: Binary indicator equal to 1 for 2014–2023 (BRI announced September 2013).
 - *post_bri_x_minerals*: Interaction term: post_bri_2013 × minerals_narrow_B.
 
@@ -191,14 +228,14 @@ Table 4.1 consolidates all variables, their sources, coverage, and key limitatio
 
 ## 4.3 Measurement Break in Mineral Data
 
-A critical limitation concerns the mineral export variable. For 2000–2013, the narrow minerals series is constructed from WITS Ores and Metals exports as a proxy, because HS-6 level Comtrade data for specific mineral categories are not available for the full pre-2014 period. For 2014–2023, the series uses HS-2 level Comtrade data for uranium (HS 2612), copper (HS 7403), and chromium (HS 2610). This creates a measurement break at 2014 that changes the source and definition of the variable. This is analytically dangerous because it coincides precisely with the post-BRI dummy.
+A critical limitation concerns the mineral export variable. For 2000–2013, the narrow minerals series is constructed from WITS Ores and Metals exports as a proxy, because HS-6 level Comtrade data for specific mineral categories are not available for the full pre-2014 period. For 2014–2023, the series uses UN Comtrade data at HS-chapter level, chapters 26 and 28, as reported by Kazakhstan. This creates a measurement break at 2014 that changes the source and definition of the variable. This is analytically dangerous because it coincides precisely with the post-BRI dummy.
 
 **Table 4.4. Mineral Variable Measurement by Period**
 
 | Period | Source | Definition | Coverage |
 |--------|--------|-----------|----------|
 | 2000–2013 | WITS | Ores and Metals aggregate | Broader than target |
-| 2014–2023 | Comtrade HS-2 | U + Cu + Cr specific codes | Narrower, targeted |
+| 2014–2023 | Comtrade HS-2 | HS 26 + HS 28 chapters | Narrower, closer to target |
 
 This break means that the post-BRI structural break detected in regression could partly reflect measurement-source switching rather than genuine economic change. Consequently, researchers must avoid overclaiming from the narrow mineral variable alone. A robustness check using the WITS Ores and Metals series consistently for the full 2000–2023 period (Section 6.6) is therefore essential, not optional, for validating the findings.
 
@@ -323,7 +360,7 @@ Each regressor is theoretically anchored as follows (see also Table 3.1 for the 
 
 **`log(CN GDP / KZ GDP)` (gravity ratio) — robustness.** Following the methodological guidance of Anderson and van Wincoop [-@anderson_vanwincoop_2003], the gravity ratio operationalises bilateral size asymmetry and is retained as a robustness check. It reduces max VIF from 236.3 to 33.4 — a large improvement but still above the VIF < 10 target (§6.3; Appendix B).
 
-**Interpretation constraint:** The model does not identify a causal BRI effect. PostBRI is a period indicator that coincides with multiple concurrent shocks (oil price collapse, tenge devaluation, Crimea-related trade disruption, COVID-19). All coefficients are interpreted as conditional associations. Causal language is reserved for the triple-concordance criterion in §7: a finding is described as "causal" only where the DiD partner-placebo estimate (§6.5), the synthetic counterfactual gap (§6.6), and the sanctions-robustness check (§6.4) all point in the same direction.
+**Interpretation constraint:** The model does not identify a causal BRI effect. PostBRI is a period indicator that coincides with multiple concurrent shocks (oil price collapse, tenge devaluation, Crimea-related trade disruption, COVID-19). All coefficients are interpreted as conditional associations. Causal language is reserved for the triple-concordance criterion: a finding is described as "causal" only where the DiD partner-placebo estimate (§6.15), the synthetic counterfactual gap (§6.16), and the sanctions-robustness check (§6.14) all point in the same direction.
 
 ## 5.2 Full vs. Parsimonious vs. Growth-Rate Specifications
 
@@ -454,6 +491,8 @@ One caution applies to every annual *p*-value. A Monte Carlo experiment (§6.17,
 |------|-----------|-----------|---------------|
 | Durbin–Watson | 1.799 | — | Mild positive autocorrelation; inconclusive |
 | Breusch–Pagan | 19.78 | 0.006 | Heteroskedasticity detected |
+
+*Note: Table 6.2 reports diagnostics for the full model (A1) from the original analysis. Diagnostics for the primary model (B) and for Models C and A2 are reported in Table 6.1b.*
 
 The Breusch–Pagan test rejects the null of homoskedasticity (*p* = 0.006), which motivates the use of HAC standard errors throughout. HAC standard errors correct for both heteroskedasticity and autocorrelation in inference, but do not address potential model misspecification. The Durbin–Watson statistic (1.80) is close to 2.0, suggesting that serial correlation is mild after conditioning on regressors.
 

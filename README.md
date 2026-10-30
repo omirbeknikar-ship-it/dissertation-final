@@ -44,7 +44,7 @@ The dissertation is complete. `Paper/final_dissertation.md` is the submission-re
 
 The final analysis includes:
 - A cleaned annual Kazakhstan–China bilateral panel (2000–2023, *n* = 24)
-- OLS association models with HAC (Newey–West) standard errors; gravity-ratio specification as primary (replaces collinear GDP levels)
+- OLS association models with HAC (Newey–West) standard errors; GDP growth-rate specification (Scheme B) as primary, gravity ratio (Scheme C) as robustness
 - VIF diagnostics: three-scheme comparison (GDP levels max VIF=236; gravity ratio max VIF=33; GDP growth rates max VIF=10)
 - Influence diagnostics: Cook's D, leverage, studentised residuals, leave-one-out analysis
 - AIC-selected ADL dynamic association model with PSS bounds test
