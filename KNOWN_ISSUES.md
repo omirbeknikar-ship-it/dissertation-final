@@ -8,7 +8,7 @@ This file documents known limitations, data gaps, and technical issues in the di
 
 **Severity:** Major analytical limitation  
 **Script:** `Scripts/01_load_comtrade.py`; affects `Scripts/31_revision_computations.py` and all regression specifications  
-**Status:** [DATA_GAP] — unresolved, acknowledged in §4.5 and §6.10
+**Status:** [PARTLY RESOLVED, Oct 2026] observed monthly HS 27 data for 2010–2023 now used (§4.6, §6.18 M4); annual 2000–2009 still missing. The former 55%-of-exports placeholder has been removed.
 
 **Description:** The local Comtrade Kazakhstan-as-reporter file covers only HS chapters 26, 28, 72, 74, 78, 79, and 81. Chapter 27 (petroleum, natural gas, coal) is not present. The `oil_exports` column in `clean_panel_annual.csv` is empty for all 24 sample years. This omission is significant because Kazakhstan's bilateral oil exports to China constitute approximately 60% of total export revenues.
 
@@ -101,5 +101,15 @@ This file documents known limitations, data gaps, and technical issues in the di
 **Severity:** Minor
 **Description:** China's monthly Comtrade records for Kazakhstan are missing for 2012M10-2015M12 and could not be retrieved for 2021M08-2023M12 within the public preview quota (annual totals for 2013-2015 and 2021-2023 were retrieved instead). Monthly mirror-adjusted samples therefore omit 2021M08-2022M12. The NBK RSS archive lacks most of August 2023 (that month's KZT/USD average uses 3 dates).
 
-*Last updated: 2026-10-15*
+## ISSUE-009: DiD Inference with Six Partners
+
+**Severity:** Major for interpretation
+**Script:** `Scripts/44_did_robustness.py`
+**Description:** Script 34's Newey–West errors on the stacked panel overstate precision (p = 0.0002). Driscoll–Kraay p ≈ 0.02; wild cluster bootstrap p ≈ 0.33–0.38; permutation p = 0.167 (China ranks first of six). The 2020–2022 import break also affects DEU, USA, UZB and TUR (not RUS); excluding 2020–2022 leaves the estimate at −0.352.
+
+## ISSUE-010: Bibliography Corrections
+
+**Status:** [RESOLVED] Six entries corrected or removed after verification against publisher records (see README, Final Audit). Working notes in `Literature_Review/literature_review.md` still mention three unverified keys that are not cited in the dissertation.
+
+*Last updated: 2026-10-30*
 

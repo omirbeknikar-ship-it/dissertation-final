@@ -162,13 +162,9 @@ I ran a 288-specification robustness grid — varying the mineral measure, lag s
 
 I conducted leave-one-out analysis and influence diagnostics to identify whether any single year is driving the results.
 
-For causal identification, I used a Two-Way Fixed-Effects Difference-in-Differences design,
-and a synthetic counterfactual as a complementary check.
+I also compared China with Kazakhstan's other major partners using a difference-in-differences design, and built a synthetic counterfactual as a complementary check.
 
-Each method serves a specific purpose.
-But the most important one — the one I anchor my conclusions to — is the DiD.
-
-I will get to that shortly.
+Each method serves a specific purpose. My conclusions rest on three things: the descriptive decomposition, the hypothesis tests on annual and monthly data, and the data validation. The other methods support or qualify them.
 First, there is a methodological problem I needed to solve.
 
 ---
@@ -323,40 +319,19 @@ So I read my regression coefficients as associations, not as minerals driving th
 
 ---
 
-## [SLIDE 17 — DiD — MAIN FINDING]
+## [SLIDE 17 — CROSS-PARTNER CHECK: DiD]
 
-This is the central result of the dissertation.
+This slide asks: did Kazakhstan's balance with China deteriorate *more* than its balance with other major partners after 2013?
 
-The Two-Way Fixed-Effects Difference-in-Differences design asks a simple question:
-Did Kazakhstan's trade balance with China deteriorate *more* than Kazakhstan's trade balance with other major partners, after 2013?
+I stacked annual data for six partners: China, and Russia, Germany, Uzbekistan, Turkey and the USA as comparisons. Partner and year fixed effects absorb permanent differences between partners and shocks common to all of them.
 
-If the answer is yes — and it is only Kazakhstan-China that deteriorated — then we know this is not just a global economic story.
-It is specifically about the Kazakhstan-China relationship.
+The estimate is **minus 0.305**: after 2013, the balance ratio with China fell about 30 percentage points more than with the other partners. It stays between minus 0.31 and minus 0.37 when I drop the 2020 to 2022 data-break years or drop Russia.
 
-I stacked annual bilateral trade data for six partner countries:
-China as the treatment unit, and Russia, Germany, Uzbekistan, Turkey, and the United States as controls.
-That gives 144 observations across a balanced panel.
-I included partner fixed effects and year fixed effects to absorb all country-level differences and common time trends.
+The chart at the bottom shows what happens if I pretend each partner in turn is "China". China has the most negative result of the six. Germany is second, at minus 0.24.
 
-The result:
+I have to be honest about precision. An earlier version reported p = 0.0002, but that used standard errors that are not appropriate for a panel. With proper panel errors the p-value is about 0.02. With methods built for very few groups, the permutation test and the wild bootstrap, it is between 0.17 and 0.38, because with only six partners there is simply not much to compare against.
 
-**DiD coefficient = minus 0.305**
-**p-value = 0.0002**
-
-Kazakhstan's trade balance ratio declined approximately **30.5 percentage points more** than the average of the control group in the post-2013 period.
-
-This is significant at the 0.02 percent level.
-That is an extremely high standard of statistical evidence.
-
-And when I restrict the comparison to Russia alone — Kazakhstan's closest geographic neighbor, sharing the same commodity cycle exposure — the result holds:
-minus 0.151, p = 0.008.
-
-This is my central finding.
-**The post-BRI trade balance deterioration is China-specific.**
-It is not an oil price story.
-It is not a global macro story.
-It is not something happening across all of Kazakhstan's trading partners.
-It is specifically about China.
+So I present this as supporting evidence: the deterioration was largest with China. I do not present it as proof that it was caused by China or BRI.
 
 ---
 
@@ -393,13 +368,13 @@ The annual regression depends on 2022 and 2023 in the data as reported. It survi
 
 The synthetic control is consistent but not independently significant.
 
-But the DiD — the strongest identification strategy — is robust.
-Minus 0.305, p = 0.0002, robust to the Russia comparison, robust to fixed effects.
+The DiD shows the largest decline was with China, stable in size but statistically imprecise with only six partners.
+And controlling for oil exports removes the mineral effect, which points to the oil collapse as the mechanism.
 
 The sanctions robustness check cannot rule out that the parallel-import channel through Kazakhstan contributed to the 2022–2023 import surge.
 That is an honest limitation.
 
-Overall: the evidence is **strongly consistent** with asymmetric interdependence deepening post-BRI.
+Overall: the evidence is **consistent** with asymmetric interdependence deepening post-BRI.
 That is the epistemically honest conclusion this data supports.
 
 ---
@@ -420,10 +395,10 @@ and the Russia sanctions shock from 2022 onward.
 Separating BRI's specific causal effect from those concurrent shocks is beyond what a single-country time-series can achieve cleanly.
 
 What I can claim is this:
-The deterioration is China-specific — demonstrated by the DiD.
+The deterioration was largest with China among six major partners.
 Mineral exports did not offset the import surge — shown by the descriptive decomposition.
 The mineral–balance link weakened after 2013 — shown in 120 observed months, although I cannot separate it from the oil-export collapse.
-The pattern is strongly consistent with asymmetric interdependence — supported by all six methods.
+The pattern is consistent with asymmetric interdependence.
 And the methodology is fully transparent — every number in this paper can be independently reproduced.
 
 Acknowledging what a study cannot prove is part of rigorous research.
@@ -463,10 +438,10 @@ The trade surplus fell 38 percent. In 2023 a deficit was recorded.
 **Regression:** the negative post-BRI minerals interaction is significant annually, minus 2.49, and in 120 observed months, minus 0.91.
 Most of its apparent fragility came from under-recorded imports in 2020 to 2022. It is an association, it does not survive an oil-export control, and minerals do not Granger-cause the balance.
 
-**The main finding:** the TWFE DiD shows Kazakhstan's balance deteriorated 30.5 percentage points more than control partners — p = 0.0002.
-The deterioration is China-specific.
+**Mechanism:** oil was 59 percent of exports to China before 2014 and 36 percent after; oil exports to China fell 89 percent from 2013 to 2016. That collapse, not a loss in mineral value, is the most likely reason the mineral payoff disappeared.
+**Cross-partner check:** the decline was largest with China among six partners, though with six partners this is imprecise.
 
-**Interpretation:** the evidence is strongly consistent with asymmetric interdependence.
+**Interpretation:** the evidence is consistent with asymmetric interdependence.
 Mineral wealth alone did not provide sufficient leverage against China's expanding import-export capacity.
 
 **Broader relevance:** Kazakhstan's experience is a diagnostic case study for resource-rich BRI partners everywhere.
@@ -482,10 +457,9 @@ Thank you very much.
 
 The one number I would ask you to take away from this presentation is:
 
-**DiD = minus 0.305, p = 0.0002.**
+**Imports from China grew 94 percent while exports grew 24 percent, and after 2013 minerals stopped improving the balance.**
 
-That is the evidence that the trade balance deterioration is not a global story.
-It is specifically about Kazakhstan and China.
+Trade growth with China is not the same as Kazakhstan gaining from it.
 
 I am happy to take any questions.
 
@@ -501,7 +475,7 @@ I am happy to take any questions.
 
 The regression is sensitive to 2023 — I say that explicitly.
 But the 38 percent decline in the average trade surplus runs across the entire 2014 to 2023 decade — not just one year.
-The DiD result, which is my primary finding, uses 144 observations across six partners and is robust with or without 2023.
+The 120-month monthly result ends in 2019, so it does not use 2023 at all. Much of 2023's apparent influence came from under-recorded imports in 2020 to 2022.
 So no, the main conclusion does not rest on a single year.
 
 ---
@@ -512,7 +486,7 @@ I cannot fully rule that out, and I say so in the paper.
 What I can show is that the trade balance deterioration began well before 2022.
 You can see it clearly in the ten-year downward trend in the chart.
 The sanctions years amplified something that was already underway.
-The DiD also uses Russia as a control country, and the result holds — which means the Kazakhstan-China deterioration is above and beyond anything that happened to the Kazakhstan-Russia relationship.
+My monthly evidence ends in 2019, before sanctions existed, and still shows the weakening. And in China's own data, imports into Kazakhstan were already rising 18 to 19 percent a year in 2021 and 2022.
 
 ---
 
@@ -529,7 +503,7 @@ Extending this to a gravity framework with a broader BRI country sample is somet
 
 On its own it is small, which is why I added 120 months of observed monthly data for 2010 to 2019. H2 and H3 hold there with p-values of 0.001 and 0.004.
 I also tested interpolating to 96 quarters, but interpolated quarters are not new observations, and my Monte Carlo shows they do not improve inference.
-The DiD panel has 144 observations, and the descriptive findings do not depend on inference at all.
+The descriptive findings do not depend on inference at all.
 
 ---
 
@@ -565,5 +539,23 @@ Once oil is held constant, I cannot separate a mineral-specific weakening from t
 I treat that as an important limitation, and it is a natural next step for future research.
 
 ---
+
+---
+
+**"Your DiD p-value used to be 0.0002. Why is it now 0.02 to 0.38?"**
+
+The original standard errors treated the stacked panel as one long time series, which understates uncertainty. With errors designed for panels it is about 0.02. With only six partners, the methods designed for few groups give 0.17 to 0.38. The size of the effect did not change; only the honest measure of confidence did. That is why the DiD is supporting evidence, not my main result.
+
+---
+
+**"So is your story about oil, not minerals?"**
+
+Partly, yes, and the data show it. Oil fell from 59 to 36 percent of exports to China, and from 8.9 to 1.0 billion dollars between 2013 and 2016. Minerals held up, but they could not replace the lost oil revenue while imports from China kept growing. That supports asymmetric interdependence: Kazakhstan's position depends on commodities whose prices it does not control.
+
+---
+
+**"Did you check your references?"**
+
+Yes. In the final audit the references were checked, and six entries with wrong authors, titles or years were corrected against publisher records or removed, plus two minor date and publisher fixes.
 
 *End of script.*

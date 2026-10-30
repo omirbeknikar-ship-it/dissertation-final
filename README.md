@@ -79,6 +79,13 @@ The supervisor raised two points: (1) the small annual sample (N = 24), with the
 2. **Hypothesis testing and fit.** Formal one-sided tests with H0/H1, t, df, p and the decision (§6.11, `hypothesis_tests_formal.csv`). Full fit statistics for every model (R², adj. R², F, HAC Wald F, AIC, BIC, RMSE, DW, BG, BP, JB, RESET). Granger causality (VAR in differences and Toda-Yamamoto), annual and monthly (§6.19): mineral exports do not Granger-cause the balance. The predictive link exists only pre-BRI in monthly data and is bidirectional.
 3. **New data-quality finding.** Kazakhstan-reported imports from China are under-recorded in 2020-2022 (China/Kazakhstan mirror ratio about 2.2 in 2016-2019 versus 4.6-6.0 in 2020-2022, and HS 84/85/87 rows missing). This explains much of the "2023 drives everything" fragility. With mirror-adjusted imports, the interaction survives excluding 2023 and 2022-2023 (§4.7, §6.20, `Scripts/43`). The result is weaker when exports are adjusted too.
 
+## Final Audit (October 2026)
+
+- **References:** six bibliography entries were wrong or unverifiable and have been corrected or removed, and two had minor errors (Jepson & Baldakova 2024; Calabrese 2024; Primiano & Kudebayeva 2025; Grant 2020 replaces a misattributed "Mostowlansky 2020"; a non-existent Petry 2023 book removed; "Keohane & Nye 1973" corrected to 1977; Frank 1967; Prebisch 1950 publisher).
+- **Placeholder data removed:** the annual `oil_exports` column was 55% of exports in every year; it has been blanked and the models that used it (ADL, §6.12) re-estimated or withdrawn.
+- **DiD re-assessed:** see the Key Limitations entry above and §6.15 (Table 6.10b).
+- **Oil channel measured:** HS 27 fell from 59% of exports to China (2010–13) to 36% (2014–19); oil exports fell 89% from 2013 to 2016 (§4.6).
+
 ## Reproducing the Analysis
 
 ### Install dependencies
@@ -106,6 +113,8 @@ python Scripts/31_revision_computations.py
 python Scripts/32_sanctions_robustness.py  # sanctions robustness (NEW)
 python Scripts/33_multi_partner_panel.py   # multi-partner panel (NEW, needs network for full run)
 python Scripts/34_did_partner_placebo.py   # DiD partner placebo (NEW)
+python Scripts/44_did_robustness.py        # DiD inference + permutation (final audit)
+python Scripts/45_ardl_clean.py            # ADL + CUSUM on observed data only (final audit)
 python Scripts/35_collinearity_resolution.py  # VIF comparison (NEW)
 python Scripts/36_synthetic_control.py    # synthetic control (NEW)
 python Scripts/40_model_fit_hypothesis_tests.py  # fit statistics, formal H1-H3 tests, annual Granger (supervisor round 2)
@@ -143,7 +152,7 @@ Requires [Pandoc](https://pandoc.org/) and a LaTeX distribution (e.g. TeX Live o
 - **n = 24** annual observations; partly addressed with 120 observed months (2010-2019). Interpolated quarterly data are not independent evidence.
 - **2020-2022 import reporting break** in Kazakhstan-reported data; mirror adjustment is an estimate.
 - **HS-27 bilateral oil/energy data** are now available monthly (2010-2023); controlling for them removes the monthly interaction, so H3 is not shown to be mineral-specific.
-- **Multi-partner DiD** was not executed due to IMF DOTS API unavailability; within-unit ITS is a weaker substitute.
+- **Multi-partner DiD** (6 partners): China shows the largest post-2013 decline (−0.31 to −0.37 across samples), but with six partners inference is imprecise (Driscoll–Kraay p ≈ 0.02; wild cluster bootstrap p ≈ 0.33; permutation p = 0.167). See `Scripts/44`.
 - **2022–2023** are geopolitically contaminated (Russia-sanctions parallel imports); the regression finding depends on these years.
 - **No causal identification** is claimed or achieved.
 
@@ -153,6 +162,6 @@ Requires [Pandoc](https://pandoc.org/) and a LaTeX distribution (e.g. TeX Live o
 - No fabricated citations or bibliographic references are included.
 - All regression outputs are computed from real observed data and saved in `Outputs/generated_tables/`.
 - All figures are generated programmatically and saved in `Outputs/generated_figures/`.
-- The energy proxy in §6.12 of the paper is clearly labelled **illustrative only** — it is not observed HS-27 data.
+- The former annual "energy proxy" (a constant 55% of exports) has been **removed** from the data and the paper; energy is now controlled with observed monthly HS 27 data.
 - The within-unit synthetic control is presented as a weaker substitute for a true multi-partner design, not as causal evidence.
 - The dissertation explicitly acknowledges fragile findings, the influence of the 2023 observation, multicollinearity in GDP controls, and the absence of causal identification.

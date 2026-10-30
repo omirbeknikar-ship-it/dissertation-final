@@ -1,0 +1,4 @@
+Sample,DiD_if_treated_CHN,DiD_if_treated_DEU,DiD_if_treated_RUS,DiD_if_treated_TUR,DiD_if_treated_USA,DiD_if_treated_UZB,China_rank_most_negative,N_units,permutation_p_one_sided
+"All partners, 2000-2023 (original)",-0.3051,-0.2433,-0.1236,0.3844,0.2306,0.057,1,6,0.1667
+"All partners, excl. 2020-2022",-0.3521,-0.2594,-0.0055,0.4202,0.1317,0.0651,1,6,0.1667
+"All partners, excl. 2020-2023",-0.3139,-0.2512,-0.0223,0.4301,0.1189,0.0383,1,6,0.1667

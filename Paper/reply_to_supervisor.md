@@ -17,5 +17,13 @@ Thank you for your comments. I have worked on both points. A summary is below, a
 
 While comparing Kazakhstan's reported imports from China with China's reported exports to Kazakhstan, I found that Kazakhstan's import figures for 2020–2022 appear under-recorded. The ratio between the two sources is about 2.2 in 2016–2019, 4.6–6.0 in 2020–2022, and 1.5 in 2023, and machinery, electronics and vehicle import records are missing in those years. This explains much of the earlier finding that the result depends on 2023. With mirror-adjusted imports, the interaction remains significant without 2023 (§4.7, §6.20). I keep the original series as the baseline and report the adjusted one as a sensitivity check. Would you prefer that I keep this framing, or use the adjusted series as the main specification?
 
+**Final audit before the pre-defence**
+
+I also re-checked the parts of the thesis that had not been verified:
+
+- **References:** six bibliography entries had wrong authors, titles or years, or could not be found, and two had minor date or publisher errors. I corrected them against publisher records or removed them.
+- **Oil data:** an annual "oil exports" series in the dataset turned out to be a placeholder, a fixed 55% of total exports. I removed it and replaced the analysis with observed monthly oil data. These show that oil fell from 59% of exports to China in 2010–2013 to 36% in 2014–2019, which helps explain the post-BRI pattern.
+- **DiD:** the cross-partner comparison originally reported p = 0.0002 using standard errors that are not suitable for a panel. With appropriate methods the estimate is unchanged (China shows the largest decline of six partners), but its precision is lower (p ≈ 0.02–0.38). I now present it as supporting rather than main evidence.
+
 Kind regards,
 Nikar Omirbek
