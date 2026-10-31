@@ -1,62 +1,50 @@
-# Examiner-Style Evaluation of the Reconstructed Thesis
-
-Written as a skeptical external examiner would write it. It is meant to show where the thesis is strong, where it can be attacked, and what answer the candidate should give.
+# Examiner-Style Evaluation (revised after the second round)
 
 ## Overall assessment
 
-The reconstructed thesis has a clear question, a design that matches it and conclusions that do not exceed the evidence. Its main strength is that it removes the commodity cycle before talking about the BRI, which the earlier version could not do. Its main weakness is aggregation: HS-2 chapters are coarse, and energy is a single chapter. Provisional grade band: **pass, likely good**, conditional on the candidate defending the timing result and the limits of level-B attribution confidently.
+The thesis now has one question and one line of argument. It asks how much of the BRI-era deterioration in Kazakhstan's balance with China was bilateral, and whether the bilateral part fits BRI mechanisms. Every chapter contributes a step: mechanisms (Ch. 2–3), measurability (Ch. 4), upper bound (§6.2), export and import mechanism tests (§6.4–6.6), safeguards (§6.7), channels (§6.8), synthesis (§6.9). The contribution is a bound plus a mechanism test, which is more defensible than a claimed BRI effect and more substantive than a list of significant coefficients. Provisional assessment: **pass, likely good**. The main risks are the aggregate import side and the partly exploratory history of the analysis, both of which are disclosed.
 
-## Strengths
+## Is there a unified contribution?
 
-1. **Question–design fit.** The comparison of the same chapter, same year, China versus the rest of the world directly addresses "was it China-specific?".
-2. **Timing test.** The trend-break model answers the objection that a post-2013 dummy picks up any upward trend. The finding that agri-food slowed after 2013 is unexpected and well documented.
-3. **Transparent BRI framing.** Levels A/B/C are defined early and used consistently.
-4. **Data work.** Validation against WDI and the mirror data, and discovery of the 2020–2022 suppression, are useful contributions in themselves.
-5. **Reproducibility.** Raw transcriptions with query URLs, scripts and tables are all in the repository.
+Yes, with one caveat. The decomposition makes the findings parts of one answer: oil and imports are the bilateral components that do not fit the BRI; minerals and agri-food are the bilateral components that relate to BRI mechanisms and improved the balance. The caveat is that the "upper bound" logic depends on the shift-share counterfactual (trade with China growing like trade with everyone else), which is a benchmark, not an estimate of what would have happened.
 
-## Questions the examiner is likely to ask, with suggested answers
+## Likely questions and suggested answers
 
-**Q1. "Your title says BRI, but you conclude the BRI did not cause anything. What is left of the topic?"**
-The thesis shows what the BRI can and cannot explain. It is supported as context and as an association for agri-food; it is not supported as a cause of compositional change. That is a substantive answer to the registered question, and it corrects a common assumption.
+**Q1. "If the BRI does not explain the deterioration, why is it in your title?"**
+Because the deterioration is 92 per cent bilateral, the BRI is the obvious candidate and had to be tested. The thesis gives an answer about the BRI: it bounds what the BRI could explain and shows that the largest bilateral components do not fit its mechanisms. Dropping the BRI would change the question, not strengthen it.
 
-**Q2. "The agri-food coefficient is 2.46. Isn't that a huge BRI effect?"**
-No. It compares post-2013 levels with the pre-2013 average, so any upward trend produces a large coefficient. The placebo with a false 2010 start gives 2.61, and the trend-break test shows the trend slowed after 2013 (δ = −0.37, *p* = 0.02).
+**Q2. "Isn't 'China-specific' just another word for 'BRI'?"**
+No. China-specific change includes China's own demand and regional shocks. That is why it is an upper bound. The import comparison shows the point: the largest China-specific component is shared with Kyrgyzstan, Uzbekistan and Russia after 2022.
 
-**Q3. "Proportional growth slows mechanically when you start from almost zero. Isn't the slowdown an artefact?"**
-Partly, and the thesis says so (§6.4). In absolute terms most of the growth happened after 2013. The conclusion therefore is not that the BRI slowed agri-food exports, but that nothing in the data shows the BRI *starting or accelerating* the China-specific trend. A level-based test would need a model of how fast trade from a small base "should" grow, which the thesis does not have.
+**Q3. "Is agri-food your main finding, picked because it was significant?"**
+No. The main finding is the bound and the classification of components. Agri-food is one component, small in dollars (+0.8 bn), and it matters because it is the only one consistent with a BRI mechanism. It was one of four pre-defined groups, not selected from a search across chapters; it survives Holm correction and is larger than every one of 300 random sets of 24 chapters.
 
-**Q4. "Couldn't China's demand for oilseeds and feed explain the agri-food result?"**
-Yes. The design cannot separate China's demand from BRI market access; this is why the finding is level B. A comparison with other countries exporting the same products to China would be the next step (§8.3).
+**Q4. "You say the agri-food trend slowed after 2013. Is that robust?"**
+Not fully: the slowdown fails Holm correction (adjusted p = 0.059). The thesis does not rely on it. It relies on the absence of acceleration, which M1 requires and which is ruled out (95 per cent interval for the trend change lies below zero).
 
-**Q5. "Energy is one chapter. Why report it at all?"**
-Because the oil fall is the main driver of the 2013–2019 balance change. It is reported as a point estimate without inference, and the thesis says so wherever it appears.
+**Q5. "How do you handle missing data?"**
+Four sources, handled separately (§5.7): non-random suppression in Kazakhstan's 2020–2022 data (excluded; China's mirror data used), retrieval failures (outside decomposition endpoints), truncation (re-queried and validated against World Bank totals), and limited import detail (import side kept aggregate and descriptive).
 
-**Q6. "Why do you use China's data for the balance?"**
-Kazakhstan's partner-level data omit major chapters in 2020–2022 and its imports from China are 1.5–2.5 times lower than China's exports to Kazakhstan even in normal years. China's data have no such gaps. The level of the balance is therefore not comparable with Kazakh official figures, which the thesis states.
+**Q6. "Your hypotheses were formed after seeing data."**
+Partly, and the thesis says exactly which parts (§3.4). The general structure was planned first; group predictions, the trend-break test, the decomposition and the neighbour comparison were added later. The safeguards in §5.7 limit what this can produce; the conclusions about the BRI do not depend on any single p-value.
 
-**Q7. "The metals result disappears without 2023–24. Is it real?"**
-It is real in the data but not BRI-timed. It coincides with the post-2022 period and with ores, whose China share went from 41% (2019) to 80% (2024). The thesis does not explain it.
+**Q7. "Why use China's data for the balance?"**
+Kazakhstan's data omit major chapters in 2020–2022 and record imports from China at 1/1.5 to 1/2.5 of China's export figures. The China-specific share of the deterioration is 92 per cent with either source.
 
-**Q8. "Isn't 'excluding 2020–2022' just dropping inconvenient years?"**
-No. Kazakhstan's own data for those years omit copper, zinc and aluminium. Including them would create a false collapse in exports to China. The mirror-data model (Table 6.4, row 2) confirms the results.
+**Q8. "What explains the China-specific oil decline?"**
+The thesis does not know and says so (§7.5). What it shows is that the decline has the opposite sign to the resource-security mechanism.
 
-**Q9. "You formulated expectations after seeing the data."**
-Correct, and disclosed (§3.3). The aggregate data were known; the product-level panel and tests were built afterwards. The key result (pre-trend in agri-food) went against what the author expected, which is some evidence that the tests were not tuned.
+## Weaknesses that remain
 
-**Q10. "What is the policy relevance if nothing is causal?"**
-Monitoring by product and against other markets; recognising that agri-food diversification followed access and logistics rather than finance; correcting the national statistics.
+- The import side is aggregate; product-level imports from other partners were not collected.
+- HS-2 aggregation (uranium inside HS 28).
+- Energy is a single chapter: no inference.
+- The neighbour comparison uses four destinations and two periods; it is descriptive.
+- Shift-share components depend on the choice of endpoints (2013, 2019, 2024) and are not additive across periods.
+- Some context relies on a company blog (Khorgos) and newspapers (protocols, copper).
 
-## Weaknesses that should be acknowledged, not hidden
+## Before submission
 
-- HS-2 aggregation (uranium inside HS 28; extensive margin at chapter level).
-- Only three years of China's exports to Kazakhstan, so the import side is described for snapshot years.
-- No external comparison country.
-- AidData is commitments only.
-- The 2010 and 2011–2012 differences between Comtrade and WDI totals are noted but unexplained.
-- Several contextual facts (Khorgos, protocols) rely on a company blog and a newspaper.
-
-## Required before submission
-
-1. Rebuild the defence slides and script on the new argument.
-2. Confirm with the department whether the new title can be used or must appear as a subtitle.
-3. Ask the supervisor whether the shorter thesis (about 11,700 words) meets the length requirement; if not, the safest additions are an HS-6 analysis for agri-food or a comparison country, not more text.
+1. Rebuild slides and defence script on the new argument (the old ones describe v2).
+2. Confirm with the department whether the new title can be used or must be a subtitle.
+3. Confirm length requirements (about 13,200 words, 36 pages).

@@ -133,3 +133,45 @@ ax.set_title("Concentration of Kazakhstan's export basket: China vs rest of worl
 foot(fig, "2020-2022 excluded.")
 fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(F / "fig_r6_hhi.png", dpi=200); plt.close(fig)
 print("figures written")
+
+# Fig R7: common vs China-specific components of the balance change (China-reported legs)
+bc = pd.read_csv(T / "balance_common_vs_china_specific.csv")
+bc = bc[bc["source"].str.startswith("China")].set_index("period")
+per = ["2013-2019", "2019-2024", "2013-2024"]
+fig, ax = plt.subplots(figsize=(7.2, 3.2))
+x = np.arange(len(per)); wdt = 0.36
+c1 = ax.bar(x - wdt / 2, bc.loc[per, "balance_common_bn"], wdt, color="#2a78d6", label="Common to all partners")
+c2 = ax.bar(x + wdt / 2, bc.loc[per, "balance_china_specific_bn"], wdt, color="#eb6834", label="China-specific")
+for bars in (c1, c2):
+    for b_ in bars:
+        v = b_.get_height()
+        ax.text(b_.get_x() + b_.get_width() / 2, v - 0.4, f"{v:+.1f}", ha="center", va="top", fontsize=8, color=INK)
+ax.axhline(0, color=INK, lw=0.8)
+ax.set_xticks(x); ax.set_xticklabels([p.replace("-", "–") for p in per])
+ax.set_ylim(-17, 1.5)
+ax.set_ylabel("Contribution to change in balance, USD bn")
+ax.set_title("Kazakhstan's balance with China: common vs China-specific change", fontsize=9.5)
+ax.legend(frameon=False, fontsize=8, loc="lower left")
+foot(fig, "Shift-share decomposition, China-reported China legs (Script 65).")
+fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(F / "fig_r7_common_vs_specific.png", dpi=200); plt.close(fig)
+
+# Fig R8: growth of China's exports by destination
+rg = pd.read_csv(T / "china_exports_regional_comparison.csv").set_index("destination")
+order = ["Kazakhstan", "Kyrgyzstan", "Uzbekistan", "Russia", "World"]
+fig, ax = plt.subplots(figsize=(7.2, 3.0))
+x = np.arange(len(order)); wdt = 0.36
+b1 = ax.bar(x - wdt / 2, rg.loc[order, "growth_2013_2019"], wdt, color="#2a78d6", label="2013–2019")
+b2 = ax.bar(x + wdt / 2, rg.loc[order, "growth_2019_2024"], wdt, color="#eb6834", label="2019–2024")
+for bars in (b1, b2):
+    for b_ in bars:
+        ax.text(b_.get_x() + b_.get_width() / 2, b_.get_height() + 0.05, f"×{b_.get_height():.2f}",
+                ha="center", fontsize=7.5, color=INK)
+ax.axhline(1, color=MUTED, lw=0.8, ls="--")
+ax.set_xticks(x); ax.set_xticklabels(order)
+ax.set_ylabel("Growth factor of China's exports")
+ax.set_ylim(0, 3.6)
+ax.set_title("China's exports to Kazakhstan, its neighbours and the world", fontsize=9.5)
+ax.legend(frameon=False, fontsize=8, loc="upper left")
+foot(fig, "China-reported totals (Script 65).")
+fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(F / "fig_r8_regional_imports.png", dpi=200); plt.close(fig)
+print("figures r7, r8 written")

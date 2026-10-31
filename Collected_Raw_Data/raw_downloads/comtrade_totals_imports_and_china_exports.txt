@@ -1,0 +1,11 @@
+# UN Comtrade public preview API, annual, cmdCode=TOTAL, current USD. Retrieved 2026-10-31.
+# Block KZM: reporter=398 Kazakhstan, flow=M (imports, CIF), partners 0=World, 156=China
+#   URL: https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=398&partnerCode=0,156&period=YYYY&cmdCode=TOTAL&flowCode=M
+# Block CNX: reporter=156 China, flow=X (exports, FOB), partners 0=World, 398=Kazakhstan, 417=Kyrgyzstan, 860=Uzbekistan, 643=Russia
+#   URL: https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=156&partnerCode=0,398,417,860,643&period=YYYY&cmdCode=TOTAL&flowCode=X
+KZM|2013|0:48804580084;156:8364465531
+KZM|2019|0:39708836450.91;156:6788625828.84
+KZM|2024|0:59787310605.21;156:15153469835.46
+CNX|2013|0:2209007280259;398:12545123569;417:5075346113;643:49591171963;860:2613355048
+CNX|2019|0:2499206993866;398:12729100679;417:6280519944;643:49748486510;860:5032088425
+CNX|2024|0:3576543293842;398:27954331004;417:19904739264;643:115275861485;860:11649115947

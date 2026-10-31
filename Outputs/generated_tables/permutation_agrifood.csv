@@ -1,0 +1,3 @@
+statistic,observed_agrifood,n_draws,share_draws_ge_observed,draw_median,draw_p95,share_draws_le_observed,draw_p5
+China x Post coefficient (single-term model),2.4559,300,0.0,0.3937,1.2428,,
+Slope change after 2013 (single-group trend model),-0.3677,300,0.9933,-0.0189,,0.0067,-0.2621

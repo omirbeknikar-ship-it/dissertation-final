@@ -34,3 +34,30 @@ Added 16 entries (Melitz 2003; Chaney 2008; Hummels and Klenow 2005; Imbs and Wa
 - Scripts 10–45 and their outputs still run and are documented in Appendix B.
 - Defence slides (`defense_presentation.pptx`) and `defense_script.md` still describe v2 and **must be rebuilt** before the pre-defence.
 - `reply_to_supervisor.md` describes v2.
+
+---
+
+# Second Round (31 October 2026): Unifying the Argument
+
+## Why a second round was needed
+
+A review of the first reconstruction found that it presented several findings (oil, imports, agri-food, Chinese finance, minerals, statistics) without one question that connected them. Its research question had two loosely joined halves (export composition; implications for the balance), the import surge was described but not tested, and the agri-food result risked being read as the main contribution simply because it was the most significant result. The first round's disclosure (§3.3) also overstated how much was pre-specified: it said all product-level tests were run after the expectations were fixed, but descriptive shares by group had been inspected before the group predictions were written. This has been corrected.
+
+## What changed
+
+| Area | First reconstruction | Second round |
+|---|---|---|
+| Central question | Was export composition change China-specific and BRI-timed; what does it imply for the balance? | How much of the BRI-era balance deterioration was bilateral, and does the bilateral part match BRI mechanisms, in particular via strategic minerals? |
+| Organising idea | Separate tests by product group | Upper bound (China-specific component) + mechanism test for each part of it |
+| New analysis | none | Shift-share decomposition of exports, imports and balance into common and China-specific parts (Script 65); strategic-minerals component; China's exports to Kyrgyzstan, Uzbekistan, Russia and World as an import-side comparison; Holm corrections, one-sided acceleration tests and randomisation inference (Script 66) |
+| New data | none | Kazakhstan's total imports from World and China (2013, 2019, 2024); China's total exports to KZ, KG, UZ, RU, World (2013, 2019, 2024); WDI merchandise imports |
+| Main finding | Balance fell because of oil, then imports; agri-food China-specific | 92% of the deterioration is bilateral; its two largest parts (post-2022 regional import surge; China-specific oil fall) do not fit BRI mechanisms; minerals and agri-food improved the balance |
+| Role of agri-food | Presented as the clearest China-specific change | Supporting result: the only component consistent with a BRI mechanism in products and channel, small (+0.8 bn), not BRI-timed |
+| Strategic minerals | Rose; did not cause deterioration | China-specific stabiliser (+3.4 bn), post-2019 |
+| Timing claim | "Agri-food trend slowed after 2013 (p = 0.02)" | "No acceleration" (one-sided p = 0.99; CI below zero). The slowdown fails Holm correction (adjusted p = 0.059) and is not relied on |
+| Earlier statement corrected | §7.1 said post-2013 export change was "mostly the commodity cycle" | Decomposition shows about half of the 2013–2019 export fall was China-specific; statement removed |
+| Disclosure | §3.3 overstated pre-specification | §3.4 states which elements were exploratory; §5.7 lists safeguards |
+| Title | "...Export Composition, Strategic Minerals and the Bilateral Balance" | "The Belt and Road Initiative and the Kazakhstan–China Trade Balance: Bilateral Change, BRI Mechanisms and the Role of Strategic Mineral Exports, 2005–2024" (closer to the registered topic) |
+| Length | about 11,700 words, 34 pages | about 13,200 words, 36 pages |
+
+New files: `Scripts/65_common_vs_china_specific.py`, `Scripts/66_multiple_testing_permutation.py`, `Collected_Raw_Data/raw_downloads/comtrade_totals_imports_and_china_exports.txt`, `wdi_kaz_merch_imports.csv`, `comtrade_hs2_chn_imports_from_world_2024_selected.txt`, tables `balance_common_vs_china_specific.csv`, `export_components_by_group.csv`, `strategic_minerals_components.csv`, `china_exports_regional_comparison.csv`, `multiple_testing.csv`, `permutation_agrifood.csv`, figures `fig_r7`, `fig_r8`.

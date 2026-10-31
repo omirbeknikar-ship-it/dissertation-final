@@ -1,0 +1,7 @@
+family,group,estimate,p_raw,p_holm,p_one_sided_acceleration,ci95_upper
+Main triple difference (China x Post x group),metals_ores,0.3288,0.0,0.0,,
+Main triple difference (China x Post x group),agrifood,2.4559,0.0,0.0,,
+Main triple difference (China x Post x group),other,0.634,0.2243,0.2243,,
+Trend break (change in China-specific slope after 2013),metals_ores,-0.0703,0.2641,0.5282,0.8678,0.0532
+Trend break (change in China-specific slope after 2013),agrifood,-0.3677,0.0195,0.0585,0.9903,-0.0592
+Trend break (change in China-specific slope after 2013),other,0.1069,0.4368,0.5282,0.2184,0.3764

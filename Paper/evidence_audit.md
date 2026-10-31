@@ -73,3 +73,20 @@ Every factual or numerical claim in the reconstructed thesis is traced here to i
 | Kazakhstan's 2020–2022 data are unreliable | **Confirmed and extended**: exports of HS74/76/79 are also missing, not only imports. |
 | N = 24 is too small | **Addressed differently**: product × destination panel (3,160 obs.), but effective information is still limited (12–24 chapters per group; energy one chapter). |
 | The BRI changed Kazakhstan's export composition | **Not supported as a causal claim**; the main China-specific change predates 2013. |
+
+
+## 6. Second round additions
+
+| Claim | Source / file | Status |
+|---|---|---|
+| KZ imports: World 48.80 / China 8.36 (2013); 39.71 / 6.79 (2019); 59.79 / 15.15 (2024) bn | Comtrade TOTAL, `comtrade_totals_imports_and_china_exports.txt` | V |
+| WDI KZ merchandise imports 2013 48.81, 2019 37.76, 2024 59.13 bn (2013 matches Comtrade; 2019 and 2024 differ by 5% and 1%) | `wdi_kaz_merch_imports.csv` | V |
+| China's exports to KZ, KG, UZ, RU, World (2013, 2019, 2024) | Comtrade TOTAL, China as reporter | V |
+| China's 2024 imports from World, selected chapters | `comtrade_hs2_chn_imports_from_world_2024_selected.txt` | V |
+| China-reported exports to KZ 2020–2023 (11.70, 13.76, 16.36, 24.70) | Earlier retrieval, v2 Table 4.6 / Appendix B Table B.2 | V (earlier session) |
+| 92% China-specific; components in Tables 6.3, 6.4, 6.14 | Script 65 | C |
+| Holm, one-sided and randomisation results (Table 6.12) | Script 66 (seed 20261031, 300 draws) | C |
+
+## 7. Correction of an earlier statement
+
+The first reconstruction's §3.3 stated that "the product-level panel and all tests in Chapters 5–6 were built and run after the expectations and the decision rules above were fixed." This was inaccurate: descriptive China shares by product group were computed before the group-level predictions were written, and the trend-break test was added after the event study was seen. The revised §3.4 and §5.7 state this correctly.

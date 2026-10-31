@@ -1,0 +1,5 @@
+# World Bank WDI indicator TM.VAL.MRCH.CD.WT (Merchandise imports, current US$), Kazakhstan. Retrieved 2026-10-31 from https://api.worldbank.org/v2/country/KAZ/indicator/TM.VAL.MRCH.CD.WT?format=json&date=2005:2024
+year,merch_imports_usd
+2013,48806000000
+2019,37757000000
+2024,59133000000
