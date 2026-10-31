@@ -1,0 +1,6 @@
+Coefficient,Estimate,Std. Error,Pr(>|t|),pre_mean_china_by_group
+cxp_energy,0.0,0.0,,1.0
+cxp_metals_ores,0.024,0.0383,0.5324,0.8384
+cxp_agrifood,0.2066,0.1089,0.0609,0.1019
+cxp_other,-0.0697,0.0406,0.0896,0.1111
+cxp_all (pooled),0.0126,0.0396,0.7519,0.2033

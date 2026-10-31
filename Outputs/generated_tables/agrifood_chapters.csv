@@ -1,0 +1,33 @@
+hs2,chapter,year,kz_x_chn_musd,cn_m_kaz_musd,kz_x_wld_musd,china_share_pct
+10,Cereals,2008,,,1633.79,
+10,Cereals,2013,34.15,25.87,1338.11,2.55
+10,Cereals,2019,97.45,96.22,1347.66,7.23
+10,Cereals,2024,260.93,300.5,1472.66,17.72
+12,Oilseeds,2008,0.07,0.15,27.58,0.25
+12,Oilseeds,2013,23.67,43.23,187.4,12.63
+12,Oilseeds,2019,94.47,109.06,424.47,22.26
+12,Oilseeds,2024,170.05,121.15,414.59,41.02
+15,Animal/vegetable fats and oils,2008,,0.01,16.98,
+15,Animal/vegetable fats and oils,2013,0.17,0.06,56.65,0.29
+15,Animal/vegetable fats and oils,2019,99.64,96.72,173.13,57.55
+15,Animal/vegetable fats and oils,2024,215.56,164.63,543.95,39.63
+23,"Food residues, fodder",2008,,,58.77,
+23,"Food residues, fodder",2013,1.74,1.78,51.15,3.4
+23,"Food residues, fodder",2019,30.73,29.37,83.67,36.72
+23,"Food residues, fodder",2024,280.05,300.29,415.98,67.32
+11,Milling products (flour),2008,,,875.67,
+11,Milling products (flour),2013,,,587.98,
+11,Milling products (flour),2019,6.58,7.03,388.12,1.69
+11,Milling products (flour),2024,5.2,0.8,548.03,0.95
+2,Meat,2008,,,2.55,
+2,Meat,2013,,,8.16,
+2,Meat,2019,13.54,11.63,59.18,22.87
+2,Meat,2024,0.58,0.08,219.08,0.27
+4,"Dairy, eggs, honey",2008,,,8.21,
+4,"Dairy, eggs, honey",2013,0.06,0.05,20.92,0.29
+4,"Dairy, eggs, honey",2019,0.09,0.18,74.1,0.13
+4,"Dairy, eggs, honey",2024,2.51,2.25,71.29,3.52
+19,Cereal preparations,2008,0.0,0.0,22.84,0.02
+19,Cereal preparations,2013,0.15,0.32,56.36,0.27
+19,Cereal preparations,2019,6.0,1.2,63.45,9.46
+19,Cereal preparations,2024,2.44,1.73,122.91,1.99

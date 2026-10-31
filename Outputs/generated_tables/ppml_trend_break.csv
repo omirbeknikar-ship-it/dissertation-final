@@ -1,0 +1,5 @@
+group,n_chapters,pre_slope,pre_slope_p,slope_change,slope_change_se,slope_change_p,post_slope,post_slope_se
+energy,1,0.068,,-0.1343,,,-0.0663,
+metals_ores,12,0.0953,0.0058,-0.0703,0.063,0.2641,0.025,0.0308
+agrifood,24,0.5378,0.0002,-0.3677,0.1574,0.0195,0.1701,0.0257
+other,60,-0.017,0.8584,0.1069,0.1375,0.4368,0.0899,0.0667

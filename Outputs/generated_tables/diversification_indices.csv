@@ -1,0 +1,54 @@
+series,year,HHI,n_chapters_gt_1m,top3_share_pct,nonresource_share_pct,HHI_excl_HS27
+KZ-reported exports to China,2005,0.1635,19.0,64.2938,13.095,0.1927
+KZ-reported exports to China,2006,0.2138,17.0,68.3614,7.9576,0.1736
+KZ-reported exports to China,2007,0.3168,18.0,80.8112,5.6516,0.2613
+KZ-reported exports to China,2008,0.3695,15.0,81.8121,6.0318,0.2114
+KZ-reported exports to China,2009,0.247,15.0,70.014,5.3066,0.195
+KZ-reported exports to China,2010,0.3445,20.0,80.4027,0.725,0.2212
+KZ-reported exports to China,2011,0.3855,22.0,81.4064,0.4166,0.2105
+KZ-reported exports to China,2012,0.3455,20.0,78.2409,0.7376,0.2035
+KZ-reported exports to China,2013,0.4154,26.0,82.6138,1.5474,0.2118
+KZ-reported exports to China,2014,0.3226,27.0,76.7234,3.1401,0.1978
+KZ-reported exports to China,2015,0.2354,29.0,75.5478,2.924,0.2218
+KZ-reported exports to China,2016,0.1722,32.0,64.1885,5.0593,0.1982
+KZ-reported exports to China,2017,0.1595,27.0,55.527,5.0059,0.1894
+KZ-reported exports to China,2018,0.1952,27.0,67.5608,4.9844,0.2087
+KZ-reported exports to China,2019,0.2031,31.0,68.9265,6.3453,0.1872
+KZ-reported exports to China,2023,0.2239,32.0,74.5895,9.2453,0.2306
+KZ-reported exports to China,2024,0.1731,36.0,66.5659,11.0096,0.205
+China-reported imports from KZ,2005,0.2031,16.0,72.9614,3.2541,0.2549
+China-reported imports from KZ,2007,0.321,20.0,84.5733,1.0656,0.2791
+China-reported imports from KZ,2008,0.3643,17.0,83.4185,0.763,0.2629
+China-reported imports from KZ,2009,0.2711,19.0,75.706,0.5831,0.2272
+China-reported imports from KZ,2010,0.3269,21.0,80.3676,0.6878,0.2351
+China-reported imports from KZ,2011,0.4278,18.0,83.5592,0.4087,0.2305
+China-reported imports from KZ,2012,0.4331,22.0,82.928,0.819,0.2144
+China-reported imports from KZ,2013,0.4263,20.0,83.8284,0.766,0.2249
+China-reported imports from KZ,2014,0.2819,23.0,76.2684,2.2695,0.2185
+China-reported imports from KZ,2015,0.2249,21.0,76.6259,2.8847,0.2438
+China-reported imports from KZ,2016,0.1772,25.0,64.8935,3.8279,0.2141
+China-reported imports from KZ,2017,0.1662,26.0,58.1218,3.6736,0.1988
+China-reported imports from KZ,2018,0.1705,26.0,62.9748,3.792,0.1918
+China-reported imports from KZ,2019,0.1799,33.0,66.7216,4.9972,0.1928
+China-reported imports from KZ,2020,0.1935,33.0,68.3413,4.0508,0.2062
+China-reported imports from KZ,2021,0.2173,25.0,76.4641,2.3757,0.245
+China-reported imports from KZ,2022,0.2592,27.0,81.868,4.3152,0.2825
+China-reported imports from KZ,2023,0.2167,29.0,73.3102,8.9542,0.2213
+China-reported imports from KZ,2024,0.1707,32.0,63.971,9.8694,0.2057
+KZ-reported exports to rest of world,2005,0.569,61.0,85.4306,5.5124,0.132
+KZ-reported exports to rest of world,2006,0.526,59.0,83.8576,6.6791,0.1237
+KZ-reported exports to rest of world,2007,0.4757,62.0,79.6929,8.8879,0.1137
+KZ-reported exports to rest of world,2008,0.5033,64.0,82.4526,7.9309,0.1374
+KZ-reported exports to rest of world,2009,0.5518,60.0,84.0808,6.5846,0.1153
+KZ-reported exports to rest of world,2010,0.5752,63.0,85.4716,5.8011,0.1265
+KZ-reported exports to rest of world,2011,0.57,72.0,85.5549,4.7144,0.135
+KZ-reported exports to rest of world,2012,0.5416,73.0,82.3166,7.4727,0.1047
+KZ-reported exports to rest of world,2013,0.6318,70.0,85.6589,6.79,0.0884
+KZ-reported exports to rest of world,2014,0.6396,71.0,86.426,7.2859,0.0914
+KZ-reported exports to rest of world,2015,0.5204,68.0,81.4108,8.152,0.0922
+KZ-reported exports to rest of world,2016,0.44,68.0,77.0491,11.074,0.086
+KZ-reported exports to rest of world,2017,0.4938,73.0,80.697,8.6507,0.1045
+KZ-reported exports to rest of world,2018,0.562,76.0,83.2796,8.2234,0.0986
+KZ-reported exports to rest of world,2019,0.5135,74.0,79.8253,10.2635,0.0823
+KZ-reported exports to rest of world,2023,0.4213,84.0,74.6256,16.757,0.0691
+KZ-reported exports to rest of world,2024,0.4241,84.0,74.9904,16.6746,0.0668

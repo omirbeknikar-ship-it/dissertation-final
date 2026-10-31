@@ -111,5 +111,26 @@ This file documents known limitations, data gaps, and technical issues in the di
 
 **Status:** [RESOLVED] Six entries corrected or removed after verification against publisher records (see README, Final Audit). Working notes in `Literature_Review/literature_review.md` still mention three unverified keys that are not cited in the dissertation.
 
-*Last updated: 2026-10-30*
+## ISSUE-011: Kazakhstan-Reported Product Suppression, 2020–2022 (exports)
+
+**Severity:** Major for data use
+**Scripts:** `61_composition_diversification.py` (`mirror_suppression.csv`)
+**Description:** Kazakhstan's partner-level exports of HS 74, 76 and 79 to China are absent in 2020–2022 although China reports USD 1.8–2.5 bn of copper imports per year; Kazakhstan's copper exports to the World in 2021 are only USD 0.11 bn. Kazakhstan-reported product data for 2020–2022 are excluded from all China-vs-RoW comparisons.
+
+## ISSUE-012: HS-2 Retrieval Gaps
+
+**Severity:** Minor
+**Description:** Kazakhstan-to-World HS-2 data for 2020 could not be retrieved and the 2022 response was rejected (duplicated values). China-reported imports from Kazakhstan for 2006 were not retrieved. China's exports to Kazakhstan were collected for 2013, 2019 and 2024 only. Truncated responses were completed by explicit re-queries (`comtrade_hs2_kaz_exports_to_world_gapfill.txt`).
+
+## ISSUE-013: Energy Is a Single Chapter
+
+**Severity:** Moderate for inference
+**Description:** In the PPML models the energy group is HS 27 alone, so clustered standard errors are undefined; energy coefficients are reported without inference.
+
+## ISSUE-014: Defence Materials Out of Date
+
+**Severity:** Major (practical)
+**Description:** `Paper/defense_presentation.pptx`, `Paper/defense_script.md` and `Paper/reply_to_supervisor.md` describe the pre-reconstruction thesis and must be rebuilt.
+
+*Last updated: 2026-10-31*
 
