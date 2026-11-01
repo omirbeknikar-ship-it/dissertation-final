@@ -1,0 +1,30 @@
+figure,value,expected_text,source,found
+Balance 2013,3.506,+3.51,trade_balance_decomposition,True
+Balance 2024,-12.043,−12.04,trade_balance_decomposition,True
+Swing 2013-2024,15.549,−15.55,trade_balance_decomposition,True
+Energy export change 2013-19,7.564,−7.56,trade_balance_decomposition,True
+Import change 2019-24,15.225,+15.23,trade_balance_decomposition,True
+China-specific balance 2013-24,14.312,−14.31,balance_common_vs_china_specific,True
+Common balance 2013-24,1.237,−1.24,balance_common_vs_china_specific,True
+China-specific imports 2013-24,14.108,+14.11,balance_common_vs_china_specific,True
+China-specific share 2013-24,92.04450446974083,92 per cent,balance_common_vs_china_specific,True
+KZ-reported swing,6.265,−6.27,balance_common_vs_china_specific,True
+KZ-reported China-specific,5.742,−5.74,balance_common_vs_china_specific,True
+Grid share min,51.666,52,robust_kz_partner_grid,True
+Grid share max,92.044,92,robust_kz_partner_grid,True
+Averaged-endpoint share,70.989,71% (,robust_kz_partner_grid,True
+"Max KZ-specific imports vs neighbours, end 2023-24",0.659,+0.66,robust_china_neighbour_grid,True
+KZ-specific imports vs world 2013-24,7.643,+7.64,robust_china_neighbour_grid,True
+PPML metals_ores,0.3288,0.329,ppml_main,True
+PPML agrifood,2.4559,2.456,ppml_main,True
+PPML other,0.634,0.634,ppml_main,True
+PPML energy,0.528,−0.528,ppml_main,True
+Trend change agri,0.3677,−0.368,ppml_trend_break,True
+Holm agri trend,0.0585,0.059,multiple_testing,True
+CI upper agri trend,0.0592,−0.059,multiple_testing,True
+Permutation median draw,0.3937,0.39,permutation_agrifood,True
+Permutation 95th pct,1.2428,1.24,permutation_agrifood,True
+Strategic minerals China-specific 2013-24,3.424,+3.42,strategic_minerals_components,True
+AidData total,64.146,64.15,aiddata_by_sector_period,True
+Ores China share,80.21,80.2,two_sided_dependence_2024,True
+Ores KZ share of China,1.81,1.8,two_sided_dependence_2024,True

@@ -130,7 +130,13 @@ This file documents known limitations, data gaps, and technical issues in the di
 ## ISSUE-014: Defence Materials Out of Date
 
 **Severity:** Major (practical)
-**Description:** `Paper/defense_presentation.pptx`, `Paper/defense_script.md` and `Paper/reply_to_supervisor.md` describe the pre-reconstruction thesis and must be rebuilt.
+**Status:** Partly resolved (2026-11-01). `Paper/defense_presentation.pptx` (Script `build_presentation_v4.py`) and `Paper/defense_script.md` now match the final manuscript; the previous versions are in `Paper/archive/`. `Paper/reply_to_supervisor.md` still describes the earlier thesis and should be rewritten by the author.
 
-*Last updated: 2026-10-31*
+## ISSUE-015: Comparator Contamination and Base-Year Sensitivity
+
+**Severity:** Moderate for interpretation
+**Scripts:** `67_robustness_baselines_comparators.py`
+**Description:** Comparison-adjusted components depend on base and end years (China-specific share 52–92 per cent). The neighbour comparators are BRI members and were affected by post-2022 re-routing to Russia. Conclusions are stated as ranges; claims holding for one base year only were removed.
+
+*Last updated: 2026-11-01*
 

@@ -1,0 +1,97 @@
+base,end,comparator,weighting,comp_import_growth,comp_export_growth,exports_kz_specific_bn,imports_kz_specific_bn,balance_kz_specific_bn,turnover_kz_specific_bn,balance_change_bn
+2011-13 avg,2019,World,value-weighted,1.132,1.218,-8.521,-0.714,-7.807,-9.234,-8.188
+2011-13 avg,2019,Russia,value-weighted,1.478,1.126,-13.845,0.301,-14.146,-13.543,-8.188
+2011-13 avg,2019,Central Asia ex-KZ,value-weighted,1.369,1.333,-12.159,-1.979,-10.18,-14.138,-8.188
+2011-13 avg,2019,Central Asia ex-KZ,median,1.119,1.052,-8.327,1.12,-9.447,-7.207,-8.188
+2011-13 avg,2019,Central Asia ex-KZ + Russia,value-weighted,1.459,1.164,-13.547,-0.12,-13.427,-13.667,-8.188
+2011-13 avg,2019,Central Asia ex-KZ + Russia,median,1.297,1.126,-11.065,0.301,-11.366,-10.764,-8.188
+2011-13 avg,2023,World,value-weighted,1.392,1.647,-5.016,6.518,-11.534,1.502,-12.66
+2011-13 avg,2023,Russia,value-weighted,3.122,2.511,-31.587,-3.016,-28.571,-34.604,-12.66
+2011-13 avg,2023,Central Asia ex-KZ,value-weighted,1.31,3.672,-3.768,-15.835,12.067,-19.602,-12.66
+2011-13 avg,2023,Central Asia ex-KZ,median,1.298,2.951,-3.577,-7.874,4.298,-11.451,-12.66
+2011-13 avg,2023,Central Asia ex-KZ + Russia,value-weighted,2.802,2.725,-26.677,-5.383,-21.294,-32.06,-12.66
+2011-13 avg,2023,Central Asia ex-KZ + Russia,median,1.298,2.511,-3.583,-3.016,-0.566,-6.599,-12.66
+2011-13 avg,2024,World,value-weighted,1.407,1.743,-5.7,8.717,-14.417,3.017,-16.364
+2011-13 avg,2024,Russia,value-weighted,3.138,2.609,-32.284,-0.843,-31.441,-33.127,-16.364
+2011-13 avg,2024,Central Asia ex-KZ,value-weighted,1.665,3.607,-9.666,-11.862,2.196,-21.527,-16.364
+2011-13 avg,2024,Central Asia ex-KZ,median,2.694,2.925,-25.465,-4.333,-21.132,-29.798,-16.364
+2011-13 avg,2024,Central Asia ex-KZ + Russia,value-weighted,2.878,2.793,-28.292,-2.878,-25.414,-31.169,-16.364
+2011-13 avg,2024,Central Asia ex-KZ + Russia,median,3.138,2.609,-32.284,-0.843,-31.441,-33.127,-16.364
+2011-13 avg,2023-24 avg,World,value-weighted,1.399,1.695,-5.358,7.617,-12.975,2.259,-14.512
+2011-13 avg,2023-24 avg,Russia,value-weighted,3.13,2.56,-31.936,-1.93,-30.006,-33.865,-14.512
+2011-13 avg,2023-24 avg,Central Asia ex-KZ,value-weighted,1.488,3.64,-6.717,-13.848,7.131,-20.565,-14.512
+2011-13 avg,2023-24 avg,Central Asia ex-KZ,median,2.365,2.938,-20.191,-6.104,-14.087,-26.294,-14.512
+2011-13 avg,2023-24 avg,Central Asia ex-KZ + Russia,value-weighted,2.84,2.759,-27.484,-4.13,-23.354,-31.615,-14.512
+2011-13 avg,2023-24 avg,Central Asia ex-KZ + Russia,median,3.13,2.56,-31.936,-1.93,-30.006,-33.865,-14.512
+2012,2019,World,value-weighted,1.144,1.22,-7.921,-0.691,-7.23,-8.612,-7.541
+2012,2019,Russia,value-weighted,1.386,1.129,-11.483,0.307,-11.79,-11.177,-7.541
+2012,2019,Central Asia ex-KZ,value-weighted,1.219,1.294,-9.025,-1.507,-7.518,-10.532,-7.541
+2012,2019,Central Asia ex-KZ,median,0.944,1.074,-4.988,0.916,-5.904,-4.072,-7.541
+2012,2019,Central Asia ex-KZ + Russia,value-weighted,1.355,1.16,-11.031,-0.037,-10.993,-11.068,-7.541
+2012,2019,Central Asia ex-KZ + Russia,median,1.11,1.129,-7.427,0.307,-7.733,-7.12,-7.541
+2012,2023,World,value-weighted,1.406,1.65,-4.279,6.549,-10.828,2.27,-12.013
+2012,2023,Russia,value-weighted,2.927,2.518,-26.601,-3.004,-23.597,-29.606,-12.013
+2012,2023,Central Asia ex-KZ,value-weighted,1.167,3.566,-0.767,-14.533,13.767,-15.3,-12.013
+2012,2023,Central Asia ex-KZ,median,1.315,2.995,-2.946,-8.255,5.309,-11.201,-12.013
+2012,2023,Central Asia ex-KZ + Russia,value-weighted,2.603,2.717,-21.844,-5.19,-16.654,-27.034,-12.013
+2012,2023,Central Asia ex-KZ + Russia,median,1.52,2.518,-5.95,-3.004,-2.945,-8.954,-12.013
+2012,2024,World,value-weighted,1.422,1.746,-4.954,8.75,-13.704,3.795,-15.717
+2012,2024,Russia,value-weighted,2.943,2.617,-27.272,-0.831,-26.441,-28.103,-15.717
+2012,2024,Central Asia ex-KZ,value-weighted,1.483,3.503,-5.852,-10.583,4.732,-16.435,-15.717
+2012,2024,Central Asia ex-KZ,median,2.497,2.966,-20.738,-4.678,-16.06,-25.416,-15.717
+2012,2024,Central Asia ex-KZ + Russia,value-weighted,2.674,2.785,-23.328,-2.679,-20.648,-26.007,-15.717
+2012,2024,Central Asia ex-KZ + Russia,median,2.943,2.617,-27.272,-0.831,-26.441,-28.103,-15.717
+2012,2023-24 avg,World,value-weighted,1.414,1.698,-4.616,7.649,-12.266,3.033,-13.865
+2012,2023-24 avg,Russia,value-weighted,2.935,2.567,-26.937,-1.918,-25.019,-28.855,-13.865
+2012,2023-24 avg,Central Asia ex-KZ,value-weighted,1.325,3.535,-3.309,-12.558,9.249,-15.868,-13.865
+2012,2023-24 avg,Central Asia ex-KZ,median,2.202,2.981,-16.18,-6.466,-9.714,-22.647,-13.865
+2012,2023-24 avg,Central Asia ex-KZ + Russia,value-weighted,2.638,2.751,-22.586,-3.935,-18.651,-26.52,-13.865
+2012,2023-24 avg,Central Asia ex-KZ + Russia,median,2.724,2.567,-23.84,-1.918,-21.923,-25.758,-13.865
+2013,2019,World,value-weighted,1.066,1.131,-8.253,-1.464,-6.789,-9.717,-7.373
+2013,2019,Russia,value-weighted,1.543,1.003,-15.898,0.144,-16.042,-15.754,-7.373
+2013,2019,Central Asia ex-KZ,value-weighted,1.106,1.247,-8.885,-2.91,-5.975,-11.795,-7.373
+2013,2019,Central Asia ex-KZ,median,1.071,1.044,-8.326,-0.368,-7.958,-8.694,-7.373
+2013,2019,Central Asia ex-KZ + Russia,value-weighted,1.448,1.046,-14.377,-0.398,-13.98,-14.775,-7.373
+2013,2019,Central Asia ex-KZ + Russia,median,1.082,1.003,-8.513,0.144,-8.657,-8.369,-7.373
+2013,2023,World,value-weighted,1.311,1.53,-4.687,5.503,-10.19,0.816,-11.845
+2013,2023,Russia,value-weighted,3.257,2.237,-35.923,-3.367,-32.556,-39.289,-11.845
+2013,2023,Central Asia ex-KZ,value-weighted,1.059,3.435,-0.633,-18.4,17.767,-19.033,-11.845
+2013,2023,Central Asia ex-KZ,median,1.209,2.926,-3.046,-12.013,8.967,-15.059,-11.845
+2013,2023,Central Asia ex-KZ + Russia,value-weighted,2.78,2.45,-28.271,-6.034,-22.237,-34.305,-11.845
+2013,2023,Central Asia ex-KZ + Russia,median,1.335,2.237,-5.062,-3.367,-1.696,-8.429,-11.845
+2013,2024,World,value-weighted,1.326,1.619,-5.367,7.643,-13.01,2.276,-15.548
+2013,2024,Russia,value-weighted,3.274,2.325,-36.642,-1.207,-35.435,-37.85,-15.548
+2013,2024,Central Asia ex-KZ,value-weighted,1.345,3.375,-5.682,-14.382,8.7,-20.064,-15.548
+2013,2024,Central Asia ex-KZ,median,2.475,2.9,-23.813,-8.43,-15.384,-32.243,-15.548
+2013,2024,Central Asia ex-KZ + Russia,value-weighted,2.856,2.511,-29.929,-3.544,-26.385,-33.474,-15.548
+2013,2024,Central Asia ex-KZ + Russia,median,3.274,2.325,-36.642,-1.207,-35.435,-37.85,-15.548
+2013,2023-24 avg,World,value-weighted,1.318,1.575,-5.027,6.573,-11.6,1.546,-13.697
+2013,2023-24 avg,Russia,value-weighted,3.266,2.281,-36.283,-2.287,-33.996,-38.569,-13.697
+2013,2023-24 avg,Central Asia ex-KZ,value-weighted,1.202,3.405,-3.158,-16.391,13.233,-19.548,-13.697
+2013,2023-24 avg,Central Asia ex-KZ,median,2.211,2.913,-19.358,-10.221,-9.137,-29.579,-13.697
+2013,2023-24 avg,Central Asia ex-KZ + Russia,value-weighted,2.818,2.48,-29.1,-4.789,-24.311,-33.889,-13.697
+2013,2023-24 avg,Central Asia ex-KZ + Russia,median,3.266,2.281,-36.283,-2.287,-33.996,-38.569,-13.697
+2014,2019,World,value-weighted,1.061,1.067,-1.477,-0.832,-0.645,-2.309,-0.899
+2014,2019,Russia,value-weighted,1.471,0.927,-5.47,0.949,-6.419,-4.52,-0.899
+2014,2019,Central Asia ex-KZ,value-weighted,1.083,1.175,-1.684,-2.211,0.527,-3.895,-0.899
+2014,2019,Central Asia ex-KZ,median,1.336,0.921,-4.153,1.022,-5.175,-3.131,-0.899
+2014,2019,Central Asia ex-KZ + Russia,value-weighted,1.389,0.97,-4.666,0.398,-5.064,-4.268,-0.899
+2014,2019,Central Asia ex-KZ + Russia,median,1.471,0.927,-5.47,0.949,-6.419,-4.52,-0.899
+2014,2023,World,value-weighted,1.305,1.443,3.645,6.358,-2.713,10.003,-5.371
+2014,2023,Russia,value-weighted,3.106,2.067,-13.904,-1.571,-12.333,-15.475,-5.371
+2014,2023,Central Asia ex-KZ,value-weighted,1.036,3.239,6.261,-16.473,22.734,-10.212,-5.371
+2014,2023,Central Asia ex-KZ,median,1.27,2.626,3.986,-8.675,12.661,-4.689,-5.371
+2014,2023,Central Asia ex-KZ + Russia,value-weighted,2.667,2.271,-9.621,-4.171,-5.45,-13.792,-5.371
+2014,2023,Central Asia ex-KZ + Russia,median,1.501,2.067,1.733,-1.571,3.303,0.162,-5.371
+2014,2024,World,value-weighted,1.319,1.527,3.058,8.547,-5.489,11.605,-9.075
+2014,2024,Russia,value-weighted,3.123,2.148,-14.509,0.659,-15.167,-13.85,-9.075
+2014,2024,Central Asia ex-KZ,value-weighted,1.317,3.182,3.08,-12.489,15.569,-9.409,-9.075
+2014,2024,Central Asia ex-KZ,median,4.227,2.61,-25.272,-5.216,-20.056,-30.487,-9.075
+2014,2024,Central Asia ex-KZ + Russia,value-weighted,2.739,2.328,-10.773,-1.635,-9.138,-12.408,-9.075
+2014,2024,Central Asia ex-KZ + Russia,median,3.123,2.148,-14.509,0.659,-15.167,-13.85,-9.075
+2014,2023-24 avg,World,value-weighted,1.312,1.485,3.351,7.452,-4.101,10.804,-7.223
+2014,2023-24 avg,Russia,value-weighted,3.115,2.107,-14.206,-0.456,-13.75,-14.662,-7.223
+2014,2023-24 avg,Central Asia ex-KZ,value-weighted,1.177,3.211,4.671,-14.481,19.152,-9.811,-7.223
+2014,2023-24 avg,Central Asia ex-KZ,median,3.681,2.618,-19.729,-6.945,-12.784,-26.674,-7.223
+2014,2023-24 avg,Central Asia ex-KZ + Russia,value-weighted,2.703,2.3,-10.197,-2.903,-7.294,-13.1,-7.223
+2014,2023-24 avg,Central Asia ex-KZ + Russia,median,3.115,2.107,-14.206,-0.456,-13.75,-14.662,-7.223

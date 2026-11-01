@@ -72,3 +72,28 @@ New files: `Scripts/65_common_vs_china_specific.py`, `Scripts/66_multiple_testin
 **Fix.** A second, explicit benchmark for imports (Script 65, `import_benchmarks.csv`, new Table 6.10b): imports from China are compared with China's exports to the world, to Russia, to Kyrgyzstan and Uzbekistan, and to all three neighbours. Under every neighbour benchmark, the Kazakhstan-specific part of the import rise is close to zero or negative (2013–2024: −1.2 bn vs Russia, −4.2 bn vs all three). The answer is now stated as a funnel: 15.5 bn total → 14.3 bn China-specific relative to Kazakhstan's other partners → about zero net specific to the Kazakhstan–China pair (export side −0.2 bn). The manuscript states that the neighbour benchmark also removes any region-wide BRI effect, so the import conclusion rests on timing (post-2022), not on the benchmark alone.
 
 **Edits.** Abstract, §1.4, §1.6 (contribution, provisions 1–2), §5.5, §6.2, §6.6 (new Table 6.10b), §6.9, §7.1 (funnel), §7.2, §8.1, §8.2 (new limitation on benchmarks and base year), Appendix A. Display equation in §5.1 simplified so it converts in the Word file. About 14,000 words.
+
+---
+
+# Fourth Round (1 November 2026): Final Adversarial Audit
+
+| Area | Before | After | Reason |
+|---|---|---|---|
+| Research question | "How much of the BRI-era deterioration ... was specific to the bilateral relationship" | "Is the post-2013 swing ... distinctive to the Kazakhstan–China relationship, and are its distinctive components consistent with BRI mechanisms" | "Deterioration" presumed a deficit is bad; the question now treats the balance as an accounting summary (§1.3) |
+| "Upper bound" | The China-specific component was called an upper bound on any BRI effect | Removed; called a comparison-adjusted measure of distinctiveness | Not mathematically justified: the BRI can move the benchmark, and BRI effects can be offset within the component |
+| Funnel and "approximately zero" | 15.5 → 14.3 → ≈0, applied sequentially | Two comparisons reported side by side; "≈0" removed | The comparisons use different reporters and benchmarks; the export-side "−0.2 bn" was specific to a 2013 base (+2.0 to +3.7 bn from other bases) |
+| 92 per cent | Headline | Reported as the maximum of a 16-cell grid; range 52–92 per cent; 71 per cent with averaged endpoints | 2013 was the peak year of oil exports to China |
+| Import neighbour comparison | One base, value-weighted, four comparators | China-reported on both sides; Central Asia (4 states) with and without Russia; value-weighted and median; 16 base/end combinations | Robustness; result unchanged (≤ +0.7 bn by 2023–24) |
+| Export neighbour comparison | Not done | Computed (Script 67) but not used in conclusions | Comparators' exports to China are oil and gas |
+| Oil | "China-specific fall began with the 2014 price collapse" | "Concentrated in 2013→2014; negative from every pre-2014 base; small and sign-unstable from a 2014 base" | Grid |
+| Strategic minerals | "Almost entirely after 2019" | "Positive in every specification; timing base-dependent (0.2–2.4 bn by 2019)" | Grid |
+| Agri-food timing | "began 2010–2012" | "rising from 2008" (event study) | Consistency with Table 6.8 |
+| Trend tests | "Absence of acceleration in every group" | No group shows significant acceleration; positive imprecise δ for other goods is absence of evidence; power reported (MDE 0.39 and 0.16) | Wording exceeded the test |
+| Literature | BRI trade-cost studies only | New §2.3 on positive-effect studies (de Soyres et al.; Baniya et al.; Bird et al.; Foo et al. 2020; Mau & Seuren 2023) and how they relate | Required engagement; transit services point |
+| Mechanisms | Prediction table | Table 3.1: support / inconsistent / uninformative observation for each mechanism | Distinguish absence of evidence from contradiction |
+| Data | Discrepancies described in text | Table 4.4: every discrepancy, likely cause, treatment, limitation; corrected CIF/FOB reasoning for the import gap (valuation widens, not explains, the gap) | Data audit |
+| Verification | Scripts run once | All tables regenerated from raw files (identical to 0.001); main PPML re-estimated as a weighted binomial model in statsmodels (identical point estimates); Script 68 checks 29 manuscript figures against tables | Independent checks |
+| Bibliography | de Soyres et al. (International Economics) dated 2020 | Corrected to 2019 (vol. 159, pp. 151–164); added Mau & Seuren 2023, Foo et al. 2020 | Verified on RePEc / Springer |
+| Length | about 14,000 words, 36 pages | about 16,300 words, 40 pages | Robustness tables, discrepancy table, literature |
+
+New files: `Scripts/67_robustness_baselines_comparators.py`, `Scripts/68_reconcile_manuscript.py`, `Collected_Raw_Data/raw_downloads/comtrade_china_totals_by_partner.txt`; tables `robust_kz_partner_grid.csv`, `robust_china_neighbour_grid.csv`, `robust_export_groups_grid.csv`, `reconciliation_report.csv`. KZ import totals for 2011, 2012, 2014, 2023 added to `comtrade_totals_imports_and_china_exports.txt`.

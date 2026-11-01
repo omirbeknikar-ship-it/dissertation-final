@@ -1,53 +1,48 @@
-# Examiner-Style Evaluation (revised after the third round)
+# Examiner-Style Evaluation (final adversarial audit)
 
-## Overall assessment
+## Verdict
 
-The thesis now has one question and one line of argument. It asks how much of the BRI-era deterioration in Kazakhstan's balance with China was bilateral, and whether the bilateral part fits BRI mechanisms. Every chapter contributes a step: mechanisms (Ch. 2–3), measurability (Ch. 4), upper bound (§6.2), export and import mechanism tests (§6.4–6.6), safeguards (§6.7), channels (§6.8), synthesis (§6.9). The contribution is a bound plus a mechanism test, which is more defensible than a claimed BRI effect and more substantive than a list of significant coefficients. Provisional assessment: **pass, likely good**. The main risks are the aggregate import side and the partly exploratory history of the analysis, both of which are disclosed.
+The thesis now has one question, a design that separates three kinds of evidence (accounting identities, comparison-adjusted components, statistical tests), and conclusions that are stated as ranges over specifications rather than single numbers. Its contribution is a two-sided assessment of whether the swing in Kazakhstan's balance with China is distinctive and whether its components fit BRI mechanisms. Provisional assessment: **pass, likely good**, provided the candidate can explain the difference between "inconsistent with a mechanism" and "no effect".
 
-## Is there a unified contribution?
+## The five strongest objections, and what was done
 
-Yes, with one caveat. The decomposition makes the findings parts of one answer: oil and imports are the bilateral components that do not fit the BRI; minerals and agri-food are the bilateral components that relate to BRI mechanisms and improved the balance. The caveat is that the "upper bound" logic depends on the shift-share counterfactual (trade with China growing like trade with everyone else), which is a benchmark, not an estimate of what would have happened.
+**1. "A bilateral deficit is not a problem. Why study it?"**
+*Fixed in substance.* The question was reframed from "deterioration" to "swing", and §1.3 and §7.4 state that the balance is an accounting summary, not a welfare measure. The thesis now shows that 47 per cent of the 2019–2024 import rise is machinery, electrical equipment and vehicles, which can embody investment, and that transit services, the BRI's main channel for Kazakhstan, are outside merchandise trade. *Cannot be resolved:* whether imports were used for investment, consumption or re-export; this needs firm or product-level end-use data.
 
-## Likely questions and suggested answers
+**2. "Your 'China-specific' component is not a counterfactual, and calling it an upper bound on the BRI is wrong."**
+*Fixed.* The "upper bound" claim was removed everywhere. §1.5 and §5.1 explain why it fails (the BRI can move the benchmark; BRI effects can be offset within the component). Components are now called comparison-adjusted measures of distinctiveness.
 
-**Q1. "If the BRI does not explain the deterioration, why is it in your title?"**
-Because the deterioration is 92 per cent bilateral, the BRI is the obvious candidate and had to be tested. The thesis gives an answer about the BRI: it bounds what the BRI could explain and shows that the largest bilateral components do not fit its mechanisms. Dropping the BRI would change the question, not strengthen it.
+**3. "Your headline numbers depend on choosing 2013."**
+*Fixed.* A 16-cell grid of base and end years (Table 6.3b) shows the China-specific share ranges from 52 to 92 per cent; 92 per cent was the maximum, and 71 per cent with averaged endpoints is now the central figure. The claim that the pair-specific export side "nets to about zero" held only for a 2013 base and was removed. The oil result is now stated as concentrated in 2014; the timing of the strategic-mineral gain is stated as base-dependent.
 
-**Q2. "You say the change is 92% bilateral, then that it is regional. Which is it?"**
-Both, against different benchmarks. Against Kazakhstan's other partners, 92 per cent is China-specific. Against China's other neighbours, the import surge (the largest part) is not specific to Kazakhstan; what is specific to the pair is the export side, which nets to about zero (§7.1 funnel, Table 6.10b).
+**4. "The 'funnel' combines two different comparisons, and your neighbour comparison is contaminated by sanctions-era re-routing and by the fact that the neighbours are BRI members."**
+*Partly fixed.* The funnel was removed; the two comparisons are now reported side by side and described as answering different questions (§5.5). The neighbour comparison now uses China's data on both sides, two weighting schemes, Central Asia with and without Russia, and the full base/end grid; the result (no meaningful Kazakhstan-specific import rise) holds in every specification. The export side is not compared with neighbours because their exports to China are oil and gas. *Cannot be resolved:* the neighbour comparison removes region-wide BRI effects along with other regional shocks, so the argument against a BRI explanation of the import rise rests on timing, and the comparators themselves are affected by re-routing to Russia.
 
-**Q2b. "The neighbours are BRI partners too. Doesn't your neighbour benchmark throw away a regional BRI effect?"**
-Yes, and the thesis says so (§5.5). The argument against a BRI cause of the import surge rests on timing: it came after 2022, while China's exports to Kazakhstan grew more slowly than its exports to the world in 2013–2019.
+**5. "A null on BRI timing is not evidence that the BRI did nothing; your tests may simply lack power."**
+*Fixed in wording and quantified.* §7.2 distinguishes evidence inconsistent with a mechanism, absence of evidence, and evidence of no effect (which the thesis does not have). Minimum detectable trend changes are reported (0.39 log points per year for agri-food, 0.16 for metals). The ex-ante literature's effects of a few per cent are stated to be undetectable here.
 
-**Q3. "Is agri-food your main finding, picked because it was significant?"**
-No. The main finding is the bound and the classification of components. Agri-food is one component, small in dollars (+0.8 bn), and it matters because it is the only one consistent with a BRI mechanism. It was one of four pre-defined groups, not selected from a search across chapters; it survives Holm correction and is larger than every one of 300 random sets of 24 chapters.
+**Further objection: "You searched across sectors and found agri-food."**
+Agri-food is one of four groups defined by HS boundaries; it survives Holm correction and is larger than all 300 random chapter sets. Its role is supporting, not principal. The "slowdown after 2013" claim fails Holm (0.059) and is not relied upon; only "no acceleration" is used.
 
-**Q4. "You say the agri-food trend slowed after 2013. Is that robust?"**
-Not fully: the slowdown fails Holm correction (adjusted p = 0.059). The thesis does not rely on it. It relies on the absence of acceleration, which M1 requires and which is ruled out (95 per cent interval for the trend change lies below zero).
+**Further objection: "Your data mix reporters."**
+Kept, documented and tested: the KZ-partner comparison uses China-reported China legs and KZ-reported RoW growth; the KZ-reported version gives the same 92 per cent share for 2013–2024. The neighbour comparison uses only China's data. Table 4.4 lists every discrepancy and substitution.
 
-**Q5. "How do you handle missing data?"**
-Four sources, handled separately (§5.7): non-random suppression in Kazakhstan's 2020–2022 data (excluded; China's mirror data used), retrieval failures (outside decomposition endpoints), truncation (re-queried and validated against World Bank totals), and limited import detail (import side kept aggregate and descriptive).
+## Consistency check across chapters
 
-**Q6. "Your hypotheses were formed after seeing data."**
-Partly, and the thesis says exactly which parts (§3.4). The general structure was planned first; group predictions, the trend-break test, the decomposition and the neighbour comparison were added later. The safeguards in §5.7 limit what this can produce; the conclusions about the BRI do not depend on any single p-value.
+| Chapter | Answers the central question by... | Checked |
+|---|---|---|
+| 1 | Stating the question, why the balance, and the three kinds of evidence | Yes |
+| 2 | Deriving mechanisms, including positive-effect studies and how they relate | Yes |
+| 3 | Stating support / contradiction / uninformative observations per mechanism | Yes |
+| 4 | Making distinctiveness measurable; discrepancy table | Yes |
+| 5 | Defining formulas, comparisons and safeguards | Yes |
+| 6 | Answering SQ1–SQ4; synthesis table | Yes |
+| 7–8 | Answer, interpretation, limits | Yes |
 
-**Q7. "Why use China's data for the balance?"**
-Kazakhstan's data omit major chapters in 2020–2022 and record imports from China at 1/1.5 to 1/2.5 of China's export figures. The China-specific share of the deterioration is 92 per cent with either source.
+## Remaining weaknesses
 
-**Q8. "What explains the China-specific oil decline?"**
-The thesis does not know and says so (§7.5). What it shows is that the decline has the opposite sign to the resource-security mechanism.
-
-## Weaknesses that remain
-
-- The import side is aggregate; product-level imports from other partners were not collected.
-- HS-2 aggregation (uranium inside HS 28).
-- Energy is a single chapter: no inference.
-- The neighbour comparison uses four destinations and two periods; it is descriptive.
-- Shift-share components depend on the choice of endpoints (2013, 2019, 2024) and are not additive across periods.
-- Some context relies on a company blog (Khorgos) and newspapers (protocols, copper).
-
-## Before submission
-
-1. Rebuild slides and defence script on the new argument (the old ones describe v2).
-2. Confirm with the department whether the new title can be used or must be a subtitle.
-3. Confirm length requirements (about 13,200 words, 36 pages).
+- Comparators affected by post-2022 re-routing; neighbours are BRI members.
+- HS-2 aggregation; imports from other partners only as totals; China's chapter-level exports to Kazakhstan for three years.
+- Energy is a single chapter.
+- No data on transit services.
+- Several analyses added after seeing earlier results (§3.3).

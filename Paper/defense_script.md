@@ -1,561 +1,113 @@
-# Defense Presentation Script
-### BRI's Impact on Kazakhstan–China Trade Balance: The Role of Strategic Mineral Exports
-**Nikar Omirbek — Final Defense, 2026**
+# Defence Script (final version, matches `defense_presentation.pptx`, 16 slides)
 
----
-*Read at a comfortable, steady pace. Each [SLIDE] marker = advance to next slide.
-Total time: approximately 16–18 minutes (23 slides). If time is short, slides 13 and 16 can be condensed to one sentence each.*
+Target length: about 15 minutes for slides 1–15; slide 16 is backup. Numbers are from the final manuscript; table numbers are given so you can point to them.
 
 ---
 
-## [SLIDE 1 — TITLE]
+## Slide 1. Title (20 s)
 
-Good morning, and thank you for being here.
+"Good morning. My thesis is on the Belt and Road Initiative and the Kazakhstan–China trade balance, and the role of strategic mineral exports. I use UN Comtrade data reported by both countries, World Bank totals and AidData's records of Chinese official finance."
 
-My name is Nikar Omirbek, and today I am presenting my final dissertation:
-*BRI's Impact on Kazakhstan–China Trade Balance: The Role of Strategic Mineral Exports.*
+## Slide 2. What happened (1 min)
 
-This study covers 24 years of bilateral trade data — 2000 to 2023 —
-and asks a question that I think matters well beyond Kazakhstan.
+"In China's data, Kazakhstan had a surplus of 3.5 billion dollars with China in 2013. By 2019 it was a deficit of 3.9 billion, and by 2024 a deficit of 12 billion: a swing of 15.5 billion.
 
-Let me walk you through what I found.
+It happened in two phases. From 2013 to 2019, energy exports to China fell by 7.6 billion while imports were flat. From 2019 to 2024, imports from China rose by 15.2 billion, while metal and ore exports rose by 5.6 billion.
 
----
+One data point up front: Kazakhstan's own partner statistics for 2020 to 2022 leave out copper, zinc, aluminium and machinery, so I use China's mirror data for the balance."
 
-## [SLIDE 2 — AGENDA]
+## Slide 3. Why the trade balance (1 min)
 
-Here is how the next twelve minutes are structured.
+"I want to be clear that a deficit is not a loss. Imports can be investment: 47 per cent of the import rise since 2019 is machinery, electrical equipment and vehicles. And the BRI's best-documented benefit for Kazakhstan, rail transit between China and Europe, earns service revenue that goods-trade data do not record.
 
-I will start with the puzzle — what the raw data shows at face value.
+So I treat the balance as an accounting summary. I study it because it is the outcome in my registered topic and in public debate, because explaining it forces an account of every export and import, and because it is where the role of strategic minerals can be measured."
 
-Then I will explain the research question and the theoretical framework I used.
+## Slide 4. Puzzle and research question (1 min)
 
-After that, I will cover the data and how the analytical pipeline was built.
+"The swing coincides with the BRI, but a before-and-after comparison cannot tell the BRI apart from shocks to all of Kazakhstan's trade, like the 2014 commodity collapse, or shocks to all of China's regional trade, like the re-routing after 2022.
 
-Then the regression analysis, including how I resolved a serious multicollinearity problem.
+So my question is: is the post-2013 swing distinctive to the Kazakhstan–China relationship, and are its distinctive components consistent with the mechanisms through which the BRI was expected to work, especially through strategic minerals?
 
-The main finding — which comes from a Difference-in-Differences design — is the center of this presentation.
+I use two comparisons, side by side, and I grade every claim: A is context, B is consistent with a BRI mechanism, and C, a causal effect, I do not claim."
 
-And I will close with robustness checks, limitations, and what the findings mean in practice.
+## Slide 5. Mechanisms and evidence (1 min 15 s)
 
----
+"From the literature I take two mechanisms. M1, connectivity and market access, predicts more trade in goods that were little traded before, like food, and a Kazakhstan-specific rise in imports from about 2015. M2, resource finance, predicts more China-oriented energy and mineral exports after Chinese investment.
 
-## [SLIDE 3 — THE PUZZLE]
+For each, I state in advance what would support it, what would contradict it, and what would be uninformative.
 
-Let me start with the numbers, because they tell a striking story on their own.
+There is good evidence that the BRI raises trade on average: lower trade costs in de Soyres et al., up to 4 per cent more trade in Baniya, Rocha and Ruta, and ex-post gains in Foo et al. and in Mau and Seuren for rail. Those studies measure average volumes; I measure one pair's balance and composition. Effects of a few per cent are below what my data can detect, and I say so."
 
-After China's Belt and Road Initiative launched in 2013, Kazakhstan's imports from China grew by **94.3 percent**.
+## Slide 6. Three kinds of evidence (1 min)
 
-Kazakhstan's exports to China grew by only **24.3 percent**.
+"I keep three kinds of evidence apart. Accounting decompositions show which flows moved. Comparison-adjusted components show how distinctive a change was relative to a benchmark; they are not causal and not an upper bound on any BRI effect. And statistical tests on product-level data show whether China-specific export changes exceed noise and when they began.
 
-Mineral exports — uranium, copper, chromium — grew **29.2 percent**. Better than overall exports, but nowhere near enough to match the import surge.
+Safeguards: four product groups fixed in advance, Holm correction, 300 random sets of chapters, reported power, and every comparison over 16 combinations of base and end years. I regenerated every table from the raw files and re-estimated the main model independently. Some analyses were added after I saw earlier results, and the thesis says which."
 
-As a result, the average bilateral trade surplus fell by **37.8 percent** in the post-BRI period.
+## Slide 7. Result 1 (1 min 15 s)
 
-And then in 2023 — for the first time in Kazakhstan's recorded trade history — there was a bilateral trade **deficit** with China.
-Kazakhstan imported **16.77 billion dollars** from China.
-It only exported **14.76 billion dollars** back.
-A deficit of two billion dollars.
-In the same year that mineral exports hit their all-time high.
+"First comparison: against Kazakhstan's trade with its other partners. Between 52 and 92 per cent of the swing is specific to China, depending on the years compared; 71 per cent using averaged endpoints. 92 per cent is the maximum, because 2013 was the peak year for oil exports to China.
 
-That is the central puzzle.
-Mineral exports grew. The trade balance still deteriorated.
-The question is: why?
+So the commodity cycle alone does not explain the swing. Its largest part is the rise in imports from China after 2019. This is about distinctiveness, not causation."
 
----
+## Slide 8. Result 2 (1 min 15 s)
 
-## [SLIDE 4 — RESEARCH QUESTION AND THEORY]
+"Second comparison: from China's side. Did China's exports to Kazakhstan grow faster than its exports to Russia and the other Central Asian states? No. Under every comparator, weighting and base year, the Kazakhstan-specific part is at most 0.7 billion by 2023–24, and usually negative, with or without Russia. Against the world it is positive, 5.5 to 8.8 billion.
 
-My research question is:
-*How did the post-BRI period change the relationship between Kazakhstan's strategic mineral exports and its bilateral trade balance with China?*
+The rise came mostly in 2022 to 2024, and between 2013 and 2019 China's exports to Kazakhstan grew more slowly than its exports to the world. Two caveats: the neighbours are also BRI members, so this comparison cannot rule out a region-wide BRI effect, which is why I rely on timing; and the comparators were affected by re-routing to Russia."
 
-To answer this, I use the framework of **asymmetric interdependence**,
-developed by Keohane and Nye.
+## Slide 9. Result 3 (1 min)
 
-The concept is straightforward.
-Both countries depend on this trade relationship — but not equally.
+"On exports. Oil to China fell more than oil to other markets, concentrated in 2014: that is the opposite of the resource-security mechanism. Strategic minerals shifted towards China, and their China-specific gain is positive in every specification, from 1.8 to 6.7 billion; how much happened before 2019 depends on the base year. Agri-food also shifted towards China, by a factor of about 12 relative to other markets, and this is robust. Metals and ores are significant only when 2023–24 are included."
 
-Kazakhstan needs China as its primary buyer for minerals.
-China, on the other hand, can source uranium, copper, and chromium from dozens of countries.
-Kazakhstan cannot easily replace China.
-China can more easily replace Kazakhstan.
+## Slide 10. Result 4 (1 min 15 s)
 
-This structural imbalance — where one side has far more outside options — is what asymmetric interdependence describes.
+"Timing. If the BRI drove these changes, the China-specific trend should speed up after 2013. For agri-food the ratio was already rising from 2008. Its trend was 0.54 log points a year before 2013 and 0.17 after: no acceleration, one-sided p of 0.99. The agri-food rise survives Holm correction and is larger than in all 300 random chapter sets. The 'slowdown' fails Holm, at 0.059, so I don't rely on it. For metals there is no detectable acceleration, but the test could miss changes smaller than 0.16 a year. Energy is one chapter, so there is no inference."
 
-The theoretical prediction is this:
-as BRI deepened the bilateral relationship, China's manufactured exports into Kazakhstan would grow faster than Kazakhstan's mineral revenues.
-The trade balance would deteriorate.
+## Slide 11. Result 5 (45 s)
 
-That is what I am testing against real data.
+"What did the BRI actually consist of? Chinese official finance was 48 billion dollars in 2000–2013, against 16 billion in 2014–2021. Before 2013: gas pipelines, oil companies, copper mines. After: roads and border checkpoints, and the Khorgos dry port opened in 2015. No agricultural project is recorded, so if a BRI channel helped food exports, it was access and logistics, not finance."
 
----
+## Slide 12. Synthesis (1 min)
 
-## [SLIDE 5 — DATA AND PIPELINE]
+"Putting it together. Imports: China-specific from Kazakhstan's side, not distinctive from China's side, and too late for M1. Oil: inconsistent with M2. Minerals: offset part of the swing, but the timing doesn't identify the BRI. Agri-food: consistent with M1 in products and channel, not in timing. Other goods and the extensive margin: absence of evidence. No large component has the combination of distinctiveness, predicted sign and post-2013 timing."
 
-The dataset is an annual bilateral panel covering Kazakhstan and China from 2000 to 2023 — 24 yearly observations.
+## Slide 13. Strategic minerals and dependence (1 min)
 
-The data comes from four main sources:
-the IMF Direction of Trade Statistics,
-the World Bank national accounts,
-UN Comtrade for mineral-level export data,
-and Kazakhstan's own Bureau of National Statistics, which I used for independent cross-validation.
+"For my registered topic: strategic minerals supported the balance. China now takes 80 per cent of Kazakhstan's ore exports, but Kazakhstan supplies under 2 per cent of China's ore imports: dependence mostly runs one way. Uranium reverses it: Kazakhstan supplied about two-thirds of China's natural uranium imports in 2023. And dependence is not vulnerability: China's share of Kazakhstan's refined copper exports fell from 65 to 49 per cent in 2025, with Türkiye taking up the rest."
 
-For the Difference-in-Differences analysis, I also collected bilateral trade data for five control countries:
-Russia, Germany, Uzbekistan, Turkey, and the United States.
+## Slide 14. What this does and does not say (1 min)
 
-A core commitment of this project was reproducibility.
-I built a fully automated pipeline — 36 Python scripts in a public GitHub repository.
-Every table, every figure, every regression in the dissertation is generated by those scripts automatically.
-If you change a number in the data, everything re-runs.
-The entire analytical chain is open and verifiable.
+"I separate three things. Evidence inconsistent with a mechanism: oil, the timing of imports, the timing of agri-food. Absence of evidence: the extensive margin, other goods, small trend changes. And evidence of no effect: I have none. Transit services are not in my data, and small average effects are undetectable. So I am not saying the BRI did nothing for Kazakhstan.
 
-As a validation check: I cross-referenced my trade figures against the Kazakhstan Bureau of National Statistics directly.
-The 2023 export figure matched to within 0.3 percent.
-The 2023 import figure matched to within 0.1 percent.
-Both are well within acceptable validation thresholds.
+Limitations: no causal identification, results depend on base years so I report ranges, comparators affected by re-routing, two-digit product data, imports only as totals, energy as one chapter, and goods only."
+
+## Slide 15. Conclusion (45 s)
+
+"The swing is China-specific from Kazakhstan's side and regional from China's side, and none of its large components has the timing or direction BRI mechanisms predict. Strategic minerals offset part of it, and agri-food is the one BRI-consistent channel, in products but not timing.
+
+For policy: don't read the deficit as a BRI failure or a loss; monitor the relationship by component against both benchmarks; keep phytosanitary access and border processing efficient; and reconcile the national trade statistics with China's. Thank you."
+
+## Slide 16. Backup: robustness grid
+
+Use only if asked about base years: "Here is the full grid. 92 per cent is the top; the range is 52 to 92; with averaged endpoints, 71. With Kazakhstan's own data, 2013 to 2024, it is also 92."
 
 ---
 
-## [SLIDE 6 — TRADE BALANCE CHART]
+## Likely questions and short answers
 
-This figure shows Kazakhstan's bilateral trade balance with China from 2000 to 2023.
+**"Why not just say the BRI caused the deficit?"** Because most of the deficit's growth is an import rise after 2019 that Kazakhstan shares with its neighbours, and the oil fall goes the wrong way for the BRI's resource logic.
 
-For most of the period, Kazakhstan ran a comfortable surplus.
-You can see it clearly — the balance is positive, and generally above two billion dollars.
+**"Isn't 'China-specific' the same as 'BRI'?"** No. It includes China's own demand and regional shocks. It measures distinctiveness, and it is not even an upper bound on a BRI effect, because the BRI can also change Kazakhstan's trade with other partners.
 
-After 2013, the trend shifts downward.
-The deterioration is not a sudden shock — it is a sustained, decade-long decline.
+**"Your neighbours are BRI members too."** Yes, so the neighbour comparison can't rule out a region-wide BRI effect. My argument there rests on timing: the import rise came after 2019, mostly 2022–2024.
 
-And at the very end — 2023 — the balance crosses below zero for the first time.
+**"Did you pick 2013 to get 92 per cent?"** 2013 is the BRI announcement year, but it was also the oil peak, so I report all 16 combinations: 52 to 92 per cent, 71 with averages.
 
-This is not one bad year.
-This is the endpoint of a ten-year trend.
+**"Is agri-food just the one significant result you found?"** It is one of four groups fixed in advance; it survives Holm and beats 300 random chapter sets. But it is a supporting result, small in dollars, and it began before 2013.
 
----
+**"Is a deficit bad for Kazakhstan?"** Not necessarily. Nearly half of the recent import rise is machinery, equipment and vehicles, which can be investment, and transit revenue isn't in goods data.
 
-## [SLIDE 7 — EXPORTS vs IMPORTS]
+**"Why use China's data?"** Kazakhstan's 2020–2022 partner data omit major chapters, and its recorded imports from China are 1.5–2.5 times lower than China's records even in normal years. The China-specific share is 92 per cent for 2013–2024 with either source.
 
-This figure shows why.
-
-The blue line — imports from China — accelerates sharply after 2013.
-The red line — exports to China — grows, but far more slowly.
-
-Mineral exports grew 29 percent in the post-BRI period.
-But imports nearly doubled.
-
-The trade balance deterioration is not about exports collapsing.
-It is about imports growing much faster than exports can keep up with.
-
-Import-side deepening is the primary mechanism.
-That is the descriptive finding.
-
----
-
-## [SLIDE 8 — EMPIRICAL STRATEGY]
-
-To move beyond description, I used seven analytical methods.
-
-The baseline is OLS regression with Newey-West standard errors,
-which account for the serial correlation typical in annual time-series data.
-
-I ran a 288-specification robustness grid — varying the mineral measure, lag structure, estimator, and BRI proxy — to test whether results hold across model choices.
-
-I conducted leave-one-out analysis and influence diagnostics to identify whether any single year is driving the results.
-
-I also compared China with Kazakhstan's other major partners using a difference-in-differences design, and built a synthetic counterfactual as a complementary check.
-
-Each method serves a specific purpose. My conclusions rest on three things: the descriptive decomposition, the hypothesis tests on annual and monthly data, and the data validation. The other methods support or qualify them.
-First, there is a methodological problem I needed to solve.
-
----
-
-## [SLIDE 9 — MULTICOLLINEARITY]
-
-The original regression model used log of Kazakhstan's GDP and log of China's GDP as two separate variables.
-
-The problem is that both economies grow almost every single year.
-They move together nearly perfectly over 24 years.
-When you put both into the same regression, the model cannot tell them apart.
-It gets confused, and the estimates become unreliable.
-
-The technical measure of this problem is called the Variance Inflation Factor, or VIF.
-In Scheme A — the original model — the maximum VIF was **236**.
-That is far beyond any acceptable threshold.
-The standard target is below 10.
-
-The fix was to replace GDP levels with annual GDP **growth rates**.
-Growth rates bounce around independently year to year.
-They are stationary, they make economic sense as controls, and crucially — they solve the collinearity problem.
-
-With Scheme B — the growth-rate specification — the maximum VIF dropped to **10.4**.
-That is the only specification that substantially meets the threshold.
-Scheme B is therefore the primary specification for all regression results.
-
----
-
-## [SLIDE 10 — REGRESSION RESULTS]
-
-With Scheme B as the primary model, here are the regression results.
-
-The coefficient of interest is the interaction term:
-Post-BRI period multiplied by mineral exports.
-
-In the full-sample Scheme B model, this coefficient is **minus 2.49**, with a p-value of **0.011**.
-
-That says: in the post-BRI period, higher mineral exports were associated with a weaker, not stronger, trade balance.
-
-But I want to be honest about something important.
-
-When I exclude the years 2022 and 2023 — the two years when Russia sanctions caused an abnormal flood of Chinese goods through Kazakhstan — the result loses statistical significance entirely.
-The p-value rises to 0.966.
-The coefficient shrinks to essentially zero.
-
-So in the data as reported, the regression result is directionally consistent but **fragile**.
-
-Over the last revision I found out why it looks so fragile, and I will show you in two slides.
-Part of it is not economics at all: it is a gap in Kazakhstan's own import statistics for 2020 to 2022.
-
----
-
-## [SLIDE 11 — INFLUENCE DIAGNOSTICS]
-
-The influence diagnostics confirm what I just said.
-
-This figure shows Cook's Distance — a measure of how much each single observation influences the regression results.
-
-The conventional threshold is 4 divided by n, which for this sample is 0.167.
-
-The 2023 observation has a Cook's Distance of **3.90**.
-That is **23 times** the threshold.
-It is the most influential single observation by a very large margin.
-
-If you exclude any other year in the dataset, the negative interaction stays negative and significant.
-If you exclude 2023 alone, it disappears.
-
-This is not a flaw that is hidden — it is a finding in its own right.
-It tells us that 2023 may be an inflection point, not just a statistical nuisance.
-But we cannot build robust causal claims on a single extreme observation.
-
-But here is the new part. When I checked Kazakhstan's import figures against China's own customs records, I found that 2020 to 2022 are under-recorded.
-Once those three years are corrected, 2023's Cook's distance falls from 3.9 to 2.3, and the interaction survives even without 2023.
-Let me show you the evidence.
-
----
-
-## [SLIDE 12 — DATA CHECK: 2020–2022 IMPORTS]
-
-This slide is a data-quality finding from the latest revision.
-
-The blue line is Kazakhstan's reported imports from China. The orange line is China's reported exports to Kazakhstan, which is the same trade seen from the other side.
-
-From 2013 to 2019, China's figure is consistently about **two times** Kazakhstan's. That gap is normal in Central Asian trade data.
-In 2020 to 2022 the gap jumps to **four-and-a-half to six times**, and in 2023 it returns to normal.
-
-Kazakhstan's imports supposedly fell by **70 percent** in 2020. China says its exports to Kazakhstan fell by only **8 percent**.
-And in those three years, Kazakhstan's monthly records have no rows at all for machinery, electronics and vehicles.
-
-So the 2020 to 2022 surpluses in my original series are overstated, and the dramatic swing into deficit in 2023 is partly a return to complete reporting.
-
-I do not claim to know the administrative cause. I report the mirror-adjusted series as a sensitivity check, next to the original.
-
----
-
-## [SLIDE 13 — SAMPLE SIZE: INTERPOLATION vs MONTHLY DATA]
-
-My supervisor raised the point that 24 observations restrict the analysis, and suggested disaggregating to quarterly or monthly data.
-
-I did both, but I want to be precise about what each one gives.
-
-On the left: I split the annual data into 96 quarters with the Denton method. The coefficients are almost identical, as they should be. The p-values get smaller only because there are four times as many rows, not four times as much information.
-A Monte Carlo experiment shows this clearly: with plain standard errors, interpolated data produce false positives **47 percent** of the time, against 21 percent for the annual data. With HAC standard errors there is no gain at all.
-So I report the interpolated model as a robustness check only.
-
-On the right is the real solution: **observed** monthly trade data from UN Comtrade.
-That is 120 actual months, 2010 to 2019, with 48 months before BRI and 72 after. It ends before the 2020 reporting break, and it includes monthly oil exports, which my annual data never had.
-
----
-
-## [SLIDE 14 — MONTHLY EVIDENCE]
-
-Here are the monthly results.
-
-Before BRI, a 100-million-dollar increase in monthly mineral exports goes with a **126-million-dollar** higher monthly balance.
-After 2013, that slope falls by **0.91**, with p = 0.008, and the post-BRI slope is no longer different from zero.
-
-This holds with a trend, with copper prices, with lagged balances, with the break moved to October 2013, and with product-level minerals.
-
-There is one honest exception, highlighted in pink. When I control for monthly oil exports, the interaction disappears.
-So I can say the mineral–balance link weakened after 2013, but I cannot say that this weakening is specific to minerals rather than to the commodity export base as a whole, especially the oil price collapse.
-
----
-
-## [SLIDE 15 — HYPOTHESIS TESTS AND MODEL FIT]
-
-My supervisor also asked for a clear interpretation of the hypothesis tests and the fit statistics.
-
-Each hypothesis has a stated null and alternative, and I use one-sided tests at 5 percent because the hypotheses predict a direction.
-
-**H1, a post-BRI level shift:** not supported. It is not significant annually, and in monthly data it disappears once a trend is added.
-**H2, a positive mineral payoff before BRI:** supported in both datasets.
-**H3, a weaker payoff after BRI:** supported in both datasets, with p = 0.011 annual and 0.004 monthly. It is a conditional association, not a causal effect.
-
-On fit: the primary annual model explains **74 percent** of the variation, with an F-test of 6.15 and p = 0.002. The monthly model also explains 74 percent.
-The typical annual prediction error is about 1.9 billion dollars, against an average balance of 2.9 billion. So the model captures the pattern but does not predict individual years precisely.
-
----
-
-## [SLIDE 16 — GRANGER CAUSALITY]
-
-Finally, Granger causality: does one series help predict the other?
-
-Mineral exports do **not** Granger-cause the trade balance in the annual data or in the full monthly sample.
-If anything, the balance predicts next year's mineral exports.
-
-In the monthly data before BRI, the two series predicted each other in both directions. After 2013, that link is gone, which matches H3.
-
-BRI financing intensity has no predictive power for the balance at all.
-
-So I read my regression coefficients as associations, not as minerals driving the balance.
-
----
-
-## [SLIDE 17 — CROSS-PARTNER CHECK: DiD]
-
-This slide asks: did Kazakhstan's balance with China deteriorate *more* than its balance with other major partners after 2013?
-
-I stacked annual data for six partners: China, and Russia, Germany, Uzbekistan, Turkey and the USA as comparisons. Partner and year fixed effects absorb permanent differences between partners and shocks common to all of them.
-
-The estimate is **minus 0.305**: after 2013, the balance ratio with China fell about 30 percentage points more than with the other partners. It stays between minus 0.31 and minus 0.37 when I drop the 2020 to 2022 data-break years or drop Russia.
-
-The chart at the bottom shows what happens if I pretend each partner in turn is "China". China has the most negative result of the six. Germany is second, at minus 0.24.
-
-I have to be honest about precision. An earlier version reported p = 0.0002, but that used standard errors that are not appropriate for a panel. With proper panel errors the p-value is about 0.02. With methods built for very few groups, the permutation test and the wild bootstrap, it is between 0.17 and 0.38, because with only six partners there is simply not much to compare against.
-
-So I present this as supporting evidence: the deterioration was largest with China. I do not present it as proof that it was caused by China or BRI.
-
----
-
-## [SLIDE 18 — SYNTHETIC CONTROL]
-
-As a complementary check, I also constructed a synthetic counterfactual.
-
-The idea is to ask: given Kazakhstan's pre-2013 trade dynamics —
-commodity prices, relative economic size, trend — where would the trade balance ratio have been expected to go if BRI had not happened?
-
-I estimated that pre-period trajectory using data from 2000 to 2012 only.
-Then I projected it forward into the post-2013 period.
-
-The gap between actual and synthetic is negative in 8 out of 11 post-BRI years.
-The mean gap is minus 0.014.
-The post-period prediction error is nine times larger than the pre-period error — indicating that something genuinely changed after 2013 that the pre-BRI model cannot explain.
-
-The three years where the gap is positive, 2020 to 2022, are exactly the years with under-recorded imports, so I do not read them as a real improvement.
-
-The synthetic control is not statistically significant on its own.
-But it points in the same direction as the DiD.
-I treat it as complementary evidence, not a standalone finding.
-
----
-
-## [SLIDE 19 — TRIPLE CONCORDANCE]
-
-This slide summarizes all six pieces of evidence together.
-
-Every single method points in the same direction — negative.
-Kazakhstan's trade balance position worsened post-2013.
-
-The annual regression depends on 2022 and 2023 in the data as reported. It survives once the 2020 to 2022 import gap is corrected, and it is confirmed by 120 observed months that end in 2019.
-
-The synthetic control is consistent but not independently significant.
-
-The DiD shows the largest decline was with China, stable in size but statistically imprecise with only six partners.
-And controlling for oil exports removes the mineral effect, which points to the oil collapse as the mechanism.
-
-The sanctions robustness check cannot rule out that the parallel-import channel through Kazakhstan contributed to the 2022–2023 import surge.
-That is an honest limitation.
-
-Overall: the evidence is **consistent** with asymmetric interdependence deepening post-BRI.
-That is the epistemically honest conclusion this data supports.
-
----
-
-## [SLIDE 20 — LIMITATIONS]
-
-Let me be direct about what this study cannot establish.
-
-I cannot claim that BRI **caused** the trade balance to deteriorate.
-
-The 2013 BRI launch coincides with too many overlapping events:
-an oil price collapse starting in 2014,
-a major tenge devaluation in 2015,
-COVID-19 in 2020 and 2021,
-a gap in Kazakhstan's own import statistics for 2020 to 2022,
-and the Russia sanctions shock from 2022 onward.
-
-Separating BRI's specific causal effect from those concurrent shocks is beyond what a single-country time-series can achieve cleanly.
-
-What I can claim is this:
-The deterioration was largest with China among six major partners.
-Mineral exports did not offset the import surge — shown by the descriptive decomposition.
-The mineral–balance link weakened after 2013 — shown in 120 observed months, although I cannot separate it from the oil-export collapse.
-The pattern is consistent with asymmetric interdependence.
-And the methodology is fully transparent — every number in this paper can be independently reproduced.
-
-Acknowledging what a study cannot prove is part of rigorous research.
-I believe this is one of the contributions of this dissertation.
-
----
-
-## [SLIDE 21 — POLICY IMPLICATIONS]
-
-Let me turn to what these findings mean in practice.
-
-**First:** governments should monitor the composition of trade, not just the headline volume.
-A country can look like it is benefiting from BRI because total trade is growing —
-while its bilateral position is quietly deteriorating.
-
-**Second:** import-side dependence deserves as much attention as export growth.
-A 94 percent increase in imports from a single partner is a structural vulnerability.
-
-**Third:** value-added export upgrading matters more than commodity volume.
-Raw mineral exports are price-sensitive and insufficient to offset a surge in manufactured imports.
-
-**Fourth:** the 2020 to 2022 bilateral import statistics need to be reconciled.
-Kazakhstan's records show four-and-a-half to six times less than China's. A gap that size changes how the bilateral position is perceived, and therefore which policy is chosen.
-
-**Fifth:** export market diversification reduces the leverage asymmetry over time.
-Having more buyers for your minerals changes the negotiating dynamic.
-
----
-
-## [SLIDE 22 — CONCLUSIONS]
-
-Let me close with a clean summary.
-
-**Descriptively:** imports grew four times faster than exports post-BRI.
-The trade surplus fell 38 percent. In 2023 a deficit was recorded.
-
-**Regression:** the negative post-BRI minerals interaction is significant annually, minus 2.49, and in 120 observed months, minus 0.91.
-Most of its apparent fragility came from under-recorded imports in 2020 to 2022. It is an association, it does not survive an oil-export control, and minerals do not Granger-cause the balance.
-
-**Mechanism:** oil was 59 percent of exports to China before 2014 and 36 percent after; oil exports to China fell 89 percent from 2013 to 2016. That collapse, not a loss in mineral value, is the most likely reason the mineral payoff disappeared.
-**Cross-partner check:** the decline was largest with China among six partners, though with six partners this is imprecise.
-
-**Interpretation:** the evidence is consistent with asymmetric interdependence.
-Mineral wealth alone did not provide sufficient leverage against China's expanding import-export capacity.
-
-**Broader relevance:** Kazakhstan's experience is a diagnostic case study for resource-rich BRI partners everywhere.
-Raw commodities are not a substitute for economic diversification.
-
-This dissertation contributes a rigorous, reproducible, and diagnostically honest piece of evidence to that literature.
-
----
-
-## [SLIDE 23 — THANK YOU]
-
-Thank you very much.
-
-The one number I would ask you to take away from this presentation is:
-
-**Imports from China grew 94 percent while exports grew 24 percent, and after 2013 minerals stopped improving the balance.**
-
-Trade growth with China is not the same as Kazakhstan gaining from it.
-
-I am happy to take any questions.
-
----
-
-## ANTICIPATED QUESTIONS
-
-*(Read these only if asked — do not volunteer them.)*
-
----
-
-**"Isn't your whole result just 2023? One data point?"**
-
-The regression is sensitive to 2023 — I say that explicitly.
-But the 38 percent decline in the average trade surplus runs across the entire 2014 to 2023 decade — not just one year.
-The 120-month monthly result ends in 2019, so it does not use 2023 at all. Much of 2023's apparent influence came from under-recorded imports in 2020 to 2022.
-So no, the main conclusion does not rest on a single year.
-
----
-
-**"How do you know the Russia sanctions aren't the real explanation?"**
-
-I cannot fully rule that out, and I say so in the paper.
-What I can show is that the trade balance deterioration began well before 2022.
-You can see it clearly in the ten-year downward trend in the chart.
-The sanctions years amplified something that was already underway.
-My monthly evidence ends in 2019, before sanctions existed, and still shows the weakening. And in China's own data, imports into Kazakhstan were already rising 18 to 19 percent a year in 2021 and 2022.
-
----
-
-**"Why didn't you use a gravity model?"**
-
-Gravity models are excellent for cross-sectional analysis across many country pairs simultaneously.
-My design focuses on a single bilateral relationship over time.
-That is better suited to time-series regression and panel DiD.
-Extending this to a gravity framework with a broader BRI country sample is something I flag as a direction for future research.
-
----
-
-**"Your sample is only 24 observations — is that enough?"**
-
-On its own it is small, which is why I added 120 months of observed monthly data for 2010 to 2019. H2 and H3 hold there with p-values of 0.001 and 0.004.
-I also tested interpolating to 96 quarters, but interpolated quarters are not new observations, and my Monte Carlo shows they do not improve inference.
-The descriptive findings do not depend on inference at all.
-
----
-
-**"Why not just interpolate to 288 months, as is often done?"**
-
-Interpolation is fine for presenting a smooth series, but every interpolated month is a function of the same 24 annual totals.
-In my Monte Carlo, an interpolated regression with ordinary standard errors finds a "significant" relationship between two unrelated series 47 percent of the time.
-That is why I went to the source and used observed monthly data instead.
-
----
-
-**"How do you know the 2020–2022 import figures are wrong and not real?"**
-
-I cannot prove the administrative cause. Three facts point to a reporting problem.
-First, China's exports to Kazakhstan barely fell while Kazakhstan's recorded imports fell 70 percent.
-Second, the ratio between the two sources jumps from about two to about six, then returns to normal in 2023.
-Third, entire import chapters, machinery, electronics and vehicles, are missing from Kazakhstan's monthly records in exactly those years.
-That is why I keep the original series as the baseline and report the corrected one as a sensitivity check. The correction is weaker if exports are adjusted too, and I report that as well.
-
----
-
-**"Does Granger causality prove BRI or minerals caused the change?"**
-
-No. Granger causality only tests whether past values improve a forecast.
-And in fact it shows that minerals do not lead the balance. That is why everything in the thesis is phrased as association.
-
----
-
-**"What explains the result disappearing when you control for oil?"**
-
-Oil exports collapsed in value after 2014, at the same time as the BRI break.
-Once oil is held constant, I cannot separate a mineral-specific weakening from the general commodity-export downturn.
-I treat that as an important limitation, and it is a natural next step for future research.
-
----
-
----
-
-**"Your DiD p-value used to be 0.0002. Why is it now 0.02 to 0.38?"**
-
-The original standard errors treated the stacked panel as one long time series, which understates uncertainty. With errors designed for panels it is about 0.02. With only six partners, the methods designed for few groups give 0.17 to 0.38. The size of the effect did not change; only the honest measure of confidence did. That is why the DiD is supporting evidence, not my main result.
-
----
-
-**"So is your story about oil, not minerals?"**
-
-Partly, yes, and the data show it. Oil fell from 59 to 36 percent of exports to China, and from 8.9 to 1.0 billion dollars between 2013 and 2016. Minerals held up, but they could not replace the lost oil revenue while imports from China kept growing. That supports asymmetric interdependence: Kazakhstan's position depends on commodities whose prices it does not control.
-
----
-
-**"Did you check your references?"**
-
-Yes. In the final audit the references were checked, and six entries with wrong authors, titles or years were corrected against publisher records or removed, plus two minor date and publisher fixes.
-
-*End of script.*
+**"What would you do with more time?"** Six-digit product data to date the agri-food shift against individual protocols, product-level import data for the neighbours, and transit data to study the BRI's main channel directly.

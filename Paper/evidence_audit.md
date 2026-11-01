@@ -92,3 +92,21 @@ Every factual or numerical claim in the reconstructed thesis is traced here to i
 The first reconstruction's §3.3 stated that "the product-level panel and all tests in Chapters 5–6 were built and run after the expectations and the decision rules above were fixed." This was inaccurate: descriptive China shares by product group were computed before the group-level predictions were written, and the trend-break test was added after the event study was seen. The revised §3.4 and §5.7 state this correctly.
 
 | Import benchmarks, Table 6.10b | Script 65, `import_benchmarks.csv` (from Comtrade totals above) | C |
+
+
+## 8. Final audit (1 November 2026)
+
+| Item | Check performed | Result |
+|---|---|---|
+| All output tables | Deleted the panel and regenerated every table from raw files with Scripts 60–67 | All values identical to within 0.001 |
+| Main PPML | Re-estimated as weighted binomial logit of China's share (statsmodels), an equivalent model with chapter-year effects | Point estimates identical to 4 decimals; clustered SEs within about 4 per cent |
+| Holm, CIs, permutation | Recomputed by hand from `ppml_trend_break.csv` and `multiple_testing.csv` | Agri trend δ CI −0.676 to −0.059; Holm 0.0585; permutation shares as reported |
+| Manuscript figures | Script 68 recomputes 29 key figures from tables and searches the manuscript | 29 of 29 found |
+| Funnel arithmetic | 15.55 = (15.91 − 27.95) − (16.05 − 12.55); 14.31 = 0.20 + 14.11; 92% = 14.31/15.55 | Correct as arithmetic; "upper bound" interpretation removed; "≈0" removed as base-dependent |
+| China totals by partner, 2011–2014, 2019, 2023, 2024 | Comtrade TOTAL, China as reporter (`comtrade_china_totals_by_partner.txt`) | V |
+| KZ import totals 2011, 2012, 2014, 2023 | Comtrade TOTAL (2023 China value 16.77 bn matches the earlier monthly-based figure) | V |
+| de Soyres et al. | RePEc: International Economics 159 (2019) 151–164; 1.7–3.2% shipment-time and 1.5–2.8% trade-cost reductions for BRI economies; up to 11.9% / 10.2% on corridors | V; bib year corrected |
+| Baniya, Rocha, Ruta (2020) | RePEc abstract: up to 4.1% trade increase; about three times larger with reforms | V |
+| Foo, Lean, Salim (2020) | RePEc: NAJEF 54; positive significant OBOR dummy, 2000–2016 | V |
+| Mau & Seuren (2023) | Springer: Review of World Economics 159(2) 257–297; rail connections raised European exports to China | V (effect size from body text, not quoted) |
+| Import composition shares (47% capital/durable, 29% apparel and footwear of the 2019–24 rise) | Computed from `import_composition_china_reported.csv` | C |
