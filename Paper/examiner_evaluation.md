@@ -1,4 +1,4 @@
-# Examiner-Style Evaluation (revised after the second round)
+# Examiner-Style Evaluation (revised after the third round)
 
 ## Overall assessment
 
@@ -13,8 +13,11 @@ Yes, with one caveat. The decomposition makes the findings parts of one answer: 
 **Q1. "If the BRI does not explain the deterioration, why is it in your title?"**
 Because the deterioration is 92 per cent bilateral, the BRI is the obvious candidate and had to be tested. The thesis gives an answer about the BRI: it bounds what the BRI could explain and shows that the largest bilateral components do not fit its mechanisms. Dropping the BRI would change the question, not strengthen it.
 
-**Q2. "Isn't 'China-specific' just another word for 'BRI'?"**
-No. China-specific change includes China's own demand and regional shocks. That is why it is an upper bound. The import comparison shows the point: the largest China-specific component is shared with Kyrgyzstan, Uzbekistan and Russia after 2022.
+**Q2. "You say the change is 92% bilateral, then that it is regional. Which is it?"**
+Both, against different benchmarks. Against Kazakhstan's other partners, 92 per cent is China-specific. Against China's other neighbours, the import surge (the largest part) is not specific to Kazakhstan; what is specific to the pair is the export side, which nets to about zero (§7.1 funnel, Table 6.10b).
+
+**Q2b. "The neighbours are BRI partners too. Doesn't your neighbour benchmark throw away a regional BRI effect?"**
+Yes, and the thesis says so (§5.5). The argument against a BRI cause of the import surge rests on timing: it came after 2022, while China's exports to Kazakhstan grew more slowly than its exports to the world in 2013–2019.
 
 **Q3. "Is agri-food your main finding, picked because it was significant?"**
 No. The main finding is the bound and the classification of components. Agri-food is one component, small in dollars (+0.8 bn), and it matters because it is the only one consistent with a BRI mechanism. It was one of four pre-defined groups, not selected from a search across chapters; it survives Holm correction and is larger than every one of 300 random sets of 24 chapters.

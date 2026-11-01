@@ -61,3 +61,14 @@ A review of the first reconstruction found that it presented several findings (o
 | Length | about 11,700 words, 34 pages | about 13,200 words, 36 pages |
 
 New files: `Scripts/65_common_vs_china_specific.py`, `Scripts/66_multiple_testing_permutation.py`, `Collected_Raw_Data/raw_downloads/comtrade_totals_imports_and_china_exports.txt`, `wdi_kaz_merch_imports.csv`, `comtrade_hs2_chn_imports_from_world_2024_selected.txt`, tables `balance_common_vs_china_specific.csv`, `export_components_by_group.csv`, `strategic_minerals_components.csv`, `china_exports_regional_comparison.csv`, `multiple_testing.csv`, `permutation_agrifood.csv`, figures `fig_r7`, `fig_r8`.
+
+
+---
+
+# Third Round (1 November 2026): Resolving the "Bilateral" Ambiguity
+
+**Problem found.** The second round claimed the deterioration was "bilateral" (92 per cent China-specific) and, a few pages later, that its largest part was a regional shock shared with China's other neighbours. Both statements were true, but against different benchmarks, and the manuscript did not say so. The central claim was therefore internally inconsistent.
+
+**Fix.** A second, explicit benchmark for imports (Script 65, `import_benchmarks.csv`, new Table 6.10b): imports from China are compared with China's exports to the world, to Russia, to Kyrgyzstan and Uzbekistan, and to all three neighbours. Under every neighbour benchmark, the Kazakhstan-specific part of the import rise is close to zero or negative (2013–2024: −1.2 bn vs Russia, −4.2 bn vs all three). The answer is now stated as a funnel: 15.5 bn total → 14.3 bn China-specific relative to Kazakhstan's other partners → about zero net specific to the Kazakhstan–China pair (export side −0.2 bn). The manuscript states that the neighbour benchmark also removes any region-wide BRI effect, so the import conclusion rests on timing (post-2022), not on the benchmark alone.
+
+**Edits.** Abstract, §1.4, §1.6 (contribution, provisions 1–2), §5.5, §6.2, §6.6 (new Table 6.10b), §6.9, §7.1 (funnel), §7.2, §8.1, §8.2 (new limitation on benchmarks and base year), Appendix A. Display equation in §5.1 simplified so it converts in the Word file. About 14,000 words.

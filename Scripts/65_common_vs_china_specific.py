@@ -144,3 +144,35 @@ for code, n in names.items():
 reg = pd.DataFrame(reg)
 reg.round(3).to_csv(T / "china_exports_regional_comparison.csv", index=False)
 print(reg.round(2).to_string())
+
+# ── Second benchmark for imports: China's exports to other destinations ────
+# The main import split benchmarks imports from China against Kazakhstan's
+# imports from its other suppliers. That removes Kazakhstan-wide shocks but
+# not shocks to China's trade with the whole region. Here the counterfactual
+# is: imports from China grow like China's exports to (a) the world,
+# (b) Russia, (c) Kyrgyzstan + Uzbekistan, (d) Kyrgyzstan + Uzbekistan + Russia.
+# The excess of actual over counterfactual is the part specific to the
+# Kazakhstan-China pair relative to that benchmark. Note: the neighbours are
+# also BRI partners, so benchmarks (b)-(d) remove any region-wide BRI effect
+# too; they separate Kazakhstan-specific from regional change, not BRI from
+# non-BRI change.
+bm = {"World": [0], "Russia": [643], "Kyrgyzstan + Uzbekistan": [417, 860],
+      "Kyrgyzstan + Uzbekistan + Russia": [417, 860, 643]}
+nb = []
+for t0, t1 in PERIODS:
+    kz0, kz1 = tot[("CNX", t0)][398], tot[("CNX", t1)][398]
+    for name, codes in bm.items():
+        g = sum(tot[("CNX", t1)][c] for c in codes) / sum(tot[("CNX", t0)][c] for c in codes)
+        cf = kz0 * g
+        nb.append({"period": f"{t0}-{t1}", "benchmark": name, "benchmark_growth": g,
+                   "kz_actual_growth": kz1 / kz0, "imports_counterfactual_bn": cf / 1e9,
+                   "imports_actual_bn": kz1 / 1e9, "kz_pair_specific_imports_bn": (kz1 - cf) / 1e9})
+    # benchmark used in the main split, for comparison
+    im = import_components(t0, t1, "china_reported")
+    nb.append({"period": f"{t0}-{t1}", "benchmark": "Kazakhstan's imports from other suppliers (main split)",
+               "benchmark_growth": im["row_growth"], "kz_actual_growth": kz1 / kz0,
+               "imports_counterfactual_bn": (kz0 * im["row_growth"]) / 1e9, "imports_actual_bn": kz1 / 1e9,
+               "kz_pair_specific_imports_bn": im["china_specific"] / 1e9})
+nb = pd.DataFrame(nb)
+nb.round(3).to_csv(T / "import_benchmarks.csv", index=False)
+print(nb.round(2).to_string())

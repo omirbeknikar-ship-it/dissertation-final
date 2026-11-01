@@ -16,17 +16,18 @@ For each product, I ask: if Kazakhstan's trade with China had grown at the same 
 
 ## What did I find?
 
-1. **The swing was almost entirely about China.** About 92 per cent of it (USD 14.3 of 15.5 billion) is China-specific. So the BRI is a fair suspect.
-2. **But the biggest pieces don't look like the BRI.**
+1. **Compared with Kazakhstan's other trading partners, the swing was almost entirely about China.** About 92 per cent of it (USD 14.3 of 15.5 billion) is China-specific. So the BRI is a fair suspect.
+2. **Compared with China's other neighbours, most of it is not about Kazakhstan.** The biggest piece, the jump in imports from China after 2022, also happened to Russia, Kyrgyzstan and Uzbekistan, at the same speed or faster. What is left that is special to Kazakhstan and China is on the export side, and it roughly cancels out.
+3. **And the pieces don't look like the BRI.**
    - The largest piece is the jump in imports from China, mostly in 2022–2024. China's exports to Kyrgyzstan, Uzbekistan and Russia jumped just as much or more at the same time, so it is a regional event after 2022, not something the BRI started in 2013.
    - The second piece is that Kazakhstan sold China less oil from 2014, more than it cut oil sales to others. The BRI was supposed to *increase* resource trade with China, so this goes the wrong way.
-3. **The pieces that do relate to the BRI helped Kazakhstan.**
+4. **The pieces that do relate to the BRI helped Kazakhstan.**
    - Strategic minerals (ores, copper, uranium compounds, ferroalloys, zinc) shifted towards China and added USD 3.4 billion, but mostly after 2019.
    - Food exports (sunflower oil, feed, wheat, oilseeds) shifted towards China. This is the one change with the products and channel the BRI predicts (market-access deals, faster border), but it started around 2010–2012 and didn't speed up after 2013.
-4. **China's loans came before the BRI.** Chinese state lending peaked in 2008–2012, for pipelines, oil and copper mines. After 2013 it was smaller and went to roads and border posts. None went to farming.
-5. **Kazakhstan's own statistics have holes** for 2020–2022 (copper, zinc, aluminium exports; machinery imports), so China's figures have to be used.
+5. **China's loans came before the BRI.** Chinese state lending peaked in 2008–2012, for pipelines, oil and copper mines. After 2013 it was smaller and went to roads and border posts. None went to farming.
+6. **Kazakhstan's own statistics have holes** for 2020–2022 (copper, zinc, aluminium exports; machinery imports), so China's figures have to be used.
 
-**Bottom line:** the swing is a China story, and the BRI is the right thing to test, but the evidence doesn't show the BRI caused it.
+**Bottom line:** compared with Kazakhstan's other partners the swing is a China story, so the BRI is the right thing to test. Compared with China's other neighbours it is mostly a regional story after 2022. Either way, the evidence doesn't show the BRI caused it.
 
 ## Is the food finding just luck from testing many things?
 
@@ -38,4 +39,4 @@ Because the recent deterioration is mainly a regional import surge after 2022, n
 
 ## One-paragraph version for the defence
 
-"I asked whether the BRI-era deterioration of Kazakhstan's trade balance with China was really about the bilateral relationship, and whether it looks like what the BRI was meant to do. Comparing trade with China to trade with everyone else, I found that 92 per cent of the deterioration is China-specific, so the BRI is a fair suspect. But the two biggest China-specific pieces don't fit the BRI: an import surge after 2022 that Kyrgyzstan, Uzbekistan and Russia also experienced, and a fall in oil sales to China that runs opposite to the BRI's resource logic. The pieces that do relate to the BRI, strategic minerals and food exports, improved the balance, and neither changed at the time the BRI predicts. So the BRI is the right frame for this bilateral change, but the evidence does not support saying it caused the deterioration."
+"I asked whether the BRI-era deterioration of Kazakhstan's trade balance with China was really about the bilateral relationship, and whether it looks like what the BRI was meant to do. Comparing trade with China to Kazakhstan's trade with everyone else, I found that 92 per cent of the deterioration is China-specific, so the BRI is a fair suspect. But comparing Kazakhstan with China's other neighbours, the biggest piece, an import surge after 2022, is regional: Russia, Kyrgyzstan and Uzbekistan saw the same. What is specific to Kazakhstan and China nets to about zero, and its largest part, a fall in oil sales to China, runs opposite to the BRI's resource logic. The pieces that do relate to the BRI, strategic minerals and food exports, improved the balance, and neither changed at the time the BRI predicts. So the BRI is the right frame for this bilateral change, but the evidence does not support saying it caused the deterioration."

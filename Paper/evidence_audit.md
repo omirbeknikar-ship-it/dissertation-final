@@ -90,3 +90,5 @@ Every factual or numerical claim in the reconstructed thesis is traced here to i
 ## 7. Correction of an earlier statement
 
 The first reconstruction's §3.3 stated that "the product-level panel and all tests in Chapters 5–6 were built and run after the expectations and the decision rules above were fixed." This was inaccurate: descriptive China shares by product group were computed before the group-level predictions were written, and the trend-break test was added after the event study was seen. The revised §3.4 and §5.7 state this correctly.
+
+| Import benchmarks, Table 6.10b | Script 65, `import_benchmarks.csv` (from Comtrade totals above) | C |
