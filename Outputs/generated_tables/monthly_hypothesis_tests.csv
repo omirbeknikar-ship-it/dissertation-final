@@ -1,0 +1,6 @@
+Model,Hypothesis,Variable,H0,H1,Coef,HAC_SE,t_stat,df_resid,p_two_sided,p_one_sided,Decision
+M1: parsimonious + month FE,H1,POST,beta_PostBRI >= 0,beta_PostBRI < 0,-0.2222,0.1309,-1.6969,103.0,0.0927,0.0464,Reject H0 at 5%
+M1: parsimonious + month FE,H2,MIN,beta_Minerals <= 0,beta_Minerals > 0,1.2599,0.3755,3.3557,103.0,0.0011,0.0006,Reject H0 at 5%
+M1: parsimonious + month FE,H3,POST_x_MIN,beta_Interaction >= 0,beta_Interaction < 0,-0.9132,0.339,-2.6935,103.0,0.0083,0.0041,Reject H0 at 5%
+M1: parsimonious + month FE,Joint,"POST, POST_x_MIN",beta_PostBRI = beta_Interaction = 0,at least one non-zero,,,15.0531,,0.0,,Reject H0 at 5%
+M1: parsimonious + month FE,Post-BRI slope,MIN + POST_x_MIN,slope = 0,slope != 0,0.3467,0.3117,1.1125,,0.2685,,Fail to reject H0

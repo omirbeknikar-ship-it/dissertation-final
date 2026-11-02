@@ -1,0 +1,7 @@
+period,source,exports_change_bn,exports_common_bn,exports_china_specific_bn,imports_change_bn,imports_common_bn,imports_china_specific_bn,kz_imports_row_growth,balance_change_bn,balance_common_bn,balance_china_specific_bn
+2013-2019,China-reported China legs (main),-7.189,-3.745,-3.444,0.184,-2.333,2.517,0.814,-7.373,-1.412,-5.961
+2013-2019,Kazakhstan-reported China legs (robustness),-6.37,-3.201,-3.169,-1.576,-1.555,-0.02,0.814,-4.794,-1.646,-3.148
+2019-2024,China-reported China legs (main),7.05,2.813,4.236,15.225,4.529,10.696,1.356,-8.176,-1.716,-6.46
+2019-2024,Kazakhstan-reported China legs (robustness),6.894,2.542,4.352,8.365,2.416,5.949,1.356,-1.471,0.126,-1.597
+2013-2024,China-reported China legs (main),-0.139,0.064,-0.203,15.409,1.301,14.108,1.104,-15.549,-1.237,-14.312
+2013-2024,Kazakhstan-reported China legs (robustness),0.524,0.344,0.179,6.789,0.867,5.922,1.104,-6.265,-0.523,-5.742

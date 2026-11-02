@@ -1,0 +1,4 @@
+from,to,d_exports_energy_bn,d_exports_metals_ores_bn,d_exports_agrifood_bn,d_exports_other_bn,d_exports_total_bn,d_imports_total_bn,d_balance_bn,balance_from_bn,balance_to_bn
+2013,2019,-7.564,0.055,0.297,0.023,-7.189,0.184,-7.373,3.506,-3.867
+2019,2024,0.361,5.561,0.561,0.567,7.05,15.225,-8.176,-3.867,-12.043
+2013,2024,-7.203,5.616,0.857,0.59,-0.139,15.409,-15.549,3.506,-12.043

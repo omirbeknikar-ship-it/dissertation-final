@@ -1,4 +1,6 @@
 """
+NOTE (October 2026 audit): superseded for reporting by Scripts/45_ardl_clean.py.
+The annual oil_exports column was a 55%-of-exports placeholder and has been blanked.
 12_ardl.py
 Phase 2 — ARDL/UECM bounds test, long-run coefficients, CUSUM stability.
 
@@ -132,7 +134,7 @@ for model_label, bri_var, bri_desc in MODELS:
     interaction_col = f"{bri_var}_x_minerals_narrow_B"
     df[interaction_col] = df[bri_var] * df["minerals_narrow_B"]
     exog_cols = ["minerals_narrow_B", "brent_annual_mean", "kzt_usd",
-                 "log_kz_gdp", "log_cn_gdp", bri_var, interaction_col, "oil_exports_B"]
+                 "log_kz_gdp", "log_cn_gdp", bri_var, interaction_col]
 
 
     # -------- (1) OLS + HAC SE, for direct comparison with earlier output --------

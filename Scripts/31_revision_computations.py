@@ -90,7 +90,7 @@ print("\n" + "=" * 70)
 print("  2. FULL MODEL (7 regressors)")
 print("=" * 70)
 exog_full = ["minerals_narrow_B", "brent_annual_mean", "kzt_usd",
-             "log_kz_gdp", "log_cn_gdp", "post_bri_2013", "post_bri_x_minerals", "oil_exports_B"]
+             "log_kz_gdp", "log_cn_gdp", "post_bri_2013", "post_bri_x_minerals"]
 X_full = sm.add_constant(df[exog_full])
 ols_full = sm.OLS(df["trade_balance_B"], X_full).fit()
 ols_full_hac = ols_full.get_robustcov_results(cov_type="HAC", maxlags=3)
@@ -107,7 +107,7 @@ print("\n" + "=" * 70)
 print("  3. PARSIMONIOUS MODEL (no GDP controls)")
 print("=" * 70)
 exog_pars = ["minerals_narrow_B", "brent_annual_mean", "kzt_usd",
-             "post_bri_2013", "post_bri_x_minerals", "oil_exports_B"]
+             "post_bri_2013", "post_bri_x_minerals"]
 
 X_pars = sm.add_constant(df[exog_pars])
 ols_pars = sm.OLS(df["trade_balance_B"], X_pars).fit()

@@ -1,0 +1,2 @@
+n_recursive_residuals,first_year_tested,cusum_outside_bounds,cusumsq_outside_bounds,cusumsq_outside_years
+8,2016,False,True,"2020,2021,2022"

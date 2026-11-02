@@ -1,865 +1,989 @@
 ---
-title: "BRI's Impact on Kazakhstan-China Trade Balance: The Role of Strategic Mineral Exports"
-subtitle: "Evidence from an Annual Bilateral Time-Series Analysis, 2000–2023"
+title: "The Belt and Road Initiative and the Kazakhstan–China Trade Balance: Sources of the Post-2013 Swing and the Role of Strategic Mineral Exports, 2005–2024"
+subtitle: "Master's thesis. Registered topic: BRI's Impact on Kazakhstan–China Trade Balance: The Role of Strategic Mineral Exports"
 author: "Nikar Omirbek"
 bibliography: ../Literature_Review/bibliography.bib
 ---
 
 # Abstract
 
-This thesis examines the post-BRI association between the Belt and Road Initiative (BRI) and the Kazakhstan–China bilateral trade balance, focusing on the role of strategic mineral exports. Using an annual bilateral time-series dataset for 2000–2023 (*n* = 24), the analysis applies descriptive pre/post decomposition, structural-break diagnostics, OLS association models with Newey–West standard errors, autoregressive distributed lag (ADL) dynamic association models, and a 288-specification robustness grid. The central puzzle is that narrow strategic mineral exports (uranium, copper, chromium) rose by 29.2 per cent between the pre-BRI (2000–2013) and post-BRI (2014–2023) periods, yet the average bilateral trade balance fell by 37.8 per cent. Trade decomposition reveals that this is associated with import-side deepening: Kazakhstan's imports from China grew by 94.3 per cent while exports grew by only 24.3 per cent. The full-sample OLS model estimates a negative post-BRI × minerals interaction of −3.22 (*p* = 0.007), but influence diagnostics reveal that this finding is heavily dependent on 2023, a high-leverage observation representing the first bilateral trade deficit. Excluding 2023 reduces the interaction to −0.41 (*p* = 0.178), rendering it statistically insignificant. Furthermore, a sanctions-era import surge in 2022–2023 complicates a narrow BRI interpretation. Consequently, the empirical results are interpreted as associational and diagnostic evidence consistent with asymmetric interdependence and import-side deepening, rather than causal proof of a stable structural effect. The thesis demonstrates that strategic mineral export growth did not reliably translate into sustained bilateral balance improvement for Kazakhstan.
+Between 2013, when the Belt and Road Initiative (BRI) was announced in Astana, and 2024, Kazakhstan's merchandise trade balance with China moved from a surplus of USD 3.5 billion to a deficit of USD 12.0 billion (China-reported data). The BRI is often credited, or blamed, for this swing. A bilateral deficit is not in itself an economic loss: imports can embody investment, integration and specialisation, and the BRI's main channels (lower trade costs, transit, investment) need not show up in the balance at all. The thesis therefore uses the balance as an accounting summary that organises the change in the whole merchandise relationship, exports and imports, and asks: **is the post-2013 change in Kazakhstan–China merchandise trade, summarised by the swing in the bilateral balance, distinctive to the relationship, and is it consistent with the BRI mechanisms that are observable in merchandise trade, in particular through strategic mineral exports?**
 
-**Keywords:** Belt and Road Initiative; Kazakhstan–China trade; strategic minerals; asymmetric interdependence; trade balance; small-sample diagnostics; post-BRI period
+The thesis builds an HS-2 panel of Kazakhstan's exports to China and to the rest of the world for 2005–2024 from UN Comtrade, validated against China's mirror records and World Bank totals, and adds aggregate import data, China's trade with Russia and the Central Asian states, AidData records of Chinese official finance and dated connectivity milestones. It keeps three kinds of evidence distinct: accounting decompositions, comparison-adjusted (descriptive) components, and statistical tests on product-level data (PPML triple differences, event studies and trend breaks with Holm corrections, randomisation inference and alternative break years). No causal effect of the BRI is estimated.
+
+Relative to Kazakhstan's trade with its other partners, most of the swing is specific to China: 52–92 per cent depending on base and end years, 71 per cent with averaged endpoints. Its largest part is a rise in imports from China after 2019. That rise was not specific to Kazakhstan: between 2019 and 2024 China's exports to each of Kazakhstan's five neighbours grew by a factor of 2.2–3.2, and to Kazakhstan by 2.2, the lowest of the six. On the export side, oil exports to China fell by more than to other markets, mainly between 2013 and 2014, contrary to the resource-security expectation; strategic mineral exports offset part of the swing in every specification; and agri-food exports reoriented towards China, matching the market-access mechanism in products, but without acceleration at any dated BRI milestone (2012, 2013, 2015, 2017). Chinese official finance peaked before 2013. Relative to Kazakhstan's other partners, bilateral trade turnover did not expand specifically with China before 2019.
+
+The thesis concludes that the swing is real and mostly China-specific from Kazakhstan's side, that its largest component was shared by China's other neighbours, and that the merchandise-trade evidence does not show a change that both matches a BRI mechanism and starts or accelerates at a BRI milestone. This does not establish that the BRI had no effect on Kazakhstan: effects on transit, investment, productivity or welfare, region-wide effects and effects too small to detect are outside what the design can see.
+
+**Keywords:** Belt and Road Initiative; Kazakhstan–China trade balance; strategic minerals; comparison-adjusted decomposition; PPML; mirror statistics; Central Asia
 
 
 # 1. Introduction
 
-*Note on terminology: The official registered title of this dissertation uses the word "impact." Throughout this work, "impact" refers to post-BRI associations and trade-balance dynamics observed in the data, not to a causal effect established through experimental or quasi-experimental identification. The analysis is explicitly diagnostic and associational.*
+## 1.1 The Phenomenon
 
-Kazakhstan occupies a central position in the overland economic geography of China's Belt and Road Initiative (BRI). The Silk Road Economic Belt was announced in Astana in September 2013, and since then Kazakhstan's transport corridors, mineral exports, and financing relationships have been folded into the broader architecture of Eurasian connectivity. Policy discourse frequently treats BRI as a vehicle for mutual economic benefit: more infrastructure should reduce trade costs, increase bilateral exchange, and expand opportunities for landlocked economies. Yet the distinction between trade growth and trade-balance improvement is analytically essential. A corridor that increases both exports and imports may expand total trade while simultaneously weakening the bilateral trade-balance position of the smaller partner.
+China is one of Kazakhstan's two most important trading partners. In 2023 it supplied 27.4 per cent of Kazakhstan's imports and took 18.7 per cent of its exports [@bns_2024_foreign_trade]. Kazakhstan is also where the BRI began: Xi Jinping proposed the Silk Road Economic Belt at Nazarbayev University in Astana on 7 September 2013 [@xinhua_chinadaily_2013]. Connectivity between the two countries was improving before and after that date: a second rail border crossing, Altynkol–Khorgos, opened in December 2012 [@tengrinews_altynkol_2012]; the Khorgos Gateway dry port began operating in 2015, with Chinese state companies taking a 49 per cent stake in 2017 [@ktze_khorgos_2025]; Chinese policy banks financed road reconstruction in 2017–2018 [@aiddata_gcdf3_2023]; and the two governments signed protocols opening the Chinese market to Kazakh agricultural products [@astanatimes_agri_2023].
 
-This thesis studies a specific dimension of that problem. The research question asks: *How did the post-BRI period coincide with changes in the relationship between Kazakhstan's strategic mineral exports to China and Kazakhstan's bilateral trade balance with China?* The question is deliberately associational. BRI is not a randomly assigned treatment, and the available data do not support credible causal identification. The thesis therefore provides diagnostic and suggestive evidence rather than causal proof.
+Over the same period Kazakhstan's merchandise trade balance with China swung by USD 15.5 billion: by China's reported data, from a surplus of USD 3.5 billion in 2013 to a deficit of USD 3.9 billion in 2019 and USD 12.0 billion in 2024 (Table 6.1). The composition of trade also changed: oil fell from 62 to 22 per cent of Kazakhstan's exports to China, metals and ores rose from 36 to 67 per cent, and imports from China more than doubled after 2019.
 
-The analytical motivation is straightforward. Kazakhstan's exports to China are heavily concentrated in natural resources, including uranium, copper, and chromium products. These strategic minerals are economically valuable and increasingly relevant to China's industrial and energy supply chains. If BRI-era trade facilitation strengthened Kazakhstan's mineral export position, one might expect the bilateral trade balance to improve, or at least to maintain its pre-BRI level. The descriptive evidence suggests otherwise. Between 2000–2013 and 2014–2023, Kazakhstan's average bilateral trade balance with China fell by 37.8 per cent, from USD 3.35 billion to USD 2.08 billion, even as narrow strategic mineral exports rose by 29.2 per cent, from USD 1.92 billion to USD 2.48 billion (Table 4.2). Trade decomposition reveals that this divergence is driven primarily by import-side deepening: Kazakhstan's imports from China grew by 94.3 per cent compared to export growth of 24.3 per cent (Table 4.3). This pattern motivates the central puzzle: mineral exports increased, yet the bilateral trade-balance position weakened because import growth substantially outpaced export growth.
+## 1.2 The Puzzle
 
-The thesis uses asymmetric interdependence as its primary theoretical lens. Following Keohane and Nye [-@keohane_nye_1977] and Hirschman [-@hirschman_1945], the framework treats economic linkages as a source of both gains and vulnerability. Interdependence becomes asymmetric when one partner has more outside options, greater market power, or lower adjustment costs. The framework is more precise than dependency theory because it allows for mutual gains, sectoral leverage, and policy agency, while still treating trade concentration as politically and economically consequential.
+The swing coincides with the BRI, and the BRI is the obvious bilateral explanation. But two other explanations predict the same before-and-after pattern. The swing may be the bilateral reflection of shocks that hit all of Kazakhstan's trade, such as the 2014–2016 collapse of oil and metal prices. Or it may be the Kazakh reflection of changes in China's trade with the whole region, such as the reorganisation of trade with Russia after 2022. Before-and-after comparisons cannot tell these apart. The puzzle is therefore: **Kazakhstan's merchandise trade with China changed sharply in the BRI era, but it is not known whether the change is distinctive to the Kazakhstan–China relationship at all, and if it is, whether it took the form the BRI's mechanisms imply.**
 
-The empirical strategy is convergent and transparent. The thesis constructs an annual Kazakhstan–China bilateral time-series dataset for 2000–2023, estimates descriptive pre/post comparisons, structural-break diagnostics, and dynamic association models (OLS with HAC standard errors), and performs a 288-row robustness grid. Multicollinearity is addressed by adopting GDP growth rates as the primary specification (max VIF = 10.4, down from 236.3 in the original GDP-levels model). The primary regression estimates a negative post-BRI × minerals interaction of −2.49 (*p* = 0.011), but this result does not survive exclusion of 2022–2023. The most important identification finding comes from a two-way fixed-effects (TWFE) DiD partner-placebo design using Kazakhstan's bilateral trade with Russia, Germany, Uzbekistan, Turkey, and the USA as control units (data from UN Comtrade, 2000–2023): the post-2013 balance deterioration is **China-specific**, with a DiD coefficient of −0.305 (*p* = 0.0002), ruling out common macroeconomic shocks as the sole explanation.
+## 1.3 The Trade Balance and the Trade Relationship
 
-These results are interpreted as strong diagnostic evidence that Kazakhstan's bilateral trade deterioration post-BRI is China-specific and consistent with asymmetric interdependence deepening. The regression interaction is fragile; the cross-partner identification is robust. The strongest empirical contributions are: (i) the descriptive decomposition showing import-side deepening as the primary mechanism; (ii) the TWFE DiD demonstrating China-specificity; and (iii) transparent reporting of regression fragility.
+The registered topic names the bilateral trade balance as the outcome. It is necessary to be precise about what the balance is and is not.
 
-## 1.1 Contribution
+*The balance is not the relationship.* The BRI is usually discussed in terms of infrastructure, transport costs, trade facilitation, investment and trade expansion. None of these is the bilateral balance. Lower trade costs can raise both exports and imports, so the BRI could expand and deepen Kazakhstan–China trade while worsening, improving or leaving unchanged the bilateral balance. Imports of Chinese machinery and equipment can raise Kazakhstan's productive capacity; consumer imports can lower prices; goods can transit Kazakhstan to third countries. Machinery, electrical equipment and vehicles account for 47 per cent of the 2019–2024 rise in imports from China (Table 6.11). The BRI's best-documented channel for Kazakhstan, China–Europe rail transit [@mau_seuren_2023], earns service revenue that is not recorded in merchandise trade. A bilateral balance is also not a measure of gains from trade [@ricardo_1817; @heckscher_1919]: Kazakhstan's total merchandise exports in 2024 (USD 82.5 billion) were close to their 2013 level (USD 84.7 billion) [@wdi_2026]. The thesis therefore does not treat the swing as a loss or the deficit as a problem.
 
-This thesis makes five specific contributions. First, it distinguishes between trade expansion and trade-balance improvement, shifting attention from aggregate trade volumes to bilateral trade-balance outcomes in a diagnostic case study of Kazakhstan and China. Second, it bridges theory and method by using asymmetric interdependence to interpret the moderating compositional channel of strategic mineral exports, accommodating both mutual gains and distributional asymmetry. Third, it tests whether strategic mineral exports translated into external-balance improvement, demonstrating that resource-export growth is not inherently synonymous with an improved external position. Fourth, it provides a transparent and reproducible annual Kazakhstan–China single country-pair dataset with a fully scripted pipeline. Fifth, it treats the results explicitly as diagnostic and fragile, deploying small-sample robustness checks and influence diagnostics to document the critical role of 2023. By providing an honest interpretation of fragility, the thesis strengthens methodological discipline and avoids claiming definitive causal identification of a stable structural effect.
+*What the balance is good for.* First, it is an accounting identity: a swing of USD 15.5 billion must equal the sum of changes in specific exports and imports, so explaining it requires an account of the whole merchandise relationship, both sides and all product groups, rather than of one flow. The thesis uses it in that way: every result is a component of the swing, and bilateral trade turnover (exports plus imports), the outcome closest to the BRI trade-expansion literature, is reported alongside it (§6.2). Second, the balance with China is the indicator most often cited in Kazakhstan's public debate about the BRI, so establishing what moved it has direct policy relevance. Third, the registered topic asks about strategic mineral exports, and the balance is where their contribution can be set against the other components.
 
-## 1.2 Structure
+*Scope of the conclusions.* Conclusions are limited to Kazakhstan's merchandise trade with China: its balance, turnover and composition. The thesis does not assess the BRI's effects on transit services, investment, productivity or welfare.
 
-The remainder of this thesis is organised as follows. Chapter 2 reviews the literature and identifies the research gap. Chapter 3 presents the theoretical framework. Chapter 4 describes the data, variable construction, and data limitations. Chapter 5 explains the empirical strategy. Chapter 6 presents the results, including influence diagnostics and model stability analysis. Chapter 7 discusses the findings and their implications. Chapter 8 concludes.
+## 1.4 Research Question
+
+> **Central research question.** *Is the post-2013 change in Kazakhstan–China merchandise trade, summarised by the swing in the bilateral balance, distinctive to the Kazakhstan–China relationship, and is it consistent with the BRI mechanisms that are observable in merchandise trade, in particular through strategic mineral exports?*
+
+"Distinctive" is assessed against two comparisons, which answer different questions, use different data and are not combined into a single number:
+
+- **Relative to Kazakhstan's other partners.** Did trade with China change differently from Kazakhstan's trade with the rest of the world, product by product? This removes shocks common to Kazakhstan's trade, including world commodity prices.
+- **Relative to China's other regional partners.** Did China's trade with Kazakhstan change differently from China's trade with Russia and the other Central Asian states? This removes shocks common to China's trade with the region. Because those partners are also BRI participants, it also removes any region-wide BRI effect.
+
+"Consistent with a BRI mechanism" means that a change has the products, direction and timing that the mechanism predicts (Table 3.1). Timing is assessed against dated connectivity milestones (2012, 2013, 2015, 2017; Table 6.13b), not only against the 2013 announcement.
+
+Four sub-questions organise the analysis:
+
+- **SQ1.** Which flows and product groups account for the swing, and how much of it, and of bilateral turnover, is China-specific relative to Kazakhstan's other partners? (§6.1–6.2)
+- **SQ2.** Which export groups, including strategic minerals, changed specifically towards or away from China, and did those changes begin or accelerate at BRI milestones? (§6.3–6.5)
+- **SQ3.** Was the rise in imports from China specific to Kazakhstan relative to China's other regional partners, and when did it occur? (§6.6)
+- **SQ4.** Do the timing and sectors of measurable BRI channels (Chinese finance, transport and border infrastructure, market access) match the components found under SQ1–SQ3? (§6.8)
+
+The reliability of the bilateral statistics is a precondition, examined first (Chapter 4), because comparison-adjusted components are exactly what reporting discrepancies distort.
+
+## 1.5 Why the BRI Is Central, and What Kind of Claim Is Made
+
+The BRI is central for three reasons. First, it is the hypothesis the question is built around: the reason to ask whether the change is distinctive to the relationship is that the BRI is a bilateral and regional framework. Second, the BRI literature specifies mechanisms with observable implications for which products change and when (Chapters 2–3). Third, the conclusion is a statement about the BRI: which of its observable mechanisms the merchandise-trade evidence matches, which it contradicts, and where it is silent.
+
+The thesis tests BRI *mechanisms* where they have observable implications in merchandise trade (products, direction, timing); it does not test the BRI as a whole. Three kinds of evidence are kept distinct:
+
+1. **Accounting decompositions** (Table 6.2): identities that show which flows moved.
+2. **Comparison-adjusted components** (Tables 6.3–6.4, 6.10b–c): how much a flow changed relative to a benchmark. They describe distinctiveness, not causes, and they are not a bound on any BRI effect: the BRI can change Kazakhstan's trade with other partners too, which moves the benchmark, and BRI effects inside a China-specific component can be offset by other China-specific changes.
+3. **Statistical tests** on product-level data (Tables 6.7–6.9b, 6.12): whether China-specific export changes are distinguishable from noise and whether they began or accelerated at the predicted times.
+
+Claims are graded at three levels: **A** (context: the BRI is the policy framework of the period), **B** (a distinctive change whose products, direction and timing match a BRI mechanism) and **C** (a causal effect). The design can reach A and B, never C. A test that cannot detect a change is *absence of evidence*; a change in the opposite direction or without the predicted timing is *evidence inconsistent with a specific mechanism's prediction*; neither is *evidence that the BRI had no effect*.
+
+## 1.6 Aim, Objectives and Contribution
+
+**Aim.** To determine what accounts for the post-2013 change in Kazakhstan–China merchandise trade, summarised by the balance, how far it is distinctive to the relationship, and whether its distinctive components are consistent with the BRI mechanisms observable in merchandise trade, including through strategic mineral exports.
+
+**Objectives.**
+
+1. To derive the BRI's expected mechanisms and their observable implications from the literature, including studies that find positive BRI trade effects (Chapters 2–3).
+2. To build and validate a dataset in which distinctive components can be measured, reconciling Kazakh and Chinese statistics (Chapter 4).
+3. To decompose the swing by flow and product group and compare it, and turnover, with Kazakhstan's other partners (§6.1–6.2).
+4. To test which export groups changed specifically towards China, and when, against dated milestones (§6.3–6.5).
+5. To compare the rise in imports with China's trade with Kazakhstan's neighbours (§6.6).
+6. To compare BRI channels with these components and state what the evidence does and does not show for each mechanism (§6.8–6.9, Chapters 7–8).
+
+**Object and subject.** The *object* is Kazakhstan–China bilateral merchandise trade. The *subject* is the composition and distinctiveness of the post-2013 change in that trade, summarised by the bilateral balance, and its relationship to BRI mechanisms and strategic mineral exports.
+
+**Contribution.** The thesis replaces a before-and-after narrative with a two-sided comparison and a mechanism-by-mechanism assessment for one country pair. Its contribution is modest and specific: it shows which parts of the change in Kazakhstan–China merchandise trade were distinctive, from which side, and how each part relates to the observable predictions of BRI mechanisms (mechanism scorecard, §6.9). Supporting contributions are tests of the timing of the agri-food reorientation against several milestones and the documentation of a reporting break in Kazakhstan's 2020–2022 partner statistics.
+
+**Provisions submitted for defence.**
+
+1. Relative to Kazakhstan's other partners, most of the 2013–2024 swing is China-specific (52–92 per cent depending on base and end years; 71 per cent with averaged endpoints); its largest part is a rise in imports from China after 2019, and bilateral turnover did not expand specifically with China before 2019.
+2. The post-2019 rise in imports from China was not specific to Kazakhstan: China's exports to each of Kazakhstan's five neighbours grew as fast or faster in 2019–2024.
+3. On the export side, the China-specific fall in oil exports runs opposite to the resource-security expectation, strategic mineral exports offset part of the swing in every specification, and the agri-food reorientation matches the market-access mechanism in products but shows no acceleration at any dated milestone.
+4. Kazakhstan's 2020–2022 partner statistics omit major metal exports and machinery imports; China's mirror data are needed to measure the relationship.
+
+## 1.7 Relevance, Novelty and Significance
+
+**Relevance.** China is one of Kazakhstan's two largest trading partners, and the bilateral deficit with China is widely cited in Kazakhstan as a measure of what the BRI has meant for the country. Whether that deficit reflects the BRI, the commodity cycle or regional developments matters for how trade, customs and statistical policy respond. The question is also timely: the largest part of the swing occurred in 2022–2024, during the reorganisation of trade in the region after 2022.
+
+**Scientific novelty.** Within the literature reviewed here (Chapter 2), studies of the BRI and Kazakhstan–China trade either estimate average effects across many countries or describe one pair's trade before and after 2013. This thesis is, as far as the author has found, the first to (i) compare the change in Kazakhstan–China merchandise trade against two separate benchmarks, Kazakhstan's other partners and China's other regional partners; (ii) test the timing of China-specific export changes against dated connectivity milestones rather than the announcement alone; and (iii) document, with China's mirror data, the omission of major chapters from Kazakhstan's 2020–2022 partner statistics. The claim of novelty is limited to this combination for this country pair; each method is standard.
+
+**Theoretical significance.** The thesis connects the BRI trade-cost and market-access literature, which predicts changes in trade volume and composition, with the policy debate about the bilateral balance, and shows what each mechanism implies for an outcome that the literature itself does not study.
+
+**Practical significance.** The results are relevant to three audiences. For trade policy, they show that the post-2019 deficit is better treated as part of a regional import pattern than as a consequence of specific BRI projects. For agricultural export promotion, they identify agri-food as the one area where Kazakhstan's exports reoriented towards China, a reorientation that recorded Chinese finance did not target. For official statistics, they show that partner-level data for 2020–2022 need reconciliation with partner reports before they can support analysis of the relationship.
+
+## 1.8 Structure
+
+Chapter 2 reviews the literature, including evidence of positive BRI trade effects. Chapter 3 states what each mechanism predicts and what would count as support or contradiction. Chapter 4 builds and validates the data. Chapter 5 sets out the decompositions, comparisons, tests and safeguards. Chapter 6 answers the sub-questions and ends with a synthesis (Table 6.14) and a mechanism scorecard (§6.9). Chapter 7 interprets the results. Chapter 8 concludes.
 
 
 # 2. Literature Review
 
-The literature relevant to Kazakhstan–China trade under BRI spans several overlapping debates. Rather than summarising individual studies, this review synthesises what the literature agrees on, identifies disagreements and limitations, and explains how each strand connects to the research question.
+## 2.1 Resource-Based Trade and the Comparative-Advantage Null
 
-## 2.1 Trade Theory, Resource Specialisation, and Trade-Balance Outcomes
+Standard trade theory predicts that a resource-abundant economy such as Kazakhstan exports resource-intensive goods and imports manufactures from a labour- and capital-abundant economy such as China [@ricardo_1817; @heckscher_1919; @ohlin_1933]. In that framework neither the bilateral balance nor the share of a particular partner has welfare significance in itself. What matters for this thesis is the empirical implication: if Kazakhstan's comparative advantage and world prices determine what it exports, the composition of its exports should change in the same way for every destination. Any change in the composition of exports to China would then reflect world prices and Kazakhstan's own supply, not anything specific to China. This is the null hypothesis against which BRI-related claims must be tested.
 
-Classical trade theory predicts that countries gain from trade by specialising according to comparative advantage [@ricardo_1817]. The Heckscher–Ohlin framework extends this logic: resource-abundant countries like Kazakhstan should export resource-intensive goods, while labour- and capital-abundant countries like China should export manufactures [@heckscher_1919; @ohlin_1933]. In this framework, bilateral trade expansion is mutually beneficial regardless of trade-balance outcomes, because gains accrue through efficiency improvements rather than balance-of-payments surplus.
+The commodity-dependence literature explains why that null is demanding. Commodity prices are volatile and have long cycles [@harvey_etal_2010], resource booms affect the real exchange rate and non-resource sectors [@corden_neary_1982], and the developmental consequences of resource wealth depend on institutions and policy [@sachs_warner_1995; @vanderploeg_2011; @frankel_2010]. Export growth driven by resource volume can even reduce welfare when it worsens the terms of trade [@bhagwati_1958]. For Kazakhstan, the 2014–2016 oil price collapse alone could produce large changes in export composition, the bilateral balance and the exchange rate without any change in trade costs with China.
 
-However, the trade-balance implications of resource specialisation are not neutral. Bhagwati [-@bhagwati_1958] demonstrated that export growth can be *immiserising* if it worsens the terms of trade sufficiently to offset volume gains. Applied to Kazakhstan, this concern is relevant because strategic mineral exports are price-taking commodities subject to global demand cycles. If mineral export values rise due to volume expansion while unit values stagnate or decline, the trade-balance benefit may be smaller than headline export figures suggest.
+## 2.2 Trade Costs, Gravity and the BRI
 
-New trade theory [@krugman_1979; @helpman_krugman_1985] adds that trade patterns between differentiated and homogeneous goods producers create structural asymmetries. A country exporting homogeneous minerals and importing differentiated manufactures faces different elasticities of substitution on each side of its trade balance. This framework helps explain why import-side growth from China—spanning machinery, consumer goods, and intermediate inputs—may be more income-elastic than mineral export growth.
+Gravity models explain bilateral trade by economic size and bilateral trade costs relative to the trade costs each country faces with all partners [@anderson_vanwincoop_2003]. Poisson pseudo-maximum-likelihood (PPML) estimation of such models is now standard because it handles zero flows and heteroskedasticity [@santos_silva_tenreyro_2006]. The BRI literature applies this framework. De Soyres et al. [-@desoyres_etal_2019; -@desoyres_etal_2020] estimate that BRI transport projects reduce shipping times and trade costs, with gains concentrated along corridors. Baniya, Rocha and Ruta [-@baniya_rocha_ruta_2020] find that BRI-related improvements raise trade flows, more so when infrastructure is complemented by trade-policy reforms. Bird, Lebrand and Venables [-@bird_lebrand_venables_2020] model Central Asia specifically and show that gains from improved connectivity are uneven across locations and sectors.
 
-**Empirical bridge (Pillar 1 — trade theory).** This strand predicts that `minerals_narrow` should have a **positive** coefficient in the pre-BRI baseline (H2): mineral export revenues are associated with an improved bilateral balance. The differential elasticity prediction implies that import growth will outpace export growth post-BRI, consistent with the **negative** `post_bri_x_minerals` interaction in H3.
+Two limits of this literature matter here. First, most estimates are simulations or cross-country averages; they do not test what happened in one country pair. Second, they predict *more trade*, not a particular balance or composition. The trade-cost channel has a compositional implication only through the next strand of theory: lower trade costs matter most for products that were previously not traded or were traded little.
 
-## 2.2 Commodity Dependence, Terms of Trade, and External Vulnerability
+## 2.3 Evidence of Positive BRI Trade Effects, and How It Relates to This Thesis
 
-The Prebisch–Singer hypothesis posits that the terms of trade for primary commodity exporters tend to deteriorate over time relative to manufactured-goods exporters [@prebisch_1950; @singer_1950]. Harvey et al. [-@harvey_etal_2010] provide four centuries of evidence consistent with long-run commodity terms-of-trade decline, though with significant heterogeneity across commodities and periods.
+A substantial peer-reviewed literature finds that the BRI lowers trade costs and raises trade. Table 2.1 summarises the four studies most relevant here, with what each estimates.
 
-Sachs and Warner [-@sachs_warner_1995] link resource abundance to development risks through the resource curse mechanism, while van der Ploeg [-@vanderploeg_2011] emphasises that resource wealth can be either a curse or blessing depending on institutional quality, volatility management, and reinvestment patterns. Auty [-@auty_1993] coined the term "resource curse" and documented how mineral-rich developing economies often underperform expectations. Corden and Neary [-@corden_neary_1982] formalised Dutch Disease, showing how resource booms can crowd out manufacturing competitiveness through real exchange-rate appreciation.
+**Table 2.1. Selected studies of BRI trade effects and their comparability with this thesis**
 
-Frankel [-@frankel_2010] reviews the resource curse literature and argues that the negative association between resources and growth is not deterministic but conditional on institutions and commodity-price management. Applied to Kazakhstan, the relevant question is whether BRI-era mineral export growth was accompanied by value-added upgrading and import-substitution or whether it reproduced the commodity-dependent pattern that the resource curse literature identifies as problematic.
+| Study | Design | Outcome (dependent variable) | Main finding | Comparable to this thesis? |
+|---|---|---|---|---|
+| de Soyres et al. [-@desoyres_etal_2020], *International Economics* | Ex-ante; transport-network estimates of planned BRI projects | Shipment times and trade costs | Shipment times −1.7 to −3.2 per cent and trade costs −1.5 to −2.8 per cent in BRI economies; up to −11.9 and −10.2 per cent along some corridors | Mechanism only: predicts lower costs, not a bilateral balance |
+| Baniya, Rocha and Ruta [-@baniya_rocha_ruta_2020], *Journal of Development Economics* | Ex-ante; estimated trade-time reductions fed into gravity and comparative-advantage models | Bilateral trade flows among 71 BRI economies | Trade flows up to +4.1 per cent; about three times more with trade reforms; larger gains for time-sensitive products | Predicts volume and composition (time-sensitive goods); not the balance |
+| Foo, Lean and Salim [-@foo_lean_salim_2020], *North American Journal of Economics and Finance* | Ex-post augmented gravity model, ASEAN and China, 2000–2016 | Bilateral trade flows | Positive, statistically significant BRI (OBOR) dummy | Different region; total trade, not balance; dummy-based timing |
+| Mau and Seuren [-@mau_seuren_2023], *Review of World Economics* | Ex-post panel, timing of China–Europe rail connections, 1996–2018 | European countries' exports to China, by industry | Rail connections raised European exports to China, including for indirectly connected countries | Transit corridor through Central Asia; outcome is third-country exports, not Kazakhstan's trade |
 
-**Empirical bridge (Pillar 2 — resource dependence).** This strand predicts that `brent_annual_mean` should carry an **ambiguous but predominantly positive** sign: higher commodity prices improve Kazakhstan's export revenues in the short run (positive for balance), but via Dutch Disease mechanisms may also appreciate the real exchange rate and crowd out manufacturing (partially negative over time). The `kzt_usd` depreciation variable captures the reverse competitiveness channel and is predicted to be **positive** on the bilateral balance via the Marshall–Lerner condition.
+*All four entries were checked against the publisher's or RePEc's record of the abstract (Paper/evidence_audit.md). Effect sizes in the body of Mau and Seuren were not used. A Kazakhstan-specific simulation by Krulikowski and Riker [-@krulikowski_riker_2024] is discussed in §2.6.*
 
-## 2.3 BRI as Trade Facilitation
+These studies and this thesis answer different questions, and their results are compatible with this thesis's findings. First, none of them uses a bilateral trade *balance* as the outcome; they measure trade costs, total trade or one side's exports. A BRI that raises both exports and imports can leave the balance better, worse or unchanged, so their positive findings neither predict nor contradict a particular direction of Kazakhstan's balance with China. Second, the ex-ante effects are a few per cent on average, smaller than this design can detect in one country pair's annual data (§6.7); a failure to detect them is absence of evidence. Third, the rail evidence concerns China–Europe transit, in which Kazakhstan is a corridor; transit earns Kazakhstan service revenue that merchandise trade data do not record. Fourth, the mechanisms these studies identify have specific implications for Kazakhstan's own trade with China (turnover, time-sensitive and non-traditional goods), and those implications are tested here (Chapter 3).
 
-The strongest econometric evidence for BRI trade effects comes from gravity and GIS-linked models. De Soyres et al. [-@desoyres_etal_2019; -@desoyres_etal_2020] use shipping-time estimates to show that BRI infrastructure can reduce trade costs, with the largest gains concentrated along corridors. Baniya, Rocha, and Ruta [-@baniya_rocha_ruta_2020] estimate gravity models and find that BRI-related improvements raise trade flows, especially when transport investment is complemented by trade reforms. Anderson and van Wincoop [-@anderson_vanwincoop_2003] provide the theoretical foundation for gravity-based trade-cost analysis. Rolland [-@rolland_2017] situates these trade-facilitation dynamics within China's broader Eurasian strategic logic, arguing that BRI infrastructure serves geopolitical as well as commercial purposes. Swaine [-@swaine_2015] analyses Chinese official commentary on BRI, showing that the initiative was explicitly framed to combine economic connectivity with strategic depth.
 
-However, the trade-facilitation literature has an important limitation for this thesis. It generally treats increased trade as the primary success metric. It does not systematically ask whether the smaller partner's bilateral trade balance improves, deteriorates, or remains unchanged. A corridor that increases both exports and imports may raise total trade while shifting the trade-balance distribution against the resource-exporting partner.
+## 2.4 The Margins of Export Growth and Diversification
 
-**Empirical bridge (Pillar 3 — BRI trade facilitation).** This strand predicts that `log(CN GDP / KZ GDP)` should have a **negative** sign: as China's economy grows faster relative to Kazakhstan's, its export capacity expands, worsening Kazakhstan's bilateral trade balance. It also motivates the `post_bri_2013` period dummy as a partial test of trade-cost reduction, while noting that the dummy conflates BRI-specific effects with concurrent commodity shocks. The comparative DiD design (§6.5) addresses this limitation by testing whether the post-2013 balance shift is China-specific or common across all of Kazakhstan's trading partners.
+Models with heterogeneous firms imply that lower trade costs allow new, less productive firms and new products to enter a market [@melitz_2003], so that bilateral trade responds to trade costs mainly through the *extensive margin* of new products and firms [@chaney_2008]. Across countries, larger exporters export more varieties [@hummels_klenow_2005]. Diversification also follows a development pattern: production and exports diversify as income rises and re-concentrate only at high income levels [@imbs_wacziarg_2003; @cadot_carrere_strausskahn_2011]. These studies give the BRI trade-cost argument a specific, testable form: if BRI connectivity lowered the cost of reaching China, the gains should be largest for products that Kazakhstan exported little to China before, especially perishable or time-sensitive goods such as food, and the number of products exported to China should rise relative to other markets.
 
-## 2.4 BRI as Asymmetric Interdependence
+## 2.5 Chinese Finance and Resource Projects
 
-A second strand treats BRI-era connectivity as a context for asymmetric economic relationships. Keohane and Nye [-@keohane_nye_1977] define interdependence as mutual dependence that creates both sensitivity and vulnerability. Hirschman [-@hirschman_1945] argues that foreign trade generates political influence when a partner's dependence is concentrated and costly to replace.
+A separate strand concerns Chinese official finance. China has become the largest official creditor to developing countries [@horn_reinhart_trebesch_2021], and BRI lending raised debt-sustainability concerns in several corridor economies [@hurley_morris_portelance_2018], although claims of systematic "debt-trap diplomacy" are not supported by the evidence [@brautigam_2020]. AidData's Global Chinese Development Finance Dataset records Chinese official commitments project by project for 2000–2021 [@aiddata_gcdf3_2023; @custer_etal_2023]. For Kazakhstan, the relevant question is whether Chinese finance went into export capacity, for instance mines and processing, and whether that capacity was then oriented towards China. Jepson and Baldakova [-@jepson_2024] study whether Chinese state capital supported resource-based structural transformation in Bolivia and Kazakhstan, and Calabrese [-@calabrese_2024] asks the same question for diversification in the Kyrgyz Republic. Global value chain research adds that suppliers in captive relationships often have limited scope for upgrading [@gereffi_humphrey_sturgeon_2005].
 
-Horn, Reinhart, and Trebesch [-@horn_reinhart_trebesch_2021] document the rise of China as the world's largest official creditor, showing that Chinese lending creates financial interdependencies alongside trade linkages. Petry [-@petry_2023] demonstrates that financial infrastructures are part of Chinese economic statecraft, not secondary to physical corridors. Hurley, Morris, and Portelance [-@hurley_morris_portelance_2018] assess the debt-sustainability implications of BRI financing for low- and middle-income countries, finding that several corridor economies face elevated risk. Brautigam [-@brautigam_2020] critically examines the "debt-trap diplomacy" narrative, cautioning against both uncritical BRI promotion and undifferentiated alarmism—a nuance relevant to the Kazakhstan case, where Chinese financing supports infrastructure without yet producing the balance-sheet stress seen in some South Asian borrowers. Recent Kazakhstan-specific evidence supports asymmetric rather than symmetric interdependence. Primiano and Kudebayeva [-@primiano_kudebayeva_2025] find uneven public reception of BRI in Kazakhstan. Mostowlansky [-@mostowlansky_2020] shows how border security, soft power, and suspicion interact at the Sino-Kazakh boundary.
+## 2.6 Kazakhstan, Central Asia and China
 
-**Empirical bridge (Pillar 4 — asymmetric interdependence, PRIMARY).** This is the load-bearing pillar. It predicts that (i) `post_bri_x_minerals` should be **negative** (H3): the post-BRI period coincided with mineral export growth failing to translate into trade-balance improvement, as China's leverage expanded faster than Kazakhstan's export revenues; (ii) `post_bri_2013` should be **negative** (H1): the post-BRI period is associated with a level shift in bilateral trade that favours the more diversified partner; (iii) this pattern should be **China-specific** rather than common across all of Kazakhstan's partners, which is evaluated by the DiD partner-placebo design (§6.15) and the synthetic counterfactual (§6.16). Variables directly operationalising this pillar are `post_bri_2013`, `post_bri_x_minerals`, and `log(CN GDP / KZ GDP)`.
+Area studies emphasise that the BRI in Central Asia is a broad label applied to projects, agreements and diplomatic initiatives of very different kinds [@laruelle_2018; @cooley_2012]. Pomfret [-@pomfret_2019] documents how Central Asian trade has been shaped by transport costs, trade policy and the Eurasian Economic Union, not only by China. Laruelle and Peyrouse [-@laruelle_peyrouse_2012] and Grant [-@grant_2020] show that the Chinese presence is received ambivalently in Kazakhstan, and Primiano and Kudebayeva [-@primiano_kudebayeva_2025] find uneven views of the BRI among Kazakh students. Rolland [-@rolland_2017] and Swaine [-@swaine_2015] describe the strategic purposes China attaches to the initiative. This literature is a warning against treating "the BRI" as a single treatment with a single start date.
 
-## 2.5 Kazakhstan, Central Asia, and China
+Quantitative studies of Kazakhstan–China trade itself are fewer. Huang, Yenina and Hossain [-@huang_yenina_hossain_2021] apply Hummels–Klenow margin indices and intra-industry trade indices to China–Kazakhstan trade in 2002–2017 and describe a growing extensive margin of bilateral trade. Their indices are not benchmarked against Kazakhstan's trade with other partners, so they cannot show whether that growth was specific to China; this thesis's extensive-margin test (§6.7) adds that comparison. Krulikowski and Riker [-@krulikowski_riker_2024], in a U.S. International Trade Commission working paper, combine a structural gravity model with a growth model and BRI membership dates, and simulate that the BRI raised Kazakhstan's total exports by 10.7 per cent, its total imports by 15.4 per cent and China's exports to Kazakhstan by 29.1 per cent in 2022 relative to a no-BRI counterfactual, with the largest gains among Central Asian countries. These are model-based average effects rather than observed changes, and the paper is not peer-reviewed, but it is the closest existing estimate for this pair. It implies that the BRI may have widened Kazakhstan's bilateral deficit by raising imports more than exports, and that its effects were region-wide. Both implications bear directly on how this thesis's results should be read (§7.3).
 
-Central Asia studies caution that geography and local political economy matter. Bird, Lebrand, and Venables [-@bird_lebrand_venables_2020] model how BRI can reshape economic geography in Central Asia, with gains unevenly distributed across locations. Pomfret [-@pomfret_2019] analyses Central Asian trade patterns and regional integration dynamics. Cooley [-@cooley_2012] examines great-power competition in Central Asia, including China's growing economic footprint. Laruelle [-@laruelle_2018] documents China's Belt and Road Initiative in Central Asia from multiple analytical perspectives. Laruelle and Peyrouse [-@laruelle_peyrouse_2012] provide foundational analysis of the social and political dimensions of China's growing presence in the region, including the reception of Chinese labour and capital by local populations. Olcott [-@olcott_2002] offers an early and still-relevant account of Kazakhstan's post-independence challenges, establishing the resource-dependence baseline against which BRI-era changes should be measured.
+## 2.7 Asymmetric Interdependence
 
-Jepson and Sweeney [-@jepson_2024] directly examine whether Chinese state capital supports resource-based structural transformation in Kazakhstan and Bolivia. Calabrese [-@calabrese_2024] asks whether Chinese capital can support diversification away from extractives in the Kyrgyz Republic. The global value chain (GVC) literature adds that governance structures shape whether suppliers upgrade or remain in captive, low-value positions [@gereffi_humphrey_sturgeon_2005].
+Keohane and Nye [-@keohane_nye_1977] distinguish *sensitivity*, how quickly changes in one economy affect another, from *vulnerability*, the cost of adjusting when a relationship is disrupted. Hirschman [-@hirschman_1945] showed that trade can become a source of influence for the larger partner when the smaller partner's trade is concentrated on it and hard to redirect. This framework is frequently invoked for Kazakhstan–China relations. It does not, however, predict that trade concentration is harmful, or that it will be used as leverage; it predicts that the costs of disruption are distributed according to who can substitute more easily. Whether that is the case is an empirical question about both sides of the relationship, which most applications do not measure.
 
-**Empirical bridge (Pillar 5 — GVC and upgrading).** This strand predicts that if Kazakhstan occupies a captive supplier position, the `post_bri_x_minerals` interaction should be **negative**: rising mineral exports coincide with rising imports of Chinese capital goods and machinery needed for extraction, rather than supporting domestic value-chain upgrading. The import-category decomposition in §6.4 (HS 84 machinery, HS 85 electronics, HS 87 vehicles) tests this mechanism directly: if these categories exploded disproportionately post-2013, it is consistent with an extractive-infrastructure import channel that drains the trade balance while mineral exports rise.
+## 2.8 Research Gap
 
-## 2.6 Empirical Methods in BRI and Small-Sample Trade Research
+The literature supplies BRI mechanisms (trade costs and market access; resource finance), a null (comparative advantage and common shocks), and evidence that the BRI raises trade volumes on average. Among the studies reviewed here, the Kazakhstan-specific work either describes bilateral trade without a benchmark or simulates average BRI effects from membership dates; none asks whether the swing in Kazakhstan's balance with China is distinctive to the relationship, either relative to Kazakhstan's other partners or relative to China's other regional partners, or tests whether its distinctive components have the timing and composition BRI mechanisms imply. None checks the bilateral statistics on which such conclusions depend. This thesis addresses these gaps for one country pair; it does not estimate the BRI's effect in general, and it does not address transit services.
 
-Time-series analysis of bilateral trade relationships frequently involves small annual samples. Pesaran, Shin, and Smith [-@pesaran_shin_smith_2001] developed the ARDL bounds-testing approach specifically for cases with mixed integration orders and limited observations. Newey and West [-@newey_west_1987] introduced heteroskedasticity and autocorrelation consistent (HAC) standard errors for time-series regression. Chow [-@chow_1960] proposed the structural-break test used in this thesis. Bai and Perron [-@bai_perron_1998; -@bai_perron_2003] developed multiple-break detection methods.
 
-A key methodological concern in small-sample regression is influence diagnostics. Cook [-@cook_1977] demonstrated that individual observations can disproportionately affect regression estimates, particularly in samples below 30 observations. Belsley, Kuh, and Welsch [-@belsley_kuh_welsch_1980] provided comprehensive influence diagnostic tools that are essential for validating results in the sample sizes encountered in bilateral trade studies.
+# 3. Theoretical Framework and Expectations
 
-## 2.7 Research Gap
+## 3.1 Framework
 
-Most BRI studies focus on aggregate trade expansion or infrastructure connectivity. Fewer examine whether resource exports improve the bilateral trade balance of smaller resource-exporting partners. The compositional question—whether mineral export growth translates into external-balance improvement—remains empirically underdeveloped for the Kazakhstan–China case. Moreover, no existing study applies formal influence diagnostics to assess how robust post-BRI trade findings are to individual high-leverage observations. This thesis addresses that gap.
+Following the structural gravity view of bilateral trade [@anderson_vanwincoop_2003], Kazakhstan's trade with China in product *p* and year *t* depends on:
 
+1. **Factors common to Kazakhstan's trade with all partners:** world prices, Kazakhstan's output and income, its exchange rate and trade policy.
+2. **Factors common to China's trade with the region:** China's export supply and import demand, regional routing, and regional shocks such as the post-2022 reorganisation of trade with Russia.
+3. **Persistent features of the Kazakhstan–China relationship:** distance, pipelines and rail links that existed before 2013, long-standing contracts.
+4. **Changes specific to the Kazakhstan–China relationship over time:** BRI-era infrastructure at the Kazakhstan–China border, bilateral market-access agreements, Chinese finance in Kazakhstan, and other bilateral changes.
 
-# 3. Theoretical Framework
+The BRI can operate through (2), (3) and (4): it is both a bilateral and a regional initiative. The comparison against Kazakhstan's other partners removes (1); the comparison against China's other regional partners removes (2), including any region-wide BRI effect. Neither comparison isolates the BRI, which is why mechanism predictions about products and timing are needed.
 
-## 3.1 Primary Framework: Asymmetric Interdependence
+## 3.2 Mechanisms and What Would Count as Evidence
 
-The primary theoretical framework is **asymmetric interdependence**, as developed by Keohane and Nye [-@keohane_nye_1973] and Hirschman [-@hirschman_1945]. This framework is chosen over dependency theory because it is both more precise and more empirically testable: it allows for mutual gains from trade while predicting that the distribution of those gains, and the distribution of vulnerability, depend on the structural position of each partner.
+The BRI-related mechanisms relevant to Kazakhstan–China merchandise trade are:
 
-Keohane and Nye define interdependence as mutual dependence between states or actors across issues, characterised by two distinct dimensions: *sensitivity* (the extent to which changes in one economy are transmitted to another before policy adjusts) and *vulnerability* (the cost of adjusting to those changes after the fact). Two economies can be simultaneously interdependent and asymmetrically so: China and Kazakhstan both depend on bilateral trade, but China can diversify mineral suppliers at lower cost than Kazakhstan can diversify its export markets. This structural asymmetry predicts that deepening bilateral integration will expand aggregate trade while potentially strengthening China's bargaining position.
+**M1. Trade-cost reduction and connectivity** [@desoyres_etal_2020; @baniya_rocha_ruta_2020; @bird_lebrand_venables_2020]. New and upgraded rail, road and border infrastructure lowers the cost of trade between the two countries. Expected: an expansion of bilateral trade turnover beyond Kazakhstan's trade with others, after the infrastructure becomes operational.
 
-Hirschman's mechanism sharpens the prediction. In *National Power and the Structure of Foreign Trade*, Hirschman shows that dependence on a large trading partner generates political influence for the partner precisely when the dependent economy's trade is *concentrated* (few substitutable partners) and *inelastic* (the dependent economy cannot easily reduce or redirect trade). Kazakhstan's export basket is highly concentrated in mineral commodities shipped predominantly to China and Russia, with limited substitution options in the short run. Hirschman's framework therefore predicts that post-BRI deepening of mineral trade—by increasing Kazakhstan's exposure to Chinese demand while China retains many alternative suppliers—will strengthen the asymmetric structure of the relationship and may translate into a weakening of Kazakhstan's bilateral trade-balance position, as import capacity grows faster than export revenues.
+**M2. Time-sensitive and non-traditional goods, and market access** [@baniya_rocha_ruta_2020; @chaney_2008; @melitz_2003]. Lower costs and phytosanitary access raise trade most where it was previously small and for time-sensitive goods such as food. Expected: a China-specific rise in agri-food and other non-traditional exports, beginning or accelerating after dated milestones; more product chapters exported to China.
 
-This framework is preferred over dependency theory, which is retained only as *historical context* (§3.3). The critical difference is falsifiability: asymmetric interdependence generates variable-level predictions that can be tested in regression models (§3.4), whereas dependency theory operates at the level of structural formations and does not readily produce falsifiable coefficient predictions. The empirical strategy in this thesis is built entirely on the asymmetric interdependence framework.
+**M3. Resource finance and security** [@horn_reinhart_trebesch_2021; @jepson_2024]. Chinese finance for hydrocarbon and mining projects raises Kazakhstan's China-oriented exports of energy and strategic minerals. Expected: China-specific rises in energy and mineral exports after the relevant finance and project completion.
 
-## 3.2 Supporting Frameworks
+**M4. Investment-linked imports.** Chinese-financed projects and Chinese investment raise imports of Chinese machinery and equipment. Expected: a Kazakhstan-specific rise in capital-goods imports from China timed with project activity.
 
-Three supporting theoretical strands inform variable selection and interpretation:
+**M5. Transit.** Kazakhstan earns revenue from China–Europe transit [@mau_seuren_2023]. Expected: growth in transit volumes and service receipts. This is not observable in merchandise trade and is not tested.
 
-**Gravity and trade facilitation.** Anderson and van Wincoop [-@anderson_vanwincoop_2003] show that bilateral trade depends on trade costs relative to multilateral resistance. BRI infrastructure reduces bilateral trade costs, increasing trade on both sides of the bilateral relationship. For the present model, China's GDP proxies *foreign demand capacity* — a larger Chinese economy demands more inputs from Kazakhstan and exports more manufactured goods, both effects that simultaneously expand the bilateral relationship and expose Kazakhstan to the import-side risk that asymmetric interdependence theory identifies.
+**N0. Common shocks and comparative advantage** [@heckscher_1919; @ohlin_1933; @harvey_etal_2010]. Kazakhstan–China trade moves with Kazakhstan's trade with others and with China's trade with the region.
 
-**Resource curse and terms-of-trade channel.** Van der Ploeg [-@vanderploeg_2011] and Sachs and Warner [-@sachs_warner_1995] identify conditions under which resource-export dependence generates macroeconomic vulnerability. For this model, the Brent crude price proxies global commodity market conditions that simultaneously drive the value of Kazakhstan's energy and mineral exports and affect China's import demand for those commodities. The predicted relationship between global commodity prices and the bilateral trade balance is theoretically ambiguous: higher oil prices raise export revenues (positive for the balance) but may also appreciate the real exchange rate and crowd out non-commodity exports (negative).
+**Table 3.1. Observable implications**
 
-**Global value chains (GVC) and upgrading.** Gereffi, Humphrey, and Sturgeon [-@gereffi_humphrey_sturgeon_2005] show that captive supplier positions in raw-material chains provide little upgrading leverage. For this model, the minerals–post-BRI interaction term tests whether mineral export growth translates into trade-balance improvement or whether raw-mineral export growth coincides with rising imports of Chinese capital goods and intermediates, consistent with a captive supplier relationship that generates asymmetric gains.
+| Mechanism | Observation that would support it | Observation inconsistent with its prediction | Uninformative |
+|---|---|---|---|
+| M1 Trade costs, connectivity | China-specific rise in turnover after operational milestones (2012–2019) | No China-specific turnover expansion while infrastructure became operational | A rise shared by all of China's neighbours (could be region-wide BRI or other regional shocks) |
+| M2 Time-sensitive goods, market access | China-specific rise in agri-food and other non-traditional exports that starts or accelerates after a milestone; positive extensive margin | A rise that began earlier and does not accelerate at any milestone | A change smaller than the test can detect |
+| M3 Resource finance | China-specific rise in energy and mineral exports after Chinese finance | China-specific fall; gains unrelated in time to finance | Gains whose timing depends on the base year |
+| M4 Investment-linked imports | Kazakhstan-specific rise in capital-goods imports from China timed with projects | Rise in imports shared equally by neighbours without comparable projects | Aggregate imports without project-level data |
+| M5 Transit | Transit volumes and service receipts | | All merchandise-trade evidence |
+| N0 Common shocks | Comparison-adjusted components near zero | Large components in either comparison | |
 
-## 3.3 Why Not Dependency Theory
+A component is classed as **consistent with a BRI mechanism (level B)** only if it is distinctive, has the predicted sign and products, and begins or accelerates after a dated milestone. **Inconsistent with a mechanism's prediction** means the evidence contradicts that specific prediction; it does not mean the BRI had no effect.
 
-Dependency theory and world-systems analysis provide the intellectual history from which the asymmetric interdependence framework builds. Frank [-@frank_1966; as cited in the dependency tradition] and Prebisch [-@prebisch_1950] argue that peripheral commodity exporters face structural terms-of-trade deterioration imposed by the architecture of the global economy. This framing is useful for contextualising Kazakhstan's commodity-export position but is not adopted as the primary framework for three reasons: (i) it tends to overpredict structural subordination and understate policy agency; (ii) it does not generate variable-level coefficient predictions; (iii) the empirical evidence on Prebisch–Singer is heterogeneous and commodity-specific (Harvey et al. [-@harvey_etal_2010]), making it a weaker anchor for regression-based analysis. The thesis therefore uses asymmetric interdependence as the testable mechanism and treats dependency theory as background context.
 
-## 3.4 Variable Selection Rationale and Predicted Signs
+## 3.3 How the Expectations Were Formed (Disclosure)
 
-Every regressor in the empirical model is anchored to the theoretical framework above. The table below maps each variable to its theoretical mechanism, predicted sign on the bilateral trade balance, and supporting citation. This mapping is the bridge between theory and empirics that structures all results in Chapter 6.
+The general structure (a common-shocks null against connectivity and resource-finance mechanisms) was planned before the product-level data were collected. The product-group predictions were written after the author had inspected aggregate Kazakhstan–China data (in the earlier version of this thesis) and the descriptive shares by product group in the new panel (Table 6.6). The PPML tests were run after that inspection. The trend-break test, the comparison-adjusted decomposition, the comparison with China's regional partners, the robustness grid over base and end years, the independent re-estimation, and, in the final validation, the alternative break years (Table 6.9b), the comparators excluding Kyrgyzstan and Uzbekistan alone, the partner-by-partner growth comparison and the turnover comparison were added in later rounds of analysis, after earlier results had been reviewed. These elements are therefore exploratory or confirmatory-after-exposure, not pre-registered. §5.7 describes the safeguards used.
 
-**Table 3.1. Variable Selection Rationale**
+## 3.4 Where Asymmetric Interdependence Fits
 
-| Variable | Theoretical mechanism | Predicted sign on TB | Key citation |
-|----------|----------------------|---------------------|-------------|
-| `minerals_narrow` (USD bn) | Hirschman concentration proxy: higher mineral exports increase export revenues, predicted to improve the bilateral balance *before* accounting for post-BRI import deepening | **Positive** (pre-BRI baseline) | Hirschman [-@hirschman_1945]; H2 |
-| `post_bri_2013` (0/1) | Period indicator for post-BRI structural change; tests whether the bilateral balance level shifted after 2013 corridor deepening | **Negative** (asymmetric interdependence predicts import-side acceleration dominates) | Keohane & Nye [-@keohane_nye_1973]; H1 |
-| `post_bri_x_minerals` | Asymmetric interdependence interaction: tests whether the trade-balance payoff of mineral exports weakened post-BRI, as rising Chinese manufactured exports outpaced mineral-export revenues | **Negative** (primary test of H3) | Hirschman [-@hirschman_1945]; Keohane & Nye [-@keohane_nye_1973] |
-| `brent_annual_mean` (USD/bbl) | Resource-curse / terms-of-trade channel: global commodity prices affect both export revenues and Chinese import demand; sign is theoretically ambiguous but expected positive via revenue channel | **Ambiguous** (positive via export revenue; potentially negative via Dutch disease crowding) | Van der Ploeg [-@vanderploeg_2011]; Corden & Neary [-@corden_neary_1982] |
-| `kzt_usd` (tenge per USD) | Competitiveness channel: a weaker tenge (higher KZT/USD) makes Kazakh exports cheaper in dollar terms and Chinese imports more expensive, predicted to improve the bilateral balance | **Positive** (depreciation improves balance via Marshall-Lerner) | Standard open-economy macroeconomics; Bhagwati [-@bhagwati_1958] |
-| `log(KZ GDP)` | Domestic income / absorption: higher Kazakh GDP increases import capacity; ambiguous net effect on bilateral balance; **severe multicollinearity (VIF > 130)** renders this variable unreliable in levels — see §5 and Appendix B | **Ambiguous** (absorption vs. export-capacity effects) | World Bank WDI; Anderson & van Wincoop [-@anderson_vanwincoop_2003] |
-| `log(CN GDP)` | Foreign demand / gravity: higher Chinese GDP increases demand for Kazakh mineral exports (positive for balance) but also expands China's manufactured-export capacity (negative for balance); **severe multicollinearity (VIF > 236) in levels** — see §5 | **Ambiguous** (demand effect positive; supply effect negative); **replaced by d.log(CN GDP) growth rate in primary specification; gravity ratio in robustness** | Anderson & van Wincoop [-@anderson_vanwincoop_2003] |
-| `d.log(KZ GDP)`, `d.log(CN GDP)` [**primary**] | Annual growth rates; stationary; eliminate trending-variable collinearity; VIF = 2.63 and 3.36 respectively | **Ambiguous sign** (income effects); primary specification (max VIF = 10.4) | Anderson & van Wincoop [-@anderson_vanwincoop_2003]; §6.3 |
-| `log(CN GDP / KZ GDP)` [robustness] | Gravity-motivated relative size: one parsimonious regressor captures bilateral asymmetry in market size; retained as robustness check (max VIF = 33.4) | **Negative** (rising ratio = deeper asymmetry) | Anderson & van Wincoop [-@anderson_vanwincoop_2003]; §6.3 |
+Asymmetric interdependence [@keohane_nye_1977; @hirschman_1945] is used in Chapter 7 to interpret the results, not as a hypothesis tested by them. The decompositions measure how trade changed; they do not measure bargaining power. Chapter 7 uses two-sided indicators of dependence without assuming that concentration of trade with China implies Chinese leverage.
 
-*Note: The primary specification uses GDP growth rates (d.log) following multicollinearity diagnostics (§6.3). The gravity-ratio specification is retained as a robustness check. Both GDP-levels specifications are retained in Appendix B for transparency.*
 
-## 3.5 Testable Hypotheses
+# 4. Data
 
-The asymmetric interdependence framework produces three testable hypotheses that correspond directly to the variable mapping above:
+## 4.1 Sources
 
-**H1 (Trade-Balance Change):** The post-BRI period (2014–2023) is associated with a weaker bilateral trade-balance position for Kazakhstan relative to China, conditional on commodity and macroeconomic controls. Mechanism: Keohane–Nye sensitivity asymmetry — BRI infrastructure simultaneously facilitates Kazakh mineral exports and Chinese manufactured exports, but China's diversified export basket grows faster than Kazakhstan's concentrated mineral exports.
+All trade data come from the UN Comtrade database, retrieved through its public preview API on 31 October 2026 [@un_comtrade_hs2_2026]. Every value used is transcribed in a raw text file in `Collected_Raw_Data/raw_downloads/`, with the query URL, reporter, partner, flow, units and retrieval date in the file header (Appendix A). Table 4.1 lists the series.
 
-**H2 (Mineral Export Payoff):** Higher strategic mineral exports are positively associated with Kazakhstan's bilateral trade balance in the pre-BRI baseline period. Mechanism: Hirschman export-revenue channel — mineral exports generate foreign exchange that directly improves the bilateral balance before post-BRI import deepening takes hold.
+**Table 4.1. Data series**
 
-**H3 (Asymmetric Interaction):** The post-BRI × minerals interaction is negative, indicating that the trade-balance payoff of mineral exports weakened after BRI corridor deepening. Mechanism: asymmetric interdependence deepening — rising Chinese manufactured exports and the expansion of import-intensive infrastructure financing outpace the revenue gains from mineral exports, producing a deteriorating bilateral position despite export growth. A negative interaction is interpreted as diagnostic evidence consistent with Hirschman's dependence mechanism, not as causal proof of a BRI effect.
+| Series | Reporter → partner | Flow | Valuation | HS level | Years | File |
+|---|---|---|---|---|---|---|
+| Kazakhstan's exports to China | Kazakhstan (398) → China (156) | Exports | FOB | HS-2 | 2005–2024 | `comtrade_hs2_kaz_exports_to_china.txt` |
+| Kazakhstan's exports to the world | Kazakhstan → World (0) | Exports | FOB | HS-2 | 2005–2024 except 2020, 2022 | `comtrade_hs2_kaz_exports_to_world.txt` (+ gap-fill file) |
+| China's imports from Kazakhstan (mirror) | China → Kazakhstan | Imports | CIF | HS-2 | 2005–2024 except 2006 | `comtrade_hs2_chn_imports_from_kaz.txt` |
+| China's exports to Kazakhstan (mirror of Kazakhstan's imports) | China → Kazakhstan | Exports | FOB | HS-2 | 2013, 2019, 2024 | `comtrade_hs2_chn_exports_to_kaz.txt` |
+| Kazakhstan's exports to Russia, HS 84, 85, 87 | Kazakhstan → Russia (643) | Exports | FOB | HS-2 | 2019, 2023 | `comtrade_hs2_kaz_exports_to_russia_selected.txt` |
+| Merchandise exports, total | World Bank WDI | Exports | | Total | 2005–2024 | `wdi_kaz_merch_exports.csv` [@wdi_2026] |
+| Kazakhstan's total imports from World and from China | Kazakhstan → World, China | Imports | CIF | Total | 2011–2014, 2019, 2023, 2024 | `comtrade_totals_imports_and_china_exports.txt` |
+| China's total exports to and imports from Kazakhstan, Russia, Kyrgyzstan, Uzbekistan, Tajikistan, Turkmenistan, World | China → partners | Exports (FOB) and imports (CIF) | | Total | 2011–2014, 2019, 2023, 2024 | `comtrade_china_totals_by_partner.txt` |
+| China's imports from World, selected chapters | China → World | Imports | CIF | HS-2 | 2024 | `comtrade_hs2_chn_imports_from_world_2024_selected.txt` |
+| Chinese official finance commitments | AidData GCDF 3.0 | Commitments | Constant 2021 USD | Project | 2000–2021 | `aiddata_gcdf_v3.xlsx` [@aiddata_gcdf3_2023] |
 
-# 4. Data and Variables
+*Values are in current US dollars unless stated. HS chapters are those reported (HS 2002 to HS 2022 vintages); chapter boundaries are stable across these vintages at the two-digit level.*
 
-## 4.1 Data Sources and Panel Construction
+Data were retrieved year by year because the public API returns one period per call. Where the retrieval tool truncated a long response, the missing chapters were identified by comparison with neighbouring years and re-queried explicitly; these are recorded in a separate gap-fill file. One response (Kazakhstan to World, 2022) was rejected because its tail contained duplicated values and omitted the two largest chapters; Kazakhstan-to-World data for 2020 could not be retrieved. As §4.4 shows, 2020–2022 would have been excluded in any case.
 
-The analysis uses an annual Kazakhstan–China bilateral time-series dataset for 2000–2023 (*n* = 24). Data sources include: (i) IMF Direction of Trade Statistics (DOTS) and UN Comtrade for bilateral exports and imports; (ii) UN Comtrade HS-2 and World Bank WITS for strategic mineral and ores/metals exports; (iii) World Bank WDI for GDP, exchange rates, and CPI; (iv) Federal Reserve Bank of St. Louis (FRED) for Brent crude oil prices and London Metal Exchange copper prices; (v) AidData for Chinese finance flows. The year 2024 is excluded because import data are unavailable, preventing trade-balance construction.
+## 4.2 Product Groups
 
-Table 4.1 consolidates all variables, their sources, coverage, and key limitations. Source consistency is analytically important in this thesis: the mineral export variable switches from a World Bank WITS aggregate (2000–2013) to UN Comtrade HS-2 specific codes (2014–2023), creating a measurement break that coincides with the post-BRI dummy. This break is discussed in detail in §4.3 and addressed by a WITS-consistent robustness specification in §6.6.
+The 97 HS chapters are grouped into four groups. **Energy** is HS 27 (crude oil, gas, coal and products). **Metals and ores** are HS 25, 26, 28, 71, 72 and 74–81: salt and minerals, ores and concentrates, inorganic chemicals including uranium compounds (HS 2844), precious metals, iron and steel including ferroalloys, and base metals (copper, nickel, aluminium, lead, zinc, tin and others). **Agri-food** is HS 01–24. **Other goods** are all remaining chapters, mainly chemicals, plastics, textiles, metal articles, machinery and vehicles. The "strategic minerals" of the registered topic (uranium, copper, ores and ferroalloys) fall inside the metals and ores group and are reported separately where relevant (§6.2). Energy is a single chapter, which matters for inference (§5.7).
 
-**Table 4.1. Data Sources and Variable Construction**
+## 4.3 Validation Against Independent Totals
 
-| Variable / Concept | Definition | Source | Coverage | Key Limitation |
-|-------------------|-----------|--------|----------|---------------|
-| Bilateral exports to China | Kazakhstan's total exports to China, FOB (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | Mirror-data discrepancies reconciled via bilateral cross-reporting |
-| Bilateral imports from China | Kazakhstan's total imports from China, CIF (USD bn) | IMF DOTS; UN Comtrade (KAZ reporter) | 2000–2023 | CIF/FOB adjustment not applied; affects level, not trend |
-| Bilateral trade balance | $TB_t = X_t - M_t$ (USD bn) | Derived | 2000–2023 | Dependent on accuracy of both export and import series |
-| Strategic mineral exports (narrow) | Uranium (HS 2612), copper (HS 7403), chromium (HS 2610), USD bn | WITS Ores & Metals proxy (2000–2013); Comtrade HS-2 (2014–2023) | 2000–2023 | **Measurement break at 2014** coincides with BRI dummy |
-| WITS ores and metals proxy | Aggregate ores and metals exports from WITS, USD bn | World Bank WITS | 2000–2023 | Broader than target minerals; used for consistent-proxy robustness |
-| Brent crude price | Annual mean Brent spot price, USD/barrel | FRED (St. Louis Fed) | 2000–2023 | Controls global price conditions; does **not** proxy bilateral oil volume |
-| KZT/USD exchange rate | Kazakh tenge per US dollar, annual average | World Bank WDI | 2000–2023 | Annual average; within-year volatility not captured |
-| log Kazakhstan GDP | Log real GDP, constant 2015 USD | World Bank WDI | 2000–2023 | VIF > 130 in full model; excluded from parsimonious specification |
-| log China GDP | Log real GDP, constant 2015 USD | World Bank WDI | 2000–2023 | VIF > 236 in full model; excluded from parsimonious specification |
-| Post-BRI dummy | =1 for 2014–2023, =0 for 2000–2013 | Author-constructed | 2000–2023 | Period indicator only; coincides with oil shock, tenge devaluation, COVID-19 |
-| Bilateral oil/energy exports | KAZ→CHN HS 2709/2710/2711/2701 exports, USD bn | **Not available** in current dataset | — | Major omitted variable; future research should use Comtrade HS-27 pull |
+Table 4.2 compares the sum of Kazakhstan's reported HS-2 exports to the world with the World Bank's merchandise export totals, and Kazakhstan's reported exports to China with China's reported imports from Kazakhstan.
 
-*Note: Author's compilation. Full variable definitions are available in the accompanying codebook.*
+**Table 4.2. Validation of the HS-2 data (USD bn)**
 
-## 4.2 Variable Definitions
+| Year | KZ exports to world, sum of chapters | WDI merchandise exports | Ratio, % | KZ-reported exports to China | China-reported imports from KZ | Mirror ratio |
+|---|---:|---:|---:|---:|---:|---:|
+| 2005 | 27.85 | 27.85 | 100.0 | 2.42 | 2.91 | 1.20 |
+| 2008 | 71.17 | 71.17 | 100.0 | 7.68 | 7.73 | 1.01 |
+| 2010 | 57.24 | 59.97 | 95.5 | 10.12 | 11.11 | 1.10 |
+| 2011 | 88.10 | 84.34 | 104.5 | 16.29 | 15.35 | 0.94 |
+| 2012 | 92.28 | 86.45 | 106.7 | 16.48 | 14.68 | 0.89 |
+| 2013 | 84.66 | 84.70 | 100.0 | 14.37 | 16.05 | 1.12 |
+| 2016 | 36.74 | 36.69 | 100.1 | 4.22 | 4.81 | 1.14 |
+| 2019 | 58.07 | 57.31 | 101.3 | 8.00 | 8.86 | 1.11 |
+| 2020 | n/a | 46.45 | | 6.84 | 10.37 | **1.52** |
+| 2021 | 53.07 | 60.63 | **87.5** | 6.85 | 11.29 | **1.65** |
+| 2022 | n/a | 84.59 | | 10.46 | 14.82 | **1.42** |
+| 2023 | 78.74 | 78.53 | 100.3 | 14.76 | 16.36 | 1.11 |
+| 2024 | 81.61 | 82.47 | 99.0 | 14.90 | 15.91 | 1.07 |
 
-**Dependent variable:** Kazakhstan's bilateral trade balance with China in current USD billions: $TB_t = X_t - M_t$.
+*Source: UN Comtrade [@un_comtrade_hs2_2026]; World Bank [@wdi_2026]. Author's calculations (Script 60, `hs2_validation.csv`; all years in the file). Mirror ratio = China-reported imports (CIF) / Kazakhstan-reported exports (FOB).*
 
-**Key explanatory variables:**
-- *minerals_narrow_B*: Strategic mineral exports (uranium, copper, chromium) in USD billions.
-- *post_bri_2013*: Binary indicator equal to 1 for 2014–2023 (BRI announced September 2013).
-- *post_bri_x_minerals*: Interaction term: post_bri_2013 × minerals_narrow_B.
+In most years the chapter sums match the World Bank totals within about 1 per cent, which confirms that the transcribed data are complete. The exceptions are informative. In 2011–2012 Comtrade's totals exceed the World Bank's by 4–7 per cent; this is a difference between the two publishers' totals that affects both destinations equally and is absorbed by the fixed effects in Chapter 5. In 2010 the chapter sum is 4.5 per cent below the WDI total; the cause could not be identified. In 2021 it is 12.5 per cent below, which is explained by the suppression described in §4.4.
 
-**Controls:** Brent crude oil price (USD/bbl), KZT/USD exchange rate, log Kazakhstan GDP (constant 2015 USD), log China GDP (constant 2015 USD).
+The mirror ratio of 1.0–1.2 in normal years is what one expects when one side reports CIF and the other FOB. In 2020–2022 it jumps to 1.4–1.65.
 
-## 4.3 Measurement Break in Mineral Data
+## 4.4 A Reporting Break: Suppressed Chapters in 2020–2022
 
-A critical limitation concerns the mineral export variable. For 2000–2013, the narrow minerals series is constructed from WITS Ores and Metals exports as a proxy, because HS-6 level Comtrade data for specific mineral categories are not available for the full pre-2014 period. For 2014–2023, the series uses HS-2 level Comtrade data for uranium (HS 2612), copper (HS 7403), and chromium (HS 2610). This creates a measurement break at 2014 that changes the source and definition of the variable. This is analytically dangerous because it coincides precisely with the post-BRI dummy.
+The jump in the mirror ratio has a precise cause. In Kazakhstan's own partner-level data for 2020–2022, exports to China of copper (HS 74), aluminium (HS 76) and zinc (HS 79) are absent, although China reports importing USD 1.8–2.5 billion of Kazakh copper in each of those years (Table 4.3). In 2021, Kazakhstan's reported copper exports to the *world* are only USD 0.11 billion, against USD 2.7 billion in 2019 and USD 3.2 billion in 2023. The same pattern was found earlier for imports: Kazakhstan's partner-level records for 2020–2022 contain no machinery (HS 84), electrical equipment (HS 85) or vehicle (HS 87) imports from China, and its reported imports from China fall by about 70 per cent in 2020 while China's reported exports to Kazakhstan fall by 8 per cent (Appendix B, Table B.2).
 
-**Table 4.4. Mineral Variable Measurement by Period**
+**Table 4.3. Copper, aluminium and zinc exports to China by reporter (USD million)**
 
-| Period | Source | Definition | Coverage |
-|--------|--------|-----------|----------|
-| 2000–2013 | WITS | Ores and Metals aggregate | Broader than target |
-| 2014–2023 | Comtrade HS-2 | U + Cu + Cr specific codes | Narrower, targeted |
+| Year | Copper: KZ-reported | Copper: China-reported | Zinc: KZ-reported | Zinc: China-reported |
+|---|---:|---:|---:|---:|
+| 2017 | 1,110 | 1,230 | 333 | 340 |
+| 2018 | 1,365 | 1,470 | 167 | 558 |
+| 2019 | 1,567 | 1,743 | 563 | 623 |
+| 2020 | not reported | 1,834 | not reported | 450 |
+| 2021 | not reported | 2,451 | not reported | 586 |
+| 2022 | not reported | 2,388 | not reported | 33 |
+| 2023 | 1,912 | 2,160 | 270 | 315 |
+| 2024 | 2,695 | 2,742 | 327 | 413 |
 
-This break means that the post-BRI structural break detected in regression could partly reflect measurement-source switching rather than genuine economic change. Consequently, researchers must avoid overclaiming from the narrow mineral variable alone. A robustness check using the WITS Ores and Metals series consistently for the full 2000–2023 period (Section 6.6) is therefore essential, not optional, for validating the findings.
+*Source: UN Comtrade [@un_comtrade_hs2_2026]. Author's calculations (Script 61, `mirror_suppression.csv`).*
 
-## 4.4 Data Validation via Independent Cross-Checking
+The pattern is consistent with confidentiality suppression of chapters dominated by few firms, but the reason cannot be confirmed from the data. Two consequences follow. First, Kazakhstan-reported product-level data for 2020–2022 are excluded from all comparisons of China with the rest of the world. Second, the bilateral balance is computed from China's records, which show no such gaps (§6.1). The main export results are re-estimated with China's mirror data for the China side (§6.7, Table 6.7).
 
-To validate the accuracy of the IMF DOTS / Comtrade trade figures used in this thesis, a cross-validation was conducted using data independently collected from Kazakhstan's Bureau of National Statistics (`stat.gov.kz`) via automated web-scraping.
+## 4.5 The Persistent Import Gap
 
-**Method.** The Bureau publishes annual foreign trade summaries ("Foreign trade turnover of the Republic of Kazakhstan, January-December [year]") at `stat.gov.kz`. Each publication reports Kazakhstan's total exports and imports in USD millions and China's percentage share of both, allowing computation of implied bilateral trade values for comparison against the WITS/Comtrade panel figures.
+China's reported exports to Kazakhstan have long exceeded Kazakhstan's reported imports from China: by a factor of 1.5 to 2.5 in 2013–2019, before the 2020–2022 break (Appendix B, Table B.2). Valuation cannot explain it: Kazakhstan records imports CIF and China records exports FOB, so Kazakhstan's figures should be the higher ones. It may reflect goods declared differently at the border, transit through the Eurasian Economic Union customs territory, or under-declaration; the data cannot distinguish these. For this reason the thesis does not use Kazakhstan's import figures to measure the balance. The main balance figures in Chapter 6 are China-reported (China's imports from Kazakhstan minus China's exports to Kazakhstan), and are therefore not comparable in level with figures published by Kazakhstan's Bureau of National Statistics.
 
-**Cross-validation results.** The Bureau's 2023 and 2024 annual publications yield bilateral values that are internally consistent with the panel data:
+## 4.6 Chinese Official Finance
 
-**Table 4.5. Web-Scraped Cross-Validation: Kazakhstan–China Bilateral Trade**
+AidData's GCDF 3.0 records 155 Chinese official finance projects in Kazakhstan with commitments in 2000–2021 that AidData recommends for aggregate analysis [@aiddata_gcdf3_2023; @custer_etal_2023]. Amounts are in constant 2021 US dollars. The data record commitments, not disbursements, and they cover official finance only, not private Chinese investment. Syndicated loans appear as one record per lender. These limitations mean the data can show where and when Chinese state finance was committed, but not how much was spent or what it produced.
 
-| Year | Panel exports (USD bn) | Scraped exports (USD bn) | Discrepancy | Panel imports (USD bn) | Scraped imports (USD bn) | Discrepancy |
-|------|----------------------:|-------------------------:|:-----------:|----------------------:|-------------------------:|:-----------:|
-| 2023 | 14.759 | 14.712 | **0.3%** ✓ | 16.772 | 16.758 | **0.1%** ✓ |
-| 2024 | 14.897 | 14.936 | **0.3%** ✓ | — | — | — |
 
-*Source: Author's calculations. Data collected from Bureau of National Statistics (stat.gov.kz); panel data from IMF DOTS / UN Comtrade. Discrepancy computed as |panel − scraped| / scraped × 100%.*
+## 4.7 Summary of Discrepancies and Substitutions
 
-All discrepancies are below 0.5% — well within the < 10% threshold for validation support. This confirms that the trade values used in the analytical panel are consistent with Kazakhstan's national statistical authority's official figures. The 2023 import figure (USD 16.772 billion in the panel vs. USD 16.758 billion scraped, a difference of USD 14 million on a USD 16.8 billion total) is the most important validation given that 2023 is the most influential observation in the regression analysis.
+**Table 4.4. Data discrepancies, their likely causes and their treatment**
 
-## 4.5 Descriptive Statistics and Trade Balance Decomposition
+| Discrepancy | Evidence | Most likely cause | Treatment | Remaining limitation |
+|---|---|---|---|---|
+| KZ exports of HS 74, 76, 79 absent in 2020–2022 | China reports USD 1.8–2.5 bn of copper imports per year; KZ copper exports to the World only USD 0.11 bn in 2021 (Table 4.3) | Missing partner records, consistent with confidentiality suppression; not valuation (the gap is total, not proportional) | Years excluded from KZ-reported product comparisons; China legs China-reported | Cause cannot be confirmed |
+| KZ imports of HS 84, 85, 87 absent in 2020–2022 | No monthly records in these chapters in 2020–2022, present in all other years (Table B.2) | Missing partner records | KZ-reported imports not used for 2020–2022; China's export data used | As above |
+| KZ imports from China 1.5–2.5 times below China's exports in normal years | Table B.2; ratio 1.84 in 2024 | Not valuation: Kazakhstan's CIF figures should exceed China's FOB figures, so the CIF/FOB difference widens rather than explains the gap. The cause is unresolved (candidates: under-declaration, attribution by country of origin versus consignment, cross-border shuttle trade, transit within the Eurasian Economic Union) | Levels and the balance from China's data; KZ-reported robustness for comparisons (Table 6.3) | The level of the balance depends on the reporter; comparison-adjusted shares do not (92 per cent with either) |
+| KZ exports to China vs China's imports from KZ, ratio 0.89–1.28 outside 2020–2022 | Table 4.2 | CIF/FOB valuation and timing | Either source; China's for comparisons with China-reported imports | Small year-to-year noise |
+| Comtrade KZ export totals above WDI in 2011–2012 (4–7 per cent), below in 2010 (4.5 per cent) | Table 4.2 | Differences between publishers' totals | Affects China and RoW alike; absorbed by chapter-by-year effects; base-period averages include these years | Cause not identified |
+| Truncated API responses | Missing chapters in some years | Retrieval tool length limit | Missing chapters re-queried; totals validated against WDI | None detected after gap-fill |
+| KZ-to-World 2022 response with duplicated values | Identical values for different chapters; HS 27 and 28 absent | Retrieval error | Rejected; year not used | 2022 unavailable |
+| Mixed reporters in the comparison against KZ's other partners | China legs China-reported, RoW growth KZ-reported | Necessary because KZ partner data have gaps | Robustness with KZ-reported China legs | Coverage differences between reporters cannot be fully excluded |
 
-Table 4.2 presents the summary statistics for the 24-year annual sample. The trade balance ranges from a deficit of USD 2.01 billion to a surplus of USD 11.27 billion, with high variability in both the trade balance and strategic mineral exports. This small sample size underscores the need for rigorous diagnostics, as inference may be sensitive to individual years.
-
-**Table 4.2. Descriptive Statistics of Main Variables**
-
-| Variable | N | Mean | Median | Min | Max |
-|----------|---|-----:|-------:|----:|----:|
-| Exports to China (USD bn) | 24 | 6.957 | 6.098 | 0.647 | 16.484 |
-| Imports from China (USD bn) | 24 | 4.137 | 3.620 | 0.151 | 16.772 |
-| Trade balance (USD bn) | 24 | 2.820 | 1.441 | −2.014 | 11.270 |
-| Ores and metals exports (USD bn) | 24 | 2.268 | 2.114 | 0.048 | 6.039 |
-
-*Source: Author's calculations.*
-
-![Figure 1. Kazakhstan Exports to China vs Imports from China (2000–2023)](../Outputs/generated_figures/fig_1_exports_imports.png)
-*Source: Author's construction based on IMF DOTS and UN Comtrade. Figure 1 shows the steady rise of exports punctuated by volatility, while imports from China show a dramatic acceleration in recent years.*
-
-![Figure 2. Kazakhstan–China Bilateral Trade Balance (2000–2023)](../Outputs/generated_figures/fig_2_trade_balance.png)
-*Source: Author's construction. Figure 2 highlights the structural decline in the bilateral surplus following the 2013 BRI announcement, culminating in the 2023 deficit.*
-
-![Figure 3. Strategic Mineral Exports to China (2000–2023)](../Outputs/generated_figures/fig_3_minerals.png)
-*Source: Author's construction. Figure 3 traces the growth of mineral exports, illustrating the measurement source transition at 2014.*
-
-**Table 4.3. Pre-BRI vs. Post-BRI Means**
-
-| Variable | Pre-BRI (2000–2013) | Post-BRI (2014–2023) | Change (%) |
-|----------|--------------------:|---------------------:|-----------:|
-| Exports to China (USD bn) | 6.318 | 7.851 | +24.3% |
-| Imports from China (USD bn) | 2.970 | 5.771 | +94.3% |
-| Trade Balance (USD bn) | 3.347 | 2.081 | −37.8% |
-| Minerals Narrow (USD bn) | 1.918 | 2.478 | +29.2% |
-| Trade Balance Ratio | 0.405 | 0.197 | −51.2% |
-
-*Source: Author's calculations from clean_panel_annual dataset.*
-
-The decomposition reveals that the trade-balance deterioration is driven by import-side deepening. Imports from China nearly doubled (+94.3%), while exports grew modestly (+24.3%). Strategic mineral exports grew by 29.2%, but this growth was insufficient to offset the import surge. The year 2023 is exceptional: it is the only year in the sample in which Kazakhstan recorded a bilateral trade deficit (−USD 2.01 billion), driven by imports of USD 16.77 billion exceeding exports of USD 14.76 billion.
-
-## 4.6 Oil and Energy Exports: An Omitted Variable
-
-Oil and energy exports (HS 2709, 2710, 2711, 2701) constitute approximately 60% of Kazakhstan's total export revenues. These are absent from the current dataset because bilateral HS-level oil export data for Kazakhstan–China were not available for the full sample period. This is a major limitation. The mineral coefficient may partly capture broader commodity-cycle dynamics rather than the isolated contribution of strategic minerals. The direction of omitted variable bias is ambiguous: oil exports are positively correlated with both minerals and trade balance, so their exclusion may bias the mineral coefficient upward while simultaneously affecting the interaction term. Future research with HS-level energy data should treat oil exports as a separate control.
+Throughout, HS chapters are as reported in each year; the two-digit chapter boundaries are stable across the HS vintages in the data, so no concordance is needed at this level.
 
 
 # 5. Empirical Strategy
 
-## 5.1 Baseline OLS Association Model
+The strategy follows the two parts of the central question. §5.1 decomposes the swing and compares it with Kazakhstan's other partners (SQ1). §5.2–5.4 test the export components (SQ2), and §5.5 compares imports with China's other regional partners (SQ3). §5.6 states the identification limits, and §5.7 the safeguards against multiple testing, exploratory analysis, specification choice and missing data.
 
-The baseline specification is:
+## 5.1 Accounting Decomposition and Comparison Against Kazakhstan's Other Partners (SQ1)
 
-$$TB_t = \alpha + \beta_1 \text{Minerals}_t + \beta_2 \text{PostBRI}_t + \beta_3 (\text{Minerals}_t \times \text{PostBRI}_t) + \gamma' Z_t + \varepsilon_t$$
+**Accounting decomposition.** With all terms China-reported, the change in Kazakhstan's balance with China between periods *t*~0~ and *t*~1~ is
 
-where $Z_t$ includes Brent crude price, KZT/USD exchange rate, and optionally GDP controls. Standard errors are computed using the Newey–West [-@newey_west_1987] HAC estimator with bandwidth 3. The coefficient of interest is $\beta_3$: a negative value indicates that the trade-balance payoff of mineral exports weakened in the post-BRI period, consistent with the asymmetric interdependence prediction in H3 (§3.5).
+$$\Delta B = \sum_{g} \Delta X^{CN}_{g} - \Delta M^{CN}.$$
 
-Each regressor is theoretically anchored as follows (see also Table 3.1 for the full mapping):
+For 2013–2024: $\Delta B = (15.91 - 27.95) - (16.05 - 12.55) = -15.55$ (USD bn). This is an identity.
 
-**`minerals_narrow` (USD bn).** This variable operationalises Hirschman's [-@hirschman_1945] trade-concentration mechanism. A larger mineral export share increases export revenues and should improve the bilateral trade balance in the pre-BRI baseline, yielding a *positive* predicted sign on $\beta_1$. The interaction $\beta_3$ tests whether this payoff changed post-BRI, with asymmetric interdependence theory predicting a *negative* coefficient as import deepening outpaces mineral revenue growth.
+**Comparison against Kazakhstan's other partners.** For each export chapter *p*, the benchmark assumes that exports to China grow at the rate of Kazakhstan's exports of *p* to the rest of the world (RoW):
 
-**`post_bri_2013` (0/1).** This period indicator tests whether the bilateral trade balance shifted structurally after the BRI announcement in September 2013. Keohane and Nye's sensitivity mechanism predicts a *negative* level shift as the post-BRI period coincides with Chinese manufactured exports into Kazakhstan expanding faster than Kazakh mineral exports to China. The coefficient $\beta_2$ is a net level shift that subsumes multiple concurrent shocks (oil-price collapse, tenge devaluation, COVID-19) and is therefore interpreted as suggestive rather than causal.
+$$X^{B}_{p,t_1} = X^{CN}_{p,t_0} \cdot \left( X^{RoW}_{p,t_1} / X^{RoW}_{p,t_0} \right)$$
 
-**`brent_annual_mean` (USD/bbl).** This variable operationalises the resource-curse / terms-of-trade channel identified by van der Ploeg [-@vanderploeg_2011] and Corden and Neary [-@corden_neary_1982]. Higher global oil prices increase Kazakhstan's commodity export revenues, predicting a *positive* sign; however, they may also appreciate the real exchange rate and expand import-financing capacity, introducing ambiguity. The expected sign is therefore *positive but uncertain*.
+The **China-specific export component** is $\sum_p (X^{CN}_{p,t_1} - X^{B}_{p,t_1})$ and the **common component** is $\sum_p (X^{B}_{p,t_1} - X^{CN}_{p,t_0})$; they sum to the actual change. Where a chapter's RoW base is below USD 1 million, its product group's RoW growth is used. For imports, the same calculation is done on totals: imports from China are benchmarked against the growth of Kazakhstan's imports from all other suppliers (Kazakhstan's imports from the world minus those from China, Kazakhstan-reported). The balance's China-specific component is the export component minus the import component, and its share is that component divided by the actual change in the balance (reported only when both have the same sign). The China-specific component of turnover is the export component plus the import component.
 
-**`kzt_usd` (tenge per USD).** This variable operationalises the competitiveness channel from standard open-economy macroeconomics. A higher KZT/USD value (tenge depreciation) makes Kazakh exports cheaper in dollar terms and Chinese imports more expensive, predicting a *positive* effect on the bilateral trade balance via the Marshall–Lerner condition. The Bhagwati [-@bhagwati_1958] immiserising-growth caveat applies: if depreciation also compresses import demand for Chinese capital goods on which Kazakh industries depend, the effect may be partially self-limiting.
+Data sources: the China legs are China-reported (China's imports from Kazakhstan, CIF; China's exports to Kazakhstan, FOB), because Kazakhstan's partner data have gaps (§4.4–4.5); the RoW growth rates are Kazakhstan-reported. A robustness version uses Kazakhstan-reported China legs throughout.
 
-**`log(KZ GDP)` and `log(CN GDP)` (levels).** These variables operationalise domestic absorption (KZ) and foreign demand (CN) from Anderson and van Wincoop's [-@anderson_vanwincoop_2003] gravity framework. However, both GDP series grow monotonically over 2000–2023, producing near-perfect multicollinearity (VIF = 130.9 and 236.3, respectively). Monotonic trending regressors in a 24-observation sample absorb the time trend and destabilise all other coefficient estimates. These variables are therefore **excluded from the primary specification** and retained only in the pre-revision specification in Appendix B.
+**What the components are and are not.** The benchmark is a description of how trade with China would have moved had it moved like trade with everyone else; it is not an estimate of what would have happened without the BRI. The China-specific component therefore measures distinctiveness, not causation. It is not an upper bound on a BRI effect, for two reasons: the BRI can change Kazakhstan's trade with other partners too, which moves the benchmark; and BRI effects within the China-specific component can be offset by other China-specific changes. Shift-share components are not additive across sub-periods, and they depend on the base and end years, so they are reported for a grid of alternatives: base years 2012, 2013, 2014 and the 2011–2013 average; end years 2019, 2023, 2024 and the 2023–2024 average (Script 67).
 
-**`d.log(KZ GDP)` and `d.log(CN GDP)` (annual growth rates) — primary.** The primary specification replaces GDP levels with annual log-difference growth rates, which are stationary, achieve max VIF = 10.4 (the only specification meeting the VIF < 10 target), and operationalise year-on-year income dynamics. One observation is lost to differencing (n = 23). See §6.3.
 
-**`log(CN GDP / KZ GDP)` (gravity ratio) — robustness.** Following the methodological guidance of Anderson and van Wincoop [-@anderson_vanwincoop_2003], the gravity ratio operationalises bilateral size asymmetry and is retained as a robustness check. It reduces max VIF from 236.3 to 33.4 — a large improvement but still above the VIF < 10 target (§6.3; Appendix B).
+## 5.2 Descriptive Indicators
 
-**Interpretation constraint:** The model does not identify a causal BRI effect. PostBRI is a period indicator that coincides with multiple concurrent shocks (oil price collapse, tenge devaluation, Crimea-related trade disruption, COVID-19). All coefficients are interpreted as conditional associations. Causal language is reserved for the triple-concordance criterion in §7: a finding is described as "causal" only where the DiD partner-placebo estimate (§6.5), the synthetic counterfactual gap (§6.6), and the sanctions-robustness check (§6.4) all point in the same direction.
+China's share of Kazakhstan's exports is computed by product group from Kazakhstan's data. Concentration is measured by the Herfindahl–Hirschman index across HS-2 chapters, with and without HS 27, and by the number of chapters exported above USD 1 million.
 
-## 5.2 Full vs. Parsimonious vs. Growth-Rate Specifications
+## 5.3 Triple-Difference PPML for the Export Side (SQ2)
 
-Three specification families are reported:
+The shift-share split shows which groups have large China-specific components; the PPML model tests whether they are statistically distinguishable from zero and robust. It compares, within each chapter and year, exports to China with exports to RoW:
 
-- **Pre-revision full model (A1):** 7 regressors including log(KZ GDP) and log(CN GDP) — retained in Appendix B for transparency. Max VIF > 100. *Not used for primary interpretation.*
-- **Pre-revision parsimonious model (A2):** 5 regressors excluding GDP controls. Max VIF < 10. Used for primary interpretation in the midterm version.
-- **Primary growth-rate model (B) [main specification]:** Replaces both GDP levels with d.log(KZ GDP) and d.log(CN GDP). Stationary, max VIF = 10.4 — the only specification substantially meeting the VIF < 10 target. **This is the primary specification in the final version.** See §6.3 and Appendix B.
-- **Robustness gravity-ratio model (C):** Replaces both GDP levels with log(CN GDP/KZ GDP). Theoretically grounded in Anderson and van Wincoop [-@anderson_vanwincoop_2003]. Max VIF = 33.4 — substantial improvement over A1, does not meet VIF < 10 target. Retained as robustness check.
+$$X_{pdt} = \exp\Big(\alpha_{pt} + \gamma_{pd} + \sum_{g} \beta_{g}\,(\text{China}_d \times \text{Post}_t \times G_{pg})\Big)\,\varepsilon_{pdt},$$
 
-The growth-rate specification is the primary model because it is the only specification that substantially meets the VIF < 10 collinearity threshold (§6.3). Coefficient direction and approximate magnitude are consistent across all full-sample specifications (B and C), supporting the directional interpretation, while exact magnitudes should not be over-interpreted given residual collinearity in Scheme C.
+where *p* is the chapter, *d* ∈ {China, RoW}, Post = 1 from 2014 and *G* indicates the four product groups.
 
-## 5.3 ADL Dynamic Association Model
+- **Chapter-by-year effects** α~pt~ absorb everything common to all destinations: world prices, Kazakhstan's production, exchange rate and export policy. They are the regression counterpart of the "common component".
+- **Chapter-by-destination effects** γ~pd~ absorb the pre-2014 orientation of each chapter towards China.
+- **β~g~** is the post-2013 change in the China/RoW ratio for group *g*; the ratio changes by a factor of exp(β).
 
-Prior to estimating the ADL model, stationarity diagnostics were conducted. Because *n* = 24, unit-root tests have inherently low power, so these diagnostics are used to guide model choice (ARDL) rather than to definitively prove integration order.
+Estimation is by PPML [@santos_silva_tenreyro_2006] in `pyfixest`, with standard errors clustered by chapter. Chapter–destination pairs that are always zero are dropped. Main sample: 2005–2019 and 2023–2024 (17 years, 97 chapters, 3,160 observations).
 
-**Table 5.1. Stationarity and Integration Order Diagnostics**
+## 5.4 Timing: Event Study and Trend Break (SQ2)
 
-| Variable | ADF Stat | ADF *p* | PP Stat | PP *p* | KPSS Stat | KPSS *p* | Inferred Order |
-|----------|----------|---------|---------|--------|-----------|----------|----------------|
-| Trade Balance | −2.09 | 0.247 | −0.89 | 0.958 | 0.11 | >0.10 | Ambiguous |
-| Minerals Narrow | −1.63 | 0.467 | −1.17 | 0.917 | 0.10 | >0.10 | Ambiguous |
-| Brent Crude | −2.21 | 0.204 | −1.65 | 0.773 | 0.13 | 0.072 | Ambiguous |
-| KAZ GDP | −1.56 | 0.506 | −1.64 | 0.777 | 0.17 | 0.027 | I(1) |
-| BRI Intensity | −4.08 | 0.001 | −2.91 | 0.160 | 0.19 | 0.021 | Ambiguous |
+β~g~ compares post-2013 levels with the *pre-2013 average*, so any upward trend yields a positive β whether or not it began with the BRI. Timing is therefore tested directly: an event study replaces Post with year dummies (base 2013), with a joint test of the pre-2013 coefficients; and a trend-break model estimates the China-specific trend before 2013 (θ~g~) and its change afterwards (δ~g~):
 
-*Note: Author's calculations. ADF and PP test H₀: unit root. KPSS tests H₀: stationarity. Low power at n = 24 is acknowledged; diagnostics guide model selection rather than definitively establishing integration orders. Diagnostics for additional series (copper price, log China GDP, log minerals) are qualitatively similar and are available from the author on request.*
+$$X_{pdt} = \exp\big(\alpha_{pt} + \gamma_{pd} + \sum_{g}[\theta_{g}\,\text{China}_d G_{pg}(t-2013) + \delta_{g}\,\text{China}_d G_{pg}(t-2013)\text{Post}_t]\big)\varepsilon_{pdt}.$$
 
-Given the mixed and ambiguous integration orders (I(0) and I(1)), the bounds testing approach is appropriate. The AIC-selected autoregressive distributed lag (ADL) model is estimated to capture dynamic associations. Following Pesaran, Shin, and Smith [-@pesaran_shin_smith_2001], the bounds test is applied to assess cointegration. If the PSS F-statistic falls below the upper bound, the results are interpreted as short-run dynamic associations rather than long-run equilibrium estimates.
+Consistency with M2 requires δ~g~ > 0 (acceleration after the break). The relevant test is therefore one-sided. Because the 2013 announcement is not the date at which infrastructure became operational, the model is also re-estimated with the break at the dated operational and financing milestones of 2012, 2015 and 2017 (Table 6.13b; exploratory).
 
-## 5.4 Robustness Strategy
+## 5.5 Comparison Against China's Other Regional Partners, and the Extensive Margin (SQ3)
 
-Robustness is assessed through: (i) a 288-specification grid varying mineral measures (narrow/broad), BRI variables (dummy/intensity), lag structures, and estimators; (ii) leave-one-out coefficient stability analysis; (iii) WITS-consistent mineral proxy for the full 2000–2023 period; (iv) exclusion of 2023.
+The second comparison uses only China's own reports, so each flow has one reporter and one valuation. The benchmark assumes that China's exports to Kazakhstan grow at the rate of China's exports to a comparator *C*:
+
+$$M^{B}_{KZ,t_1} = M_{KZ,t_0} \cdot G_{C}, \qquad \text{Kazakhstan-specific import change} = M_{KZ,t_1} - M^{B}_{KZ,t_1}.$$
+
+Comparators are the world; Russia; Central Asia excluding Kazakhstan (Kyrgyzstan, Uzbekistan, Tajikistan, Turkmenistan); the same excluding Kyrgyzstan, a known re-export hub; Uzbekistan alone; and Central Asia plus Russia. Growth factors for each partner separately are also reported, which normalises for the large differences in partner size. *G*~C~ is computed in two ways: value-weighted (the comparator group's total in *t*~1~ divided by its total in *t*~0~) and as the median of the individual partners' growth factors, which limits the influence of any one partner. Results are reported with and without Russia and for the same grid of base and end years as §5.1.
+
+The same comparison is *not* used for Kazakhstan's exports. China's imports from Russia and Turkmenistan are dominated by oil and gas, whose prices and post-2022 volumes move for reasons unrelated to Kazakhstan, so the regional benchmark for exports is not comparable (Script 67 computes it for completeness). Export distinctiveness is assessed product by product against Kazakhstan's other markets (§5.1, §5.3).
+
+The two comparisons are not nested and are not applied sequentially: they use different reporters, different benchmarks and answer different questions. They are reported side by side.
+
+The extensive margin on the export side is tested by a linear probability model of exporting more than USD 1 million, with the same fixed effects as §5.3.
+
+
+## 5.6 Identification Limits
+
+The design identifies China-specific change, not its cause. A rise in China's demand for Kazakh sunflower oil, a phytosanitary protocol, a faster border crossing and a Chinese-financed road would produce the same China-specific component. This is why the China-specific component is treated as a description of distinctiveness, not as an estimate or bound of a BRI effect, and why consistency with a BRI mechanism (level B) is the strongest claim made.
+
+## 5.7 Safeguards: Exploratory Analysis, Multiple Testing and Missing Data
+
+**Limiting the search.** All export tests use four product groups fixed by HS chapter boundaries before estimation (§4.2): energy, metals and ores, agri-food and other. The analysis does not search across individual chapters for significant results. Energy is a single chapter and has no valid standard error, so each family of tests has three inferential coefficients.
+
+**Multiple testing.** Holm–Bonferroni adjustments are applied within each family: the three group coefficients of the main triple difference, and the three trend-break coefficients. Robustness variants (Table 6.7) are not counted as separate discoveries; a result is used only if it holds in the main specification after adjustment.
+
+**Randomisation inference.** For agri-food, the group that drives the export-side conclusions, 300 random sets of 24 chapters are drawn from the 96 non-energy chapters and the China × Post and trend-break coefficients are re-estimated. This asks whether agri-food is unusual among Kazakhstan's export chapters, which guards against both small-cluster problems and the possibility that any set of chapters would show a similar change.
+
+**Exploratory elements.** As disclosed in §3.3, the group predictions, the trend-break test, the comparison-adjusted decomposition, the neighbour comparison and the robustness grid were added after inspecting data. The decompositions are descriptive and involve no test. For the tests, the safeguards above apply, and the thesis reports which conclusions would change without them.
+
+**Specification grids instead of single choices.** Every comparison-adjusted figure that enters a conclusion is reported over a grid of four base periods and four end periods (Tables 6.3b, 6.4, 6.10b) and, for imports, six comparator specifications. A conclusion is stated only if it holds across the grid; otherwise the range is reported.
+
+**Independent re-estimation.** With chapter-by-year fixed effects and two destinations, the Poisson model in §5.3 is equivalent to a binomial (logit) model of China's share in each chapter-year, weighted by the chapter-year total. The main coefficients were re-estimated this way with a different library (`statsmodels`) as a check on the `pyfixest` estimates (§6.7).
+
+**Power.** For the trend-break test, the minimum detectable change in the China-specific trend (one-sided 5 per cent test, 80 per cent power) is reported, so that a non-significant result is not mistaken for evidence of no change.
+
+**Missing data.** Missingness has four sources, handled differently:
+
+1. *Confidentiality-type suppression in Kazakhstan's 2020–2022 partner data* (§4.4). This is not random: it removes metals and machinery. These years are excluded from all Kazakhstan-reported product comparisons and from decomposition endpoints; China's mirror data, which show no suppression, are used for the China legs, and the main PPML is re-estimated with them.
+2. *Retrieval failures*: Kazakhstan-to-World HS-2 data for 2020 and 2022 and China-reported imports for 2006. These are failures of the retrieval process, unrelated to trade values; they reduce the sample but are not expected to bias it. All three years are outside the decomposition endpoints.
+3. *Truncated API responses*: missing chapters were re-queried; completeness was verified against World Bank totals (§4.3).
+4. *Limited import detail*: China's exports to Kazakhstan by chapter were collected for 2013, 2019 and 2024 only, and imports from RoW only as totals. The import side is therefore analysed at aggregate level, and import results are presented as descriptive.
 
 
 # 6. Results
 
-## 6.1 Baseline OLS Results
-
-**Table 6.1. OLS Regression Results: Full and Parsimonious Models**
+The chapter answers the sub-questions in order: the composition of the swing and its China-specific part (§6.1–6.2, SQ1), its export side (§6.3–6.5, SQ2), its import side (§6.6, SQ3), the robustness of the inferential results (§6.7), and the BRI channels (§6.8, SQ4). §6.9 maps every result to the central question.
 
-| Variable | A1 Coef. | A1 HAC SE | A1 *p* | A2 Coef. | A2 HAC SE | A2 *p* |
-|----------|------:|------:|------:|------:|------:|------:|
-| Constant | 197.624 | (53.040) | 0.002*** | −3.326 | (2.359) | 0.176 |
-| Minerals (USD bn) | 2.463 | (0.541) | 0.000*** | 1.694 | (0.853) | 0.062* |
-| Brent (USD/bbl) | 0.047 | (0.039) | 0.239 | 0.023 | (0.037) | 0.542 |
-| KZT/USD | 0.016 | (0.012) | 0.198 | 0.014 | (0.012) | 0.270 |
-| log(KZ GDP) | −13.230 | (6.112) | 0.046** | — | — | — |
-| log(CN GDP) | 4.529 | (4.460) | 0.325 | — | — | — |
-| Post-BRI | 4.927 | (1.847) | 0.017** | 0.691 | (1.492) | 0.649 |
-| Minerals × Post-BRI | **−3.221** | **(1.043)** | **0.007***| **−2.382** | **(0.977)** | **0.025**|
-| | | | | | | |
-| N | 24 | | | 24 | | |
-| R² | 0.765 | | | 0.703 | | |
-| Adj. R² | 0.661 | | | 0.620 | | |
-| Durbin–Watson | 1.799 | | | 1.739 | | |
+## 6.1 The Balance and Its Gross Components
 
-*Notes: HAC (Newey–West) standard errors in parentheses, bandwidth = 3. Sample: 2000–2023 (*n* = 24). Significance: \*p<0.10, \*\*p<0.05, \*\*\*p<0.01. A1 = full model (7 regressors including log Kazakhstan GDP and log China GDP); A2 = parsimonious model (no GDP controls). Standard errors are heteroskedasticity- and autocorrelation-consistent (HAC) throughout, as motivated by the Breusch–Pagan test result (§6.2).*
+**Table 6.1. Kazakhstan's trade with China, China-reported data (USD bn)**
 
-In the full model, the minerals coefficient (2.46, *p* < 0.001) indicates that, during the pre-BRI period, each additional USD billion of mineral exports was associated with approximately USD 2.46 billion higher bilateral trade balance. The interaction term (−3.22 with HAC SE of 1.043, *p* = 0.007) suggests that this positive association weakened substantially in the post-BRI period. However, the large constant (197.6) and the signs on the GDP terms indicate that the model absorbs trend dynamics through GDP controls, and the severe multicollinearity (VIF > 100 for both GDP variables; see §6.3) renders these full-model coefficients unreliable as structural estimates.
+| | 2013 | 2019 | 2024 |
+|---|---:|---:|---:|
+| Kazakhstan's exports to China (China's imports, CIF) | 16.05 | 8.86 | 15.91 |
+| Kazakhstan's imports from China (China's exports, FOB) | 12.55 | 12.73 | 27.95 |
+| Balance for Kazakhstan | +3.51 | −3.87 | −12.04 |
 
-The parsimonious model (A2) is therefore preferred for substantive interpretation. By removing the collinear GDP controls, all remaining VIF values fall below 10, and the interaction estimate of −2.38 (HAC SE = 0.977, *p* = 0.025) is more stable. The Post-BRI level shift becomes statistically insignificant (*p* = 0.649), confirming that the period dummy's apparent significance in A1 was driven by GDP collinearity rather than a genuine level shift in the trade balance. All results in this table are conditional associations only. No coefficient in either model should be interpreted as a causal estimate: PostBRI is a period indicator that coincides with the oil-price collapse, the tenge devaluation, and the COVID-19 shock alongside BRI-related infrastructure changes.
+*Source: UN Comtrade, China as reporter [@un_comtrade_hs2_2026]. Author's calculations (Script 61, `trade_balance_decomposition.csv`).*
 
-![Figure 4. Strategic Mineral Exports vs Bilateral Trade Balance, Pre-BRI vs Post-BRI](../Outputs/generated_figures/fig_4_scatter.png)
-*Source: Author's construction. Figure 4 plots the relationship between mineral exports and the trade balance across the two periods, visualising the weakened association post-BRI.*
+**Table 6.2. Gross decomposition of the change in the balance (USD bn)**
 
-## 6.2 Residual Diagnostics
+| Component | 2013→2019 | 2019→2024 | 2013→2024 |
+|---|---:|---:|---:|
+| Energy exports | −7.56 | +0.36 | −7.20 |
+| Metals and ores exports | +0.06 | +5.56 | +5.62 |
+| Agri-food exports | +0.30 | +0.56 | +0.86 |
+| Other exports | +0.02 | +0.57 | +0.59 |
+| Imports from China (enters with a minus sign) | +0.18 | +15.23 | +15.41 |
+| **Change in balance** | **−7.37** | **−8.18** | **−15.55** |
 
-**Table 6.2. Residual Diagnostics**
+*Source: as Table 6.1.*
 
-| Test | Statistic | *p*-value | Interpretation |
-|------|-----------|-----------|---------------|
-| Durbin–Watson | 1.799 | — | Mild positive autocorrelation; inconclusive |
-| Breusch–Pagan | 19.78 | 0.006 | Heteroskedasticity detected |
+![Figure 6.1. Gross decomposition of the change in Kazakhstan's balance with China, 2013–2024](../Outputs/generated_figures/fig_r4_balance_decomposition.png)
 
-The Breusch–Pagan test rejects the null of homoskedasticity (*p* = 0.006), which motivates the use of HAC standard errors throughout. HAC standard errors correct for both heteroskedasticity and autocorrelation in inference, but do not address potential model misspecification. The Durbin–Watson statistic (1.80) is close to 2.0, suggesting that serial correlation is mild after conditioning on regressors.
+The swing has two phases. In 2013–2019 the balance fell by USD 7.4 billion while energy exports to China fell by USD 7.6 billion; imports were flat. In 2019–2024 the balance fell by a further USD 8.2 billion because imports rose by USD 15.2 billion, more than offsetting a USD 7.0 billion rise in exports, most of it metals and ores. These are gross changes; they do not yet say whether anything was specific to China.
 
-## 6.3 Multicollinearity Diagnostics and Resolution
+## 6.2 Is the Swing China-Specific Relative to Kazakhstan's Other Partners? (SQ1)
 
-Three variable schemes were evaluated to address the severe multicollinearity in the GDP levels specification:
+**Table 6.3. Comparison against Kazakhstan's other partners, 2013 to 2024 (USD bn)**
 
-**Table 6.3a. VIF Comparison Across Specification Schemes**
+| Period | Flow | Actual change | Common | China-specific |
+|---|---|---:|---:|---:|
+| 2013→2019 | Exports | −7.19 | −3.74 | −3.44 |
+| | Imports | +0.18 | −2.33 | +2.52 |
+| | **Balance** | **−7.37** | **−1.41** | **−5.96** |
+| 2019→2024 | Exports | +7.05 | +2.81 | +4.24 |
+| | Imports | +15.23 | +4.53 | +10.70 |
+| | **Balance** | **−8.18** | **−1.72** | **−6.46** |
+| 2013→2024 | Exports | −0.14 | +0.06 | −0.20 |
+| | Imports | +15.41 | +1.30 | +14.11 |
+| | **Balance** | **−15.55** | **−1.24** | **−14.31** |
+| *Kazakhstan-reported China legs* | | | | |
+| 2013→2024 | **Balance** | **−6.27** | **−0.52** | **−5.74** |
 
-| Variable | Scheme A (GDP levels) | Scheme B (GDP growth) | Scheme C (Gravity ratio) |
-|----------|----------------------:|----------------------:|-------------------------:|
-| MIN (minerals) | 12.4 | 6.8 | 10.8 |
-| BRENT | 5.7 | 4.4 | 4.9 |
-| KZT/USD | 17.8 | 8.3 | 17.7 |
-| log(KZ GDP) | **130.9** | — | — |
-| log(CN GDP) | **236.3** | — | — |
-| d.log(KZ GDP) growth | — | 2.6 | — |
-| d.log(CN GDP) growth | — | 3.4 | — |
-| log(CN/KZ GDP ratio) | — | — | 33.4 |
-| POST dummy | 28.9 | 10.4 | 21.9 |
-| POST × MIN | 16.0 | 9.7 | 13.7 |
-| **Max VIF** | **236.3** | **10.4** | **33.4** |
+*§5.1. Export China legs: China-reported imports from Kazakhstan by HS-2 chapter; RoW growth: Kazakhstan-reported exports to World minus China, by chapter. Import China leg: China-reported exports to Kazakhstan; RoW growth: Kazakhstan-reported imports from World minus China (×0.81 in 2013–2019, ×1.36 in 2019–2024, ×1.10 in 2013–2024). Components are not additive across sub-periods. Source: Script 65, `balance_common_vs_china_specific.csv`.*
 
-*Note: Scheme A = pre-revision specification (retained in Appendix B). Scheme B = GDP annual growth rates (primary). Scheme C = gravity ratio log(CN GDP/KZ GDP) (robustness).*
+For 2013–2024, USD 14.31 billion of the USD 15.55 billion swing is China-specific (92 per cent: 14.31 ÷ 15.55). With Kazakhstan's own data the swing is smaller in level (USD 6.27 billion, because Kazakhstan records much lower imports from China, §4.5), but the China-specific share is the same (5.74 ÷ 6.27 = 92 per cent).
 
-**Scheme A (pre-revision)** has GDP-level VIFs of 130.9 and 236.3 — severe. This is the specification moved to Appendix B.
+The 92 per cent figure is the *highest* value in the robustness grid, because 2013 was the peak year of oil exports to China. Table 6.3b reports all base and end combinations.
 
-**Scheme B (growth rates) — primary specification.** Replacing GDP levels with annual log-difference growth rates reduces maximum VIF to 10.4, the only specification that substantially meets the VIF < 10 target. Growth rates are stationary, theoretically defensible (controlling for year-on-year income dynamics rather than trend levels), and eliminate the trending-variable collinearity. One year of observations is lost to differencing (n = 23). This specification is adopted as the primary model.
+**Table 6.3b. China-specific share of the swing under alternative base and end years (China-reported China legs)**
 
-**Scheme C (gravity ratio) — robustness check.** Replacing the two GDP-level variables with log(CN GDP/KZ GDP) reduces maximum VIF from 236.3 to 33.4 — a large improvement, but still well above the VIF < 10 threshold. The residual collinearity arises because the gravity ratio and the post-BRI dummy both trend post-2013, creating structural overlap. Scheme C is theoretically motivated by Anderson and van Wincoop (2003) and is retained as a robustness check because it operationalises bilateral size asymmetry and preserves all 24 observations, but it does not resolve the multicollinearity problem and is **not** the primary specification.
+| Base \ End | 2019 | 2023 | 2024 | 2023–24 average |
+|---|---:|---:|---:|---:|
+| 2011–13 average | 58% (−4.76 of −8.19) | 64% (−8.05 of −12.66) | 77% (−12.55 of −16.36) | **71% (−10.30 of −14.51)** |
+| 2012 | 52% (−3.90 of −7.54) | 57% (−6.82 of −12.01) | 71% (−11.12 of −15.72) | 65% (−8.97 of −13.87) |
+| 2013 | 81% (−5.96 of −7.37) | 82% (−9.68 of −11.84) | 92% (−14.31 of −15.55) | 88% (−11.99 of −13.70) |
+| 2014 | 71% (−0.64 of −0.90) | 56% (−3.01 of −5.37) | 83% (−7.58 of −9.07) | 73% (−5.29 of −7.22) |
 
-**Table 6.3b. Coefficient Stability Across Schemes**
+*China-specific balance component and actual change in USD bn in brackets. Source: Script 67, `robust_kz_partner_grid.csv`.*
 
-| Scheme | N | Interaction β | HAC SE | *p*-value | Max VIF |
-|--------|---|---:|---:|---:|---:|
-| A: GDP levels (pre-revision) | 24 | −3.220 | 1.043 | 0.002 | 236.3 |
-| **B: GDP growth rates (primary)** | **23** | **−2.489** | **0.974** | **0.011** | **10.4** |
-| B: Growth rates, excl. 2022–2023 | 21 | −0.012 | 0.283 | 0.966 | 10.4 |
-| B: Growth rates, excl. 2023 | 22 | +0.065 | 0.239 | 0.785 | 10.4 |
-| C: Gravity ratio (robustness) | 24 | −2.419 | 1.131 | 0.033 | 33.4 |
-| C: Gravity ratio, excl. 2022–2023 | 22 | +0.102 | 0.432 | 0.813 | 33.4 |
-| C: Gravity ratio, excl. 2023 | 23 | +0.307 | 0.449 | 0.494 | 33.4 |
+Three results hold in every cell of the grid. (i) Most of the swing is China-specific: between 52 and 92 per cent, and 71 per cent with averaged endpoints, which are least sensitive to single-year spikes. (ii) The China-specific *import* component is small to 2019 (+0.4 to +3.0 billion) and large by 2023–2024 (+8.1 to +14.7 billion). (iii) The China-specific *export* component is negative to 2019 under every base (−0.2 to −3.4 billion). The China-specific export component to 2024, in contrast, depends on the base year: −0.2 billion from 2013, but +2.0 to +3.7 billion from 2011–2013, 2012 or 2014. Any statement that the export side "nets to about zero" is specific to the 2013 base and is not made.
 
-The interaction coefficient is stable at approximately −2.4 to −2.5 across both full-sample schemes, confirming the collinearity inflated Scheme A (−3.22) but did not fundamentally alter the directional conclusion. Critically, both Scheme B and Scheme C lose significance when 2022–2023 are excluded — confirming the sanctions-robustness concern in §6.14 is structural, not an artefact of the specification choice.
+**Turnover.** The trade-expansion literature (§2.3) concerns trade volume rather than the balance. Applying the same comparison to bilateral turnover (exports plus imports), the China-specific component of turnover is between −0.9 and +2.0 billion to 2019, under every base year, and between +12.2 and +18.3 billion to 2023–2024, of which the import component is +8.1 to +14.7 billion (`robust_kz_partner_grid.csv`). Relative to Kazakhstan's other partners, then, Kazakhstan–China trade did not expand specifically while most BRI connectivity projects were being built and opened (2013–2019); it expanded after 2019, mainly through imports.
 
-**Table 6.3c. Primary Specification (Scheme B: GDP Growth Rates): Key Results**
+**Table 6.4. China-specific export component by product group (USD bn)**
 
-| Variable | Notes |
-|---|---|
-| Minerals Narrow (USD bn) | Mineral export level (pre-BRI association) |
-| d.log(KZ GDP) | Annual growth rate; stationary; VIF=2.63 |
-| d.log(CN GDP) | Annual growth rate; stationary; VIF=3.36 |
-| Brent (USD/bbl) | Global commodity price control |
-| KZT/USD | Exchange rate control |
-| Post-BRI (0/1) | Period indicator; VIF=10.43 |
-| **Minerals × Post-BRI** | **−2.489 (HAC SE=0.974, *p*=0.011) — primary coefficient** |
-| N | 23 (2001–2023; one obs. lost to differencing) |
-| R² | 0.742 |
-| Max VIF | 10.4 |
-| HAC bandwidth | 3 (Newey–West) |
+| Group | 2013→2019 | 2019→2024 | 2013→2024 | Range across the grid, end 2023–2024 |
+|---|---:|---:|---:|---|
+| Energy | −3.93 | −0.16 | −4.90 | −4.9 to +2.4 (negative from every pre-2014 base) |
+| Metals and ores | +0.20 | +3.80 | +3.36 | +1.6 to +6.6 |
+| of which strategic minerals (HS 26, 28, 72, 74, 79) | +0.38 | +3.70 | +3.42 | +1.8 to +6.7 |
+| Agri-food | +0.25 | +0.13 | +0.82 | +0.7 to +0.9 |
+| Other | +0.03 | +0.47 | +0.52 | +0.3 to +0.5 |
+| **Total exports** | **−3.44** | **+4.24** | **−0.20** | −0.2 to +5.1 |
 
-*Source: Author's calculations.*
+*China-reported China legs. With Kazakhstan-reported China legs, 2013→2024: energy −3.61, metals and ores +2.97, agri-food +0.89, other −0.08. Range: base 2011–13 average, 2012, 2013 or 2014; end 2023, 2024 or 2023–24 average. Sources: Script 65, `export_components_by_group.csv`, `strategic_minerals_components.csv`; Script 67, `robust_export_groups_grid.csv`.*
 
-**Why Scheme B is the primary specification.** The growth-rate specification is adopted as primary because: (i) it is the only scheme that substantially meets the VIF < 10 collinearity threshold (max VIF = 10.4, driven by the POST dummy); (ii) GDP growth rates are stationary, removing the trending-variable collinearity that destabilises levels-based inference; (iii) annual growth rates operationalise the income-dynamics channel (year-on-year demand and capacity changes) consistently with the underlying theory. The one-observation cost (n = 23 vs. 24) is the only trade-off relative to Scheme C.
+By product group:
 
-**Remaining collinearity note.** The POST variable retains VIF = 10.4, just above the conventional threshold of 10. This is because the post-BRI dummy is correlated with the trend component in GDP growth rates post-2013. Coefficient magnitudes in Scheme B should still be interpreted directionally rather than as precise structural parameters, but the reduced collinearity severity relative to Schemes A and C substantially improves inference reliability.
+1. **Energy.** Oil exports to China fell by more than oil exports to other markets. From any base before 2014 the China-specific component is negative at every end year (−1.2 to −4.9 billion). From a 2014 base it is small and changes sign (−0.7 to +2.4 billion): the China-specific fall is concentrated in the move from 2013 to 2014, and its size at the end depends on the volatile oil exports of 2023–2024.
+2. **Strategic minerals.** Their China-specific component is positive under every base and end year (+1.8 to +6.7 billion by 2023–2024), so they offset part of the swing in every specification. How much of this had happened by 2019 depends on the base: +0.4 billion from 2013, +1.7 billion from the 2011–2013 average, +2.4 billion from 2012.
+3. **Agri-food and other goods.** Small positive China-specific components in every specification.
 
-## 6.4 Influence Diagnostics and the Role of 2023
+![Figure 6.2. Common and China-specific components of the change in Kazakhstan's balance with China](../Outputs/generated_figures/fig_r7_common_vs_specific.png)
 
-This section addresses the most important empirical vulnerability in the thesis. Influence diagnostics reveal that the headline interaction coefficient is heavily dependent on the 2023 observation.
+The remaining sections ask whether these components are distinguishable from noise (export side), whether the import component is distinctive from China's side, and whether either matches BRI mechanisms.
 
-**Table 6.4. Influential Observations (Cook's Distance)**
 
-| Year | Cook's D | Leverage | Flag |
-|------|----------|----------|------|
-| 2000 | 0.220 | 0.657 | ⚠️ |
-| 2014 | 0.599 | 0.715 | ⚠️ |
-| 2020 | 0.275 | 0.318 | ⚠️ |
-| 2022 | 0.553 | 0.484 | ⚠️ |
-| **2023** | **3.898** | **0.697** | **⚠️⚠️** |
+## 6.3 Export Composition and China's Share
 
-*Cook's D threshold (4/n): 0.167. Flagged years exceed threshold.*
+**Table 6.5. Kazakhstan's exports to China by product group (Kazakhstan-reported)**
 
-The 2023 observation has a Cook's distance of 3.90—more than 23 times the conventional 4/*n* threshold of 0.167 and seven times larger than any other observation. This is the only year in the sample with a negative bilateral trade balance (−USD 2.01 billion), driven by an unprecedented import surge to USD 16.77 billion. The studentised residual for 2023 is −9.18, indicating an extreme outlier.
+| Year | Total, USD bn | Energy | Metals and ores | Agri-food | Other |
+|---|---:|---:|---:|---:|---:|
+| 2005 | 2.42 | 20.2% | 66.7% | 0.2% | 12.9% |
+| 2008 | 7.68 | 57.6% | 36.4% | 0.0% | 6.0% |
+| 2013 | 14.37 | 62.0% | 36.4% | 0.5% | 1.1% |
+| 2016 | 4.22 | 24.0% | 70.9% | 3.1% | 2.0% |
+| 2019 | 8.00 | 35.3% | 58.3% | 4.6% | 1.8% |
+| 2023 | 14.76 | 36.0% | 54.8% | 6.5% | 2.7% |
+| 2024 | 14.90 | 22.0% | 67.0% | 6.6% | 4.4% |
 
-**Table 6.5. Model Stability: Full Sample vs. Excluding 2023**
+*Source: UN Comtrade, Kazakhstan as reporter. Author's calculations (Script 61, `composition_kz_exports_to_china.csv`, which also gives the China-reported shares; the two sources differ by up to 10 percentage points in individual years, mainly because of CIF/FOB valuation and timing, but show the same direction of change).*
 
-| Model | Sample | Interaction β | SE | *p* | R² |
-|-------|--------|------:|------:|------:|------:|
-| Full (A1) | 2000–2023 (n=24) | −3.221 | 1.043 | 0.007 | 0.765 |
-| Parsimonious (A2) | 2000–2023 (n=24) | −2.382 | 0.977 | 0.025 | 0.703 |
-| Full, excl. 2023 (A3) | 2000–2022 (n=23) | −0.407 | 0.288 | 0.178 | 0.960 |
-| Parsimonious, excl. 2023 (A4) | 2000–2022 (n=23) | +0.401 | 0.257 | 0.137 | 0.928 |
-| WITS proxy (A5) | 2000–2023 (n=24) | −2.965 | 0.689 | 0.000 | 0.829 |
-| WITS, excl. 2023 (A6) | 2000–2022 (n=23) | −1.874 | 1.017 | 0.083 | 0.832 |
+![Figure 6.3. Kazakhstan's exports to China by product group, China-reported, 2005–2024](../Outputs/generated_figures/fig_r1_composition_china.png)
 
-*Notes: HAC standard errors. WITS models use parsimonious specification with consistent Ores and Metals proxy.*
+**Table 6.6. China's share of Kazakhstan's exports by product group, % (Kazakhstan-reported)**
 
-These results demonstrate four key findings:
+| Year | Energy | Metals and ores | Agri-food | Other | All goods |
+|---|---:|---:|---:|---:|---:|
+| 2005 | 2.5 | 24.5 | 0.7 | 30.1 | 8.7 |
+| 2008 | 9.0 | 16.7 | 0.1 | 18.3 | 10.8 |
+| 2010 | 13.5 | 33.7 | 0.8 | 6.8 | 17.7 |
+| 2012 | 14.1 | 33.0 | 1.9 | 2.3 | 17.9 |
+| 2013 | 13.8 | 34.8 | 2.5 | 6.8 | 17.0 |
+| 2016 | 4.5 | 28.2 | 6.1 | 4.9 | 11.5 |
+| 2019 | 7.4 | 33.4 | 11.1 | 6.0 | 13.8 |
+| 2023 | 11.4 | 39.9 | 18.0 | 6.0 | 18.7 |
+| 2024 | 7.1 | 44.2 | 19.4 | 8.5 | 18.3 |
 
-1. **Excluding 2023 eliminates statistical significance** in the full model (A3: *p* = 0.178) and reverses the sign in the parsimonious model (A4: β = +0.40). This sign reversal is critical: it implies that once both the GDP controls (which inflate variance) and the 2023 observation (the outlier deficit) are removed, the negative interaction entirely collapses. Therefore, the thesis does not claim a robust structural negative interaction; the stronger contribution is the descriptive decomposition and diagnostic evidence of trade-balance fragility.
-2. **The full-sample interaction is driven primarily by one observation.** The leave-one-out analysis confirms that no other year's exclusion changes the sign or significance of the interaction.
-3. **The WITS-consistent proxy partially preserves significance even excluding 2023** (A6: −1.87, *p* = 0.083), suggesting that measurement-break issues in the narrow mineral variable may compound the instability.
-4. **The R² rises dramatically when 2023 is excluded** (from 0.765 to 0.960), indicating that 2023 introduces substantial unexplained variance.
+*Source: as Table 6.5 (`china_share_by_group.csv`, all years). 2020–2022 omitted (§4.4).*
 
-**Interpretation.** The negative interaction is not a stable structural finding. Rather, 2023 represents a potential inflection point—the first year of bilateral deficit—that dramatically amplifies the estimated post-BRI deterioration. The thesis interprets the evidence as diagnostic: the data are consistent with an increasingly adverse trade-balance pattern, but the statistical evidence for a systematic post-BRI interaction effect depends on whether 2023 represents the beginning of a new structural pattern or a one-time shock.
+![Figure 6.4. China's share of Kazakhstan's exports by product group](../Outputs/generated_figures/fig_r2_china_share_by_group.png)
 
-## 6.5 Leave-One-Out Coefficient Stability
+China's share of Kazakhstan's energy exports rose from 2.5 to 14–15 per cent between 2005 and 2011, then fell back to 3–7.4 per cent in 2016–2019. China's share of metals and ores rose from 17 to 34 per cent between 2008 and 2010, stayed at 28–35 per cent until 2019, and reached 40–44 per cent only in 2023–2024. China's share of agri-food rose steadily, from below 1 per cent before 2011 to 2.5 per cent in 2013, 11 per cent in 2019 and 19 per cent in 2024.
 
-![Figure 5. Influence and Leave-One-Out Diagnostics](../Outputs/generated_figures/fig_5_diagnostics.png)
-*Source: Author's construction. Figure 5(d) plots the interaction coefficient from 24 leave-one-out regressions.*
+**Strategic minerals.** China's share of Kazakhstan's ore exports (HS 26) was 44 per cent in 2013 and 41 per cent in 2019, then 80 per cent in 2024; its share of copper (HS 74) rose from 56 to 64 per cent between 2013 and 2024; its share of inorganic chemicals including uranium compounds (HS 28) fell from 42 per cent in 2013 to 23 per cent in 2019 and was 32 per cent in 2024 (Script 61). The largest single movement is the post-2019 shift of ores towards China; how much of the strategic-mineral gain in Table 6.4 had occurred by 2019 depends on the base year.
 
-Figure 5 plots the influence diagnostics, including the interaction coefficient from 24 leave-one-out regressions in panel (d). Excluding any year other than 2023 produces interaction coefficients between −2.64 and −3.88, all statistically significant at the 5% level. Excluding 2023 alone reduces the coefficient to −0.41 and renders it insignificant. This confirms that the full-sample result is robust to all observations except 2023.
+**Concentration.** The HHI of Kazakhstan's exports to China fell from 0.415 in 2013 to 0.173 in 2024, but almost entirely because oil fell: excluding HS 27 it was 0.212 in 2013 and 0.205 in 2024 (`diversification_indices.csv`). Non-resource goods rose from 1.5 to 11.0 per cent of exports to China, against 6.8 to 16.7 per cent of exports to the rest of the world.
 
-## 6.6 WITS Consistent-Proxy Robustness
+![Figure 6.5. Concentration (HHI) of Kazakhstan's exports to China and to the rest of the world](../Outputs/generated_figures/fig_r6_hhi.png)
 
-To address the measurement break (Section 4.3), a robustness check replaces the narrow mineral variable with WITS Ores and Metals exports, which are available from a single source for the entire 2000–2023 period. The WITS proxy is broader than the targeted narrow definition, but avoids source-switching at 2014. Results (Table 6.5, Models A5–A6) show that the WITS-based interaction is −2.97 (*p* < 0.001) in full sample and −1.87 (*p* = 0.083) excluding 2023—marginally significant. This suggests that measurement consistency partially mitigates the 2023 sensitivity, though the interaction remains fragile.
+## 6.4 Which Export Changes Were Statistically China-Specific? (SQ2)
 
-## 6.7 ADL Dynamic Association Results
+**Table 6.7. PPML triple difference: change in the China/RoW export ratio after 2013, by product group**
 
-The PSS bounds test for Model A (dummy) yields *F* = 1.883 with upper-bound *p* = 0.534. This fails to reject the null of no cointegration. The ADL results are therefore interpreted as short-run dynamic associations rather than long-run equilibrium estimates. The AIC-selected ADL model for the dummy specification yields a dynamic interaction coefficient of −1.73 (*p* = 0.001), consistent in direction with the OLS specifications.
+| Sample | N | Energy | Metals and ores | Agri-food | Other |
+|---|---:|---:|---:|---:|---:|
+| (1) Main: KZ-reported, 2005–19 and 2023–24 | 3,160 | −0.528 [n/a] | 0.329 (0.074)\*\*\* | 2.456 (0.213)\*\*\* | 0.634 (0.522) |
+| (2) Mirror: China-reported imports for China leg | 2,754 | −0.659 [n/a] | 0.436 (0.112)\*\*\* | 2.307 (0.292)\*\*\* | 1.144 (0.628)\* |
+| (3) 2005–2019 only | 2,784 | −0.669 [n/a] | 0.154 (0.096) | 1.986 (0.250)\*\*\* | 0.194 (0.379) |
+| (4) Post from 2015 | 3,160 | −0.539 [n/a] | 0.319 (0.100)\*\*\* | 2.120 (0.206)\*\*\* | 0.508 (0.544) |
+| (5) Post from 2017 | 3,160 | −0.446 [n/a] | 0.381 (0.149)\*\* | 1.827 (0.184)\*\*\* | 0.594 (0.540) |
+| (6) Excluding HS 71 | 3,126 | −0.528 [n/a] | 0.328 (0.074)\*\*\* | 2.456 (0.213)\*\*\* | 0.634 (0.522) |
+| (7) Chapters with mean > USD 1m | 2,532 | −0.528 [n/a] | 0.329 (0.074)\*\*\* | 2.462 (0.214)\*\*\* | 0.640 (0.523) |
+| (8) Placebo: 2005–2013, false post = 2010 | 1,617 | 0.722 [n/a] | 0.663 (0.162)\*\*\* | 2.607 (0.876)\*\*\* | −0.228 (0.733) |
 
-Model stability is assessed with CUSUM and CUSUMSQ plots below (Figures 6a and 6b). The CUSUM path remains within the 5% bounds throughout the sample, indicating parameter stability. However, the CUSUMSQ path crosses the 5% boundary in the post-2020 period, signalling variance instability consistent with the heteroskedasticity detected in the Breusch–Pagan test (§6.2) and with the outsized influence of the 2022–2023 import surge. This variance instability reinforces the diagnostic interpretation: model parameters are directionally stable, but variance is not constant, which is a further reason to treat coefficient magnitudes cautiously.
+*Coefficients on China × Post × group. Chapter-by-year and chapter-by-destination fixed effects. Standard errors clustered by HS-2 chapter in parentheses (unadjusted; Holm-adjusted values in Table 6.12). \*\*\* p < 0.01, \*\* p < 0.05, \* p < 0.1. Energy is a single chapter, so no standard error can be computed [n/a]. Source: Script 62, `ppml_main.csv`.*
 
-![Figure 6a. CUSUM Test — Model A (Post-BRI Dummy)](../Outputs/generated_figures/fig06_cusum_Model_A_dummy.png)
-*Note: CUSUM path and 5% critical bounds. A path within bounds indicates parameter stability.*
+The regression confirms the shift-share picture. Relative to the rest of the world, the China ratio fell by 41 per cent for energy, rose by 39 per cent for metals and ores and by a factor of 11.7 for agri-food (row 1). Other goods show no significant change. The agri-food result holds in every variant. The metals result depends on 2023–2024 (row 3). The placebo (row 8), which pretends the BRI began in 2010 and uses only pre-BRI years, finds large "effects" for agri-food and metals: both were already changing before 2013.
 
-![Figure 6b. CUSUMSQ Test — Model A (Post-BRI Dummy)](../Outputs/generated_figures/fig07_cusum_Model_B_intensity.png)
-*Note: CUSUMSQ path and 5% critical bounds. Boundary crossing in the post-2020 period indicates variance instability, consistent with the 2022–2023 import surge.*
+## 6.5 Did the Export Changes Begin with the BRI? (SQ2, timing)
 
-Model B (BRI intensity) yields numerically unstable long-run multipliers (magnitudes exceeding 1,000), indicating near-singular estimation. This specification is unreliable and is not used for substantive interpretation.
+![Figure 6.6. Event study: China/RoW export ratio by product group relative to 2013](../Outputs/generated_figures/fig_r3_event_study.png)
 
-## 6.8 Robustness Grid Summary
+**Table 6.8. Event-study coefficients (log China/RoW ratio relative to 2013)**
 
-To systematically evaluate the fragility of the findings, a 288-specification robustness grid was estimated across different mineral measures, lag structures, estimators, and BRI dummy variants. 
+| Year | Agri-food | Metals and ores | Energy |
+|---|---:|---:|---:|
+| 2005 | −1.83 (0.70) | −0.56 (0.32) | −1.83 |
+| 2008 | −3.37 (0.91) | −0.99 (0.22) | −0.48 |
+| 2010 | −1.21 (0.14) | 0.04 (0.20) | −0.03 |
+| 2011 | −1.65 (0.21) | −0.14 (0.07) | 0.11 |
+| 2012 | −0.36 (0.31) | −0.04 (0.20) | 0.03 |
+| 2013 | 0 | 0 | 0 |
+| 2014 | 0.57 (0.14) | −0.10 (0.10) | −0.54 |
+| 2016 | 0.93 (0.27) | −0.27 (0.15) | −1.21 |
+| 2017 | 0.98 (0.30) | −0.09 (0.17) | −1.56 |
+| 2019 | 1.45 (0.37) | −0.12 (0.21) | −0.70 |
+| 2023 | 2.05 (0.11) | 0.18 (0.36) | −0.21 |
+| 2024 | 2.07 (0.24) | 0.36 (0.35) | −0.74 |
 
-**Table 6.6. Robustness Grid Summary**
+*PPML with chapter-by-year and chapter-by-destination fixed effects; SE clustered by chapter in parentheses (none for energy). All years in `ppml_event_study.csv` (Script 62).*
 
-| Metric | Count / Percentage |
-|--------|-------------------|
-| Total specifications | 288 |
-| Converged successfully | 190 |
-| Skipped / Data unavailable | 98 |
-| Negative and significant (*p* < 0.05) | 157 (82.6% of converged) |
-| Negative and insignificant (*p* ≥ 0.05) | 22 (11.6% of converged) |
-| Positive or sign-reversed | 11 (5.8% of converged) |
+**Table 6.9. Trend-break test: China-specific trend before and after 2013 (log points per year)**
 
-*Source: Author's calculations.*
+| Group | Chapters | Pre-2013 trend θ | Change after 2013 δ (95% CI) | One-sided *p* for acceleration (δ > 0) |
+|---|---:|---:|---:|---:|
+| Agri-food | 24 | 0.538 | −0.368 (−0.676 to −0.059) | 0.99 |
+| Metals and ores | 12 | 0.095 | −0.070 (−0.194 to 0.053) | 0.87 |
+| Other | 60 | −0.017 | 0.107 (−0.163 to 0.376) | 0.22 |
+| Energy | 1 | 0.068 | −0.134 [n/a] | n/a |
 
-![Figure 6. Model Comparison and Robustness](../Outputs/generated_figures/fig_6_pre_post.png)
-*Source: Author's construction. Figure 6 summarises the pre- and post-BRI coefficient instability across specifications.*
+*PPML with chapter-by-year and chapter-by-destination fixed effects; SE clustered by chapter. Source: Script 62, `ppml_trend_break.csv`; Script 66, `multiple_testing.csv`.*
 
-While 82.6% of the converged specifications yielded a negative and significant interaction, this consistency reflects the fact that most specifications include the 2023 observation. The grid confirms that the full-sample negative association is computationally robust across model types, but as demonstrated in Section 6.4, it remains fundamentally fragile to the exclusion of a single year.
+**Energy.** China's orientation of Kazakhstan's energy exports rose until 2011 and fell sharply from 2014 (−1.56 log points by 2017, relative to 2013) before partly recovering. The China-specific oil decline therefore began with the 2014 price collapse and ran *opposite* to the resource-security mechanism M3. No inference is possible with one chapter.
 
-## 6.9 Economic Interpretation of the Interaction Term
+**Metals and ores, including strategic minerals.** The China orientation rose before 2010, was flat or slightly negative between 2013 and 2019, and turned positive only in 2023–2024. There is no detectable acceleration after 2013 (one-sided *p* = 0.87), although the test could miss a change smaller than about 0.16 log points per year (§6.7). In the regression the rise in China orientation appears only in 2023–2024; in the decomposition, the part of the strategic-mineral gain that occurred by 2019 depends on the base year (§6.2).
 
-The full-model coefficient of −3.22 must **not** be interpreted mechanically as: "each additional USD 1 billion of mineral exports causes USD 3.22 billion of trade-balance deterioration." Such a causal interpretation violates accounting logic, ignores the distinction between statistical significance and economic meaning, and is economically implausible.
+**Agri-food.** The China/RoW ratio rose steeply before the BRI: from −3.37 in 2008 to −0.36 in 2012, relative to 2013 (pre-2013 coefficients jointly different from zero, Wald χ²(8) = 664, *p* < 0.001). After 2013 it kept rising but more slowly: the China-specific trend fell from 0.54 to 0.17 log points per year. There is no evidence of the acceleration that M2 requires: the one-sided *p*-value for δ > 0 is 0.99, and the whole unadjusted 95 per cent interval for δ lies below zero, so a non-negative trend change is outside it (with three tests in the family, the corresponding Holm-adjusted p-value for a two-sided test is 0.059, §6.7). Whether the trend significantly *slowed* is less certain (§6.7). In absolute terms, most of the growth came after 2013, from USD 70 million in 2013 to USD 980 million in 2024, led by vegetable oils (HS 15), fodder (HS 23), cereals (HS 10) and oilseeds (HS 12) (`agrifood_chapters.csv`). Both facts hold: the dollar expansion happened in the BRI period, but the China-specific growth rate did not rise when the BRI began.
 
-The coefficient is a conditional association in a small annual sample where:
-- strategic mineral export growth coincided with broader post-2014 changes including import-side expansion, commodity-price shocks, and exchange-rate adjustment;
-- the original GDP-levels specification had severe multicollinearity (VIF > 100); the primary growth-rate specification (Scheme B, max VIF = 10.4) substantially reduces this but residual collinearity remains;
-- the interaction term absorbs variation from multiple concurrent post-2014 structural changes;
-- the coefficient is dominated by the 2023 observation.
 
-The parsimonious coefficient (−2.38) is more moderate but remains difficult to interpret structurally because *n* = 24 with 6 parameters offers limited degrees of freedom. The most defensible interpretation is qualitative: the trade-balance payoff of mineral exports appears to have weakened in the post-BRI period, driven primarily by the extreme 2023 outcome.
+**Table 6.9b. Trend change at alternative break years (exploratory)**
 
-## 6.10 Endogeneity and Identification Limitations
+| Break year (milestone) | Agri-food: δ (95% CI) | One-sided *p*, acceleration | Metals and ores: δ (95% CI) | One-sided *p* | Other: δ (95% CI) | One-sided *p* |
+|---|---|---:|---|---:|---|---:|
+| 2012 (Altynkol–Khorgos rail crossing) | −0.395 (−0.837 to 0.047) | 0.96 | −0.090 (−0.215 to 0.034) | 0.92 | 0.138 (−0.141 to 0.416) | 0.17 |
+| 2013 (BRI announcement; main test) | −0.368 (−0.676 to −0.059) | 0.99 | −0.070 (−0.194 to 0.053) | 0.87 | 0.107 (−0.163 to 0.376) | 0.22 |
+| 2015 (Khorgos Gateway dry port) | −0.255 (−0.460 to −0.050) | 0.99 | −0.033 (−0.158 to 0.092) | 0.70 | 0.114 (−0.117 to 0.345) | 0.17 |
+| 2017 (Khorgos stake; road loans) | −0.169 (−0.350 to 0.011) | 0.97 | −0.011 (−0.140 to 0.119) | 0.56 | 0.141 (−0.079 to 0.360) | 0.10 |
 
-The model does not achieve causal identification. Endogeneity concerns warrant explicit acknowledgement:
+*Same PPML trend-break model as Table 6.9 with the break moved to each year; unadjusted 95% intervals. Break years were chosen after the 2013 result was seen, so this table is exploratory. Source: Script 69, `trend_break_alternative_years.csv`.*
 
-### Oil Exports and Omitted-Variable Bias: Direction and Bounds
+Moving the break to the dated connectivity milestones does not change the conclusion for agri-food or metals: at no milestone does the China-specific trend accelerate. For other goods the point estimates are positive at every milestone but imprecise (one-sided *p* 0.10–0.22): absence of evidence, not evidence against.
 
-Oil and energy exports are unavailable in the current bilateral dataset, representing a severe omitted variable. This omission biases the Minerals × Post-BRI coefficient. The direction and magnitude of this bias depend on:
-- the correlation between bilateral oil exports and strategic mineral exports;
-- the correlation between oil exports and the bilateral trade balance;
-- the impact of post-2014 global commodity price shocks.
 
-While the model includes the Brent crude price as a control, Brent only captures global oil-price movements, not the specific volume of Kazakhstan's bilateral oil exports to China. Therefore, it only partially mitigates the omitted-variable bias. The mineral coefficient and its interaction term likely absorb broader commodity-export dynamics, including the energy trade. Because the direction and magnitude of omitted oil-export bias cannot be quantified with the current data, the strategic-mineral interpretation is treated as suggestive and bounded by this limitation. This is why the thesis interprets the coefficient as diagnostic evidence of broader trade-balance fragility rather than mineral-specific causal evidence.
+## 6.6 Was the Import Surge Specific to Kazakhstan? (SQ3)
 
-### Other Endogeneity Concerns
+The China-specific import component is the largest part of the swing (USD 14.1 billion over 2013–2024, Table 6.3). Its timing and Kazakhstan-specificity can be checked against China's trade with neighbouring countries.
 
-1. **Reverse causality:** The trade balance may itself affect mineral exports (through exchange-rate adjustments) and imports (through income effects). Mineral exports and trade balance are jointly determined in general equilibrium.
+![Figure 6.7. Growth of China's exports to Kazakhstan, its five neighbours and the world](../Outputs/generated_figures/fig_r8_regional_imports.png)
 
-2. **Omitted variable bias:** Oil and energy exports, uranium spot prices, transport infrastructure quality, exchange-rate policy regimes, China-specific demand shocks, and Kazakhstan industrial policy are all plausible omitted confounders.
+The rise came after 2019 and mainly in 2022–2024: China's reported exports to Kazakhstan were USD 12.7 billion in 2019, 11.7 billion in 2020, 13.8 billion in 2021, 16.4 billion in 2022, 24.7 billion in 2023 and 28.0 billion in 2024 (Table B.2 and Table 6.1). For 2013–2019, whether there was any China-specific import rise relative to Kazakhstan's other suppliers depends on the data source: with China's export figures it is +USD 2.5 billion, with Kazakhstan's own import figures it is zero (Script 65), because the gap between the two sources widened in these years (§4.5). Tables 6.10b and 6.10c compare China's exports to Kazakhstan with its exports to Kazakhstan's neighbours.
 
-3. **Bad controls:** KZT/USD and Kazakhstan GDP may themselves respond to commodity prices and trade-balance dynamics. Including them may absorb part of the causal mechanism rather than controlling for confounders, introducing post-treatment bias.
+**Table 6.10b. Imports from China: Kazakhstan-specific change relative to China's exports to comparators (USD bn, China-reported)**
 
-The robustness strategy—comparing parsimonious and full specifications, testing multiple mineral proxies, and reporting leave-one-out sensitivity—partially addresses these concerns by showing which results are robust to specification changes. However, credible causal identification would require instrumental-variable strategies, quasi-experimental variation, or substantially larger samples.
+| Comparator (weighting) | 2013→2019 | 2013→2024 | 2011–13 avg → 2023–24 avg | Range, end 2019 | Range, end 2023–2024 |
+|---|---:|---:|---:|---|---|
+| Russia | +0.14 | −1.21 | −1.93 | +0.14 to +0.95 | −3.37 to +0.66 |
+| Central Asia excl. Kazakhstan (value-weighted) | −2.91 | −14.38 | −13.85 | −2.91 to −1.51 | −18.40 to −10.58 |
+| Central Asia excl. Kazakhstan (median) | −0.37 | −8.43 | −6.10 | −0.37 to +1.12 | −12.01 to −4.33 |
+| Central Asia excl. Kazakhstan and Kyrgyzstan (value-weighted) | −3.01 | −8.18 | −10.36 | −3.01 to −1.97 | −13.30 to −5.78 |
+| Central Asia excl. Kazakhstan and Kyrgyzstan (median) | +2.06 | +4.39 | +5.12 | +2.06 to +4.54 | +0.02 to +9.87 |
+| Uzbekistan | −11.43 | −27.97 | −42.82 | −18.31 to −11.15 | −51.73 to −27.33 |
+| Central Asia + Russia (value-weighted) | −0.40 | −3.54 | −4.13 | −0.40 to +0.40 | −6.03 to −1.64 |
+| Central Asia + Russia (median) | +0.14 | −1.21 | −1.93 | +0.14 to +0.95 | −3.37 to +0.66 |
+| World | −1.46 | +7.64 | +7.62 | −1.46 to −0.69 | +5.50 to +8.75 |
+| *Memo: Kazakhstan's imports from its other suppliers (Table 6.3)* | +2.52 | +14.11 | +12.98 | | |
 
-## 6.11 Hypothesis Evaluation
+*Actual minus benchmark imports from China (§5.5). Positive: Kazakhstan's imports from China grew faster than the comparator. Central Asia excl. Kazakhstan = Kyrgyzstan, Uzbekistan, Tajikistan, Turkmenistan; the variants excluding Kyrgyzstan (a re-export hub) and Uzbekistan alone were added in the final validation. Ranges cover base years 2011–13 average, 2012, 2013, 2014. The median of Central Asia plus Russia coincides with Russia's growth factor. Source: Script 67, `robust_china_neighbour_grid.csv`.*
 
-| Hypothesis | Regression Support | Descriptive Support | Verdict |
-|-----------|-------------------|-------------------|---------|
-| H1: Post-BRI weaker TB | Parsimonious: insignificant (*p*=0.649) | Mean TB fell 37.8%; TB ratio fell 51.2% | **Partially supported** (descriptive, not regression) |
-| H2: Minerals → better pre-BRI TB | Full: 2.46 (*p*<0.001); Pars: 1.69 (*p*=0.062) | Pre-BRI mineral growth tracked TB growth | **Supported** (regression + descriptive) |
-| H3: Post-BRI × minerals < 0 | Full: −3.22 (*p*=0.007) but fragile to 2023 | Post-BRI: minerals grew 29% but TB fell 38% | **Partially supported** (full sample only; fragile) |
+**Table 6.10c. Growth of China's exports to each partner (factor, China-reported)**
 
+| Partner | 2013, USD bn | 2019, USD bn | 2024, USD bn | 2013→2019 | 2019→2024 | 2013→2024 |
+|---|---:|---:|---:|---:|---:|---:|
+| **Kazakhstan** | 12.55 | 12.73 | 27.95 | ×1.01 | **×2.20** | ×2.23 |
+| Russia | 49.59 | 49.75 | 115.28 | ×1.00 | ×2.32 | ×2.32 |
+| Kyrgyzstan | 5.08 | 6.28 | 19.90 | ×1.24 | ×3.17 | ×3.92 |
+| Uzbekistan | 2.61 | 5.03 | 11.65 | ×1.93 | ×2.31 | ×4.46 |
+| Tajikistan | 1.87 | 1.59 | 3.51 | ×0.85 | ×2.21 | ×1.88 |
+| Turkmenistan | 1.14 | 0.43 | 1.03 | ×0.38 | ×2.39 | ×0.90 |
+| World | 2,209 | 2,499 | 3,577 | ×1.13 | ×1.43 | ×1.62 |
 
-## 6.12 Bilateral Energy-Export Control: Sensitivity Check
+*Growth factors normalise for the very different sizes of the partners. Source: Script 67, `china_exports_growth_by_partner.csv`.*
 
-Because actual bilateral HS-27 energy data remain unavailable, a stylized proxy variable was created to assess the sensitivity of the main estimates. This variable (`oil_exports_B`, in USD billions) is an **illustrative sensitivity proxy, not observed HS-27 data**, constructed assuming energy exports co-move with total exports at a 55% share baseline.
+The comparisons have to be read period by period.
 
-Table 6.7 shows the regression estimates when adding this proxy control for illustrative purposes. It is presented solely as a sensitivity exercise and is excluded from the main empirical conclusions.
+- **2019–2024, when the import rise happened.** China's exports grew by a factor of 2.2–3.2 to every one of Kazakhstan's five neighbours and by 2.20 to Kazakhstan, the lowest of the six (Table 6.10c). The rise in Kazakhstan's imports from China in this period was therefore not specific to Kazakhstan. This holds for each neighbour separately, so it does not depend on weighting or on including Russia or Kyrgyzstan.
+- **2013–2019, the main construction period.** Kazakhstan's imports from China were flat (×1.01), slower than China's exports to the world (×1.13), Kyrgyzstan and Uzbekistan, and faster than to Tajikistan and Turkmenistan.
+- **Whole period.** Over 2013–2024, whether Kazakhstan looks distinctive depends on the comparator: it is above Tajikistan and Turkmenistan, whose imports from China fell before 2019, and below Kyrgyzstan and Uzbekistan. In particular, against the median of Uzbekistan, Tajikistan and Turkmenistan, Kazakhstan's imports grew faster (+0.0 to +9.9 billion by 2023–2024). The claim, made in an earlier draft, that Kazakhstan's imports grew no faster "under every neighbour comparator" over the whole period was therefore too strong and has been withdrawn.
 
-**Table 6.7. Illustrative Sensitivity Regression Models with Energy Export Proxy**
+Three further qualifications apply.
 
-| Variable | Full Model (n=24) | Parsimonious (n=24) | Full (excl. 2023, n=23) | Pars (excl. 2023, n=23) |
+1. *Comparators are not neutral.* After 2022, China's exports to Russia, and to Kyrgyzstan as a transit hub, were shaped by sanctions and re-routing. Kazakhstan was part of that pattern: its own exports of machinery, electrical equipment and vehicles to Russia rose from USD 0.33 billion in 2019 to USD 2.25 billion in 2023 (`russia_manufactures_check.csv`), although Comtrade does not record the origin of re-exported goods. The comparison shows that Kazakhstan's import rise belongs to a regional pattern; it does not establish the pattern's cause.
+2. *Comparators are BRI participants, and infrastructure acts with lags.* Connectivity built in 2012–2019 (Table 6.13b) could have facilitated the post-2019 regional rise in China's exports. The comparison removes such region-wide effects together with other regional shocks, so it cannot rule them out. What it shows is that no *Kazakhstan-specific* mechanism is needed to account for the post-2019 import rise.
+3. *Imports are measured with error.* Kazakhstan records far lower imports from China than China records exports (§4.5); the comparison uses China's data on both sides to avoid mixing reporters.
+
+The import conclusion is therefore graded as follows: the post-2019 rise is **not specific to Kazakhstan** (robust: each neighbour separately); it does **not match** the M1 and M4 expectation of a Kazakhstan-specific expansion while BRI connectivity became operational (2013–2019 turnover and imports show no China-specific rise, §6.2); and whether region-wide BRI connectivity contributed to the post-2019 regional rise is **inconclusive**.
+
+
+**Table 6.11. Kazakhstan's imports from China by main chapter, China-reported (USD bn)**
+
+| Chapters | 2013 | 2019 | 2024 |
+|---|---:|---:|---:|
+| Apparel and footwear (HS 61, 62, 64) | 4.24 | 3.28 | 7.67 |
+| Machinery (HS 84) | 1.83 | 1.56 | 4.38 |
+| Vehicles (HS 87) | 0.80 | 0.69 | 3.54 |
+| Electrical equipment (HS 85) | 0.97 | 1.49 | 3.01 |
+| Furniture, toys, miscellaneous (HS 94–96) | 0.46 | 1.21 | 2.05 |
+| Plastics and rubber (HS 39–40) | 0.58 | 0.61 | 1.43 |
+| Iron and steel articles (HS 73) | 0.77 | 0.60 | 0.83 |
+| All other chapters | 2.90 | 3.30 | 5.04 |
+| **Total** | **12.55** | **12.73** | **27.95** |
+
+*Source: UN Comtrade, China as reporter (Script 61, `import_composition_china_reported.csv`).*
+
+## 6.7 Inference Safeguards and Robustness
+
+**Table 6.12. Multiple-testing and randomisation checks**
+
+| Test | Estimate | Unadjusted *p* | Holm-adjusted *p* | Randomisation check (300 random sets of 24 chapters) |
+|---|---:|---:|---:|---|
+| Main: China × Post × metals and ores | 0.329 | < 0.001 | < 0.001 | n/a (12 chapters) |
+| Main: China × Post × agri-food | 2.456 | < 0.001 | < 0.001 | Larger than all 300 draws (*p* < 0.004); median draw 0.39, 95th percentile 1.24 |
+| Main: China × Post × other | 0.634 | 0.224 | 0.224 | n/a |
+| Trend change δ, agri-food | −0.368 | 0.020 | 0.059 | Lower than 99.3% of draws (one-sided *p* = 0.007) |
+| Trend change δ, metals and ores | −0.070 | 0.264 | 0.528 | n/a |
+| Trend change δ, other | 0.107 | 0.437 | 0.528 | n/a |
+
+*Holm–Bonferroni within each family of three coefficients. Source: Script 66, `multiple_testing.csv`, `permutation_agrifood.csv`.*
+
+**What survives.** The China-specific rise in agri-food survives Holm correction and is larger than in any of 300 random sets of chapters of the same size, so it is unlikely to be an artefact of the choice of product group or of small-cluster inference. The metals result survives Holm correction in the main sample but not the exclusion of 2023–2024, so it is treated as a post-2022 result. No group shows a significant acceleration after 2013 (one-sided *p* = 0.99 for agri-food, 0.87 for metals and ores, 0.22 for other goods). The point estimates of δ are negative for agri-food and metals; for other goods it is positive but imprecise, which is absence of evidence rather than evidence either way.
+
+**What does not.** The claim that the agri-food trend significantly *slowed* after 2013 is weaker than the other results: it fails the Holm correction at 5 per cent (adjusted *p* = 0.059), though the randomisation check (*p* = 0.007) supports it. The thesis therefore relies on "no acceleration", not on "slowdown".
+
+**Robustness to data source and missing data.** With China's mirror data for the China leg, the export coefficients keep their signs and similar sizes (Table 6.7, row 2), and the 2020–2022 suppression does not enter because those years are excluded. In the decomposition, the China-specific share of the balance change is 92 per cent with either country's data (Table 6.3). The import-side conclusion for 2013–2019 is the only result that depends on the data source, and it is reported as such.
+
+**Independent re-estimation.** Re-estimating the main model as a weighted binomial model of China's share in each chapter-year (§5.7) reproduces the PPML point estimates to four decimal places (metals and ores 0.3288, agri-food 2.4559, other 0.6340, energy −0.5280); clustered standard errors differ slightly because of small-sample adjustments (agri-food 0.220 against 0.213; metals and ores 0.077 against 0.074; other 0.538 against 0.522). Every main table was also regenerated from the raw files, and all values reproduced to within 0.001 (Appendix A).
+
+**What the tests could detect.** The minimum change in the China-specific trend detectable with 80 per cent power at a one-sided 5 per cent level is about 0.39 log points per year for agri-food (SE 0.157) and 0.16 for metals and ores (SE 0.063). A BRI effect that raised the China orientation of these groups by less than this each year would not be detected. The non-significant trend changes for metals and other goods are therefore absence of evidence, not evidence of no change.
+
+**Extensive margin.** In a linear probability model of exporting more than USD 1 million, the pooled China × Post effect is 0.013 (SE 0.040, *p* = 0.75): the number of chapters Kazakhstan exports to China did not rise relative to other markets. For agri-food alone the effect is 0.21 (SE 0.11, *p* = 0.06), from a base of 10 per cent (`extensive_margin_lpm.csv`). The extensive-margin prediction of M2 is not supported at HS-2 level; given the imprecision for agri-food, this is absence of evidence.
+
+## 6.8 Do BRI Channels Match the Distinctive Components? (SQ4)
+
+**Table 6.13. Chinese official finance commitments to Kazakhstan by sector and period (USD bn, constant 2021)**
+
+| Sector (AidData) | 2000–2008 | 2009–2013 | 2014–2017 | 2018–2021 | Total |
+|---|---:|---:|---:|---:|---:|
+| Industry, mining, construction | 15.88 | 19.57 | 6.38 | 2.81 | 44.64 |
+| Energy | 2.75 | 7.21 | 0.36 | 0.13 | 10.46 |
+| Transport and storage | 0.43 | 0.00 | 1.92 | 1.78 | 4.13 |
+| Other sectors | 0.87 | 1.39 | 1.88 | 0.78 | 4.92 |
+| **All sectors** | **19.93** | **28.17** | **10.54** | **5.50** | **64.15** |
+
+*Source: AidData GCDF 3.0, 155 projects recommended for aggregates [@aiddata_gcdf3_2023]. Author's calculations (Script 61, `aiddata_by_sector_period.csv`). No agriculture, forestry or fishing project is recorded.*
+
+![Figure 6.8. Chinese official finance commitments to Kazakhstan by year, 2000–2021](../Outputs/generated_figures/fig_r5_aiddata_by_year.png)
+
+Recorded Chinese official finance to Kazakhstan was largest *before* the BRI: USD 48.1 billion (constant 2021 dollars) in 2000–2013 against USD 16.0 billion in 2014–2021. The largest pre-2013 commitments financed the Central Asia–China gas pipeline (2008, 2012), the acquisition of Kazakh oil companies (PetroKazakhstan 2005, Mangistaumunaigas 2009) and the Bozshakol (2009) and Aktogay (2011) copper mines (AidData records 61056 and 41941). After 2013 finance shifted towards transport: five China Eximbank road loans in 2017–2018 and a 2019 loan for border checkpoint modernisation. The Khorgos dry port began operating in 2015 [@ktze_khorgos_2025]. Kazakhstan reported in 2023 that protocols covered 24 plant and livestock products [@astanatimes_agri_2023]; the dates of individual protocols could not be verified.
+
+
+**Table 6.13b. Dated connectivity milestones relevant to Kazakhstan–China trade**
+
+| Date | Milestone | Stage | Source | Verified? |
 |---|---|---|---|---|
-| Interaction (`post_bri × minerals`) | −3.7671*** (1.1437) | −2.6040** (1.1395) | 0.1661 (0.2985) | 1.1811*** (0.2896) |
-| Minerals Narrow | 4.3459*** (1.1525) | 2.4296* (1.3025) | 2.2230*** (0.3111) | 1.2498*** (0.3857) |
-| Energy Proxy (Illustrative) | −1.1659* (0.6605) | −0.4452 (0.8545) | 0.5376*** (0.1361) | 0.8119*** (0.2210) |
-| Post-BRI 2013 Dummy | 6.5295*** (2.2109) | 1.3311 (1.6141) | −0.7509 (0.8377) | −4.6005*** (0.7344) |
-| $R^2$ | 0.8022 | 0.7096 | 0.9661 | 0.9493 |
+| December 2012 | Altynkol–Khorgos rail border crossing opened (second Kazakhstan–China rail link) | Operational | @tengrinews_altynkol_2012 | Yes (news report) |
+| September 2013 | Silk Road Economic Belt announced in Astana | Announcement | @xinhua_chinadaily_2013 | Yes |
+| 2015 | Khorgos Gateway dry port launched | Operational | @ktze_khorgos_2025 | Yes (company source) |
+| 2016 (planned) | Completion of Kazakhstan's section of the Western Europe–Western China road | Planned completion | @inform_wewc_2015 | Plan only; actual completion date not verified |
+| 2017 | Chinese state companies take 49% of Khorgos Gateway | Ownership | @ktze_khorgos_2025 | Yes (company source) |
+| 2017–2018 | China Eximbank loans for five road reconstruction projects | Financing commitment | AidData records 54989, 54990, 54991, 55016, 53554 | Commitments verified; construction and completion dates not verified |
+| 2019 | China Eximbank loan for border checkpoint modernisation | Financing commitment ("Pipeline: Commitment" status) | AidData record 70484 | Commitment only |
+| September 2025 | Second track of the Dostyk–Moyynty railway inaugurated | Operational, after the sample | @fergana_dostyk_2025 | Yes (news report) |
 
-*Note: HAC standard errors are provided in parentheses. \*\*\* p<0.01, \*\* p<0.05, \* p<0.10.*
-
-While the interaction term retains its sign and significance under this illustrative proxy control, the lack of real bilateral HS-27 series remains an empirical limitation. Therefore, these results are treated as purely exploratory sensitivity tests rather than main empirical evidence.
-
-
-
-## 6.13 Placebo Break-Year Diagnostics
-
-A standard criticism of pre/post-BRI dummy designs is that the chosen break year may coincide with unrelated shocks rather than BRI-specific structural change. For Kazakhstan, the most salient confounders at 2013–2014 are: the global oil-price collapse of 2014–2016, the Kazakhstan tenge devaluation of August 2015, and Russia's Crimea-related sanctions exposure that rerouted some Eurasian trade flows. If the detected structural break occurs primarily because of these non-BRI shocks, the post-BRI dummy is a misspecified period indicator.
-
-To partially address this concern, Chow tests were conducted at four alternative break years (2013, 2014, 2015, 2016), and a BIC-selected Bai–Perron-style procedure was applied to detect the number and location of breaks in the bilateral trade-balance series.
-
-**Table 6.8. Chow Test Statistics at Alternative Break Years**
-
-| Break Year | Chow *F* | *p*-value | Significant at 10%? | Context |
-|-----------|------:|------:|------:|------:|
-| 2013 | 10.43 | 0.0008 | *** | BRI announcement (Sep 2013) |
-| 2014 | 6.65 | 0.0061 | ** | Oil-price collapse begins; tenge devaluation (2015) |
-| 2015 | 2.84 | 0.0823 | * | Tenge float; China growth slowdown |
-| 2016 | 1.20 | 0.3215 | No | No major bilateral structural event |
-
-*Note: Author's calculations. Chow test applied to the parsimonious trade-balance regression with a split at the indicated year.*
-
-The BIC-selected Bai–Perron procedure detects two structural breaks: one in approximately 2009 (95% CI: 2004–2009) and one in approximately 2014 (95% CI: 2014–2019). The 2009 break is consistent with the Global Financial Crisis commodity collapse. The 2014 break overlaps with both the BRI implementation period and the oil-price collapse.
-
-**Interpretation.** The Chow results show that the 2013 break is the single most statistically significant (F = 10.43, *p* < 0.001), followed by 2014. The 2016 break is statistically indistinguishable from no break. This pattern is consistent with the structural change being concentrated in the 2013–2014 window rather than diffusely distributed across the post-2013 period. However, this does not resolve the BRI-versus-oil-shock identification problem: both BRI and the oil-price collapse are 2013–2014 phenomena. The placebo evidence is more useful for ruling out *late-period* confounders (2016, 2018) than for separating early-period co-incident shocks. These limitations are fully consistent with the thesis's broader claim that the evidence is diagnostic rather than causal.
-
-## 6.14 The 2022–2023 Sanctions-Evasion Channel
-
-### Background and Hypothesis
-
-Following Russia's invasion of Ukraine in February 2022, Western economies imposed broad export controls on Russia covering electronics (HS 85), machinery (HS 84), and vehicles (HS 87). These controls created strong incentives for *parallel imports*: routing restricted goods through third countries — including Kazakhstan — to reach Russian consumers and industries. Kazakhstan's geographical position as Russia's largest land-border trading partner and BRI corridor economy makes it a plausible transit route. The parallel-imports hypothesis holds that the 2022–2023 surge in Kazakhstan's imports from China is at least partly a sanctions-evasion artefact: Chinese goods entered Kazakhstan ostensibly for domestic consumption but were onward-shipped to Russia.
-
-If this hypothesis is correct, the 2023 bilateral trade deficit (−USD 2.01 billion) does not indicate a BRI-driven structural deepening of asymmetric interdependence. Instead, it reflects a temporary geopolitical shock that inflated Kazakhstan's recorded imports from China. This would significantly weaken the causal interpretation of the post-BRI mineral interaction coefficient.
-
-### Import Surge Magnitude
-
-Kazakhstan's imports from China grew by 47.5% in 2022 and by a further 369.2% in 2023, from USD 3.58 billion to USD 16.77 billion. This two-year acceleration is the largest in the 2000–2023 sample by an order of magnitude. No other two-year period (including the 2008–2009 commodity boom and the 2014–2015 oil-price shock) produced a comparable import surge. The 2023 level (USD 16.77 billion) exceeds imports in any prior year by more than 200%.
-
-**Data limitation on HS-level decomposition.** The local Comtrade Kazakhstan-as-reporter extract covers only HS chapters 26, 28, 72, 74, 78, 79, and 81 — metal and mineral categories. Chapters 84 (machinery), 85 (electronics), and 87 (vehicles) — the categories most associated with parallel-import flows — are **not available** in the local data. This remains a data limitation: a direct test of whether these categories exploded disproportionately in 2022–2023 is not possible from the current data. Closing this gap would require a dedicated Comtrade data pull for Kazakhstan as reporter, China as partner, HS chapters 84/85/87, import flow.
-
-### Regression Robustness: Does the BRI Interaction Survive?
-
-**Table 6.9. Sanctions-Period Robustness: Post-BRI Mineral Interaction Coefficient**
-
-| Model | N | Interaction β | HAC SE | *p*-value | Interpretation |
-|-------|---|---:|---:|---:|---|
-| Baseline parsimonious (2000–2023) | 24 | −2.382 | 0.977 | 0.015 | Full sample |
-| Parsimonious excl. 2022–2023 | 22 | +0.134 | 0.317 | 0.672 | Sanctions period excluded |
-| Gravity ratio excl. 2022–2023 | 22 | +0.102 | 0.432 | 0.813 | Preferred spec, excl. sanctions |
-| Parallel-imports dummy (2000–2023) | 24 | −1.906 | 1.340 | 0.155 | Dummy = 1 for 2022–2023 |
-| Gravity ratio + parallel dummy | 24 | −1.986 | 1.397 | 0.155 | Preferred spec + dummy |
-| Parsimonious excl. 2023 only | 23 | +0.401 | 0.257 | 0.118 | Midterm robustness replicated |
-
-*Note: Author's calculations. HAC (Newey–West) standard errors, bandwidth = 3.*
-
-### Findings and Interpretation
-
-**After excluding 2022–2023, the post-BRI mineral interaction coefficient does not survive.** The coefficient reverses to +0.134 (*p* = 0.672) in the parsimonious specification and to +0.102 (*p* = 0.813) in the gravity-ratio specification. After controlling for a parallel-imports dummy (= 1 for 2022–2023), the interaction is −1.906 (*p* = 0.155) — attenuated by approximately 20% relative to baseline and no longer statistically significant at the 10% level.
-
-This is an honest and important finding. The headline negative interaction is driven entirely by the 2022–2023 import surge, and that surge coincides precisely with the Russia-sanctions period that provides an alternative, overlapping channel. This weakens a narrow BRI-only interpretation, as parallel imports may account for a significant portion of the observed effect. The thesis therefore cannot claim that the post-BRI mineral interaction is a robust structural finding.
-
-**What this does not mean.** These results do not disprove the asymmetric interdependence interpretation. Three points:
-
-1. *BRI infrastructure may have enabled the parallel-import routing.* Kazakhstan's expanded trade capacity — a direct BRI outcome — may be what made it a viable transit route for sanctions-evasion flows. The channels are not mutually exclusive.
-2. *The 2022 import growth (47.5%) preceded the 2023 surge (369.2%).* Even excluding 2023, the 2022 import acceleration is historically large, suggesting some structural acceleration preceded the extreme 2023 observation.
-3. *The descriptive decomposition remains robust.* Imports from China grew by 94.3% on average in the full post-BRI period (2014–2023). Even excluding 2022–2023 (years 9–10 of the post-BRI period), the remaining post-BRI import growth is substantial.
-
-**Causal language threshold.** In light of these results, the thesis applies the triple-concordance criterion established in §5.1: a BRI-specific causal claim requires that (a) the DiD partner placebo (§6.15), (b) the synthetic counterfactual (§6.16), and (c) this sanctions robustness check all point in the same direction. The sanctions check does **not** support a China-specific BRI causal channel. Therefore, all post-BRI effect claims in this thesis are described as "consistent with" or "associated with" asymmetric interdependence rather than as causal evidence.
-
-## 6.15 Comparative Analysis: Two-Way Fixed-Effects Difference-in-Differences
-
-**Design.** This section tests whether Kazakhstan's bilateral trade-balance ratio deteriorated *specifically* with China post-2013, or whether it deteriorated uniformly across all major trading partners. The TWFE DiD design stacks annual bilateral trade-balance ratios for six partners — China (treatment), Russia, Germany, Uzbekistan, Turkey, and USA (controls) — into a balanced panel of 144 observations (6 partners × 24 years). The treatment indicator is `china_dummy × post_2013`. Partner and year fixed effects absorb unobserved partner heterogeneity and common time trends. HAC standard errors (bandwidth = 3) account for serial correlation within partners. Data are sourced from the UN Comtrade public API, validated against the existing Kazakhstan–China panel (0% discrepancy across all 24 years).
-
-**Table 6.10. TWFE DiD Results: China-Specific Post-2013 Balance Shift**
-
-| Specification | N obs | Partners | DiD coef (China) | HAC SE | *p*-value | Interpretation |
-|---|---:|---:|---:|---:|---:|---|
-| TWFE DiD: China vs all partners | 144 | 6 | **−0.305** | **0.083** | **0.0002** | Strong China-specific deterioration |
-| TWFE DiD: China vs Russia only | 48 | 2 | −0.151 | 0.057 | 0.008 | Robust to most similar partner |
-
-*Note: Author's calculations. Partner and year dummies as fixed effects. HAC standard errors, bandwidth = 3.*
-
-**Interpretation.** The TWFE DiD coefficient of −0.305 (*p* = 0.0002) indicates that China's bilateral balance ratio declined by 30.5 percentage points relative to the control partners post-2013, after controlling for partner-level heterogeneity and common time trends. This is **statistically significant at the 0.01% level** and is robust to restricting the comparison to Russia alone (−0.151, *p* = 0.008), Kazakhstan's geographically closest major trading partner.
-
-Critically, this result addresses the main identification concern in the regression analysis: the post-BRI deterioration is **China-specific**, not a common shock shared across all of Kazakhstan's trading partners. If the balance deterioration were driven purely by commodity prices, the Kazakh exchange rate, or other macro shocks, it would appear equally in Russia, Germany, and the other control partners. The TWFE DiD isolates a 30 pp China-specific component that is not shared with any control group.
-
-**Within-unit ITS cross-check.** For comparability with the pre-update analysis, the ITS placebo break-year results from within-unit estimation are preserved below:
-
-| Specification | N | Level shift β | HAC SE | *p*-value | Interpretation |
-|---|---|---:|---:|---:|---|
-| True break at 2013 | 24 | −0.237 | 0.100 | 0.018 | True BRI break: significant |
-| Placebo break at 2009 | 24 | +0.149 | 0.089 | 0.094 | Marginally significant ⚠ |
-| Placebo break at 2010 | 24 | +0.176 | 0.101 | 0.080 | Marginally significant ⚠ |
-| Placebo break at 2011 | 24 | +0.070 | 0.100 | 0.488 | Insignificant ✓ |
-
-The 2009/2010 marginal placebo significance in the ITS is a within-unit artefact that reflects the pre-existing downward trend in the Kazakhstan–China balance. The TWFE DiD absorbs this trend via year fixed effects and confirms the 2013 break is genuinely China-specific.
-
-![Figure DiD. Event Study: Kazakhstan–China Balance vs. Other Partners (2013 = reference year)](../Outputs/generated_figures/fig_did_event_study.png)
-*Note: Actual balance ratio series with BRI 2013 break marker and ITS placebo years. Author's construction.*
-
-## 6.16 Synthetic Counterfactual
-
-**Within-unit counterfactual.** The full multi-partner synthetic control (Abadie 2003 design) requires partner time series as donor units; these are now available via the UN Comtrade API (see §6.15). A within-unit synthetic control is implemented as a complement: the pre-period (2000–2012) dynamics of the KZ-China balance ratio are modeled using global commodity prices (Brent, normalized), the gravity ratio (log CN/KZ GDP), a linear time trend, and the lagged balance ratio as predictors. The pre-period OLS fit on these predictors serves as a within-unit synthetic counterfactual for the post-2013 period, isolating departures from pre-BRI trend dynamics without using other partners as donors.
-
-**Design.** The synthetic counterfactual is constructed as the OLS-fitted value of the trade-balance ratio on the four predictors, with coefficients estimated only on the 2000–2012 pre-period sample. The post-2013 counterfactual is the out-of-sample projection of these pre-period dynamics. A negative gap (actual < synthetic) post-2013 is interpreted as the actual balance falling below what would be predicted by the pre-BRI dynamics of commodity prices, bilateral size asymmetry, and trend.
-
-**Table 6.11. Post-BRI Synthetic Counterfactual Gap**
-
-| Year | Actual balance ratio | Synthetic counterfactual | Gap (actual − synthetic) |
-|------|--------------------:|------------------------:|-------------------------:|
-| 2013 | 0.264 | 0.340 | −0.075 |
-| 2014 | 0.142 | 0.265 | −0.123 |
-| 2015 | 0.037 | 0.192 | −0.155 |
-| 2016 | 0.070 | 0.160 | −0.091 |
-| 2017 | 0.105 | 0.164 | −0.059 |
-| 2018 | 0.079 | 0.173 | −0.094 |
-| 2019 | 0.082 | 0.115 | −0.033 |
-| 2020 | 0.555 | 0.112 | +0.443 |
-| 2021 | 0.477 | 0.361 | +0.116 |
-| 2022 | 0.491 | 0.287 | +0.204 |
-| 2023 | −0.064 | 0.219 | −0.283 |
-
-*Note: Author's calculations. Pre-period MSPE = 0.0038; post-period MSPE = 0.0362; MSPE ratio = 9.53.*
-
-**Findings.** The gap is negative in 8 of 11 post-BRI years, with a mean post-BRI gap of −0.014. The MSPE ratio (post-period fit error / pre-period fit error) is 9.53, indicating that post-2013 outcomes are substantially harder to predict from pre-BRI dynamics alone — consistent with a post-2013 structural change. The three years with positive gaps (2020, 2021, 2022) coincide with the COVID-19 pandemic import collapse and the initial post-Ukraine sanctions period, both of which temporarily improved the bilateral trade balance.
+For most projects only announcement or financing dates could be verified; construction start and completion dates could not. The timing tests therefore use the dated operational milestones (2012, 2015) and the 2017 ownership and financing year, alongside the 2013 announcement (Table 6.9b). Because effects may arrive with lags, a change after 2019 is not by itself evidence against a BRI contribution, and the absence of acceleration is interpreted only for the windows tested.
 
 
+Matching channels to components:
 
-![Figure 7. Synthetic Counterfactual: Actual vs. Synthetic KZ-China Trade Balance Ratio](../Outputs/generated_figures/fig_synthetic_control.png)
-*Note: Panel A shows actual vs. synthetic trajectory. Panel B shows the gap plot of post-BRI deviations from the counterfactual.*
+- **M3 (resource finance) and energy and minerals.** Resource finance was concentrated before 2013, and so was the rise in China's orientation of energy and metals (2005–2011). In the BRI period finance in these sectors fell, energy's China orientation fell, and metals' was flat until 2019. The China-specific gain in strategic minerals is positive in every specification, but its timing depends on the base year and does not coincide with the period of Chinese resource finance.
+- **M1 and M2 (connectivity, market access) and agri-food.** Transport, border and market-access channels are post-2013, and agri-food is the one group whose China orientation kept rising after 2013 and which is most exposed to phytosanitary access and border speed. Recorded finance never went into agriculture, so if a BRI channel is involved it is access and logistics, not finance. But the reorientation began before these channels existed and did not accelerate when they appeared.
+- **M1 and M4, imports.** A Kazakhstan-specific effect of connectivity or Chinese projects should have raised imports from China once infrastructure became operational (from 2012–2015 onwards). Instead, China's exports to Kazakhstan were flat in 2013–2019 and rose after 2019, as fast or faster to all five neighbours. Infrastructure completed by 2019 may have facilitated the later regional rise; these data cannot show whether it did.
 
-**Triple-concordance assessment.** The three causal identification methods produce the following pattern:
+## 6.9 Synthesis: Components, Mechanisms and What Is Established
 
-| Method | Direction | Significant | Notes |
-|--------|-----------|-------------|-------|
-| Regression: primary (Scheme B, growth rates) | Negative (−2.49) | p=0.011 | Driven by 2022–2023; loses significance on exclusion |
-| Regression: robustness (Scheme C, gravity ratio) | Negative (−2.42) | p=0.033 | Consistent with primary; same fragility pattern |
-| **TWFE DiD: China vs all partners** | **Negative (−0.305)** | **p=0.0002** | **China-specific; robust; strongest identification** |
-| TWFE DiD: China vs Russia | Negative (−0.151) | p=0.008 | Robust to most similar partner comparison |
-| Synthetic control gap | Negative (mean=−0.014) | p=0.857 | Consistent direction; not statistically significant |
-| Sanctions robustness | Attenuated to insignificance | p=0.966 excl. 2022–23 (Scheme B) | Alternative explanation not ruled out |
+**Table 6.14. Components of the swing and their distinctiveness**
 
-**Causal language.** Following the triple-concordance criterion established in §5.1: all methods point in the same direction (negative/adverse post-BRI balance shift for China). The TWFE DiD provides the strongest identification — a statistically significant China-specific effect that survives controlling for all common time trends. However, the regression interaction does not survive exclusion of 2022–2023 and the sanctions robustness check cannot rule out sanctions-era parallel-import routing as an alternative mechanism. The thesis therefore upgrades its framing to: the evidence is **strongly consistent with** asymmetric interdependence deepening post-BRI, with cross-partner identification now supporting China-specificity, but causal attribution to BRI *specifically* (versus concurrent geopolitical shocks in 2022–2023) cannot be conclusively established. Causal language remains reserved for the DiD finding only; the regression interaction is described as a conditional association.
+| Component | China-specific vs Kazakhstan's other partners (2013→2024; grid range to 2023–24) | Specific to Kazakhstan vs China's other neighbours? | Timing | Kind of evidence |
+|---|---|---|---|---|
+| Imports from China | +14.1 bn (+8.1 to +14.7) | No for 2019–2024 (lowest growth of six); comparator-dependent over 2013–2024 | Mainly 2022–2024 | Comparison-adjusted (descriptive) |
+| Energy exports | −4.9 bn (−4.9 to +2.4; negative from every pre-2014 base) | Not assessed (comparators' exports dominated by oil and gas) | Concentrated 2013→2014 | Comparison-adjusted; PPML point estimate without inference |
+| Strategic minerals exports | +3.4 bn (+1.8 to +6.7) | Not assessed | Base-dependent | Comparison-adjusted; PPML significant only with 2023–24 |
+| Agri-food exports | +0.8 bn (+0.7 to +0.9) | Not assessed | Rising from 2008; no acceleration at 2012, 2013, 2015 or 2017 | PPML, Holm, randomisation, trend tests |
+| Other exports | +0.5 bn (+0.3 to +0.5) | Not assessed | Mainly after 2019 | PPML (not significant) |
+| Turnover (exports + imports) | −0.9 to +2.0 bn to 2019; +12.2 to +18.3 bn to 2023–24 | | Expansion after 2019 | Comparison-adjusted |
+
+*Imports enter the balance with a minus sign. Sources: Tables 6.3, 6.3b, 6.4, 6.7–6.10c, 6.12.*
+
+**Mechanism scorecard.** For each mechanism of §3.2: the expectation, its observable implication, the data needed, the evidence used here, what is established, what remains untested, and the verdict.
+
+- **M1 Trade costs and connectivity.** *Expectation:* lower bilateral trade costs. *Implication:* China-specific expansion of bilateral turnover after operational milestones. *Data needed:* bilateral trade against benchmarks; ideally transport costs and times by route. *Evidence:* turnover comparison (§6.2), import comparisons (§6.6), milestones (Table 6.13b). *Established:* no China-specific turnover expansion to 2019; the post-2019 expansion was mainly imports and was shared by China's other neighbours. *Untested:* trade costs and transport times themselves; region-wide effects; lagged effects of 2012–2019 infrastructure on the post-2019 regional rise. *Verdict:* **inconsistent** with a Kazakhstan-specific expansion during 2013–2019; **inconclusive** about region-wide or lagged effects.
+- **M2 Time-sensitive goods and market access.** *Expectation:* largest gains for food and non-traditional goods. *Implication:* China-specific rise in agri-food and other exports that starts or accelerates after a milestone; more chapters exported. *Data needed:* product-level exports to China and others; protocol dates; ideally HS-6. *Evidence:* PPML, event study, trend breaks at four years, extensive-margin model. *Established:* a large China-specific agri-food rise (robust to Holm and randomisation), starting before 2013, without acceleration at any milestone tested. *Untested:* product-by-protocol timing; HS-6 extensive margin. *Verdict:* **consistent in products, inconsistent with the predicted acceleration** at the milestones tested; extensive margin **inconclusive**.
+- **M3 Resource finance.** *Expectation:* more China-oriented energy and mineral exports after Chinese finance. *Implication:* China-specific rises after finance and project completion. *Data needed:* product exports; project finance and completion dates. *Evidence:* decomposition, PPML, AidData. *Established:* energy fell specifically to China after 2013; strategic minerals rose in every specification; Chinese resource finance peaked before 2013. *Untested:* project completion and output dates. *Verdict:* **inconsistent** for energy; **inconclusive** for strategic minerals (positive but not timed with finance).
+- **M4 Investment-linked imports.** *Expectation:* Chinese projects raise capital-goods imports. *Implication:* Kazakhstan-specific rise in machinery and equipment imports timed with projects. *Data needed:* project-level procurement; product-level imports from all suppliers. *Evidence:* import composition for three years (Table 6.11); regional comparison of totals. *Established:* machinery, electrical equipment and vehicles are 47 per cent of the 2019–2024 import rise; the rise was shared regionally. *Untested:* the link to specific projects. *Verdict:* **untested**.
+- **M5 Transit.** *Expectation:* transit revenue. *Data needed:* transit volumes and service receipts. *Evidence:* none in this thesis. *Verdict:* **untested**.
+
+**What is established, what is interpretation, what is untested.**
+
+- *Established by the evidence (accounting and descriptive comparisons, robust across the specification grids):* the size and components of the swing; that most of it is China-specific relative to Kazakhstan's other partners (52–92 per cent); that turnover did not expand specifically with China before 2019; that the post-2019 import rise was shared by all five of China's other neighbours; that oil exports fell more to China than elsewhere; that strategic minerals offset part of the swing; that agri-food reoriented towards China (statistically robust) without acceleration at the milestones tested; that Chinese official finance peaked before 2013; that Kazakhstan's 2020–2022 partner data omit major chapters.
+- *Interpretation:* that the evidence does not match the observable predictions of M1–M3 in the windows tested; that the post-2019 import rise is better described as a regional pattern than as a Kazakhstan–China development; that agri-food followed access and logistics rather than finance.
+- *Untested:* any causal effect; M4 and M5; region-wide and lagged BRI effects; effects on investment, productivity and welfare; product-level timing at HS-6.
 
 
 # 7. Discussion
 
-## 7.1 What the Results Show
+## 7.1 The Answer to the Central Question
 
-The most robust finding is descriptive rather than econometric. Kazakhstan's imports from China grew by 94.3% between the pre-BRI and post-BRI periods, while exports grew by only 24.3%. This import-side deepening—not export collapse—explains the 37.8% decline in the average bilateral trade balance. Strategic mineral exports grew by 29.2%, but this growth was insufficient to offset the import surge. These descriptive findings are consistent with the asymmetric interdependence prediction that BRI trade facilitation would expand trade asymmetrically in favour of the more diversified partner, but this consistency does not constitute causal proof.
+The central question asked whether the post-2013 change in Kazakhstan–China merchandise trade, summarised by the swing in the bilateral balance, is distinctive to the relationship and consistent with the BRI mechanisms observable in merchandise trade. The answer has three parts.
 
-The regression analysis provides suggestive but fragile corroboration. The negative interaction term is statistically significant in full-sample models but depends critically on 2023. The leave-one-out analysis shows that excluding any single year other than 2023 preserves the negative interaction. Excluding 2023 alone eliminates or reverses it. Furthermore, the sanctions robustness checks (§6.14) show that after excluding 2022–2023 — the period coinciding with Russia-sanctions parallel-import routing — the interaction coefficient does not survive. This raises the possibility that the 2023 outcome reflects a geopolitical shock rather than a BRI structural effect.
+**From Kazakhstan's side, the change is mostly China-specific.** "China-specific" here has a precise meaning: the part of the change that would not have occurred had Kazakhstan's trade with China in each product grown at the rate of its trade in that product with the rest of the world. By that measure, between 52 and 92 per cent of the swing is China-specific, depending on base and end years, and 71 per cent with averaged endpoints (Table 6.3b). World commodity prices alone do not explain it. This is a statement about distinctiveness, not about causes.
 
-The TWFE DiD partner-placebo design (§6.15) — the strongest identification strategy — confirms that the post-2013 balance deterioration is **China-specific**: Kazakhstan's bilateral balance ratio declined by 30.5 pp relative to Russia, Germany, Uzbekistan, Turkey, and the USA after 2013 (*p* = 0.0002), ruling out common macroeconomic shocks as the sole explanation. The regression interaction and synthetic control point in the same direction, though neither achieves robust significance after excluding 2022–2023. This pattern supports describing the evidence as **strongly consistent with** asymmetric interdependence deepening post-BRI.
+**Its largest component was shared by China's other neighbours.** The largest China-specific component is the rise in imports from China after 2019. In 2019–2024 China's exports to each of Kazakhstan's five neighbours grew as fast as or faster than its exports to Kazakhstan (Table 6.10c). No Kazakhstan-specific mechanism is needed to account for it. Its causes, including post-2022 re-routing and any region-wide or lagged effect of BRI connectivity, cannot be separated with these data.
 
-## 7.2 What the Results Do Not Show
+**The merchandise-trade evidence does not show a change that both matches a BRI mechanism and starts or accelerates at a BRI milestone.** Turnover did not expand specifically with China while connectivity projects were being opened (2013–2019). Energy exports fell specifically to China, contrary to the resource-security expectation. Strategic minerals offset part of the swing, but their China-specific gain is not timed with Chinese resource finance. Agri-food matches the market-access mechanism in products, but it began before 2013 and did not accelerate at any milestone tested (2012, 2013, 2015, 2017).
 
-The results do **not** demonstrate that:
-- BRI *caused* Kazakhstan's trade-balance deterioration;
-- strategic minerals *caused* the bilateral deficit;
-- China *caused* Kazakhstan's external weakness;
-- the interaction coefficient (−3.22, −2.42, or −2.38) is a structural parameter.
+In the terms of §1.5: the BRI is supported as the **context (A)**; the agri-food reorientation is **consistent with a BRI mechanism in products and channel, but not in timing**, so it falls short of level **B**; and **no causal claim (C)** is made.
 
-The coefficient should be read as evidence that the trade-balance association of mineral exports weakened in the post-BRI period, not as a causal multiplier. The sanctions robustness check (§6.14) cannot rule out that part or all of the post-2013 interaction is driven by the 2022–2023 Russia-sanctions routing rather than BRI-specific structural deepening.
+## 7.2 What These Results Do and Do Not Say About the BRI
 
-## 7.3 Why 2023 is Retained but Treated Cautiously
+- **Evidence inconsistent with specific predictions.** The absence of China-specific turnover growth in 2013–2019 (M1, Kazakhstan-specific expansion), the China-specific oil decline (M3, energy), and the absence of acceleration in agri-food at the milestones tested (M2, timing). These are the thesis's strongest negative findings, and each concerns a specific prediction in a specific window.
+- **Absence of evidence.** The extensive margin, the "other goods" coefficients (positive but imprecise at every break year), and small trend changes. The minimum change in the China-specific trend detectable with 80 per cent power is about 0.39 log points per year for agri-food and 0.16 for metals and ores at the 2013 break (Tables 6.9, 6.9b). Effects of the size predicted by the ex-ante literature, a few per cent of trade [@baniya_rocha_ruta_2020; @desoyres_etal_2020], are well below what this design can detect.
+- **No evidence of no effect.** Nothing here shows that the BRI had no economically meaningful effect on Kazakhstan. Transit services (M5), investment-linked imports (M4), productivity and welfare are not measured; region-wide and lagged effects cannot be excluded; and the outcome is merchandise trade only.
 
-The 2023 observation warrants specific and cautious discussion. It is substantively meaningful because it is the first and only year of bilateral deficit (−USD 2.01 billion) in the dataset. Imports surged to USD 16.77 billion—nearly triple the 2020 level (USD 1.96 billion) and exceeding exports (USD 14.76 billion) for the first time. Meanwhile, mineral exports reached their sample maximum (USD 5.05 billion). This combination—record mineral exports coinciding with the first deficit—is precisely the puzzle that asymmetric interdependence theory predicts, suggesting 2023 may represent an inflection point, not just a statistical nuisance.
+## 7.3 Relation to Existing Studies
 
-However, from an econometric standpoint, 2023 possesses extremely high leverage. Because inference in a 24-observation dataset is fragile, the results must be reported transparently with and without this year. The full-sample interaction coefficient and the excluding-2023 estimates should be treated as co-equal evidence. The core conclusion of this thesis—that the bilateral trade relationship has grown increasingly fragile and asymmetric—is supported by the descriptive decomposition and the 2023 outcome itself, but the formal claim of a stable, systematic post-BRI statistical interaction effect must not depend solely on the full-sample regression coefficient.
+The results sit alongside, rather than against, the literature that finds positive BRI trade effects.
 
-## 7.4 Policy Implications
+*Trade-cost and volume studies.* De Soyres et al. [-@desoyres_etal_2020] and Baniya, Rocha and Ruta [-@baniya_rocha_ruta_2020] predict modest average reductions in trade costs and increases in trade, larger for time-sensitive goods. The thesis finds no China-specific expansion of Kazakhstan–China turnover in 2013–2019 relative to Kazakhstan's other partners. This does not contradict those studies: their effects are averages of a few per cent across many economies, below what one pair's annual data can detect, and they concern volume, not the balance. The agri-food result is the closest match to their prediction about time-sensitive goods, in composition if not in timing.
 
-Policy implications flow directly from the diagnostic findings:
+*Region-wide effects.* Krulikowski and Riker [-@krulikowski_riker_2024] simulate that BRI membership raised China's exports to Kazakhstan by about 29 per cent and Kazakhstan's imports more than its exports, with the largest gains in Central Asia. That is consistent with two findings here, that most of the swing is China-specific from Kazakhstan's side and that it was driven by imports, and with the finding that the import rise was shared by Kazakhstan's neighbours, because their estimates are region-wide. The difference lies in timing and identification. Their estimates come from a model in which BRI membership (2015 for Kazakhstan) shifts trade costs; the observed data show China's exports to Kazakhstan no higher in 2019 than in 2013 (after a fall in 2015–2016) and rising mainly in 2022–2024, the period of regional re-routing. The two approaches cannot be reconciled with the data available here: the neighbour comparison removes region-wide BRI effects together with other regional shocks, and their model attributes to membership whatever pair-level change follows it. This is the main reason the thesis classifies the regional and lagged contribution of the BRI to the import rise as inconclusive rather than absent.
 
-1. **Monitor bilateral trade balance decomposition**, not just total trade volumes. Aggregate trade growth can mask deteriorating bilateral positions.
-2. **Track import-side dependence** on Chinese machinery, equipment, and intermediate goods. The 94.3% import growth suggests deepening structural dependence.
-3. **Invest in mineral value-added processing** before export. Raw mineral exports generate lower returns and are price-sensitive.
-4. **Improve HS-level trade data transparency.** The measurement break in mineral data (Section 4.3) reflects data infrastructure limitations.
-5. **Diversify export destinations** where economically feasible, reducing concentration risk in a single large buyer.
-6. **Treat BRI participation as a trade-structure issue**, not solely an infrastructure issue. Infrastructure that facilitates bilateral trade may disproportionately benefit the more diversified partner.
-7. **Evaluate 2023 as a potential structural inflection** requiring policy response rather than a statistical anomaly.
+*Transit.* Mau and Seuren [-@mau_seuren_2023] show that China–Europe rail connections raised European exports to China. Kazakhstan's benefit from such connections is primarily transit revenue, which is outside this thesis's data. The thesis's conclusions are therefore silent on the channel through which the BRI is best documented to have affected Central Asia.
+
+*Central Asian political economy.* Area studies stress that the BRI is a broad label and that Central Asian trade has been shaped by transport costs, trade policy and the Eurasian Economic Union as well as by China [@pomfret_2019; @laruelle_2018]. The finding that the largest component of the swing belongs to a regional pattern, and that the BRI-era channel with a measurable footprint is agricultural market access rather than finance, supports treating "the BRI" as a set of distinct channels with distinct timings rather than as a single treatment.
+
+## 7.4 Why the BRI Remains the Right Frame
+
+First, the question of whether the BRI changed Kazakhstan–China trade is the one asked in policy debate and in the registered topic, and it can only be answered by a design that compares the relationship with appropriate benchmarks. The thesis provides that design for merchandise trade.
+
+Second, the change is China-specific from Kazakhstan's side. Had it been common to all of Kazakhstan's partners, the BRI would have been irrelevant to it and its place in the title decorative. Because it is China-specific, the BRI is the natural candidate, and because the BRI is both bilateral and regional, it had to be examined at both levels.
+
+Third, the conclusions are about the BRI's observable mechanisms: which predictions the merchandise-trade evidence contradicts in the windows tested (Kazakhstan-specific expansion in 2013–2019; resource security for energy; acceleration of agri-food at milestones), where it is silent (region-wide and lagged effects, small average effects, investment-linked imports, transit), and what the change is instead (a China-specific change from Kazakhstan's side whose largest part, the post-2019 import rise, was shared by China's other neighbours).
+
+## 7.5 The Swing Is Not a Loss: Interpreting the Balance
+
+The swing is not evidence that Kazakhstan lost from trade with China. Of the USD 15.2 billion rise in imports from China in 2019–2024, USD 7.2 billion (47 per cent) was machinery, electrical equipment and vehicles, and USD 4.4 billion (29 per cent) apparel and footwear (Table 6.11). The first group can embody investment in Kazakhstan's capital stock, and both groups can lower prices for Kazakh firms and consumers; part of the first group also appears to have been re-exported to Russia (§6.6). The data cannot separate these uses. On the export side, the China-specific gains in strategic minerals and agri-food mean that Kazakhstan sold more of these products to China than its trade with other markets would imply. A bilateral deficit is consistent with all of these outcomes.
+
+## 7.6 Strategic Minerals and the Balance
+
+The registered topic asks about the role of strategic mineral exports. They **offset part of the swing**. Exports to China of ores, uranium compounds, ferroalloys, copper and zinc rose by USD 5.6 billion between 2013 and 2024, and their China-specific component is positive in every specification (USD 1.8–6.7 billion by 2023–2024; Table 6.4). Three qualifications apply:
+
+1. In the 2013-base calculation, most of the China-specific gain came after 2019, mainly through ores, whose China share rose from 41 to 80 per cent. From earlier bases, a larger part (USD 1.7–2.4 billion) had occurred by 2019. The timing does not single out the BRI period.
+2. The gain increased Kazakhstan's dependence on China as a buyer of ores and copper (§7.7).
+3. The earlier version of this thesis found that the association between mineral exports and the balance weakened after 2013. The decomposition explains that pattern: the balance fell for reasons on other lines of the account (oil, then imports) while minerals rose, so a regression of the balance on minerals shows a weakening association without minerals having caused anything (Appendix B).
+
+## 7.7 Dependence Is Two-Sided, but Mostly Asymmetric
+
+**Table 7.1. Two-sided dependence by chapter, 2024**
+
+| HS | Chapter | China's share of KZ exports, % | KZ's share of China's imports, % |
+|---|---|---:|---:|
+| 26 | Ores | 80.2 | 1.8 |
+| 74 | Copper | 64.1 | 3.8 |
+| 79 | Zinc | 50.3 | 28.1 |
+| 28 | Inorganic chemicals incl. uranium compounds | 32.4 | 8.9 |
+| 72 | Iron and steel incl. ferroalloys | 25.0 | 5.6 |
+| 27 | Energy | 7.1 | 0.6 |
+| 23 | Food residues, fodder | 67.3 | 4.2 |
+| 15 | Fats and oils | 39.6 | 1.3 |
+| 12 | Oilseeds | 41.0 | 0.2 |
+| 10 | Cereals | 17.7 | 2.0 |
+
+*Source: UN Comtrade; Kazakhstan-reported exports and China-reported imports [@un_comtrade_hs2_2026]. Author's calculations (Script 64, `two_sided_dependence_2024.csv`).*
+
+For ores, copper and most agri-food chapters, China matters far more to Kazakhstan as a buyer than Kazakhstan matters to China as a supplier [@keohane_nye_1977; @hirschman_1945]. Zinc is closer to mutual dependence. Uranium is the main exception, and HS-2 data understate it because HS 28 mixes uranium with other chemicals: Kazakhstan supplied about two-thirds of China's natural uranium imports in 2023 [@pan_2024] and 39 per cent of the world's mined uranium in 2024 [@wna_2026], and Chinese companies had to accept minority positions to secure access [@pan_2024].
+
+Dependence is not vulnerability. Ores and copper trade on world markets, and redirection is possible: China's share of Kazakhstan's refined copper exports fell from 65.4 to 49.1 per cent between January–November 2024 and the same period of 2025, while Türkiye's rose to 40.9 per cent [@astanatimes_copper_2026]. The China-specific mineral gain raised Kazakhstan's sensitivity to Chinese demand; this thesis finds no evidence that it created leverage and does not assume that it did.
+
+## 7.8 Alternative Explanations and What Remains Unexplained
+
+- **China's own demand.** China-specific demand growth for vegetable oils and feed would produce the same agri-food component as BRI market access; the design cannot separate them (§5.6).
+- **Post-2022 regional trade and lagged infrastructure effects.** The import rise and the metals shift both occur in 2023–2024. The neighbour comparison places the import rise in a regional pattern shared by all five neighbours. Post-2022 re-routing of trade with Russia is a plausible contributor, and connectivity built in 2012–2019 may have made that re-routing easier; the data cannot separate these, and the share of re-exports cannot be measured with Comtrade.
+- **Oil.** The China-specific oil decline in 2014 is not explained here. Candidate explanations (routing of Kazakh crude, Chinese supply diversification, contract changes) could not be verified and are not asserted.
+- **Pre-BRI Chinese investment.** Chinese finance for pipelines, oil companies and copper mines before 2013 coincides with the rise of China's share of energy and metals in 2005–2011. The coincidence is consistent with, but does not prove, a link.
+
+## 7.9 Policy Implications
+
+The recommendations follow only from findings that survived the robustness checks, and each states the finding it rests on.
+
+1. **Treat the bilateral deficit as a diagnostic, not a verdict on the BRI** (finding: the largest component is a post-2019 import rise shared by all of China's neighbours, 47 per cent of it machinery, electrical equipment and vehicles). Government reporting on trade with China, for example by the Ministry of Trade and Integration, would be more informative if it separated capital goods, consumer goods and goods re-exported to third countries, rather than reporting the bilateral balance alone.
+2. **Monitor the relationship against two benchmarks** (finding: whether a change looks China-specific depends on the comparison). Changes in trade with China are informative only when compared with Kazakhstan's trade with other partners and with China's trade with Kazakhstan's neighbours; a simple dashboard of the two comparisons, product group by product group, could be produced from public data each year.
+3. **Monitor the concentration of strategic-mineral sales on China, without assuming leverage** (finding: China's share of ore exports rose from 41 to 80 per cent between 2019 and 2024, while the 2025 copper data show redirection is feasible). Buyer diversification for ores and copper is a commercial risk-management question for producers and for export-promotion bodies.
+4. **Prioritise market access and border processing for agri-food** (finding: agri-food is the one group whose orientation towards China rose robustly, and no recorded Chinese finance went to agriculture). Extending phytosanitary protocols to further products and reducing border processing times are more directly connected to this channel than attracting Chinese loans.
+5. **Reconcile partner-level trade statistics** (finding: Kazakhstan's 2020–2022 partner data omit major chapters, and its recorded imports from China are 1.5 to 2.5 times lower than China's records even in normal years). The Bureau of National Statistics could publish partner totals that include confidential chapters and a regular reconciliation with China's mirror data.
+
+These implications do not depend on a causal estimate of the BRI's effect; they concern how the relationship is measured and where Kazakhstan's own policy levers are.
 
 
 # 8. Conclusion
 
-This thesis examined whether strategic mineral exports from Kazakhstan to China translated into sustained bilateral trade-balance improvement during the post-BRI period. The answer is cautiously negative. Descriptive decomposition shows that imports from China grew nearly four times faster than exports (+94.3% vs. +24.3%), producing a 37.8% decline in the average trade balance despite 29.2% growth in strategic mineral exports. The trade-balance ratio—a normalised measure of bilateral position—fell by 51.2%.
+## 8.1 Answers to the Research Questions
 
-The regression evidence (primary specification: GDP growth rates, VIF = 10.4) estimates a negative post-BRI × minerals interaction of −2.489 (*p* = 0.011), but this result is heavily dependent on 2022–2023 and does not survive exclusion of those years. Influence diagnostics show that 2023 has a Cook's distance 23 times the conventional threshold. Multicollinearity is substantially reduced in the primary growth-rate specification (max VIF = 10.4 vs. VIF > 236 in the original GDP-levels model).
+The thesis asked whether the post-2013 change in Kazakhstan–China merchandise trade, summarised by the swing in the bilateral balance, is distinctive to the relationship, and whether it is consistent with the BRI mechanisms observable in merchandise trade, in particular through strategic mineral exports. Objective 1, deriving the BRI's mechanisms and their observable implications, is met in Chapters 2–3 (Tables 2.1 and 3.1). The answers to the sub-questions are:
 
-The cross-partner TWFE DiD (§6.15) provides the strongest evidence: the post-2013 balance deterioration is China-specific (DiD = −0.305, *p* = 0.0002), confirming it is not merely a common macroeconomic shock shared across all trading partners. This China-specificity is the most important empirical finding and substantially strengthens the case for a BRI-related structural mechanism.
+- **SQ1 (what moved the swing, and is it China-specific?).** The balance moved from +USD 3.5 billion in 2013 to −USD 12.0 billion in 2024. The 2013–2019 phase was driven by energy exports, the 2019–2024 phase by imports. Relative to Kazakhstan's other partners, 52–92 per cent of the swing is China-specific, depending on base and end years, and 71 per cent with averaged endpoints. Bilateral turnover did not expand specifically with China before 2019. *Objectives 2–3 achieved.*
+- **SQ2 (which exports changed towards China, and when?).** Oil exports fell more to China than to other markets, mainly between 2013 and 2014. Strategic mineral exports rose specifically towards China in every specification, offsetting part of the swing. Agri-food exports reoriented strongly towards China, a result robust to multiple-testing correction and randomisation inference, but the reorientation began before 2013 and did not accelerate at any of the dated milestones tested. *Objective 4 achieved.*
+- **SQ3 (was the import rise specific to Kazakhstan?).** No, for 2019–2024: China's exports grew as fast or faster to each of Kazakhstan's five neighbours. Over the whole period the comparison depends on the comparator. *Objective 5 achieved.*
+- **SQ4 (do BRI channels match?).** Chinese official finance peaked before 2013 and went mainly to hydrocarbons and mining; post-2013 finance went to roads and border facilities; operational connectivity milestones date from 2012 and 2015. The timing and sectors of these channels do not match the components of the swing, except that agri-food, the group most exposed to market access, did reorient towards China. *Objective 6 achieved.*
 
-The thesis therefore identifies a China-specific, increasingly adverse bilateral pattern that is strongly consistent with asymmetric interdependence theory. The strongest empirical contributions are: the descriptive decomposition showing import-side deepening as the primary mechanism; the TWFE DiD demonstrating China-specificity; and the transparent reporting of regression fragility and influence diagnostics.
+**Overall answer.** The change in Kazakhstan–China merchandise trade is real and mostly China-specific from Kazakhstan's side. Its largest component, the post-2019 import rise, was shared by China's other neighbours. In the windows tested, the merchandise-trade evidence does not show a change that both matches a BRI mechanism and starts or accelerates at a BRI milestone. Strategic minerals cushioned the swing rather than causing it. These conclusions concern merchandise trade only; they do not show that the BRI had no effect on Kazakhstan, because transit, investment, productivity, welfare, region-wide and lagged effects are outside what the design can see.
 
-## 8.1 Interpretation Discipline
+**Contribution.** The thesis contributes a transparent, reproducible two-sided assessment for one country pair: it shows which parts of the change in Kazakhstan–China merchandise trade were distinctive, from whose side, and how each relates to the observable predictions of BRI mechanisms. It also documents a reporting gap in Kazakhstan's partner statistics that affects any analysis of this relationship.
 
-To ensure analytical precision, it is necessary to stipulate what this thesis can and cannot claim. This thesis can claim that: (i) Kazakhstan–China trade-balance patterns are consistent with import-side deepening and asymmetric interdependence; (ii) strategic mineral export growth did not reliably translate into sustained bilateral balance improvement; and (iii) the post-2013 deterioration is **China-specific** — not a common shock across trading partners — as demonstrated by the TWFE DiD partner-placebo design (§6.15). It cannot claim that BRI causally worsened Kazakhstan's trade balance, because the regression interaction does not survive exclusion of the 2022–2023 sanctions period and an alternative explanation via parallel-import routing cannot be ruled out. The TWFE DiD finding is the most causally credible result; the regression interaction is a conditional association. 
+## 8.2 Limitations
 
-## 8.2 Limitations and Future Research
+1. **No causal identification.** The comparisons measure distinctiveness; they are neither estimates nor bounds of BRI effects.
+2. **Base-year sensitivity.** Shares and components depend on base and end years; 2013 was the peak year of oil exports to China. All key conclusions are reported as ranges over a grid (Table 6.3b, 6.4, 6.10b), and claims that held only for one base year have been removed.
+3. **Comparators and timing.** The neighbour comparison is affected by post-2022 re-routing and sanctions, by re-export hubs and by the neighbours' own BRI participation; over 2013–2024 its result depends on the comparator, and only the 2019–2024 result holds for every neighbour separately. Construction and completion dates of most BRI projects could not be verified, so timing tests use announcement, operational and financing milestones (Table 6.13b), and lagged effects cannot be excluded.
+4. **Aggregation.** HS-2 chapters mix products (uranium with other chemicals). Imports from other partners were collected as totals, and China's exports to Kazakhstan by chapter only for 2013, 2019 and 2024.
+5. **Power.** The tests can detect only large changes in trends (§6.7); small average effects of the kind predicted by the ex-ante literature are undetectable here.
+6. **Energy is one chapter,** so no statistical inference is available for it.
+7. **Missing years.** Kazakhstan's 2020–2022 product data are unusable for partner comparisons; Kazakhstan-to-World 2020 and 2022 and China-reported 2006 were not retrieved.
+8. **Merchandise only.** Transit and other services, a main BRI channel for Kazakhstan, are outside the data.
+9. **AidData** records official commitments, not disbursements or private investment.
+10. **Exploratory elements.** Several analyses were added after earlier results were seen (§3.3); safeguards are described in §5.7.
+11. **Outcome scope.** The balance is an accounting summary of merchandise trade, not a welfare measure; the thesis does not measure trade costs, investment, productivity or welfare.
 
-This study is subject to several severe limitations that bound its inferential power. As a diagnostic case study, it relies on annual data (*n* = 24), which restricts statistical degrees of freedom. The 2023 observation possesses extreme leverage and drives the interaction results. Furthermore, the 2022–2023 data likely capture sanctions-related trade diversion and parallel imports, presenting an alternative channel that weakens a narrow BRI-only interpretation. The narrow strategic mineral data contain a measurement break at 2014, and bilateral oil and energy export data are absent from the model, representing a major unquantified omitted variable bias. Consequently, the strongest finding remains the descriptive pattern rather than any single regression coefficient.
+## 8.3 Future Research
 
-Future research should extend the analysis to quarterly data to increase the sample size, incorporate HS-level energy export controls, obtain consistent HS-6 mineral series for the full period, and apply synthetic control methods using a multi-partner donor pool. Ultimately, monitoring the post-2023 data will be essential to determine whether the bilateral deficit reflects a permanent structural shift or a transient sanctions-era disruption.
+HS-6 data would allow testing the agri-food reorientation against the dates of individual phytosanitary protocols and measuring the extensive margin properly. Product-level import data for Kazakhstan and its neighbours would show which goods drove the post-2019 rise and how much passed on to Russia. Data on transit volumes and revenues would allow the BRI's main channel for Kazakhstan, which this thesis cannot observe, to be studied directly.
 
-The finding that mineral export growth did not translate into trade-balance improvement is consistent with the broader resource-dependence literature: export success in raw materials does not automatically improve external balance when the trading partner's diversified export capacity grows faster. For Kazakhstan and comparable corridor economies, this diagnostic evidence suggests that BRI participation should be evaluated not by aggregate trade volumes but by the composition and balance of bilateral exchange.
 
 # References
 
-<div id="refs"></div>
+::: {#refs}
+:::
 
-# Appendix A: Tables and Figures Concordance
 
-This appendix maps the figures and tables referenced in the text to their source files to ensure computational reproducibility.
+# Appendix A: Data and Code
 
-| Table/Figure | Source File | Section Used | Purpose |
-|--------------|-------------|--------------|---------|
-| Table 4.1 | Author's compilation; see `Codebook.md` and `Collected_Raw_Data/data_dictionary.md` | 4.1 | Consolidated data sources and variable construction |
-| Table 4.2 | `Outputs/generated_tables/summary_statistics.csv` | 4.5 | Descriptive statistics |
-| Table 4.3 | `Outputs/generated_tables/trade_decomposition.csv` | 4.5 | Trade balance decomposition |
-| Table 4.4 | N/A (Manual summary) | 4.3 | Measurement break summary |
-| Table 4.5 | Author's calculations, Bureau of National Statistics (stat.gov.kz) | 4.4 | Independent cross-validation of bilateral trade figures |
-| Table 5.1 | `Outputs/generated_tables/stationarity.csv` | 5.3 | Integration order diagnostics |
-| Table 6.1 | `Outputs/generated_tables/full_regression_table.csv` & `parsimonious_regression.csv` | 6.1 | Baseline OLS results |
-| Table 6.2 | Computed from OLS residuals via `Scripts/30_full_diagnostics.py`; DW and Breusch–Pagan statistics reported inline | 6.2 | Residual diagnostics |
-| Table 6.3a/b | `Outputs/generated_tables/collinearity_resolution.csv` | 6.3 | VIF comparison across schemes |
-| Table 6.3c | `Outputs/generated_tables/gravity_ratio_main_results.csv`; full run via `Scripts/35_collinearity_resolution.py` | 6.3 | Primary growth-rate specification and robustness schemes |
-| Table 6.4 | `Outputs/generated_tables/influence_diagnostics.csv` | 6.4 | Cook's distance outliers |
-| Table 6.5 | `Outputs/generated_tables/leave_one_out.csv` and model summaries | 6.4 | Model stability excluding 2023 |
-| Table 6.6 | `Outputs/generated_tables/robustness.csv` | 6.8 | Robustness grid summary |
-| Table 6.7 | `Outputs/generated_tables/model_comparison_summary.csv` | 6.12 | Illustrative energy-proxy sensitivity (not main evidence) |
-| Table 6.8 | `Outputs/generated_tables/structural_breaks.csv` | 6.13 | Chow placebo break-year tests |
-| Table 6.9 | `Outputs/generated_tables/sanctions_channel.csv` | 6.14 | Sanctions robustness |
-| Table 6.10 | `Outputs/generated_tables/did_partner_placebo.csv` | 6.15 | TWFE DiD partner-placebo results (China vs RUS, DEU, UZB, TUR, USA) |
-| Table 6.11 | `Outputs/generated_tables/synthetic_control.csv` | 6.16 | Synthetic control gap |
-| §6.12 data | `Outputs/oil_energy_exports_to_china.csv` | 6.12 | Bilateral oil/energy export null-result documentation |
-| Figure 1 | `Outputs/generated_figures/fig_1_exports_imports.png` | 4.5 | Exports vs imports over time |
-| Figure 2 | `Outputs/generated_figures/fig_2_trade_balance.png` | 4.5 | Trade balance over time |
-| Figure 3 | `Outputs/generated_figures/fig_3_minerals.png` | 4.5 | Strategic minerals over time |
-| Figure 4 | `Outputs/generated_figures/fig_4_scatter.png` | 6.1 | Pre/post-BRI scatter plot |
-| Figure 5 | `Outputs/generated_figures/fig_5_diagnostics.png` | 6.5 | Influence and leave-one-out stability |
-| Figure 6 | `Outputs/generated_figures/fig_6_pre_post.png` | 6.8 | Pre/post coefficient robustness |
-| Figure 6a | `Outputs/generated_figures/fig06_cusum_Model_A_dummy.png` | 6.7 | CUSUM parameter stability — Model A |
-| Figure 6b | `Outputs/generated_figures/fig07_cusum_Model_B_intensity.png` | 6.7 | CUSUMSQ variance stability — Model A |
-| Figure DiD | `Outputs/generated_figures/fig_did_event_study.png` | 6.15 | ITS + placebo event study |
-| Figure SC | `Outputs/generated_figures/fig_synthetic_control.png` | 6.16 | Synthetic control gap plot |
+**Reproduction.** From the repository root: `python Scripts/60_build_hs2_panel.py`, then Scripts 61, 62, 64, 65, 66, 67, 69 and 63 (figures), then `python Scripts/50_build_paper.py`, then `python Scripts/68_reconcile_manuscript.py`, which checks key figures in this manuscript against the output tables (34 of 34 found in the final version). All output tables were regenerated from the raw files during the final audit and reproduced the previous values to within 0.001. Python packages: pandas, numpy, statsmodels, pyfixest (0.60), matplotlib, openpyxl, scipy.
 
-# Appendix B: Pre-Revision Specification
+**Table A.1. Scripts and outputs**
 
-*This appendix documents the pre-revision OLS specification that used log(KZ GDP) and log(CN GDP) as separate level regressors. It is retained for transparency, enabling direct comparison between the midterm and final specifications and illustrating how multicollinearity resolution affected the estimates.*
+| Script | Purpose | Main outputs |
+|---|---|---|
+| 60_build_hs2_panel.py | Parse raw HS-2 files, merge gap-fills, validate totals | `hs2_panel_long.csv`, `hs2_validation.csv` |
+| 61_composition_diversification.py | Composition, China shares, HHI, suppression check, balance decomposition, imports, AidData, Russia check, agri chapters | Tables 4.3, 6.1, 6.2, 6.5, 6.6, 6.11, 6.13 |
+| 62_ppml_triple_difference.py | PPML triple difference, robustness, event study, pre-trend test, trend break, extensive margin | Tables 6.7–6.9, extensive margin (§6.7) |
+| 63_figures_reconstruction.py | Figures 6.1–6.8 | `fig_r1`–`fig_r8` |
+| 64_two_sided_dependence.py | Two-sided dependence, 2024 | Table 7.1 |
+| 65_common_vs_china_specific.py | Shift-share split into common and China-specific components; strategic minerals; neighbour comparison | Tables 6.3, 6.4, 6.10, 6.10b |
+| 66_multiple_testing_permutation.py | Holm adjustment, one-sided acceleration tests, randomisation inference (300 draws, seed 20261031) | Table 6.12 |
+| 67_robustness_baselines_comparators.py | Grids over base and end years; turnover; comparison with China's regional partners for both flows, value-weighted and median, with and without Russia and Kyrgyzstan; growth by partner | Tables 6.3b, 6.4 (ranges), 6.10b, 6.10c |
+| 68_reconcile_manuscript.py | Checks key manuscript figures against output tables | `reconciliation_report.csv` |
+| 69_timing_alternatives.py | Trend-break model with breaks at 2012, 2013, 2015, 2017 (exploratory) | Table 6.9b |
 
-## Appendix B.1 Pre-Revision Full Model (A1)
+**Units and transformations.** All trade values in current US dollars; PPML is estimated on values in USD million. Rest of world = Kazakhstan's exports to World minus exports to China (negative differences, which do not occur in the main sample, would be set to zero). Zero flows are kept. HS chapters are as reported by Comtrade in each year.
 
-The full model with GDP levels produced severe multicollinearity (max VIF = 236.3) that inflated coefficient magnitudes and destabilised inference. This specification is **not used for substantive interpretation** in the final thesis. It is retained here so that the revision from midterm to final is transparent and reproducible.
+**Data handling decisions.**
 
-| Variable | Pre-revision A1 Coef. | HAC SE | *p*-value |
-|----------|---------------------:|-------:|----------:|
-| Constant | 197.624 | 53.040 | 0.002 |
-| Minerals (USD bn) | 2.463 | 0.541 | 0.000 |
-| Brent (USD/bbl) | 0.047 | 0.039 | 0.239 |
-| KZT/USD | 0.016 | 0.012 | 0.198 |
-| log(KZ GDP) | −13.230 | 6.112 | 0.046 |
-| log(CN GDP) | 4.529 | 4.460 | 0.325 |
-| Post-BRI | 4.927 | 1.847 | 0.017 |
-| **Minerals × Post-BRI** | **−3.221** | **1.043** | **0.007** |
-| N=24, R²=0.765, max VIF=236.3 | | | |
+1. Chapters missing from a truncated API response were re-queried and merged (gap-fill file); a chapter appearing twice keeps its first value.
+2. Kazakhstan-to-World 2022 was rejected after inspection (duplicated values); 2020 could not be retrieved.
+3. 2020–2022 are excluded from Kazakhstan-reported product comparisons because of suppression (§4.4).
+4. Balances use China-reported data in both directions (§4.5).
 
-*Notes: The large constant (197.6), implausible GDP coefficient magnitudes, and max VIF > 100 indicate that this specification's coefficients absorb trending collinearity rather than identifying genuine partial effects. This specification is superseded by the growth-rate model (Scheme B, primary) and gravity-ratio model (Scheme C, robustness) in the final version.*
 
-## Appendix B.2 Pre-Revision Parsimonious Model (A2)
+# Appendix B: Relation to the Earlier Specification
 
-The midterm parsimonious model excluded GDP controls, reducing VIF:
+The earlier version of this thesis (archived as `Paper/archive/v2_minerals_trade_balance_dissertation.md`) regressed the annual bilateral balance (2000–2023, *n* = 24) and observed monthly balances (2010–2019, *n* = 120) on mineral exports, a post-2013 dummy and their interaction, with controls for oil prices and the exchange rate. Its main results were a positive pre-2013 association between mineral exports and the balance and a negative post-2013 interaction (annual β = −2.49; monthly β = −0.91, *p* = 0.008).
 
-| Variable | Pre-revision A2 Coef. | HAC SE | *p*-value |
-|----------|---------------------:|-------:|----------:|
-| Constant | −3.326 | 2.359 | 0.176 |
-| Minerals (USD bn) | 1.694 | 0.853 | 0.062 |
-| Brent (USD/bbl) | 0.023 | 0.037 | 0.542 |
-| KZT/USD | 0.014 | 0.012 | 0.270 |
-| Post-BRI | 0.691 | 1.492 | 0.649 |
-| **Minerals × Post-BRI** | **−2.382** | **0.977** | **0.025** |
-| N=24, R²=0.703, max VIF=8.31 | | | |
+That specification was replaced for four reasons, each verified during the reconstruction:
 
-*Notes: This specification achieved VIF < 10 by excluding GDP controls entirely. The final primary specification (Scheme B, GDP growth rates) retains GDP-related regressors in stationary form (d.log), achieving max VIF = 10.4. The Scheme C gravity-ratio specification is reported as a robustness check (max VIF = 33.4).*
+1. **Identification.** A post-2013 dummy in a single country-pair time series cannot separate the BRI from the 2014–2016 commodity price collapse. The triple-difference design in Chapter 5 removes common shocks by comparing destinations.
+2. **The omitted oil channel.** The monthly interaction disappeared once bilateral oil exports were controlled for, and Granger tests found that mineral exports do not lead the balance. Section 6.1 shows why: the 2013–2019 balance change is accounted for by oil.
+3. **Data problems.** An "oil exports" column in the annual panel was a placeholder (55 per cent of total exports) and was removed; the 2020–2022 import data were shown to be incomplete (Table B.2).
+4. **Inference.** A cross-partner difference-in-differences with six partners originally reported *p* = 0.0002 using standard errors unsuitable for a panel; corrected inference gave *p* between 0.02 and 0.38.
+
+**Table B.2. Kazakhstan-reported imports from China vs China-reported exports to Kazakhstan (USD bn)**
+
+| Year | Kazakhstan-reported imports | China-reported exports | Ratio | Months with HS 84/85/87 import records |
+|---|---:|---:|---:|---:|
+| 2013 | 8.36 | 12.55 | 1.50 | 12 |
+| 2016 | 3.67 | 8.29 | 2.26 | 12 |
+| 2019 | 6.57 | 12.73 | 1.94 | 12 |
+| 2020 | 1.96 | 11.70 | 5.99 | 0 |
+| 2021 | 2.42 | 13.76 | 5.67 | 0 |
+| 2022 | 3.58 | 16.36 | 4.57 | 0 |
+| 2023 | 16.77 | 24.70 | 1.47 | 12 |
+
+*Source: UN Comtrade monthly and annual data, both reporters [@un_comtrade_2026]. Author's calculations (Script 43, `import_break_evidence.csv`).*
+
+The scripts of the earlier analysis (Scripts 10–45) remain in the repository and run unchanged; their outputs are no longer cited in the main text.

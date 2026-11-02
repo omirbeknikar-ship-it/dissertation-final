@@ -1,0 +1,3 @@
+Controls,N,AIC,selected_lags,Interaction_coef,Interaction_p,sum_lagged_TB,long_run_interaction,PSS_F,PSS_p_lower_I0,PSS_p_upper_I1
+A2 controls,24,103.1155,"(0, 0, 1)",-2.3044,0.003,0,-2.3044,2.2171,0.1452,0.4428
+B controls,23,93.9078,"(0, 0, 1, 0)",-2.3643,0.0008,0,-2.3643,2.013,0.1277,0.5203

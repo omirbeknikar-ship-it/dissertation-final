@@ -1,0 +1,4 @@
+# UN Comtrade public preview API, annual, HS; reporter=398 Kazakhstan, partner=643 Russian Federation, flow=X; cmdCode=84,85,87; current USD
+# URL pattern: https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=398&partnerCode=643&period=YYYY&cmdCode=84,85,87&flowCode=X  Retrieved 2026-10-31.
+2019|84:162521670.04;85:112385243.22;87:51315851.58
+2023|84:1119162501.33;85:667195945.34;87:459103628.44

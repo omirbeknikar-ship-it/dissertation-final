@@ -177,6 +177,7 @@ items = [
     "Research Question & Theory",
     "Data & Analytical Pipeline",
     "Regression Analysis & Multicollinearity Resolution",
+    "Data Check, Monthly Evidence, Hypothesis Tests & Granger Causality",
     "Main Finding: TWFE Difference-in-Differences",
     "Robustness & Limitations",
     "Conclusions & Policy Implications",
@@ -434,8 +435,8 @@ for ri, row in enumerate(tbl_data):
     y += rh
 
 add_text(s10,
-         "⚠  The interaction disappears when 2022–2023 are excluded → result is fragile. "
-         "Primary evidence comes from the DiD (next slide).",
+         "⚠  As reported, β₃ disappears without 2022–2023. With 2020–22 imports mirror-adjusted it survives "
+         "(−1.99, p < 0.001) — see data check.",
          0.5, 6.7, 12.3, 0.5, size=13, italic=True, color=RED)
 
 
@@ -457,15 +458,174 @@ bullet_box(s11, [
     "Excluding any year except 2023\n→ interaction stays negative & significant",
     "Excluding 2023 alone\n→ interaction loses significance",
     "R² jumps from 0.765 → 0.960\nwhen 2023 removed",
-    "This is reported transparently\nin the paper",
+    "Mirror-adjusted 2020–22 imports:\nCook's D falls to 2.32, β₃ survives",
 ], 9.0, 2.85, 3.9, 3.8, size=14, color=NAVY)
 
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# NEW (round 2) — DATA CHECK: 2020–2022 IMPORT REPORTING BREAK
+# ══════════════════════════════════════════════════════════════════════════════
+sA = content_slide(prs, "Data Check: Imports Were Under-Recorded in 2020–2022",
+                   "Kazakhstan's own reports vs China's customs data (UN Comtrade mirror)")
+fig_path = FIGS / "fig_import_reporting_break.png"
+if fig_path.exists():
+    sA.shapes.add_picture(str(fig_path), Inches(0.4), Inches(1.35), Inches(8.3))
+stat_box(sA, "≈2.2×", "China / KZ ratio\n2016–2019 (normal gap)", 9.0, 1.4, w=3.9, h=1.45, val_color=NAVY)
+stat_box(sA, "4.6–6.0×", "China / KZ ratio\n2020–2022", 9.0, 3.0, w=3.9, h=1.45, val_color=RED)
+bullet_box(sA, [
+    "KZ imports fall 70% in 2020; China's exports to KZ fall only 8%",
+    "No HS 84/85/87 import rows in 2020–2022",
+    "So the 2020–22 surplus is overstated and the 2023 'jump' is partly a reporting artefact",
+], 9.0, 4.6, 3.9, 2.6, size=13, color=NAVY)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# NEW (round 2) — SAMPLE SIZE: WHY NOT INTERPOLATE?
+# ══════════════════════════════════════════════════════════════════════════════
+sB = content_slide(prs, "Sample Size: Interpolated Quarters vs Observed Months",
+                   "Supervisor's point 1: N = 24 limits estimation")
+add_rect(sB, 0.4, 1.4, 6.1, 0.45, fill=RGBColor(0xFF,0x7F,0x00))
+add_text(sB, "Interpolate annual → 96 quarters (Denton)", 0.5, 1.44, 5.9, 0.38, size=15, bold=True, color=WHITE)
+add_rect(sB, 0.4, 1.85, 6.1, 2.9, fill=LGRAY, line=MGRAY)
+bullet_box(sB, [
+    "Same coefficients: β₃ = −2.40 (annual −2.38)",
+    "p falls only because rows ×4; Durbin–Watson = 0.25",
+    "Monte Carlo, true effect = 0:",
+    ("annual HAC: 21% false positives", 1),
+    ("interpolated + OLS SE: 47%", 1),
+    ("interpolated + HAC: 21–23% (no gain)", 1),
+    "→ robustness check only, not new evidence",
+], 0.55, 1.95, 5.8, 2.8, size=15, color=BLACK)
+add_rect(sB, 6.8, 1.4, 6.1, 0.45, fill=RGBColor(0x37,0x86,0x10))
+add_text(sB, "Observed UN Comtrade monthly data", 6.9, 1.44, 5.9, 0.38, size=15, bold=True, color=WHITE)
+add_rect(sB, 6.8, 1.85, 6.1, 2.9, fill=RGBColor(0xE2,0xEF,0xDA), line=RGBColor(0x37,0x86,0x10))
+bullet_box(sB, [
+    "120 real months, 2010M01–2019M12",
+    ("48 pre-BRI, 72 post-BRI", 1),
+    "Ends before the 2020–22 reporting break",
+    "Adds monthly HS 27 oil exports (missing annually)",
+    "NBK KZT/USD + Pink Sheet Brent/copper",
+    "→ genuinely new information",
+], 6.95, 1.95, 5.8, 2.8, size=15, color=BLACK)
+add_text(sB, "Interpolation answers the request formally; the monthly data answer it substantively.",
+         0.4, 5.1, 12.5, 0.6, size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# NEW (round 2) — MONTHLY RESULTS
+# ══════════════════════════════════════════════════════════════════════════════
+sC = content_slide(prs, "Observed Monthly Evidence Confirms H2 and H3",
+                   "Monthly trade balance, 2010–2019, HAC(12), month dummies")
+mrows = [
+    ("Model", "N", "Minerals β₁", "Interaction β₃", "p (β₃)", "Adj. R²"),
+    ("M1: parsimonious ✓ primary", "120", "1.260", "−0.913", "0.008", "0.696"),
+    ("M2: + linear trend", "120", "1.374", "−1.061", "0.004", "0.718"),
+    ("M5: + lagged balance", "118", "1.401", "−1.177", "0.004", "0.742"),
+    ("Break at Oct 2013", "120", "1.208", "−0.583", "0.027", "0.679"),
+    ("+ oil exports (HS 27)", "120", "0.888", "+0.252", "0.309", "0.906"),
+]
+col_w = [3.4, 0.7, 1.4, 1.5, 1.0, 1.1]
+col_x = [0.4]
+for w in col_w[:-1]:
+    col_x.append(col_x[-1] + w)
+y = 1.4
+for ri, row in enumerate(mrows):
+    if ri == 0:
+        bg, fc, fb = NAVY, WHITE, True
+    elif ri == 1:
+        bg, fc, fb = RGBColor(0xE2,0xEF,0xDA), BLACK, True
+    elif ri == 5:
+        bg, fc, fb = RGBColor(0xFF,0xEB,0xEB), BLACK, False
+    else:
+        bg, fc, fb = (LGRAY if ri % 2 else WHITE), BLACK, False
+    rh = 0.48
+    for ci, (cell, cx, cw) in enumerate(zip(row, col_x, col_w)):
+        add_rect(sC, cx, y, cw, rh, fill=bg, line=MGRAY)
+        add_text(sC, cell, cx+0.05, y+0.06, cw-0.1, rh-0.1, size=13, bold=fb, color=fc,
+                 align=PP_ALIGN.CENTER if ci > 0 else PP_ALIGN.LEFT)
+    y += rh
+fig_path = FIGS / "fig_monthly_trade_balance.png"
+if fig_path.exists():
+    sC.shapes.add_picture(str(fig_path), Inches(0.4), Inches(4.45), Inches(6.9))
+bullet_box(sC, [
+    "Pre-BRI: +$100m minerals ↔ +$126m monthly balance",
+    "Post-BRI slope falls by 0.91 → not different from zero (p = 0.27)",
+    "Robust to trend, copper, dynamics, break date, product-level minerals",
+    "Not robust to oil exports → weakening is not shown to be mineral-specific",
+], 9.7, 1.4, 3.3, 5.6, size=14, color=NAVY)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# NEW (round 2) — HYPOTHESIS TESTS + FIT
+# ══════════════════════════════════════════════════════════════════════════════
+sD = content_slide(prs, "Hypothesis Tests and Model Fit",
+                   "Supervisor's point 2: H₀ / H₁, test statistic, p-value, decision")
+hrows = [
+    ("Hypothesis", "H₀ → H₁", "Annual B: β (p, 1-sided)", "Monthly M1: β (p, 1-sided)", "Verdict"),
+    ("H1 post-BRI level shift", "β₂ ≥ 0 → β₂ < 0", "+0.59 (0.602)", "−0.22 (0.046)", "Not supported"),
+    ("H2 pre-BRI mineral payoff", "β₁ ≤ 0 → β₁ > 0", "+1.65 (0.037)", "+1.26 (0.001)", "Supported"),
+    ("H3 weaker payoff after BRI", "β₃ ≥ 0 → β₃ < 0", "−2.49 (0.011)", "−0.91 (0.004)", "Supported†"),
+    ("Joint post-BRI change", "β₂ = β₃ = 0", "F = 3.89 (0.044)", "F = 15.05 (<0.001)", "Rejected"),
+]
+col_w = [3.0, 2.3, 2.6, 2.6, 2.0]
+col_x = [0.4]
+for w in col_w[:-1]:
+    col_x.append(col_x[-1] + w)
+y = 1.4
+for ri, row in enumerate(hrows):
+    bg = NAVY if ri == 0 else (LGRAY if ri % 2 else WHITE)
+    fc = WHITE if ri == 0 else BLACK
+    rh = 0.5
+    for ci, (cell, cx, cw) in enumerate(zip(row, col_x, col_w)):
+        add_rect(sD, cx, y, cw, rh, fill=bg, line=MGRAY)
+        clr = fc
+        if ri > 0 and ci == 4:
+            clr = RGBColor(0x37,0x86,0x10) if ("Supported" in cell and "Not" not in cell) or cell == "Rejected" else RED
+        add_text(sD, cell, cx+0.05, y+0.07, cw-0.1, rh-0.1, size=13, bold=(ri == 0 or ci == 4), color=clr,
+                 align=PP_ALIGN.CENTER if ci > 1 else PP_ALIGN.LEFT)
+    y += rh
+stat_box(sD, "0.742", "R² annual B\n(adj. 0.621)", 0.4, 4.25, w=2.9, h=1.45, val_color=NAVY)
+stat_box(sD, "F = 6.15", "joint significance\np = 0.002", 3.5, 4.25, w=2.9, h=1.45, val_color=NAVY)
+stat_box(sD, "0.737", "R² monthly M1\n(adj. 0.696)", 6.6, 4.25, w=2.9, h=1.45, val_color=NAVY)
+stat_box(sD, "$1.9bn", "typical annual error\n(mean balance $2.9bn)", 9.7, 4.25, w=3.2, h=1.45, val_color=NAVY)
+add_text(sD, "Also reported for every model: AIC, BIC, Durbin–Watson, Breusch–Godfrey, Breusch–Pagan, "
+             "Jarque–Bera, RESET.   † as a conditional association, not causation.",
+         0.4, 5.95, 12.5, 0.8, size=13, italic=True, color=NAVY)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# NEW (round 2) — GRANGER
+# ══════════════════════════════════════════════════════════════════════════════
+sE = content_slide(prs, "Granger Causality: Who Predicts Whom?",
+                   "Predictive precedence, not structural causation")
+grows = [
+    ("Data", "Minerals → Balance", "Balance → Minerals"),
+    ("Annual 2000–2023", "No (p ≥ 0.45)", "Yes at 1 lag (p = 0.021)"),
+    ("Monthly 2010–2019", "No (p ≥ 0.55)", "Only Toda–Yamamoto, 7 lags"),
+    ("Monthly pre-BRI 2010–13", "Yes, 3 lags (p = 0.016–0.032)", "Yes, 3 lags (p ≤ 0.003)"),
+    ("Monthly post-BRI 2014–19", "No (p ≥ 0.30)", "No (p ≥ 0.53)"),
+    ("BRI financing intensity", "No predictive power for the balance (p ≥ 0.75)", ""),
+]
+col_w = [3.4, 4.6, 4.5]
+col_x = [0.4, 3.8, 8.4]
+y = 1.4
+for ri, row in enumerate(grows):
+    bg = NAVY if ri == 0 else (LGRAY if ri % 2 else WHITE)
+    fc = WHITE if ri == 0 else BLACK
+    rh = 0.5
+    for ci, (cell, cx, cw) in enumerate(zip(row, col_x, col_w)):
+        add_rect(sE, cx, y, cw, rh, fill=bg, line=MGRAY)
+        add_text(sE, cell, cx+0.05, y+0.07, cw-0.1, rh-0.1, size=14, bold=(ri == 0), color=fc,
+                 align=PP_ALIGN.LEFT)
+    y += rh
+bullet_box(sE, [
+    "Mineral exports do not lead the trade balance: regression β's are associations, not drivers",
+    "Before BRI the two series predicted each other (two-way feedback); after 2013 the link disappears — consistent with H3",
+    "VAR in differences + Toda–Yamamoto (valid if I(0) or I(1)); lags by AIC/BIC",
+], 0.4, 4.6, 12.5, 2.4, size=15, color=NAVY)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # SLIDE 12 — DiD MAIN FINDING
 # ══════════════════════════════════════════════════════════════════════════════
-s12 = content_slide(prs, "Main Finding: TWFE Difference-in-Differences",
-                    "Is the deterioration China-specific, or a global trend?")
+s12 = content_slide(prs, "Cross-Partner Check: Difference-in-Differences",
+                    "Was the post-2013 deterioration larger with China than with other partners?")
 
 add_text(s12,
          "Design:  Stack Kazakhstan + 5 control partners (RUS, DEU, UZB, TUR, USA)  "
@@ -478,35 +638,34 @@ add_text(s12, "DiD Coefficient", 0.7, 1.92, 5.4, 0.45,
          size=14, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
 add_text(s12, "−0.305", 0.7, 2.32, 5.4, 0.95,
          size=58, bold=True, color=RGBColor(0xFF,0xCC,0x00), align=PP_ALIGN.CENTER)
-add_text(s12, "p = 0.0002   |   HAC SE = 0.083", 0.7, 3.25, 5.4, 0.42,
+add_text(s12, "range −0.31 to −0.37 across samples", 0.7, 3.25, 5.4, 0.42,
          size=15, color=RGBColor(0xBF,0xD7,0xED), align=PP_ALIGN.CENTER)
 
 add_rect(s12, 6.6, 1.85, 6.2, 2.3, fill=LGRAY, line=BLUE)
 add_text(s12, "What this means:", 6.75, 1.92, 5.9, 0.38,
          size=14, bold=True, color=NAVY)
 bullet_box(s12, [
-    "Kazakhstan's balance ratio fell ~30.5 pp more\nthan control partners post-2013",
-    "After controlling for all common time trends\nand partner-level differences",
-    "Not driven by oil prices, global macro,\nor general China trade patterns",
-    "→  The deterioration is CHINA-SPECIFIC",
-], 6.6, 2.3, 6.2, 1.85, size=14, color=BLACK)
+    "Balance ratio fell ~30 pp more with China\nthan with the other partners after 2013",
+    "China ranks 1st of 6; Germany 2nd (−0.24)",
+    "Holds without the 2020–22 break years",
+    "But only 6 partners: p ≈ 0.02 (Driscoll–Kraay),\n0.17–0.38 (permutation, bootstrap)",
+], 6.6, 2.25, 6.2, 1.9, size=13, color=BLACK)
 
 # robustness check row
 add_rect(s12, 0.5, 4.25, 5.8, 1.0, fill=LGRAY, line=MGRAY)
-add_text(s12, "China vs Russia only:", 0.65, 4.32, 5.5, 0.35,
+add_text(s12, "Final audit:", 0.65, 4.32, 5.5, 0.35,
          size=13, bold=True, color=NAVY)
-add_text(s12, "DiD = −0.151  (p = 0.008)  —  robust to most similar partner comparison",
+add_text(s12, "original p = 0.0002 used the wrong standard errors for a panel",
          0.65, 4.62, 5.5, 0.55, size=13, color=BLACK)
 
 add_rect(s12, 6.6, 4.25, 6.2, 1.0, fill=RGBColor(0xE2,0xEF,0xDA), line=RGBColor(0x37,0x86,0x10))
-add_text(s12, "✓  This is the strongest identification result in the paper.",
+add_text(s12, "→  Supporting evidence: largest decline is with China",
          6.75, 4.55, 5.9, 0.55, size=14, bold=True, color=RGBColor(0x37,0x5C,0x00))
 
 # DiD figure
-fig_path = FIGS / "fig_did_event_study.png"
+fig_path = FIGS / "fig_did_permutation.png"
 if fig_path.exists():
-    s12.shapes.add_picture(str(fig_path), Inches(0.5), Inches(5.4),
-                           Inches(12.3), Inches(1.9))
+    s12.shapes.add_picture(str(fig_path), Inches(4.4), Inches(5.35), height=Inches(2.05))
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -520,6 +679,7 @@ if fig_path.exists():
 bullet_box(s13, [
     "Pre-period (2000–2012) dynamics used\nto project a synthetic counterfactual",
     "Gap negative in 8 of 11 post-BRI years",
+    "The 3 positive years (2020–22) = the import reporting gap, not a real improvement",
     "MSPE ratio = 9.53\n(post-period 9× harder to fit)",
     "Consistent direction with DiD",
     "Not statistically significant alone\n→ treated as complementary evidence",
@@ -536,10 +696,10 @@ add_text(s14,
          0.5, 1.25, 12.3, 0.42, size=16, color=NAVY)
 
 methods = [
-    ("Regression (Scheme B primary)",    "Negative (−2.49)", "p = 0.011", "Driven by 2022–23;  fragile",                        "⚠", RGBColor(0xFF,0x7F,0x00)),
-    ("Regression (Scheme C robustness)", "Negative (−2.42)", "p = 0.033", "Same fragility pattern",                             "⚠", RGBColor(0xFF,0x7F,0x00)),
-    ("TWFE DiD — China vs all partners", "Negative (−0.305)","p = 0.0002","China-specific;  strongest ID",                      "✓✓",RGBColor(0x37,0x86,0x10)),
-    ("TWFE DiD — China vs Russia",       "Negative (−0.151)","p = 0.008", "Robust to similar partner",                          "✓", RGBColor(0x37,0x86,0x10)),
+    ("Regression (Scheme B primary)",    "Negative (−2.49)", "p = 0.011", "Survives excl. 2022–23 once 2020–22 imports corrected", "✓", RGBColor(0x37,0x86,0x10)),
+    ("Observed monthly 2010–2019",       "Negative (−0.91)", "p = 0.008", "120 months, pre-break; not robust to oil exports",   "✓", RGBColor(0x37,0x86,0x10)),
+    ("TWFE DiD — China vs 5 partners",   "Negative (−0.305)","p ≈ 0.02–0.38","Largest of 6; imprecise with 6 units",               "→", BLUE),
+    ("Oil exports (HS 27) control",      "Interaction → 0",  "p = 0.309", "Oil collapse 2014–16 is the likely mechanism",         "⚠", RGBColor(0xFF,0x7F,0x00)),
     ("Synthetic control gap",            "Negative (−0.014)","p = 0.857", "Consistent direction; not significant",              "→", BLUE),
     ("Sanctions robustness excl 22–23",  "Insignificant",    "p = 0.966", "Alternative channel cannot be ruled out",            "⚠", RGBColor(0xFF,0x7F,0x00)),
 ]
@@ -568,7 +728,7 @@ for i, (m, d, p, n, sym, clr) in enumerate(methods):
 
 add_rect(s14, 0.4, y+0.1, 12.5, 0.55, fill=RGBColor(0xE2,0xEF,0xDA), line=RGBColor(0x37,0x86,0x10))
 add_text(s14,
-         "Conclusion:  Evidence is strongly consistent with asymmetric interdependence deepening post-BRI.  "
+         "Conclusion:  Evidence is consistent with asymmetric interdependence deepening post-BRI.  "
          "Causal attribution to BRI specifically requires caution.",
          0.55, y+0.17, 12.2, 0.38, size=13, bold=True, color=RGBColor(0x37,0x5C,0x00))
 
@@ -580,14 +740,14 @@ s15 = content_slide(prs, "Limitations: What This Study Cannot Establish")
 
 cannot = [
     "BRI caused the trade balance deterioration",
-    "The regression interaction is a stable structural parameter",
+    "Mineral exports drive the balance (Granger: they do not lead it)",
     "The 2022–2023 import surge is purely BRI-driven (sanctions parallel-import channel exists)",
-    "Mineral-specific effects can be fully isolated from energy-export dynamics (HS-27 data unavailable)",
+    "The post-BRI weakening is mineral-specific (it vanishes once oil exports are controlled)",
 ]
 can = [
-    "The post-BRI trade balance deterioration is China-specific (TWFE DiD, p = 0.0002)",
-    "Strategic mineral export growth did not offset the import-side surge",
-    "The pattern is strongly consistent with asymmetric interdependence theory",
+    "The deterioration was largest with China among 6 major partners",
+    "The mineral–balance link weakened after 2013 in 120 observed months (p = 0.008)",
+    "The pattern is consistent with asymmetric interdependence theory",
     "The methodology is transparent, reproducible, and diagnostically honest",
 ]
 
@@ -620,8 +780,8 @@ policies = [
      "94% import growth signals deepening structural reliance on Chinese goods."),
     ("Prioritise value-added export upgrading",
      "Raw mineral exports are price-sensitive and insufficient to offset import surges."),
-    ("Evaluate 2023 as a structural inflection",
-     "First-ever deficit may mark a new regime — not a one-time statistical anomaly."),
+    ("Reconcile 2020–2022 bilateral import statistics",
+     "Kazakhstan's records show 4.6–6× less than China's — enough to distort the perceived position."),
     ("Diversify export destinations",
      "Concentration risk in a single large buyer amplifies asymmetric vulnerability."),
 ]
@@ -645,14 +805,14 @@ s17 = content_slide(prs, "Conclusions")
 
 concls = [
     ("Descriptive finding",
-     "Imports +94% vs exports +24%. Trade surplus fell 37.8%. First deficit in 2023."),
+     "Imports +94% vs exports +24%. Trade surplus fell 37.8%. Recorded deficit in 2023."),
     ("Regression finding",
-     "Negative post-BRI × minerals interaction (β = −2.49, p = 0.011) — but fragile to exclusion of 2022–2023."),
-    ("Strongest finding",
-     "TWFE DiD: Kazakhstan's balance deteriorated 30.5 pp more than control partners (p = 0.0002). "
-     "Deterioration is China-specific."),
+     "β₃ = −2.49 (p = 0.011) annual; −0.91 (p = 0.008) in 120 observed months. Fragility was mostly a 2020–22 data gap."),
+    ("Mechanism",
+     "Oil was 59% of exports to China in 2010–13, 36% in 2014–19; oil exports fell 89% (2013–16). "
+     "Largest decline of 6 partners was with China."),
     ("Interpretation",
-     "Strongly consistent with asymmetric interdependence. "
+     "Consistent with asymmetric interdependence. "
      "Mineral wealth insufficient to offset China's import-capacity advantage."),
     ("Broader relevance",
      "Applicable to all resource-rich BRI partner economies facing structural asymmetry "
@@ -691,7 +851,7 @@ add_text(s18, "Questions & Discussion",
 add_rect(s18, 3.5, 3.25, 6.3, 0.06, fill=WHITE)
 
 add_text(s18,
-         "Key number to remember:   DiD = −0.305   (p = 0.0002)   — China-specific",
+         "Imports +94% vs exports +24%   |   minerals stopped helping after 2013 (p = 0.008, 120 months)",
          0.6, 3.5, 12.0, 0.55,
          size=16, italic=True, color=RGBColor(0xFF,0xCC,0x00), align=PP_ALIGN.CENTER)
 
