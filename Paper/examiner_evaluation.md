@@ -43,3 +43,6 @@ HS-2 aggregation; imports from other partners only as totals; China's chapter-le
 - Project completion dates and lags unknown.
 - Aggregation (HS-2; import totals).
 - Several analyses exploratory (§3.3), including the alternative break years and new comparators added in the final validation.
+- Two of the Kazakhstan-specific studies added in the benchmarking round are weaker sources: Krulikowski and Riker (2024) is a USITC working paper, not peer-reviewed, and Huang, Yenina and Hossain (2021) appears in a SCIRP journal. The thesis uses both only for context and comparison, not as support for its own findings.
+- Readability: the text is dense and heavily qualified. The qualifications are accurate, but an examiner may find the main line hard to follow; the abstract, §1.4, §8.1 and the defence script carry the plain version.
+- Format: the title page and contents follow a generic layout. The department's own template (title page, declaration, supervisor's name, page format) should be applied before submission.

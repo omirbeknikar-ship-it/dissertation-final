@@ -121,3 +121,22 @@ New files: `Scripts/67_robustness_baselines_comparators.py`, `Scripts/68_reconci
 | Length | about 16,300 words, 40 pages | about 18,100 words, 44 pages | Tables 2.1, 6.9b, 6.10c, 6.13b; scorecard |
 
 New files: `Scripts/69_timing_alternatives.py`, `Scripts/build_presentation_v5.py`, tables `trend_break_alternative_years.csv`, `china_exports_growth_by_partner.csv`. New sources (pages accessed): Tengrinews (24 Dec 2012, Altynkol–Khorgos), Kazinform (21 May 2015, Western Europe–Western China planned completion), Fergana Agency (30 Sep 2025, Dostyk–Moyynty second track).
+
+# Sixth Round (2 November 2026): Benchmarking Against a Successful Dissertation
+
+The reference was Timirkan Laura, *Growth Without Prosperity* (SDU University, 2026), used as a benchmark for standard, structure and depth, not as a template. Nothing was copied. Features that reflect a different topic (her spatial typology, regional panel) were not imported. The research question, findings, claim levels and safeguards are unchanged.
+
+| Gap found | Change | Location |
+|---|---|---|
+| No contents list | Contents with page numbers (two-pass build in Script 50); also in the DOCX | pp. 2–3 |
+| No explicit relevance, novelty and significance statement (a standard pre-defence item) | New §1.7: relevance, scientific novelty (limited to the combination of methods for this pair), theoretical and practical significance | §1.7, p. 8 |
+| Kazakhstan-specific empirical studies missing | §2.6 paragraph on Huang, Yenina and Hossain (2021) and Krulikowski and Riker (2024); §2.8 gap updated; Table 2.1 note | §2.6, p. 11 |
+| Discussion did not relate results to existing studies | New §7.3: trade-cost studies, region-wide simulation versus observed timing, transit, Central Asian political economy | §7.3, p. 39 |
+| Policy implications generic | §7.9 rewritten: five recommendations, each tied to the finding it rests on, naming the responsible bodies | §7.9, p. 41 |
+| Conclusion not mapped to objectives | §8.1 "Answers to the Research Questions": Objective 1 and SQ1–SQ4 each marked as met, overall answer, contribution | §8.1, p. 42 |
+
+Not changed, with reasons: length (already longer than the reference in every chapter); method (PPML and comparisons suit a single-pair question; adding regressions would be padding); theory (no new framework was needed).
+
+Length: about 18,800 words including front matter, 49 pages including the contents list (previously about 18,100 words, 44 pages). The figure of 16,300 words described the version before the fifth round.
+
+New sources: Huang, Yenina and Hossain (2021), *Chinese Studies* 10(1), doi:10.4236/chnstd.2021.101001; Krulikowski and Riker (2024), USITC Economics Working Paper 2024-04-B. Script 68: 34 of 34 figures reconciled after the changes.

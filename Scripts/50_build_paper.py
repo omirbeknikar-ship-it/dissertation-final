@@ -54,30 +54,61 @@ ul, ol { margin: 0.2em 0; }
 a { color: inherit; text-decoration: none; }
 code { font-family: "Courier New", monospace; font-size: 10pt; }
 math[display="block"] { margin: 0.5em 0; }
+nav#TOC { page-break-after: always; line-height: 1.5; }
+nav#TOC h2 { text-align: center; font-size: 12pt; }
+nav#TOC ul { list-style: none; padding-left: 0.3in; margin: 0; }
+nav#TOC > ul { padding-left: 0; }
+nav#TOC a { text-decoration: none; color: #000; display: flex; }
+nav#TOC a .tocpg { margin-left: auto; padding-left: 1em; }
 div#refs .csl-entry { padding-left: 0.5in; text-indent: -0.5in; line-height: 2; }
 """)
 
 subprocess.run([
     "pandoc", str(MD), "--standalone", "--citeproc", "--csl", str(CSL), "--mathml",
     "--embed-resources", "--css", str(CSS), f"--resource-path={PAPER}:{ROOT}",
-    "--metadata", "link-citations=true", "-o", str(HTML)], check=True, cwd=PAPER)
+    "--metadata", "link-citations=true", "--toc", "--toc-depth=2",
+    "--metadata", "toc-title=Contents", "-o", str(HTML)], check=True, cwd=PAPER)
 
 from playwright.sync_api import sync_playwright  # noqa: E402
 with sync_playwright() as p:
     b = p.chromium.launch()
     pg = b.new_page()
     pg.goto(HTML.resolve().as_uri(), wait_until="networkidle")
-    pg.pdf(path=str(PAPER / "final_dissertation.pdf"), format="Letter",
+    pdf_kw = dict(format="Letter",
            margin={"top": "1in", "bottom": "1in", "left": "1in", "right": "1in"},
            display_header_footer=True,
            header_template='<div style="font-size:10pt;font-family:Times New Roman;width:100%;'
                            'text-align:right;margin-right:0.6in;"><span class="pageNumber"></span></div>',
            footer_template="<div></div>", print_background=True)
+    # Two-pass contents page numbers: render once, find the page on which each
+    # heading starts, write the numbers into the contents list, render again.
+    from pypdf import PdfReader
+    tmp = BUILD / "pass1.pdf"
+    pg.pdf(path=str(tmp), **pdf_kw)
+    entries = pg.eval_on_selector_all("nav#TOC a", "els => els.map(e => e.textContent.trim())")
+    texts = [" ".join(x.extract_text().split()) for x in PdfReader(str(tmp)).pages]
+    toc_first = next(i for i, x in enumerate(texts) if "Contents" in x)
+    last_key = " ".join(entries[-1].split())
+    toc_last = next(i for i in range(toc_first, len(texts)) if last_key in texts[i])
+    nums, start = [], toc_last + 1
+    for e in entries:
+        key = " ".join(e.split())
+        hit = next((i for i in range(start, len(texts)) if key in texts[i]), None)
+        nums.append("" if hit is None else str(hit + 1))
+        if hit is not None:
+            start = hit
+    pg.evaluate("""nums => { document.querySelectorAll('nav#TOC a').forEach((a, i) => {
+        const s = document.createElement('span'); s.className = 'tocpg'; s.textContent = nums[i];
+        a.appendChild(s); }); }""", nums)
+    pg.pdf(path=str(PAPER / "final_dissertation.pdf"), **pdf_kw)
+    missing = [e for e, n in zip(entries, nums) if not n]
+    print("Contents entries without a page:", missing)
     b.close()
 
 # Word styles are taken from Paper/reference.docx (the previous submission's styles).
 ref = PAPER / "reference.docx"
 cmd = ["pandoc", str(MD), "--citeproc", "--csl", str(CSL), f"--resource-path={PAPER}:{ROOT}",
+       "--toc", "--toc-depth=2", "--metadata", "toc-title=Contents",
        "-o", str(PAPER / "final_dissertation.docx")]
 if ref.exists():
     cmd += ["--reference-doc", str(ref)]

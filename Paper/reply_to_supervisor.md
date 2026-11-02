@@ -53,7 +53,7 @@ Main limitations:
 
 1. Is the reframing acceptable within the registered topic?
 2. May I use the new title ("The Belt and Road Initiative and the Kazakhstan–China Trade Balance: Sources of the Post-2013 Swing and the Role of Strategic Mineral Exports, 2005–2024"), or should the registered title remain the main title?
-3. Is the length (about 44 pages, 18,000 words) appropriate?
+3. Is the length (49 pages including a two-page contents list; about 18,800 words including front matter) appropriate?
 
 Kind regards,
 Nikar Omirbek

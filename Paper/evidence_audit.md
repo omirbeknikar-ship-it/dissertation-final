@@ -131,3 +131,14 @@ The first reconstruction's §3.3 stated that "the product-level panel and all te
 | Literature Table 2.1 | Abstracts on RePEc/Springer (see §8) | V; Mau & Seuren effect sizes not quoted |
 | "Upper bound" | Searched manuscript, slides, script, supporting files | Appears only as negation ("not an upper bound/bound") or in the change log/examiner notes describing its removal |
 | Manuscript figures | Script 68 | 34 of 34 found |
+
+## 10. Benchmarking round (2 November 2026)
+
+| Claim | Source | Status |
+|---|---|---|
+| Huang, Yenina and Hossain (2021) apply margin and intra-industry trade indices to China–Kazakhstan trade, 2002–2017 | *Chinese Studies* 10(1), 1–16, doi:10.4236/chnstd.2021.101001 (SCIRP) | V (abstract and article record checked when the entry was added); SCIRP outlet, used for context only |
+| BRI simulation: Kazakhstan exports +10.7%, imports +15.4%; China's exports to Kazakhstan +29.1% (2022) | Krulikowski and Riker, USITC Economics Working Paper 2024-04-B, https://www.usitc.gov/publications/332/working_papers/krulikowski_and_riker_2024_bri.pdf | V (working paper, not peer-reviewed; stated in §2.6) |
+| Ministry of Trade and Integration of the Republic of Kazakhstan (named in §7.9) | https://www.gov.kz/memleket/entities/mti?lang=en | V (official name on the government portal) |
+| Bureau of National Statistics (named in §7.9) | Already cited as a data source (§4.1) | V |
+| Section page numbers in the benchmarking table | Extracted from final_dissertation.pdf with pypdf after the build | C |
+| Manuscript figures | Script 68 | 34 of 34 found |
