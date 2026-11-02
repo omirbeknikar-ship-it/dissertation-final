@@ -52,8 +52,18 @@ avg = g[(g["base"] == "2011-13 avg") & (g["end"] == "2023-24 avg")].iloc[0]
 chk("Averaged-endpoint share", avg["china_specific_share_pct"], "{:.0f}% (", "robust_kz_partner_grid")
 
 nb = rd("robust_china_neighbour_grid.csv")
-late = nb[nb["end"].isin(["2023", "2024", "2023-24 avg"]) & (nb["comparator"] != "World")]
-chk("Max KZ-specific imports vs neighbours, end 2023-24", late["imports_kz_specific_bn"].max(), "+{:.2f}", "robust_china_neighbour_grid")
+late = nb[nb["end"].isin(["2023", "2024", "2023-24 avg"]) & nb["comparator"].isin(["Russia", "Central Asia ex-KZ", "Central Asia ex-KZ + Russia"])]
+chk("Max KZ-specific imports vs original neighbour sets, end 2023-24", late["imports_kz_specific_bn"].max(), "+{:.2f}", "robust_china_neighbour_grid")
+exkg = nb[nb["end"].isin(["2023", "2024", "2023-24 avg"]) & (nb["comparator"] == "Central Asia ex-KZ, ex-Kyrgyzstan") & (nb["weighting"] == "median")]
+chk("Ex-Kyrgyzstan median, max", exkg["imports_kz_specific_bn"].max(), "+{:.2f}", "robust_china_neighbour_grid")
+eg = rd("china_exports_growth_by_partner.csv").set_index("partner")
+chk("China export growth to KZ 2019-24", eg.loc["Kazakhstan", "growth_2019_2024"], "×{:.2f}", "china_exports_growth_by_partner")
+checks[-1]["found"] = checks[-1]["found"] and eg.loc["Kazakhstan", "rank_2019_2024"] == 6
+tg = g[g["end"] == "2019"]["turnover_china_specific_bn"]
+chk("Turnover China-specific to 2019, min", abs(tg.min()), "−{:.1f}", "robust_kz_partner_grid")
+chk("Turnover China-specific to 2019, max", tg.max(), "+{:.1f}", "robust_kz_partner_grid")
+ta = rd("trend_break_alternative_years.csv")
+chk("Agri trend change, break 2015", abs(ta[(ta.break_year == 2015) & (ta.group == "agrifood")]["trend_change"].iloc[0]), "−{:.3f}", "trend_break_alternative_years")
 w = nb[(nb["comparator"] == "World") & (nb["base"] == "2013") & (nb["end"] == "2024")].iloc[0]
 chk("KZ-specific imports vs world 2013-24", w["imports_kz_specific_bn"], "+{:.2f}", "robust_china_neighbour_grid")
 

@@ -13,7 +13,12 @@ KZ-reported China-specific,5.742,−5.74,balance_common_vs_china_specific,True
 Grid share min,51.666,52,robust_kz_partner_grid,True
 Grid share max,92.044,92,robust_kz_partner_grid,True
 Averaged-endpoint share,70.989,71% (,robust_kz_partner_grid,True
-"Max KZ-specific imports vs neighbours, end 2023-24",0.659,+0.66,robust_china_neighbour_grid,True
+"Max KZ-specific imports vs original neighbour sets, end 2023-24",0.659,+0.66,robust_china_neighbour_grid,True
+"Ex-Kyrgyzstan median, max",9.871,+9.87,robust_china_neighbour_grid,True
+China export growth to KZ 2019-24,2.196,×2.20,china_exports_growth_by_partner,True
+"Turnover China-specific to 2019, min",0.927,−0.9,robust_kz_partner_grid,True
+"Turnover China-specific to 2019, max",2.007,+2.0,robust_kz_partner_grid,True
+"Agri trend change, break 2015",0.2551,−0.255,trend_break_alternative_years,True
 KZ-specific imports vs world 2013-24,7.643,+7.64,robust_china_neighbour_grid,True
 PPML metals_ores,0.3288,0.329,ppml_main,True
 PPML agrifood,2.4559,2.456,ppml_main,True

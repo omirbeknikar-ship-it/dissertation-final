@@ -110,3 +110,24 @@ The first reconstruction's §3.3 stated that "the product-level panel and all te
 | Foo, Lean, Salim (2020) | RePEc: NAJEF 54; positive significant OBOR dummy, 2000–2016 | V |
 | Mau & Seuren (2023) | Springer: Review of World Economics 159(2) 257–297; rail connections raised European exports to China | V (effect size from body text, not quoted) |
 | Import composition shares (47% capital/durable, 29% apparel and footwear of the 2019–24 rise) | Computed from `import_composition_china_reported.csv` | C |
+
+
+## 9. Final validation (2 November 2026)
+
+| Item | Check | Result |
+|---|---|---|
+| Swing 15.55 bn | (15.91 − 27.95) − (16.05 − 12.55) from China-reported totals | Reproduced |
+| China-specific 14.31 bn, 92% | Script 65; KZ-reported version 5.74 of 6.27 (92%) | Reproduced |
+| 52–92% range; 71% averaged | Script 67 grid (16 cells; 2014→2019 excluded from the range because the swing is only −0.9 bn) | Reproduced |
+| Turnover China-specific | Script 67: −0.93 to +2.01 (to 2019); +12.18 to +18.28 (to 2023–24) | Computed |
+| Neighbour comparisons | Script 67 with six comparator sets, two weightings, 16 cells | Computed; the "every comparator" claim failed for the median of UZ/TJ/TM and was withdrawn |
+| Growth by partner 2019–24 | KZ ×2.20; RU ×2.32; KG ×3.17; UZ ×2.31; TJ ×2.21; TM ×2.39 | Computed from China-reported totals |
+| Alternative break years | Script 69 (PPML trend break at 2012, 2013, 2015, 2017) | Agri-food one-sided p for acceleration 0.96–0.99 |
+| Altynkol–Khorgos rail crossing opened December 2012 | Tengrinews, 24 Dec 2012 | V |
+| Western Europe–Western China road, KZ section completion planned for 2016 | Kazinform, 21 May 2015 | V (plan only; actual completion not verified) |
+| Dostyk–Moyynty second track inaugurated | Fergana Agency, 30 Sep 2025 | V |
+| Khorgos Gateway 2015; 49% stake 2017 | KTZ Express blog | V (company source) |
+| Construction start and completion dates of AidData road projects | Not found | U; stated in Table 6.13b |
+| Literature Table 2.1 | Abstracts on RePEc/Springer (see §8) | V; Mau & Seuren effect sizes not quoted |
+| "Upper bound" | Searched manuscript, slides, script, supporting files | Appears only as negation ("not an upper bound/bound") or in the change log/examiner notes describing its removal |
+| Manuscript figures | Script 68 | 34 of 34 found |

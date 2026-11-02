@@ -90,7 +90,10 @@ pd.set_option("display.width", 250)
 print("A. Kazakhstan-partner comparison\n", grid.round(2).to_string())
 
 SETS = {"World": [0], "Russia": [643], "Central Asia ex-KZ": [417, 860, 762, 795],
-        "Central Asia ex-KZ + Russia": [417, 860, 762, 795, 643]}
+        "Central Asia ex-KZ + Russia": [417, 860, 762, 795, 643],
+        # added in the final validation: Kyrgyzstan is a known re-export hub, so it is dropped
+        "Central Asia ex-KZ, ex-Kyrgyzstan": [860, 762, 795],
+        "Uzbekistan": [860]}
 
 
 def neighbour(flow, base, end, comp, weighting):
@@ -145,3 +148,18 @@ for base in BASES:
 gg_ = pd.DataFrame(grp_rows)
 gg_.round(3).to_csv(T / "robust_export_groups_grid.csv", index=False)
 print("D. China-specific export components by group\n", gg_.round(2).to_string())
+
+# ── E. Growth of China's exports to each partner separately (size-normalised) ──
+NAMES = {398: "Kazakhstan", 643: "Russia", 417: "Kyrgyzstan", 860: "Uzbekistan", 762: "Tajikistan",
+         795: "Turkmenistan", 0: "World"}
+eg = []
+for code, name in NAMES.items():
+    v = {y: cn[("X", y)][code] for y in (2012, 2013, 2014, 2019, 2023, 2024)}
+    eg.append({"partner": name, "2013_bn": v[2013] / 1e9, "2019_bn": v[2019] / 1e9, "2024_bn": v[2024] / 1e9,
+               "growth_2013_2019": v[2019] / v[2013], "growth_2019_2024": v[2024] / v[2019],
+               "growth_2013_2024": v[2024] / v[2013]})
+eg = pd.DataFrame(eg)
+for c in ["growth_2013_2019", "growth_2019_2024", "growth_2013_2024"]:
+    eg[c.replace("growth", "rank")] = eg[eg["partner"] != "World"][c].rank(ascending=False)
+eg.round(3).to_csv(T / "china_exports_growth_by_partner.csv", index=False)
+print("E. Growth of China's exports by partner\n", eg.round(2).to_string())

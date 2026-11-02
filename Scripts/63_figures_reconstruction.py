@@ -155,23 +155,23 @@ ax.legend(frameon=False, fontsize=8, loc="lower left")
 foot(fig, "Shift-share decomposition, China-reported China legs (Script 65).")
 fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(F / "fig_r7_common_vs_specific.png", dpi=200); plt.close(fig)
 
-# Fig R8: growth of China's exports by destination
-rg = pd.read_csv(T / "china_exports_regional_comparison.csv").set_index("destination")
-order = ["Kazakhstan", "Kyrgyzstan", "Uzbekistan", "Russia", "World"]
-fig, ax = plt.subplots(figsize=(7.2, 3.0))
+# Fig R8: growth of China's exports by partner (size-normalised), all five neighbours
+rg = pd.read_csv(T / "china_exports_growth_by_partner.csv").set_index("partner")
+order = ["Kazakhstan", "Russia", "Kyrgyzstan", "Uzbekistan", "Tajikistan", "Turkmenistan", "World"]
+fig, ax = plt.subplots(figsize=(7.4, 3.1))
 x = np.arange(len(order)); wdt = 0.36
 b1 = ax.bar(x - wdt / 2, rg.loc[order, "growth_2013_2019"], wdt, color="#2a78d6", label="2013–2019")
 b2 = ax.bar(x + wdt / 2, rg.loc[order, "growth_2019_2024"], wdt, color="#eb6834", label="2019–2024")
 for bars in (b1, b2):
     for b_ in bars:
         ax.text(b_.get_x() + b_.get_width() / 2, b_.get_height() + 0.05, f"×{b_.get_height():.2f}",
-                ha="center", fontsize=7.5, color=INK)
+                ha="center", fontsize=6.5, color=INK)
 ax.axhline(1, color=MUTED, lw=0.8, ls="--")
-ax.set_xticks(x); ax.set_xticklabels(order)
+ax.set_xticks(x); ax.set_xticklabels(order, fontsize=8)
 ax.set_ylabel("Growth factor of China's exports")
 ax.set_ylim(0, 3.6)
-ax.set_title("China's exports to Kazakhstan, its neighbours and the world", fontsize=9.5)
-ax.legend(frameon=False, fontsize=8, loc="upper left")
-foot(fig, "China-reported totals (Script 65).")
+ax.set_title("China's exports to Kazakhstan, its five neighbours and the world", fontsize=9.5)
+ax.legend(frameon=False, fontsize=8, loc="upper right")
+foot(fig, "China-reported totals (Script 67).")
 fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(F / "fig_r8_regional_imports.png", dpi=200); plt.close(fig)
 print("figures r7, r8 written")

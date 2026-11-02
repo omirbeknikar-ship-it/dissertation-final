@@ -97,3 +97,27 @@ New files: `Scripts/65_common_vs_china_specific.py`, `Scripts/66_multiple_testin
 | Length | about 14,000 words, 36 pages | about 16,300 words, 40 pages | Robustness tables, discrepancy table, literature |
 
 New files: `Scripts/67_robustness_baselines_comparators.py`, `Scripts/68_reconcile_manuscript.py`, `Collected_Raw_Data/raw_downloads/comtrade_china_totals_by_partner.txt`; tables `robust_kz_partner_grid.csv`, `robust_china_neighbour_grid.csv`, `robust_export_groups_grid.csv`, `reconciliation_report.csv`. KZ import totals for 2011, 2012, 2014, 2023 added to `comtrade_totals_imports_and_china_exports.txt`.
+
+---
+
+# Fifth Round (2 November 2026): Final Validation
+
+| Area | Before | After | Reason |
+|---|---|---|---|
+| Research question | "Is the post-2013 swing in Kazakhstan's trade balance with China distinctive ... consistent with the mechanisms through which the BRI was expected to operate" | "Is the post-2013 change in Kazakhstan–China merchandise trade, summarised by the swing in the bilateral balance, distinctive ... consistent with the BRI mechanisms that are observable in merchandise trade" | Distinguishes the balance (accounting summary) from the trade relationship; limits conclusions to what merchandise data can show |
+| §1.3 | "Why the trade balance" | "The trade balance and the trade relationship": BRI could expand trade and worsen the balance; investment imports; transit; explicit scope | Conceptual coherence |
+| Turnover | Not reported | China-specific turnover: −0.9 to +2.0 bn to 2019; +12.2 to +18.3 bn to 2023–24 | Links to the BRI trade-expansion literature |
+| Literature | Narrative §2.3 | Table 2.1: design, outcome, finding and comparability of the four key studies | Requested verification of what they measure |
+| Mechanisms | M1 connectivity/market access; M2 resource finance | M1 trade costs; M2 time-sensitive goods and market access; M3 resource finance; M4 investment-linked imports; M5 transit; scorecard with expectation, implication, data needed, evidence, established, untested, verdict (§6.9) | Requested mechanism-by-mechanism assessment |
+| Timing | Break at 2013 only | Breaks at 2012, 2013, 2015, 2017 (Table 6.9b, exploratory); dated milestones table (Table 6.13b) with verification status | Announcement ≠ implementation |
+| Import comparison | "No faster than neighbours under every comparator" | Withdrawn for the whole period: against the median of Uzbekistan, Tajikistan, Turkmenistan Kazakhstan grew faster (+0.0 to +9.9 bn). Retained for 2019–2024: lowest growth of six (each neighbour separately) | New comparators (excluding Kyrgyzstan; Uzbekistan alone) and partner-by-partner growth (Table 6.10c) |
+| Import verdict | "Inconsistent with the timing predicted by M1" | "Not specific to Kazakhstan (2019–2024); does not match a Kazakhstan-specific expansion in 2013–2019; region-wide or lagged BRI contribution inconclusive" | Lagged infrastructure effects cannot be excluded |
+| Conclusion | "None of the large components has the timing or direction BRI mechanisms predict" | "The merchandise-trade evidence does not show a change that both matches a BRI mechanism and starts or accelerates at a BRI milestone; not evidence of no effect" | Narrower and accurate |
+| Agri-food level | "Consistent with a BRI mechanism (B) in products and channel" | "Matches M2 in products and channel but not in timing; falls short of level B" | Consistent use of the level definitions |
+| Synthesis | Table of components | Table 6.14 plus established / interpretation / untested lists | Requested separation of claims |
+| Figure 6.7 | Four destinations | All five neighbours and the world | Comparator completeness |
+| Files | | Supervisor reply rewritten (old version archived); slides rebuilt (`build_presentation_v5.py`, 16 slides; v4 archived); defence script rewritten (v4 archived); plain-English summary under 250 words | Requested deliverables |
+| Verification | 29 figures reconciled | 34 figures reconciled; all tables regenerated from raw files and identical to within 0.001 | |
+| Length | about 16,300 words, 40 pages | about 18,100 words, 44 pages | Tables 2.1, 6.9b, 6.10c, 6.13b; scorecard |
+
+New files: `Scripts/69_timing_alternatives.py`, `Scripts/build_presentation_v5.py`, tables `trend_break_alternative_years.csv`, `china_exports_growth_by_partner.csv`. New sources (pages accessed): Tengrinews (24 Dec 2012, Altynkol–Khorgos), Kazinform (21 May 2015, Western Europe–Western China planned completion), Fergana Agency (30 Sep 2025, Dostyk–Moyynty second track).
